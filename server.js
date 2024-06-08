@@ -19,6 +19,7 @@ app.listen(port, () => {
 Categories
 IMAGES: self explanatory 
 Rarity: Legend Rare, Uber Super Rare, Super Rare, Rare, Special, Normal
+Form: Normal, Evolved, True, Ultra
 Source: Specific gacha banner, advent stage, legend stage, etc.
 Role: Sniper, LD, Tank... Go on wiki plz
 Target: Which traits they target
