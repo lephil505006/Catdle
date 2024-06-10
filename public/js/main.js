@@ -80,21 +80,32 @@ function searchCats() {
 function displayCatDetails(cat) {
   const catDetailsContainer = document.getElementById("cat-details-container");
   catDetailsContainer.innerHTML = `
-    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; padding: 10px;">
-        <div style="flex: 1; margin: 10px;">
-            <h2>${cat.name}</h2>
-            <img src="${cat.img}" alt="${cat.name}" class="cat-img" style="width: 100px; height: 100px;">
-        </div>
-        <div style="flex: 1; margin: 10px;">
-            <p><strong>Rarity:</strong> ${cat.rarity}</p>
-            <p><strong>Form:</strong> ${cat.form}</p>
-            <p><strong>Source:</strong> ${cat.source}</p>
-            <p><strong>Role:</strong> ${cat.role}</p>
-            <p><strong>Target:</strong> ${cat.target}</p>
-            <p><strong>Abilities:</strong> ${cat.abilities}</p>
-            <p><strong>Cost:</strong> ${cat.cost}</p>
-            <p><strong>Version:</strong> ${cat.version}</p>
-        </div>
+    <div>
+        <img src="${cat.img}" alt="${cat.name}" class="cat-img">
+    </div>
+    <div>
+        <p>${cat.rarity}</p>
+    </div>
+    <div>
+        <p>${cat.form}</p>
+    </div>
+    <div>
+        <p>${cat.source}</p>
+    </div>
+    <div>
+        <p>${cat.role}</p>
+    </div>
+    <div>
+        <p>${cat.target}</p>
+    </div>
+    <div>
+        <p>${cat.abilities}</p>
+    </div>
+    <div>
+        <p>${cat.cost}</p>
+    </div>
+    <div>
+        <p>${cat.version}</p>
     </div>
   `;
 }
