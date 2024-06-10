@@ -57,13 +57,19 @@ function searchCats() {
   // Clear previous results
   resultsContainer.innerHTML = "";
 
+  // Clear results if search bar is empty
+  if (query === "") {
+    resultsContainer.innerHTML = "";
+    return;
+  }
+
   // Filter cats based on the query
   const filteredCats = cats.filter((cat) =>
     cat.name.toLowerCase().includes(query)
   );
 
   // Display results
-  filteredCats.forEach((cat) => {
+  filteredCats.forEach((cat, index) => {
     const catElement = document.createElement("div");
     catElement.classList.add("cat-result");
     catElement.innerHTML = `
@@ -78,6 +84,14 @@ function searchCats() {
       searchBar.value = "";
     });
     resultsContainer.appendChild(catElement);
+
+    if (index === 0) {
+      document.getElementById("search-button").onclick = () => {
+        displayCatDetails(cat);
+        resultsContainer.innerHTML = "";
+        searchBar.value = "";
+      };
+    }
   });
 }
 
