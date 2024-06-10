@@ -70,14 +70,6 @@ function searchCats() {
             <img src="${cat.img}" alt="${cat.name}" class="cat-img">
             <div class="cat-details">
                 <p><strong>${cat.name}</strong></p>
-                <p>Rarity: ${cat.rarity}</p>
-                <p>Form: ${cat.form}</p>
-                <p>Source: ${cat.source}</p>
-                <p>Role: ${cat.role}</p>
-                <p>Target: ${cat.target}</p>
-                <p>Abilities: ${cat.abilities}</p>
-                <p>Cost: ${cat.cost}</p>
-                <p>Version: ${cat.version}</p>
             </div>
         `;
     resultsContainer.appendChild(catElement);
