@@ -49,6 +49,8 @@ const cats = [
   },
 ];
 
+let selectedCats = [];
+
 function searchCats() {
   const searchBar = document.getElementById("search-bar");
   const resultsContainer = document.getElementById("results-container");
@@ -60,12 +62,14 @@ function searchCats() {
   // Clear results if search bar is empty
   if (query === "") {
     resultsContainer.innerHTML = "";
+    document.getElementById("search-button").onclick = null;
     return;
   }
 
-  // Filter cats based on the query
-  const filteredCats = cats.filter((cat) =>
-    cat.name.toLowerCase().includes(query)
+  // Filter cats
+  const filteredCats = cats.filter(
+    (cat) =>
+      cat.name.toLowerCase().includes(query) && !selectedCats.includes(cat.name)
   );
 
   // Display results
@@ -80,6 +84,7 @@ function searchCats() {
         `;
     catElement.addEventListener("click", () => {
       displayCatDetails(cat);
+      selectedCats.push(cat.name);
       resultsContainer.innerHTML = "";
       searchBar.value = "";
     });
@@ -87,12 +92,19 @@ function searchCats() {
 
     if (index === 0) {
       document.getElementById("search-button").onclick = () => {
-        displayCatDetails(cat);
-        resultsContainer.innerHTML = "";
-        searchBar.value = "";
+        if (!selectedCats.includes(cat.name)) {
+          displayCatDetails(cat);
+          selectedCats.push(cat.name);
+          resultsContainer.innerHTML = "";
+          searchBar.value = "";
+        }
       };
     }
   });
+
+  if (filteredCats.length === 0) {
+    document.getElementById("search-button").onclick = null;
+  }
 }
 
 function displayCatDetails(cat) {
