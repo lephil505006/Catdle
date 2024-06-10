@@ -1,7 +1,7 @@
 const cats = [
   {
     name: "Thunder Jack",
-    img: "ThunderJack.webp",
+    img: "images/ThunderJack.webp",
     rarity: "Uber Super Rare",
     form: "True Form",
     source: "Dark Heros",
