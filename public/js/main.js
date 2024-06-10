@@ -140,5 +140,5 @@ function displayCatDetails(cat) {
         <p>${cat.version}</p>
     </div>
   `;
-  catDetailsContainer.appendChild(catDetailsElement);
+  catDetailsContainer.prepend(catDetailsElement);
 }
