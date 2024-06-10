@@ -6,10 +6,6 @@ body {
     text-align: center;
 }
 
-header {
-
-}
-
 #game-container {
     margin: 0 auto;
     width: 80%;
@@ -57,23 +53,17 @@ header {
     margin-right: 10px;
 }
 
-nav#headers {
-    margin-top: 20px;
-}
-
-nav#headers a {
-    margin: 0 10px;
-    color: #4CAF50;
-    text-decoration: none;
-}
-
 #cat-details-container {
+    padding: 10px;
+}
+
+.cat-details-element {
     display: flex;
     justify-content: space-around;
     padding: 10px;
 }
 
-#cat-details-container>div {
+.cat-detail {
     flex: 1;
     text-align: center;
 }

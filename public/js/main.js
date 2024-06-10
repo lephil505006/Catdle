@@ -79,33 +79,36 @@ function searchCats() {
 
 function displayCatDetails(cat) {
   const catDetailsContainer = document.getElementById("cat-details-container");
-  catDetailsContainer.innerHTML = `
-    <div>
+  const catDetailsElement = document.createElement("div");
+  catDetailsElement.classList.add("cat-details-element");
+  catDetailsElement.innerHTML = `
+    <div class="cat-detail">
         <img src="${cat.img}" alt="${cat.name}" class="cat-img">
     </div>
-    <div>
+    <div class="cat-detail">
         <p>${cat.rarity}</p>
     </div>
-    <div>
+    <div class="cat-detail">
         <p>${cat.form}</p>
     </div>
-    <div>
+    <div class="cat-detail">
         <p>${cat.source}</p>
     </div>
-    <div>
+    <div class="cat-detail">
         <p>${cat.role}</p>
     </div>
-    <div>
+    <div class="cat-detail">
         <p>${cat.target}</p>
     </div>
-    <div>
+    <div class="cat-detail">
         <p>${cat.abilities}</p>
     </div>
-    <div>
+    <div class="cat-detail">
         <p>${cat.cost}</p>
     </div>
-    <div>
+    <div class="cat-detail">
         <p>${cat.version}</p>
     </div>
   `;
+  catDetailsContainer.appendChild(catDetailsElement);
 }
