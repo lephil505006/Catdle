@@ -72,7 +72,11 @@ function searchCats() {
                 <p><strong>${cat.name}</strong></p>
             </div>
         `;
-    catElement.addEventListener("click", () => displayCatDetails(cat));
+    catElement.addEventListener("click", () => {
+      displayCatDetails(cat);
+      resultsContainer.innerHTML = "";
+      searchBar.value = "";
+    });
     resultsContainer.appendChild(catElement);
   });
 }
