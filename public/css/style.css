@@ -21,16 +21,36 @@ header {
     width: 917px;
     height: 392px;
     background: linear-gradient(180deg, #253131 0%, #4E6764 100%);
-    border: 4px solid #E6E6E6;
     border-radius: 45px;
-    padding: 20px;
+    border: 4px solid #E6E6E6;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-bar-outer {
+    background-color: #ffffff;
+    border-radius: 25px;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    width: 80%;
+    max-width: 600px;
+    margin-right: 10px;
 }
 
 #search-bar {
-    width: 80%;
+    width: 100%;
     padding: 10px;
-    margin-bottom: 10px;
+    border: none;
+    border-radius: 20px;
+    font-size: 16px;
+    outline: none;
 }
 
 #search-button {
@@ -46,26 +66,17 @@ header {
     background-color: #45a049;
 }
 
-.cat-result {
+#headers {
     display: flex;
-    align-items: center;
-    cursor: pointer;
+    justify-content: space-around;
     padding: 10px;
-    border-bottom: 1px solid #ccc;
-}
-
-.cat-result:hover {
-    background-color: #f1f1f1;
-}
-
-.cat-img {
-    width: 50px;
-    height: 50px;
-    margin-right: 10px;
+    margin-top: 20px;
+    font-family: Impact, Charcoal, sans-serif;
 }
 
 #cat-details-container {
     padding: 10px;
+    margin-top: 20px;
 }
 
 .cat-details-element {
@@ -77,13 +88,22 @@ header {
 .cat-detail {
     flex: 1;
     text-align: center;
-}
-
-.cat-details-element .cat-detail {
-    padding: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid #FFFFFF;
+    padding: 5px;
     margin: 5px;
     border-radius: 5px;
+}
+
+.img-detail {
+    text-align: center;
+}
+
+.trait-ability-detail {
+    text-align: center;
+}
+
+.text-detail {
+    text-align: center;
 }
 
 .good-job-message {
@@ -104,12 +124,4 @@ header {
 .ability-icon {
     width: 40px;
     height: 40px;
-}
-
-#headers {
-    display: flex;
-    justify-content: space-around;
-    padding: 10px;
-    margin-top: 20px;
-    font-family: 'Impact', sans-serif;
 }

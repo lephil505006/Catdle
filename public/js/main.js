@@ -136,7 +136,7 @@ document.addEventListener("DOMContentLoaded", () => {
           color = colors[index - 1];
         }
         if (category === "img") {
-          return `<div class="cat-detail" style="flex: 1; text-align: center;">
+          return `<div class="cat-detail img-detail">
                 <img src="${cat[category]}" alt="${cat.name}" class="cat-img">
               </div>`;
         } else if (category === "traits" || category === "abilities") {
@@ -147,15 +147,15 @@ document.addEventListener("DOMContentLoaded", () => {
                 value === "X"
                   ? `images/${category}/x.png`
                   : `images/${category}/${value.toLowerCase()}.webp`;
-              const imageClass = value === "X" ? "trait-icon" : "trait-icon"; // Use appropriate class
+              const imageClass = value === "X" ? "trait-icon" : "trait-icon";
               return `<img src="${imagePath}" alt="${value}" class="${imageClass}">`;
             })
             .join(" ");
-          return `<div class="cat-detail" style="flex: 1; text-align: center; background-color: ${color};">
+          return `<div class="cat-detail trait-ability-detail" style="background-color: ${color};">
                 <p>${images}</p>
               </div>`;
         } else {
-          return `<div class="cat-detail" style="flex: 1; text-align: center; background-color: ${color};">
+          return `<div class="cat-detail text-detail" style="background-color: ${color};">
                 <p>${cat[category]}</p>
               </div>`;
         }
