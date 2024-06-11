@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "form",
       "source",
       "role",
-      "target",
+      "traits",
       "abilities",
       "cost",
       "version",
@@ -112,7 +112,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "form",
       "source",
       "role",
-      "target",
+      "traits",
       "abilities",
       "cost",
       "version",
@@ -123,7 +123,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "Form",
       "Source",
       "Role",
-      "Target",
+      "Traits",
       "Abilities",
       "Cost",
       "Version",
@@ -137,13 +137,27 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         if (category === "img") {
           return `<div class="cat-detail" style="flex: 1; text-align: center;">
-                  <img src="${cat[category]}" alt="${cat.name}" class="cat-img">
-                </div>`;
+                <img src="${cat[category]}" alt="${cat.name}" class="cat-img">
+              </div>`;
+        } else if (category === "traits" || category === "abilities") {
+          const images = cat[category]
+            .split(" ")
+            .map((value) => {
+              const imagePath =
+                value === "X"
+                  ? `images/${category}/x.png`
+                  : `images/${category}/${value.toLowerCase()}.webp`;
+              const imageClass = value === "X" ? "trait-icon" : "trait-icon"; // Use appropriate class
+              return `<img src="${imagePath}" alt="${value}" class="${imageClass}">`;
+            })
+            .join(" ");
+          return `<div class="cat-detail" style="flex: 1; text-align: center; background-color: ${color};">
+                <p>${images}</p>
+              </div>`;
         } else {
           return `<div class="cat-detail" style="flex: 1; text-align: center; background-color: ${color};">
-                  <p>${categoryNames[index]}</p>
-                  <p>${cat[category]}</p>
-                </div>`;
+                <p>${cat[category]}</p>
+              </div>`;
         }
       })
       .join("");

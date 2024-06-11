@@ -88,3 +88,9 @@ body {
     text-align: center;
     z-index: 1000;
 }
+
+.trait-icon,
+.ability-icon {
+    width: 40px;
+    height: 40px;
+}
