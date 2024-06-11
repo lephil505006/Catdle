@@ -4,7 +4,7 @@ body {
     margin: 0;
     padding: 0;
     text-align: center;
-    background-image: url('../images/Battle Cats Background.PNG');
+    background-image: url('../images/assets/Battle Cats Background.PNG');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -16,6 +16,15 @@ header {
     margin-bottom: 20px;
 }
 
+#menu-cat {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+    width: 300px;
+    height: auto;
+}
+
 #game-container {
     margin: 0 auto;
     width: 917px;
@@ -25,6 +34,11 @@ header {
     border: 4px solid #E6E6E6;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
 }
 
 .search-container {
@@ -34,36 +48,53 @@ header {
 }
 
 .search-bar-outer {
-    background-color: #ffffff;
-    border-radius: 25px;
+    background-color: #e6e6e6;
+    border-radius: 15px;
     padding: 5px;
     display: flex;
     align-items: center;
-    width: 80%;
-    max-width: 600px;
-    margin-right: 10px;
+    width: 580px;
+    height: 60px;
+    border: 3px solid #000;
+    position: relative;
+    z-index: 2;
 }
 
 #search-bar {
-    width: 100%;
+    width: 430px;
+    height: 20px;
+    border-radius: 10px;
+    border: 2px solid #000;
+    background: #d9d9d9;
     padding: 10px;
-    border: none;
-    border-radius: 20px;
     font-size: 16px;
     outline: none;
+    margin-left: 16px;
 }
 
 #search-button {
-    padding: 10px 20px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
+    position: absolute;
+    right: 10px;
+    width: 84px;
+    height: 46px;
+    border-radius: 10px;
+    border: 2px solid #000;
+    background: linear-gradient(180deg, #FEC200 0%, #C99102 100%);
+    color: #E4E3E3;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Impact;
+    font-size: 34px;
+    line-height: normal;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: #000;
+    text-align: center;
 }
 
 #search-button:hover {
-    background-color: #45a049;
+    background: linear-gradient(180deg, #E0A800 0%, #A57A00 100%);
 }
 
 #headers {
@@ -90,20 +121,6 @@ header {
     text-align: center;
     border: 1px solid #FFFFFF;
     padding: 5px;
-    margin: 5px;
-    border-radius: 5px;
-}
-
-.img-detail {
-    text-align: center;
-}
-
-.trait-ability-detail {
-    text-align: center;
-}
-
-.text-detail {
-    text-align: center;
 }
 
 .good-job-message {
