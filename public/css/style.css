@@ -8,25 +8,22 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    background-attachment: fixed;
     height: 100vh;
-    overflow: hidden;
 }
 
 header {
     margin-bottom: 20px;
 }
 
-h1 {
-    font-family: 'Anton', sans-serif;
-}
-
 #game-container {
     margin: 0 auto;
-    width: 80%;
-    max-width: 600px;
-    background-color: white;
+    width: 917px;
+    height: 392px;
+    background: linear-gradient(180deg, #253131 0%, #4E6764 100%);
+    border: 4px solid #E6E6E6;
+    border-radius: 45px;
     padding: 20px;
-    border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -49,17 +46,22 @@ h1 {
     background-color: #45a049;
 }
 
-#headers {
+.cat-result {
     display: flex;
-    justify-content: space-around;
+    align-items: center;
+    cursor: pointer;
     padding: 10px;
-    margin-top: 20px;
-    font-family: 'Anton', sans-serif;
+    border-bottom: 1px solid #ccc;
 }
 
-#headers span {
-    flex: 1;
-    text-align: center;
+.cat-result:hover {
+    background-color: #f1f1f1;
+}
+
+.cat-img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
 }
 
 #cat-details-container {
@@ -102,4 +104,12 @@ h1 {
 .ability-icon {
     width: 40px;
     height: 40px;
+}
+
+#headers {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    margin-top: 20px;
+    font-family: 'Impact', sans-serif;
 }
