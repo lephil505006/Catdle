@@ -67,3 +67,24 @@ body {
     flex: 1;
     text-align: center;
 }
+
+.cat-details-element .cat-detail {
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin: 5px;
+    border-radius: 5px;
+}
+
+.good-job-message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #4CAF50;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    z-index: 1000;
+}

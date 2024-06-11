@@ -1,144 +1,169 @@
-const cats = [
-  {
-    name: "Thunder Jack",
-    img: "images/ThunderJack.webp",
-    rarity: "Uber Super Rare",
-    form: "Normal Form",
-    source: "Dark Heros",
-    role: "Rusher, CC",
-    target: "Angel, Alien",
-    abilities: "Knockback",
-    cost: "3,150¢",
-    version: "v12.2",
-  },
-  {
-    name: "The Grateful Crane",
-    img: "images/TheGratefulCrane.webp",
-    rarity: "Uber Super Rare",
-    form: "Normal Form",
-    source: "Ultra Souls",
-    role: "CC",
-    target: "Angel",
-    abilities: "Knockback",
-    cost: "832¢",
-    version: "v2.7",
-  },
-  {
-    name: "Thunder God Zeus",
-    img: "images/ThunderGodZeus.webp",
-    rarity: "Uber Super Rare",
-    form: "Normal Form",
-    source: "Almighties",
-    role: "Backliner",
-    target: "Angel",
-    abilities: "Resistant",
-    cost: "4800¢",
-    version: "v4.6",
-  },
-  {
-    name: "Thundia",
-    img: "images/Thundia.webp",
-    rarity: "Uber Super Rare",
-    form: "Normal Form",
-    source: "Galaxy Gals",
-    role: "Nuker, Backliner",
-    target: "Red",
-    abilities: "Massive DMG",
-    cost: "4410¢",
-    version: "v2.1",
-  },
-];
+import cats from "./catsData.js";
 
-let selectedCats = [];
+document.addEventListener("DOMContentLoaded", () => {
+  let selectedCats = [];
+  let answer = cats.find((cat) => cat.name === "The Grateful Crane");
 
-function searchCats() {
-  const searchBar = document.getElementById("search-bar");
-  const resultsContainer = document.getElementById("results-container");
-  const query = searchBar.value.toLowerCase();
+  function compareCategories(cat, answerCat) {
+    const categories = [
+      "rarity",
+      "form",
+      "source",
+      "role",
+      "target",
+      "abilities",
+      "cost",
+      "version",
+    ];
+    return categories.map((category) => {
+      const catValues = cat[category].split(" ");
+      const answerValues = answerCat[category].split(" ");
+      const commonElements = catValues.filter((value) =>
+        answerValues.includes(value)
+      );
 
-  // Clear previous results
-  resultsContainer.innerHTML = "";
-
-  // Clear results if search bar is empty
-  if (query === "") {
-    resultsContainer.innerHTML = "";
-    document.getElementById("search-button").onclick = null;
-    return;
-  }
-
-  // Filter cats
-  const filteredCats = cats.filter(
-    (cat) =>
-      cat.name.toLowerCase().includes(query) && !selectedCats.includes(cat.name)
-  );
-
-  // Display results
-  filteredCats.forEach((cat, index) => {
-    const catElement = document.createElement("div");
-    catElement.classList.add("cat-result");
-    catElement.innerHTML = `
-            <img src="${cat.img}" alt="${cat.name}" class="cat-img">
-            <div class="cat-details">
-                <p><strong>${cat.name}</strong></p>
-            </div>
-        `;
-    catElement.addEventListener("click", () => {
-      displayCatDetails(cat);
-      selectedCats.push(cat.name);
-      resultsContainer.innerHTML = "";
-      searchBar.value = "";
+      if (
+        commonElements.length === catValues.length &&
+        commonElements.length === answerValues.length
+      ) {
+        return "green";
+      } else if (commonElements.length > 0) {
+        return "yellow";
+      }
+      return "red";
     });
-    resultsContainer.appendChild(catElement);
-
-    if (index === 0) {
-      document.getElementById("search-button").onclick = () => {
-        if (!selectedCats.includes(cat.name)) {
-          displayCatDetails(cat);
-          selectedCats.push(cat.name);
-          resultsContainer.innerHTML = "";
-          searchBar.value = "";
-        }
-      };
-    }
-  });
-
-  if (filteredCats.length === 0) {
-    document.getElementById("search-button").onclick = null;
   }
-}
 
-function displayCatDetails(cat) {
-  const catDetailsContainer = document.getElementById("cat-details-container");
-  const catDetailsElement = document.createElement("div");
-  catDetailsElement.classList.add("cat-details-element");
-  catDetailsElement.innerHTML = `
-    <div class="cat-detail">
-        <img src="${cat.img}" alt="${cat.name}" class="cat-img">
-    </div>
-    <div class="cat-detail">
-        <p>${cat.rarity}</p>
-    </div>
-    <div class="cat-detail">
-        <p>${cat.form}</p>
-    </div>
-    <div class="cat-detail">
-        <p>${cat.source}</p>
-    </div>
-    <div class="cat-detail">
-        <p>${cat.role}</p>
-    </div>
-    <div class="cat-detail">
-        <p>${cat.target}</p>
-    </div>
-    <div class="cat-detail">
-        <p>${cat.abilities}</p>
-    </div>
-    <div class="cat-detail">
-        <p>${cat.cost}</p>
-    </div>
-    <div class="cat-detail">
-        <p>${cat.version}</p>
-    </div>
-  `;
-  catDetailsContainer.prepend(catDetailsElement);
-}
+  function searchCats() {
+    const searchBar = document.getElementById("search-bar");
+    const resultsContainer = document.getElementById("results-container");
+    const query = searchBar.value.toLowerCase();
+
+    // Clear previous results
+    resultsContainer.innerHTML = "";
+
+    // Clear results if search bar is empty
+    if (query === "") {
+      resultsContainer.innerHTML = "";
+      document.getElementById("search-button").onclick = null;
+      return;
+    }
+
+    // Filter cats
+    const filteredCats = cats.filter(
+      (cat) =>
+        cat.name.toLowerCase().includes(query) &&
+        !selectedCats.includes(cat.name)
+    );
+
+    // Display results
+    filteredCats.forEach((cat, index) => {
+      const catElement = document.createElement("div");
+      catElement.classList.add("cat-result");
+      catElement.innerHTML = `
+              <img src="${cat.img}" alt="${cat.name}" class="cat-img">
+              <div class="cat-details">
+                  <p><strong>${cat.name}</strong></p>
+              </div>
+          `;
+      catElement.addEventListener("click", () => {
+        checkGuess(cat);
+        selectedCats.push(cat.name);
+        resultsContainer.innerHTML = "";
+        searchBar.value = "";
+      });
+      resultsContainer.appendChild(catElement);
+
+      if (index === 0) {
+        document.getElementById("search-button").onclick = () => {
+          if (!selectedCats.includes(cat.name)) {
+            checkGuess(cat);
+            selectedCats.push(cat.name);
+            resultsContainer.innerHTML = "";
+            searchBar.value = "";
+          }
+        };
+      }
+    });
+
+    if (filteredCats.length === 0) {
+      document.getElementById("search-button").onclick = null;
+    }
+  }
+
+  function checkGuess(cat) {
+    displayCatDetails(cat);
+    if (cat.name === answer.name) {
+      displayGoodJobMessage();
+    }
+  }
+
+  function displayCatDetails(cat) {
+    const catDetailsContainer = document.getElementById(
+      "cat-details-container"
+    );
+    const catDetailsElement = document.createElement("div");
+    catDetailsElement.classList.add("cat-details-element");
+
+    const colors = compareCategories(cat, answer);
+    const categories = [
+      "img",
+      "rarity",
+      "form",
+      "source",
+      "role",
+      "target",
+      "abilities",
+      "cost",
+      "version",
+    ];
+    const categoryNames = [
+      "Image",
+      "Rarity",
+      "Form",
+      "Source",
+      "Role",
+      "Target",
+      "Abilities",
+      "Cost",
+      "Version",
+    ];
+
+    catDetailsElement.innerHTML = categories
+      .map((category, index) => {
+        let color = "white";
+        if (index > 0) {
+          color = colors[index - 1];
+        }
+        if (category === "img") {
+          return `<div class="cat-detail" style="flex: 1; text-align: center;">
+                  <img src="${cat[category]}" alt="${cat.name}" class="cat-img">
+                </div>`;
+        } else {
+          return `<div class="cat-detail" style="flex: 1; text-align: center; background-color: ${color};">
+                  <p>${categoryNames[index]}</p>
+                  <p>${cat[category]}</p>
+                </div>`;
+        }
+      })
+      .join("");
+
+    catDetailsContainer.prepend(catDetailsElement);
+  }
+
+  function displayGoodJobMessage() {
+    const messageContainer = document.createElement("div");
+    messageContainer.classList.add("good-job-message");
+    messageContainer.innerHTML = "<p>Good job! You guessed correctly!</p>";
+    document.body.appendChild(messageContainer);
+
+    setTimeout(() => {
+      messageContainer.remove();
+    }, 3000);
+  }
+
+  document.getElementById("search-bar").addEventListener("input", searchCats);
+  document
+    .getElementById("search-button")
+    .addEventListener("click", searchCats);
+});
