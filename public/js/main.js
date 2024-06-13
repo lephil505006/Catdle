@@ -1,5 +1,4 @@
 import cats from "./catsData.js";
-
 document.addEventListener("DOMContentLoaded", () => {
   let selectedCats = [];
   let answer = cats.find((cat) => cat.name === "The Grateful Crane");
@@ -42,9 +41,11 @@ document.addEventListener("DOMContentLoaded", () => {
     // Clear previous results
     resultsContainer.innerHTML = "";
 
-    // Clear results if search bar is empty
-    if (query === "") {
-      resultsContainer.innerHTML = "";
+    // Show results container only if there is a query
+    if (query !== "") {
+      resultsContainer.style.display = "block";
+    } else {
+      resultsContainer.style.display = "none";
       document.getElementById("search-button").onclick = null;
       return;
     }
@@ -71,6 +72,7 @@ document.addEventListener("DOMContentLoaded", () => {
         selectedCats.push(cat.name);
         resultsContainer.innerHTML = "";
         searchBar.value = "";
+        resultsContainer.style.display = "none";
       });
       resultsContainer.appendChild(catElement);
 
@@ -81,6 +83,7 @@ document.addEventListener("DOMContentLoaded", () => {
             selectedCats.push(cat.name);
             resultsContainer.innerHTML = "";
             searchBar.value = "";
+            resultsContainer.style.display = "none";
           }
         };
       }
@@ -180,4 +183,10 @@ document.addEventListener("DOMContentLoaded", () => {
   document
     .getElementById("search-button")
     .addEventListener("click", searchCats);
+
+  const searchBarOuter = document.querySelector(".search-bar-outer");
+  const resultsContainer = document.getElementById("results-container");
+  if (searchBarOuter && resultsContainer) {
+    resultsContainer.style.width = `${searchBarOuter.offsetWidth}px`;
+  }
 });
