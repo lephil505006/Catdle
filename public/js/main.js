@@ -14,20 +14,36 @@ document.addEventListener("DOMContentLoaded", () => {
       "cost",
       "version",
     ];
-    return categories.map((category) => {
-      const catValues = cat[category].split(" ");
-      const answerValues = answerCat[category].split(" ");
-      const commonElements = catValues.filter((value) =>
-        answerValues.includes(value)
-      );
 
-      if (
-        commonElements.length === catValues.length &&
-        commonElements.length === answerValues.length
-      ) {
-        return "green";
-      } else if (commonElements.length > 0) {
-        return "yellow";
+    return categories.map((category) => {
+      if (category === "form") {
+        const validForms = [
+          "Normal Form",
+          "Evolved Form",
+          "True Form",
+          "Ultra Form",
+        ];
+        if (
+          validForms.includes(cat[category]) &&
+          validForms.includes(answerCat[category])
+        ) {
+          return cat[category] === answerCat[category] ? "green" : "red";
+        }
+      } else {
+        const catValues = cat[category].split(" ");
+        const answerValues = answerCat[category].split(" ");
+        const commonElements = catValues.filter((value) =>
+          answerValues.includes(value)
+        );
+
+        if (
+          commonElements.length === catValues.length &&
+          commonElements.length === answerValues.length
+        ) {
+          return "green";
+        } else if (commonElements.length > 0) {
+          return "yellow";
+        }
       }
       return "red";
     });
@@ -50,12 +66,15 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    // Filter cats
-    const filteredCats = cats.filter(
-      (cat) =>
-        cat.name.toLowerCase().includes(query) &&
-        !selectedCats.includes(cat.name)
-    );
+    // TEMP DELETE LATER: Show all cats if query is "udisq"
+    const filteredCats =
+      query === "udisq"
+        ? cats
+        : cats.filter(
+            (cat) =>
+              cat.name.toLowerCase().includes(query) &&
+              !selectedCats.includes(cat.name)
+          );
 
     // Display results
     filteredCats.forEach((cat, index) => {
