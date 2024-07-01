@@ -1,15 +1,16 @@
 import cats from "./catsData.js";
+
 document.addEventListener("DOMContentLoaded", () => {
   let selectedCats = [];
-  let answer = cats.find((cat) => cat.name === "The Grateful Crane");
+  let answer = cats[Math.floor(Math.random() * cats.length)];
 
   function compareCategories(cat, answerCat) {
     const categories = [
       "rarity",
       "form",
-      "source",
       "role",
       "traits",
+      "attackType",
       "abilities",
       "cost",
       "version",
@@ -29,9 +30,24 @@ document.addEventListener("DOMContentLoaded", () => {
         ) {
           return cat[category] === answerCat[category] ? "green" : "red";
         }
+      } else if (category === "cost" || category === "version") {
+        const catValue = parseFloat(cat[category].replace(/[^0-9.]/g, ""));
+        const answerValue = parseFloat(
+          answerCat[category].replace(/[^0-9.]/g, "")
+        );
+
+        if (catValue === answerValue) {
+          return "green";
+        } else if (catValue < answerValue) {
+          return "up";
+        } else {
+          return "down";
+        }
       } else {
-        const catValues = cat[category].split(" ");
-        const answerValues = answerCat[category].split(" ");
+        const catValue = cat[category] || "";
+        const answerValue = answerCat[category] || "";
+        const catValues = catValue.split(" ");
+        const answerValues = answerValue.split(" ");
         const commonElements = catValues.filter((value) =>
           answerValues.includes(value)
         );
@@ -54,10 +70,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const resultsContainer = document.getElementById("results-container");
     const query = searchBar.value.toLowerCase();
 
-    // Clear previous results
     resultsContainer.innerHTML = "";
 
-    // Show results container only if there is a query
     if (query !== "") {
       resultsContainer.style.display = "block";
     } else {
@@ -66,26 +80,30 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    // TEMP DELETE LATER: Show all cats if query is "udisq"
-    const filteredCats =
-      query === "udisq"
-        ? cats
-        : cats.filter(
-            (cat) =>
-              cat.name.toLowerCase().includes(query) &&
-              !selectedCats.includes(cat.name)
-          );
+    const filteredCats = cats.filter((cat) =>
+      cat.name.toLowerCase().includes(query)
+    );
 
-    // Display results
-    filteredCats.forEach((cat, index) => {
+    const allRelatedCats = [];
+    filteredCats.forEach((cat) => {
+      allRelatedCats.push(...cats.filter((c) => c.unitId === cat.unitId));
+    });
+
+    const uniqueCats = Array.from(
+      new Set(allRelatedCats.map((a) => a.name))
+    ).map((name) => {
+      return allRelatedCats.find((a) => a.name === name);
+    });
+
+    uniqueCats.forEach((cat, index) => {
       const catElement = document.createElement("div");
       catElement.classList.add("cat-result");
       catElement.innerHTML = `
-              <img src="${cat.img}" alt="${cat.name}" class="cat-img">
-              <div class="cat-details">
-                  <p><strong>${cat.name}</strong></p>
-              </div>
-          `;
+        <img src="${cat.img}" alt="${cat.name}" class="cat-img">
+        <div class="cat-details">
+          <p><strong>${cat.name}</strong></p>
+        </div>
+      `;
       catElement.addEventListener("click", () => {
         checkGuess(cat);
         selectedCats.push(cat.name);
@@ -108,7 +126,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
-    if (filteredCats.length === 0) {
+    if (uniqueCats.length === 0) {
       document.getElementById("search-button").onclick = null;
     }
   }
@@ -132,9 +150,9 @@ document.addEventListener("DOMContentLoaded", () => {
       "img",
       "rarity",
       "form",
-      "source",
       "role",
       "traits",
+      "attackType",
       "abilities",
       "cost",
       "version",
@@ -143,9 +161,9 @@ document.addEventListener("DOMContentLoaded", () => {
       "Image",
       "Rarity",
       "Form",
-      "Source",
       "Role",
       "Traits",
+      "Attack Type",
       "Abilities",
       "Cost",
       "Version",
@@ -159,9 +177,13 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         if (category === "img") {
           return `<div class="cat-detail img-detail">
-                <img src="${cat[category]}" alt="${cat.name}" class="cat-img">
-              </div>`;
-        } else if (category === "traits" || category === "abilities") {
+            <img src="${cat[category]}" alt="${cat.name}" class="cat-img">
+          </div>`;
+        } else if (
+          category === "traits" ||
+          category === "abilities" ||
+          category === "attackType"
+        ) {
           const images = cat[category]
             .split(" ")
             .map((value) => {
@@ -169,17 +191,26 @@ document.addEventListener("DOMContentLoaded", () => {
                 value === "X"
                   ? `images/${category}/x.png`
                   : `images/${category}/${value.toLowerCase()}.webp`;
-              const imageClass = value === "X" ? "trait-icon" : "trait-icon";
-              return `<img src="${imagePath}" alt="${value}" class="${imageClass}">`;
+              return `<img src="${imagePath}" alt="${value}" class="trait-icon">`;
             })
             .join(" ");
           return `<div class="cat-detail trait-ability-detail" style="background-color: ${color};">
-                <p>${images}</p>
-              </div>`;
+            <p>${images}</p>
+          </div>`;
+        } else if (category === "cost" || category === "version") {
+          let indicator = "";
+          if (color === "up") {
+            indicator = '<span class="indicator up">▲</span>';
+          } else if (color === "down") {
+            indicator = '<span class="indicator down">▼</span>';
+          }
+          return `<div class="cat-detail text-detail" style="background-color: ${color};">
+            <p>${cat[category]} ${indicator}</p>
+          </div>`;
         } else {
           return `<div class="cat-detail text-detail" style="background-color: ${color};">
-                <p>${cat[category]}</p>
-              </div>`;
+            <p>${cat[category]}</p>
+          </div>`;
         }
       })
       .join("");

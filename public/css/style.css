@@ -183,24 +183,33 @@ header {
 /* Custom scrollbar styling */
 #results-container::-webkit-scrollbar {
     width: 12px;
-    /* Set the width of the scrollbar */
 }
 
 #results-container::-webkit-scrollbar-track {
     background: #e6e6e6;
-    /* Track color */
     border-radius: 10px;
 }
 
 #results-container::-webkit-scrollbar-thumb {
     background-color: #c0c0c0;
-    /* Scrollbar thumb color */
     border-radius: 10px;
     border: 2px solid #e6e6e6;
-    /* Space around thumb */
 }
 
 #results-container::-webkit-scrollbar-thumb:hover {
     background-color: #a0a0a0;
-    /* Scrollbar thumb hover color */
+}
+
+.indicator {
+    display: inline-block;
+    font-size: 1.2em;
+    vertical-align: middle;
+}
+
+.up {
+    color: green;
+}
+
+.down {
+    color: red;
 }
