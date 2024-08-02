@@ -125,39 +125,122 @@ header {
 }
 
 .cat-img {
+    width: 120px;
+    height: 120px;
+    border: none;
+}
+
+.header-item {
+    flex: 1;
+    text-align: center;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.search-cat-img {
     width: 50px;
     height: 50px;
-    margin-right: 10px;
+}
+
+.cat-img-container {
+    width: 120px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+}
+
+.cat-img-container img {
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
 }
 
 .cat-details p {
     margin: 0;
 }
 
-#headers {
-    display: flex;
-    justify-content: space-around;
-    padding: 10px;
-    margin-top: 20px;
-    font-family: Impact, Charcoal, sans-serif;
-}
-
 #cat-details-container {
-    padding: 10px;
-    margin-top: 20px;
+    padding: 5px;
+    margin-top: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 60%;
+    margin: 0 auto;
 }
 
 .cat-details-element {
     display: flex;
-    justify-content: space-around;
-    padding: 10px;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 5px;
 }
 
 .cat-detail {
     flex: 1;
     text-align: center;
     border: 1px solid #FFFFFF;
-    padding: 5px;
+    padding: 3px;
+    margin: 0 3px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.green-box,
+.red-box,
+.yellow-box,
+.white-box {
+    padding: 10px;
+    border-radius: 10px;
+    font-family: 'Impact';
+    font-size: 16px;
+    color: white;
+}
+
+.cat-detail .traits-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.cat-detail .trait-icon {
+    width: 20px;
+    height: 20px;
+    margin: 2px;
+}
+
+.cat-detail.small-font .traits-container .trait-icon {
+    width: 25px;
+    height: 25px;
+}
+
+.cat-details-element .red-box,
+.cat-details-element .green-box,
+.cat-details-element .yellow-box {
+    width: 120px;
+    max-width: 120px;
+    height: 100px;
+    max-height: 100px;
+    padding: 10px;
+    border-radius: 10px;
+    font-family: 'Impact';
+    font-size: 24px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.cat-detail img:not(.cat-img) {
+    width: 30px;
+    height: 30px;
 }
 
 .good-job-message {
@@ -172,12 +255,6 @@ header {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
     z-index: 1000;
-}
-
-.trait-icon,
-.ability-icon {
-    width: 40px;
-    height: 40px;
 }
 
 /* Custom scrollbar styling */
@@ -200,9 +277,37 @@ header {
     background-color: #a0a0a0;
 }
 
+/* Styles for the colored boxes */
+.green-box {
+    background-color: #3DBE29;
+    color: white;
+    padding: 5px;
+    border-radius: 10px;
+    font-family: 'Impact';
+    font-size: 14px;
+}
+
+.red-box {
+    background-color: #FF3232;
+    color: white;
+    padding: 5px;
+    border-radius: 10px;
+    font-family: 'Impact';
+    font-size: 14px;
+}
+
+.yellow-box {
+    background-color: #FFEA00;
+    color: white;
+    padding: 5px;
+    border-radius: 10px;
+    font-family: 'Impact';
+    font-size: 14px;
+}
+
 .indicator {
     display: inline-block;
-    font-size: 1.2em;
+    font-size: 1em;
     vertical-align: middle;
 }
 

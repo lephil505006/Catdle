@@ -28,20 +28,19 @@ document.addEventListener("DOMContentLoaded", () => {
           validForms.includes(cat[category]) &&
           validForms.includes(answerCat[category])
         ) {
-          return cat[category] === answerCat[category] ? "green" : "red";
+          return cat[category] === answerCat[category]
+            ? "green-box"
+            : "red-box";
         }
       } else if (category === "cost" || category === "version") {
-        const catValue = parseFloat(cat[category].replace(/[^0-9.]/g, ""));
+        const catValue = parseFloat(cat[category].replace(/[^\d.-]/g, ""));
         const answerValue = parseFloat(
-          answerCat[category].replace(/[^0-9.]/g, "")
+          answerCat[category].replace(/[^\d.-]/g, "")
         );
-
-        if (catValue === answerValue) {
-          return "green";
+        if (catValue > answerValue) {
+          return category === "cost" ? "green-box up" : "green-box";
         } else if (catValue < answerValue) {
-          return "up";
-        } else {
-          return "down";
+          return category === "cost" ? "red-box down" : "red-box";
         }
       } else {
         const catValue = cat[category] || "";
@@ -56,12 +55,12 @@ document.addEventListener("DOMContentLoaded", () => {
           commonElements.length === catValues.length &&
           commonElements.length === answerValues.length
         ) {
-          return "green";
+          return "green-box";
         } else if (commonElements.length > 0) {
-          return "yellow";
+          return "yellow-box";
         }
       }
-      return "red";
+      return "red-box";
     });
   }
 
@@ -99,11 +98,11 @@ document.addEventListener("DOMContentLoaded", () => {
       const catElement = document.createElement("div");
       catElement.classList.add("cat-result");
       catElement.innerHTML = `
-        <img src="${cat.img}" alt="${cat.name}" class="cat-img">
-        <div class="cat-details">
-          <p><strong>${cat.name}</strong></p>
-        </div>
-      `;
+            <img src="${cat.img}" alt="${cat.name}" class="search-cat-img">
+            <div class="cat-details">
+                <p><strong>${cat.name}</strong></p>
+            </div>
+        `;
       catElement.addEventListener("click", () => {
         checkGuess(cat);
         selectedCats.push(cat.name);
@@ -157,35 +156,24 @@ document.addEventListener("DOMContentLoaded", () => {
       "cost",
       "version",
     ];
-    const categoryNames = [
-      "Image",
-      "Rarity",
-      "Form",
-      "Role",
-      "Traits",
-      "Attack Type",
-      "Abilities",
-      "Cost",
-      "Version",
-    ];
 
     catDetailsElement.innerHTML = categories
       .map((category, index) => {
-        let color = "white";
+        let colorClass = "white-box";
         if (index > 0) {
-          color = colors[index - 1];
+          colorClass = colors[index - 1];
         }
         if (category === "img") {
-          return `<div class="cat-detail img-detail">
-            <img src="${cat[category]}" alt="${cat.name}" class="cat-img">
-          </div>`;
-        } else if (
-          category === "traits" ||
-          category === "abilities" ||
-          category === "attackType"
-        ) {
-          const images = cat[category]
-            .split(" ")
+          return `<div class="cat-img-container">
+                            <img src="${cat[category]}" alt="${cat.name}" class="cat-img">
+                        </div>`;
+        } else if (category === "traits") {
+          const traits = cat[category].split(" ");
+          let fontSizeClass = "";
+          if (traits.length > 6) {
+            fontSizeClass = "small-font";
+          }
+          const images = traits
             .map((value) => {
               const imagePath =
                 value === "X"
@@ -194,23 +182,40 @@ document.addEventListener("DOMContentLoaded", () => {
               return `<img src="${imagePath}" alt="${value}" class="trait-icon">`;
             })
             .join(" ");
-          return `<div class="cat-detail trait-ability-detail" style="background-color: ${color};">
-            <p>${images}</p>
-          </div>`;
-        } else if (category === "cost" || category === "version") {
-          let indicator = "";
-          if (color === "up") {
-            indicator = '<span class="indicator up">▲</span>';
-          } else if (color === "down") {
-            indicator = '<span class="indicator down">▼</span>';
-          }
-          return `<div class="cat-detail text-detail" style="background-color: ${color};">
-            <p>${cat[category]} ${indicator}</p>
-          </div>`;
+          return `<div class="cat-detail ${colorClass} ${fontSizeClass}">
+                            <div class="traits-container">${images}</div>
+                        </div>`;
+        } else if (category === "attackType") {
+          const imagePath = `images/attackType/${cat[
+            category
+          ].toLowerCase()}.webp`;
+          return `<div class="cat-detail ${colorClass}">
+                            <img src="${imagePath}" alt="${cat[category]}" class="attack-type-icon">
+                        </div>`;
+        } else if (category === "abilities") {
+          const abilities = cat[category].split(" ");
+          const images = abilities
+            .map((value) => {
+              const imagePath =
+                value === "X"
+                  ? `images/${category}/x.png`
+                  : `images/${category}/${value.toLowerCase()}.webp`;
+              return `<img src="${imagePath}" alt="${value}" class="trait-icon">`;
+            })
+            .join(" ");
+          return `<div class="cat-detail ${colorClass}">
+                            <div class="traits-container">${images}</div>
+                        </div>`;
         } else {
-          return `<div class="cat-detail text-detail" style="background-color: ${color};">
-            <p>${cat[category]}</p>
-          </div>`;
+          return `<div class="cat-detail ${colorClass}">
+                            <p>${cat[category]} ${
+            category === "cost"
+              ? '<span class="indicator ' +
+                colors[index - 1].split(" ")[1] +
+                '"></span>'
+              : ""
+          }</p>
+                        </div>`;
         }
       })
       .join("");
