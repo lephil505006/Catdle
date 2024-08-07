@@ -125,16 +125,37 @@ header {
 }
 
 .cat-img {
-    width: 120px;
-    height: 120px;
+    width: 110px;
+    height: 110px;
     border: none;
 }
 
 .header-item {
-    flex: 1;
+    width: 120px;
+    height: 100px;
     text-align: center;
-    padding: 10px;
     box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    margin: 0 3px;
+    padding: 10px;
+    font-family: Impact, Charcoal, sans-serif;
+    font-size: 24px;
+    color: black;
+    -webkit-text-stroke: .5px white;
+}
+
+#headers {
+    display: flex;
+    justify-content: space-between;
+    gap: 6px;
+    padding: 5px;
+    margin: 0 auto;
+    width: 1400px;
+    box-sizing: border-box;
+    text-align: center;
 }
 
 .search-cat-img {
@@ -143,7 +164,7 @@ header {
 }
 
 .cat-img-container {
-    width: 120px;
+    width: 135px;
     height: 120px;
     display: flex;
     align-items: center;
@@ -167,39 +188,55 @@ header {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    width: 60%;
+    width: 1400px;
     margin: 0 auto;
 }
 
 .cat-details-element {
     display: flex;
     justify-content: space-between;
-    width: 100%;
+    width: 120%;
     margin-bottom: 5px;
+    gap: 20px;
 }
 
 .cat-detail {
     flex: 1;
     text-align: center;
     border: 1px solid #FFFFFF;
-    padding: 3px;
+    padding: 10px;
     margin: 0 3px;
     border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-}
-
-.green-box,
-.red-box,
-.yellow-box,
-.white-box {
-    padding: 10px;
-    border-radius: 10px;
     font-family: 'Impact';
     font-size: 16px;
     color: white;
+    width: 120px;
+    height: 120px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    white-space: normal;
+}
+
+.green-box {
+    background-color: #3DBE29;
+}
+
+.red-box {
+    background-color: #FF3232;
+}
+
+.yellow-box {
+    background-color: #FFEA00;
+}
+
+.white-box {
+    background-color: #FFFFFF;
+    color: black;
 }
 
 .cat-detail .traits-container {
@@ -223,12 +260,12 @@ header {
 .cat-details-element .red-box,
 .cat-details-element .green-box,
 .cat-details-element .yellow-box {
-    width: 120px;
-    max-width: 120px;
-    height: 100px;
-    max-height: 100px;
+    width: 110px;
+    max-width: 110px;
+    height: 110px;
+    max-height: 110px;
     padding: 10px;
-    border-radius: 10px;
+    border-radius: 30px;
     font-family: 'Impact';
     font-size: 24px;
     text-align: center;
@@ -236,6 +273,8 @@ header {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    word-wrap: break-word;
+    white-space: normal;
 }
 
 .cat-detail img:not(.cat-img) {

@@ -141,6 +141,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const catDetailsContainer = document.getElementById(
       "cat-details-container"
     );
+    const headers = document.getElementById("headers");
+
+    if (headers.style.display === "none") {
+      headers.style.display = "flex";
+    }
+
     const catDetailsElement = document.createElement("div");
     catDetailsElement.classList.add("cat-details-element");
 
@@ -157,7 +163,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "version",
     ];
 
-    catDetailsElement.innerHTML = categories
+    const detailsHTML = categories
       .map((category, index) => {
         let colorClass = "white-box";
         if (index > 0) {
@@ -220,8 +226,17 @@ document.addEventListener("DOMContentLoaded", () => {
       })
       .join("");
 
-    catDetailsContainer.prepend(catDetailsElement);
+    catDetailsElement.innerHTML = detailsHTML;
+
+    // Clear existing elements before prepending
+    catDetailsContainer.innerHTML = "";
+
+    // Prepend headers and then details
+    catDetailsContainer.appendChild(headers);
+    catDetailsContainer.appendChild(catDetailsElement);
   }
+
+  document.getElementById("headers").style.display = "none";
 
   function displayGoodJobMessage() {
     const messageContainer = document.createElement("div");
