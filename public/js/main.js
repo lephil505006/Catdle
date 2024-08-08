@@ -95,6 +95,10 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     uniqueCats.forEach((cat, index) => {
+      if (selectedCats.includes(cat.name)) {
+        return;
+      }
+
       const catElement = document.createElement("div");
       catElement.classList.add("cat-result");
       catElement.innerHTML = `
@@ -104,11 +108,13 @@ document.addEventListener("DOMContentLoaded", () => {
             </div>
         `;
       catElement.addEventListener("click", () => {
-        checkGuess(cat);
-        selectedCats.push(cat.name);
-        resultsContainer.innerHTML = "";
-        searchBar.value = "";
-        resultsContainer.style.display = "none";
+        if (!selectedCats.includes(cat.name)) {
+          checkGuess(cat);
+          selectedCats.push(cat.name);
+          resultsContainer.innerHTML = "";
+          searchBar.value = "";
+          resultsContainer.style.display = "none";
+        }
       });
       resultsContainer.appendChild(catElement);
 
@@ -192,11 +198,15 @@ document.addEventListener("DOMContentLoaded", () => {
                             <div class="traits-container">${images}</div>
                         </div>`;
         } else if (category === "attackType") {
-          const imagePath = `images/attackType/${cat[
-            category
-          ].toLowerCase()}.webp`;
+          const attackTypes = cat[category].split(" ");
+          const images = attackTypes
+            .map((type) => {
+              const imagePath = `images/attackType/${type.toLowerCase()}.webp`;
+              return `<img src="${imagePath}" alt="${type}" class="attack-type-icon">`;
+            })
+            .join(" ");
           return `<div class="cat-detail ${colorClass}">
-                            <img src="${imagePath}" alt="${cat[category]}" class="attack-type-icon">
+                            <div class="attack-type-container">${images}</div>
                         </div>`;
         } else if (category === "abilities") {
           const abilities = cat[category].split(" ");
@@ -228,12 +238,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     catDetailsElement.innerHTML = detailsHTML;
 
-    // Clear existing elements before prepending
-    catDetailsContainer.innerHTML = "";
-
-    // Prepend headers and then details
-    catDetailsContainer.appendChild(headers);
-    catDetailsContainer.appendChild(catDetailsElement);
+    // Insert new details after the headers
+    if (catDetailsContainer.children.length === 0) {
+      catDetailsContainer.appendChild(headers);
+    }
+    catDetailsContainer.insertBefore(
+      catDetailsElement,
+      catDetailsContainer.children[1]
+    );
   }
 
   document.getElementById("headers").style.display = "none";

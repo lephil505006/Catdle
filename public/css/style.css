@@ -195,15 +195,15 @@ header {
 .cat-details-element {
     display: flex;
     justify-content: space-between;
-    width: 120%;
-    margin-bottom: 5px;
+    width: 100%;
+    margin-bottom: 15px;
     gap: 20px;
 }
 
 .cat-detail {
     flex: 1;
     text-align: center;
-    border: 1px solid #FFFFFF;
+    border: 3px solid #000000;
     padding: 10px;
     margin: 0 3px;
     border-radius: 10px;
@@ -239,20 +239,15 @@ header {
     color: black;
 }
 
-.cat-detail .traits-container {
+.cat-detail .traits-container .attack-type-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-}
-
-.cat-detail .trait-icon {
-    width: 20px;
-    height: 20px;
     margin: 2px;
 }
 
-.cat-detail.small-font .traits-container .trait-icon {
+.cat-detail.small-font {
     width: 25px;
     height: 25px;
 }
@@ -318,7 +313,7 @@ header {
 
 /* Styles for the colored boxes */
 .green-box {
-    background-color: #3DBE29;
+    background-color: #3AC224;
     color: white;
     padding: 5px;
     border-radius: 10px;
@@ -327,7 +322,7 @@ header {
 }
 
 .red-box {
-    background-color: #FF3232;
+    background-color: #B21E1E;
     color: white;
     padding: 5px;
     border-radius: 10px;
@@ -336,7 +331,7 @@ header {
 }
 
 .yellow-box {
-    background-color: #FFEA00;
+    background-color: #E09E1E;
     color: white;
     padding: 5px;
     border-radius: 10px;
