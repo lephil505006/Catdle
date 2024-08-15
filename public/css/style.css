@@ -352,3 +352,63 @@ header {
 .down {
     color: red;
 }
+
+/* Same style from the boxes, change me lator plz */
+.single-up,
+.single-down,
+.double-up,
+.double-down {
+    flex: 1;
+    text-align: center;
+    border: 3px solid #000000;
+    padding: 10px;
+    margin: 0 3px;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-family: 'Impact';
+    font-size: 16px;
+    color: white;
+    width: 110px;
+    max-width: 110px;
+    height: 110px;
+    max-height: 110px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    white-space: normal;
+    background-size: cover;
+    background-position: center;
+}
+
+/* For the arrows */
+.single-up,
+.single-down,
+.double-up,
+.double-down {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.single-up {
+    background-image: url('../images/assets/UpArrow.png');
+    background-size: cover;
+}
+
+.single-down {
+    background-image: url('../images/assets/DownArrow.png');
+    background-size: cover;
+}
+
+.double-up {
+    background-image: url('../images/assets/DoubleUpArrow.png');
+    background-size: cover;
+}
+
+.double-down {
+    background-image: url('../images/assets/DoubleDownArrow.png');
+    background-size: cover;
+}

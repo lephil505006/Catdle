@@ -37,10 +37,45 @@ document.addEventListener("DOMContentLoaded", () => {
         const answerValue = parseFloat(
           answerCat[category].replace(/[^\d.-]/g, "")
         );
-        if (catValue > answerValue) {
-          return category === "cost" ? "green-box up" : "green-box";
-        } else if (catValue < answerValue) {
-          return category === "cost" ? "red-box down" : "red-box";
+
+        if (catValue === answerValue) {
+          return "green-box";
+        }
+
+        let arrowClass = "";
+        if (!isNaN(catValue) && !isNaN(answerValue)) {
+          if (category === "cost") {
+            if (Math.abs(catValue - answerValue) > 1500) {
+              arrowClass = catValue > answerValue ? "double-down" : "double-up";
+            } else {
+              arrowClass = catValue > answerValue ? "single-down" : "single-up";
+            }
+          } else if (category === "version") {
+            if (Math.abs(catValue - answerValue) >= 5) {
+              arrowClass = catValue > answerValue ? "double-down" : "double-up";
+            } else {
+              arrowClass = catValue > answerValue ? "single-down" : "single-up";
+            }
+          }
+        }
+
+        return arrowClass || "red-box";
+      } else if (category === "abilities" || category === "traits") {
+        const catValue = cat[category] || "";
+        const answerValue = answerCat[category] || "";
+        const catValues = catValue.split(" ");
+        const answerValues = answerValue.split(" ");
+        const commonElements = catValues.filter((value) =>
+          answerValues.includes(value)
+        );
+
+        if (
+          commonElements.length === catValues.length &&
+          commonElements.length === answerValues.length
+        ) {
+          return "green-box";
+        } else if (commonElements.length > 0) {
+          return "yellow-box";
         }
       } else {
         const catValue = cat[category] || "";
