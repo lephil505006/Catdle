@@ -107,66 +107,76 @@ document.addEventListener("DOMContentLoaded", () => {
     resultsContainer.innerHTML = "";
 
     if (query !== "") {
-      resultsContainer.style.display = "block";
+      const filteredCats = cats.filter((cat) =>
+        cat.name.toLowerCase().includes(query)
+      );
+
+      const allRelatedCats = [];
+      filteredCats.forEach((cat) => {
+        allRelatedCats.push(...cats.filter((c) => c.unitId === cat.unitId));
+      });
+
+      const uniqueCats = Array.from(
+        new Set(allRelatedCats.map((a) => a.name))
+      ).map((name) => {
+        return allRelatedCats.find((a) => a.name === name);
+      });
+
+      if (uniqueCats.length > 0) {
+        resultsContainer.style.display = "block";
+        uniqueCats.forEach((cat, index) => {
+          if (selectedCats.includes(cat.name)) {
+            return;
+          }
+
+          const catElement = document.createElement("div");
+          catElement.classList.add("cat-result");
+          catElement.innerHTML = `
+          <img src="${cat.img}" alt="${cat.name}" class="search-cat-img">
+          <div class="cat-details">
+              <p><strong>${cat.name}</strong></p>
+          </div>
+        `;
+          catElement.addEventListener("click", () => {
+            if (!selectedCats.includes(cat.name)) {
+              checkGuess(cat);
+              selectedCats.push(cat.name);
+              resultsContainer.innerHTML = "";
+              searchBar.value = "";
+              resultsContainer.style.display = "none";
+            }
+          });
+          resultsContainer.appendChild(catElement);
+
+          if (index === 0) {
+            document.getElementById("search-button").onclick = () => {
+              if (!selectedCats.includes(cat.name)) {
+                checkGuess(cat);
+                selectedCats.push(cat.name);
+                resultsContainer.innerHTML = "";
+                searchBar.value = "";
+                resultsContainer.style.display = "none";
+              }
+            };
+          }
+        });
+      } else {
+        // Display "No Cat Found" message if invalid entry
+        const noCatElement = document.createElement("div");
+        noCatElement.classList.add("cat-result");
+        noCatElement.style.textAlign = "center";
+        noCatElement.style.color = "#000";
+        noCatElement.style.pointerEvents = "none";
+        noCatElement.innerHTML = "<p><strong>No Cat Found</strong></p>";
+        resultsContainer.appendChild(noCatElement);
+        resultsContainer.style.display = "block";
+
+        // Disable Play button
+        document.getElementById("search-button").onclick = null;
+      }
     } else {
       resultsContainer.style.display = "none";
-      document.getElementById("search-button").onclick = null;
-      return;
-    }
-
-    const filteredCats = cats.filter((cat) =>
-      cat.name.toLowerCase().includes(query)
-    );
-
-    const allRelatedCats = [];
-    filteredCats.forEach((cat) => {
-      allRelatedCats.push(...cats.filter((c) => c.unitId === cat.unitId));
-    });
-
-    const uniqueCats = Array.from(
-      new Set(allRelatedCats.map((a) => a.name))
-    ).map((name) => {
-      return allRelatedCats.find((a) => a.name === name);
-    });
-
-    uniqueCats.forEach((cat, index) => {
-      if (selectedCats.includes(cat.name)) {
-        return;
-      }
-
-      const catElement = document.createElement("div");
-      catElement.classList.add("cat-result");
-      catElement.innerHTML = `
-            <img src="${cat.img}" alt="${cat.name}" class="search-cat-img">
-            <div class="cat-details">
-                <p><strong>${cat.name}</strong></p>
-            </div>
-        `;
-      catElement.addEventListener("click", () => {
-        if (!selectedCats.includes(cat.name)) {
-          checkGuess(cat);
-          selectedCats.push(cat.name);
-          resultsContainer.innerHTML = "";
-          searchBar.value = "";
-          resultsContainer.style.display = "none";
-        }
-      });
-      resultsContainer.appendChild(catElement);
-
-      if (index === 0) {
-        document.getElementById("search-button").onclick = () => {
-          if (!selectedCats.includes(cat.name)) {
-            checkGuess(cat);
-            selectedCats.push(cat.name);
-            resultsContainer.innerHTML = "";
-            searchBar.value = "";
-            resultsContainer.style.display = "none";
-          }
-        };
-      }
-    });
-
-    if (uniqueCats.length === 0) {
+      searchBar.placeholder = "Enter cat name...";
       document.getElementById("search-button").onclick = null;
     }
   }
