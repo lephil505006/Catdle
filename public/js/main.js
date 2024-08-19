@@ -125,13 +125,13 @@ document.addEventListener("DOMContentLoaded", () => {
         return allRelatedCats.find((a) => a.name === name);
       });
 
-      if (uniqueCats.length > 0) {
-        resultsContainer.style.display = "block";
-        uniqueCats.forEach((cat, index) => {
-          if (selectedCats.includes(cat.name)) {
-            return;
-          }
+      const validCats = uniqueCats.filter(
+        (cat) => !selectedCats.includes(cat.name)
+      );
 
+      if (validCats.length > 0) {
+        resultsContainer.style.display = "block";
+        validCats.forEach((cat, index) => {
           const catElement = document.createElement("div");
           catElement.classList.add("cat-result");
           catElement.innerHTML = `
