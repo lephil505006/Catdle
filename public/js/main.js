@@ -70,12 +70,15 @@ document.addEventListener("DOMContentLoaded", () => {
         );
 
         if (
+          commonElements.length > 0 &&
+          commonElements.length < answerValues.length
+        ) {
+          return "yellow-box";
+        } else if (
           commonElements.length === catValues.length &&
           commonElements.length === answerValues.length
         ) {
           return "green-box";
-        } else if (commonElements.length > 0) {
-          return "yellow-box";
         }
       } else {
         const catValue = cat[category] || "";
