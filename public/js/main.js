@@ -2,7 +2,10 @@ import cats from "./catsData.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   let selectedCats = [];
-  let answer = cats[Math.floor(Math.random() * cats.length)];
+  //let answer = cats[Math.floor(Math.random() * cats.length)];
+
+  //Testing line (Comment line 5 for 8)
+  let answer = cats.find((cat) => cat.name === "Macho Leg Cat");
 
   function compareCategories(cat, answerCat) {
     const categories = [
@@ -69,16 +72,15 @@ document.addEventListener("DOMContentLoaded", () => {
           answerValues.includes(value)
         );
 
-        if (
-          commonElements.length > 0 &&
-          commonElements.length < answerValues.length
-        ) {
-          return "yellow-box";
-        } else if (
-          commonElements.length === catValues.length &&
-          commonElements.length === answerValues.length
-        ) {
-          return "green-box";
+        if (commonElements.length > 0) {
+          if (
+            commonElements.length === catValues.length &&
+            commonElements.length === answerValues.length
+          ) {
+            return "green-box";
+          } else {
+            return "yellow-box";
+          }
         }
       } else {
         const catValue = cat[category] || "";
