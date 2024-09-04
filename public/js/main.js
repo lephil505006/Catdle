@@ -2,10 +2,10 @@ import cats from "./catsData.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   let selectedCats = [];
-  //let answer = cats[Math.floor(Math.random() * cats.length)];
+  let answer = cats[Math.floor(Math.random() * cats.length)];
 
   //Testing line (Comment line 5 for 8)
-  let answer = cats.find((cat) => cat.name === "Macho Leg Cat");
+  //let answer = cats.find((cat) => cat.name === "Macho Leg Cat");
 
   function compareCategories(cat, answerCat) {
     const categories = [
