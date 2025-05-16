@@ -18,33 +18,39 @@
     </header>
 
     <main id="game-container">
-        <p>Guess the Battle Cat's character! (No Collab Units Included)</p>
-        <div class="search-container">
-            <div class="search-bar-outer">
-                <input type="text" id="search-bar" placeholder="Enter cat name...">
-                <button type="button" id="search-button">Play</button>
+        <p class="game-instruction">Guess the Battle Cat's character! (No Collab Units Included)</p>
+        <div class="hint-area">
+            <div class="hint-box">
+                <div class="hint-text">Hint appears in 3 tries</div>
+            </div>
+            <div class="hint-reveal-box">
+                <div class="hint-reveal-text" id="hint-display"></div>
             </div>
         </div>
-        <img src="images/assets/MenuCat.png" id="menu-cat" alt="Menu Cat">
+        <div class="search-container">
+            <div class="search-bar-outer">
+                <input type="text" id="search-bar" placeholder="Enter cat name..." aria-label="Cat name search">
+                <button type="button" id="search-button" aria-label="Submit guess">Play</button>
+            </div>
+        </div>
+        <img src="images/assets/MenuCat.png" id="menu-cat" alt="Menu Cat" class="decorative-cat">
     </main>
 
-    <div id="results-container"></div>
+    <div id="results-container" role="listbox" aria-label="Search results"></div>
 
-    <div id="cat-details-container">
-        <nav id="headers">
-            <div class="header-item">IMG</div>
-            <div class="header-item">Rarity</div>
-            <div class="header-item">Form</div>
-            <div class="header-item">Role</div>
-            <div class="header-item">Traits</div>
-            <div class="header-item">Attack Type</div>
-            <div class="header-item">Abilities</div>
-            <div class="header-item">Cost</div>
-            <div class="header-item">Version</div>
+    <div id="cat-details-container" aria-live="polite">
+        <nav id="headers" aria-label="Categories">
+            <div class="header-item" role="columnheader">IMG</div>
+            <div class="header-item" role="columnheader">Rarity</div>
+            <div class="header-item" role="columnheader">Form</div>
+            <div class="header-item" role="columnheader">Role</div>
+            <div class="header-item" role="columnheader">Traits</div>
+            <div class="header-item" role="columnheader">Attack Type</div>
+            <div class="header-item" role="columnheader">Abilities</div>
+            <div class="header-item" role="columnheader">Cost</div>
+            <div class="header-item" role="columnheader">Version</div>
         </nav>
-
     </div>
-
 
     <script type="module" src="js/main.js"></script>
 </body>

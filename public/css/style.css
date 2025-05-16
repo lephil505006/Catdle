@@ -36,16 +36,26 @@ header {
     padding: 20px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     position: relative;
     overflow: hidden;
 }
+
+/* Instruction at top */
+.game-instruction {
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 10px;
+    /* Pushes everything below it down */
+}
+
 
 .search-container {
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
+    margin-top: auto;
 }
 
 .search-bar-outer {
@@ -144,7 +154,7 @@ header {
     font-family: Impact, Charcoal, sans-serif;
     font-size: 24px;
     color: black;
-    -webkit-text-stroke: .5px white;
+    -webkit-text-stroke: .3px white;
 }
 
 #headers {
@@ -275,6 +285,11 @@ header {
 .cat-detail img:not(.cat-img) {
     width: 30px;
     height: 30px;
+}
+
+.cat-detail[data-trait-count="10"] img:not(.cat-img) {
+    width: 24px;
+    height: 24px;
 }
 
 .good-job-message {
@@ -411,4 +426,84 @@ header {
 .double-down {
     background-image: url('../images/assets/DoubleDownArrow.png');
     background-size: cover;
+}
+
+/* Tooltip styles */
+.icon-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.icon-tooltip {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.9);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-family: Arial, sans-serif;
+    white-space: nowrap;
+    z-index: 100;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.2s;
+    pointer-events: none;
+    margin-bottom: 5px;
+}
+
+/* New hint area container */
+.hint-area {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+}
+
+/* Hint box styling */
+.hint-box {
+    width: 200px;
+    height: 200px;
+    background-color: #e6e6e6;
+    border: 3px solid #000;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    margin-bottom: 10px;
+}
+
+.hint-text {
+    font-family: 'Impact', sans-serif;
+    font-size: 18px;
+    color: #333;
+    text-align: center;
+    -webkit-text-stroke: 0.3px #000; /* Slight black outline */
+    text-stroke: 0.3px #000;
+    padding: 0 10px;
+}
+
+/* Hint Reveal Box */
+.hint-reveal-box {
+    width: 180px;
+    background-color: #f0f0f0;
+    border: 2px solid #000;
+    border-radius: 10px;
+    padding: 12px;
+    display: none;
+    text-align: center;
+}
+
+.hint-reveal-text {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    color: #333;
+    line-height: 1.4;
 }
