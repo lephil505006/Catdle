@@ -428,7 +428,6 @@ header {
     background-size: cover;
 }
 
-/* Tooltip styles */
 .icon-wrapper {
     position: relative;
     display: inline-block;
@@ -454,7 +453,6 @@ header {
     margin-bottom: 5px;
 }
 
-/* New hint area container */
 .hint-area {
     flex: 1;
     display: flex;
@@ -464,10 +462,9 @@ header {
     margin: 10px 0;
 }
 
-/* Hint box styling */
 .hint-box {
     width: 200px;
-    height: 200px;
+    height: 100px;
     background-color: #e6e6e6;
     border: 3px solid #000;
     border-radius: 15px;
@@ -478,6 +475,17 @@ header {
     padding-bottom: 20px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     margin-bottom: 10px;
+    cursor: default;
+    transition: background-color 0.3s;
+}
+
+.hint-box.active {
+  cursor: pointer;
+  background-color: #f0f0f0;
+}
+
+.hint-box.active:hover {
+  background-color: #d9d9d9;
 }
 
 .hint-text {
@@ -485,12 +493,11 @@ header {
     font-size: 18px;
     color: #333;
     text-align: center;
-    -webkit-text-stroke: 0.3px #000; /* Slight black outline */
+    -webkit-text-stroke: 0.3px #000;
     text-stroke: 0.3px #000;
     padding: 0 10px;
 }
 
-/* Hint Reveal Box */
 .hint-reveal-box {
     width: 180px;
     background-color: #f0f0f0;
@@ -499,6 +506,10 @@ header {
     padding: 12px;
     display: none;
     text-align: center;
+    margin-top: 10px;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    color: #333;
 }
 
 .hint-reveal-text {

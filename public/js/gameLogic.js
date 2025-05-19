@@ -4,6 +4,7 @@ export class GameLogic {
     this.selectedCats = [];
     this.answer = this.getRandomCat();
     this.attempts = 0;
+    this.hintAvailable = false;
   }
 
   getRandomCat() {
@@ -148,6 +149,19 @@ export class GameLogic {
   checkGuess(cat) {
     this.attempts++;
     this.selectedCats.push(cat.name);
+    
+    // Check if hint should be available (after 5 attempts)
+    if (this.attempts >= 5 && !this.hintAvailable) {
+      this.hintAvailable = true;
+    }
+    
     return cat.name === this.answer.name;
+  }
+
+  getHint() {
+    if (this.hintAvailable) {
+      return this.answer.source;
+    }
+    return null;
   }
 }

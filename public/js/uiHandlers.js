@@ -3,6 +3,7 @@ export class UIHandlers {
     this.game = gameLogic;
     this.initializeElements();
     this.setupEventListeners();
+    this.updateHintDisplay();
   }
 
   initializeElements() {
@@ -11,16 +12,65 @@ export class UIHandlers {
     this.catDetailsContainer = document.getElementById("cat-details-container");
     this.headers = document.getElementById("headers");
     this.hintDisplay = document.getElementById("hint-display");
+    this.hintBox = document.querySelector(".hint-box");
+    this.hintRevealBox = document.querySelector(".hint-reveal-box");
+    this.searchButton = document.getElementById("search-button");
+    this.updateResultsWidth();
+    window.addEventListener('resize', () => this.updateResultsWidth());
   }
 
   setupEventListeners() {
     this.searchBar.addEventListener("input", () => this.searchCats());
-    document.getElementById("search-button")
-      .addEventListener("click", () => this.searchCats());
+    this.searchButton.addEventListener("click", () => this.handleSearchButtonClick());
     
-    const searchBarOuter = document.querySelector(".search-bar-outer");
-    if (searchBarOuter && this.resultsContainer) {
-      this.resultsContainer.style.width = `${searchBarOuter.offsetWidth}px`;
+    this.hintBox.addEventListener("click", () => {
+      if (this.game.hintAvailable && !this.hintRevealBox.style.display) {
+        const hint = this.game.getHint();
+        if (hint) {
+          this.hintDisplay.textContent = hint;
+          this.hintRevealBox.style.display = "block";
+        }
+      }
+    });
+  }
+
+  updateResultsWidth() {
+      const searchBar = document.querySelector('.search-bar-outer');
+      if (searchBar) {
+          this.resultsContainer.style.width = `${searchBar.offsetWidth}px`;
+          this.resultsContainer.style.minWidth = `${searchBar.offsetWidth}px`;
+      }
+  }
+
+  handleSearchButtonClick() {
+    const query = this.searchBar.value.toLowerCase();
+    if (query === "") return;
+    
+    const filteredCats = this.game.getAllCats().filter(cat => 
+      cat.name.toLowerCase().includes(query)
+    );
+    
+    if (filteredCats.length > 0) {
+      const firstValidCat = filteredCats.find(cat => 
+        !this.game.getSelectedCats().includes(cat.name)
+      );
+      
+      if (firstValidCat) {
+        this.handleCatSelection(firstValidCat);
+      }
+    }
+  }
+
+  updateHintDisplay() {
+    const attemptsLeft = 5 - this.game.attempts;
+    const hintText = this.hintBox.querySelector(".hint-text");
+    
+    if (this.game.hintAvailable) {
+      hintText.textContent = "Click for hint!";
+      this.hintBox.style.cursor = "pointer";
+    } else {
+      hintText.textContent = `Hint available in ${attemptsLeft} ${attemptsLeft === 1 ? 'try' : 'tries'}`;
+      this.hintBox.style.cursor = "default";
     }
   }
 
@@ -28,80 +78,58 @@ export class UIHandlers {
     const query = this.searchBar.value.toLowerCase();
     this.resultsContainer.innerHTML = "";
 
-    if (query !== "") {
-      const filteredCats = this.game.getAllCats().filter((cat) =>
-        cat.name.toLowerCase().includes(query)
-      );
-
-      const allRelatedCats = [];
-      filteredCats.forEach((cat) => {
-        allRelatedCats.push(...this.game.getAllCats().filter((c) => c.unitId === cat.unitId));
-      });
-
-      const uniqueCats = Array.from(
-        new Set(allRelatedCats.map((a) => a.name))
-      ).map((name) => {
-        return allRelatedCats.find((a) => a.name === name);
-      });
-
-      const validCats = uniqueCats.filter(
-        (cat) => !this.game.getSelectedCats().includes(cat.name)
-      );
-
-      if (validCats.length > 0) {
-        this.resultsContainer.style.display = "block";
-        validCats.forEach((cat, index) => {
-          const catElement = document.createElement("div");
-          catElement.classList.add("cat-result");
-          catElement.innerHTML = `
-            <img src="${cat.img}" alt="${cat.name}" class="search-cat-img">
-            <div class="cat-details">
-                <p><strong>${cat.name}</strong></p>
-            </div>
-          `;
-          catElement.addEventListener("click", () => {
-            this.handleCatSelection(cat);
-          });
-          this.resultsContainer.appendChild(catElement);
-
-          if (index === 0) {
-            document.getElementById("search-button").onclick = () => {
-              this.handleCatSelection(cat);
-            };
-          }
-        });
-      } else {
-        // Display "No Cat Found" message
-        const noCatElement = document.createElement("div");
-        noCatElement.classList.add("cat-result");
-        noCatElement.style.textAlign = "center";
-        noCatElement.style.color = "#000";
-        noCatElement.style.pointerEvents = "none";
-        noCatElement.innerHTML = "<p><strong>No Cat Found</strong></p>";
-        this.resultsContainer.appendChild(noCatElement);
-        this.resultsContainer.style.display = "block";
-        document.getElementById("search-button").onclick = null;
-      }
-    } else {
+    if (query === "") {
       this.resultsContainer.style.display = "none";
-      this.searchBar.placeholder = "Enter cat name...";
-      document.getElementById("search-button").onclick = null;
+      return;
+    }
+
+    const filteredCats = this.game.getAllCats().filter(cat => 
+      cat.name.toLowerCase().includes(query) &&
+      !this.game.getSelectedCats().includes(cat.name)
+    );
+
+    if (filteredCats.length > 0) {
+      this.resultsContainer.style.display = "block";
+      filteredCats.forEach(cat => {
+        const catElement = document.createElement("div");
+        catElement.classList.add("cat-result");
+        catElement.innerHTML = `
+          <img src="${cat.img}" alt="${cat.name}" class="search-cat-img">
+          <div class="cat-details">
+            <p><strong>${cat.name}</strong></p>
+          </div>
+        `;
+        catElement.addEventListener("click", () => this.handleCatSelection(cat));
+        this.resultsContainer.appendChild(catElement);
+      });
+    } else {
+      const noCatElement = document.createElement("div");
+      noCatElement.classList.add("cat-result");
+      noCatElement.style.textAlign = "center";
+      noCatElement.style.color = "#000";
+      noCatElement.style.pointerEvents = "none";
+      noCatElement.innerHTML = "<p><strong>No Cat Found</strong></p>";
+      this.resultsContainer.appendChild(noCatElement);
+      this.resultsContainer.style.display = "block";
     }
   }
 
   handleCatSelection(cat) {
-    if (!this.game.getSelectedCats().includes(cat.name)) {
-      const isCorrect = this.game.checkGuess(cat);
-      this.displayCatDetails(cat);
-      if (isCorrect) {
-        this.displayGoodJobMessage();
-      }
-    }
-    this.resultsContainer.innerHTML = "";
+    if (this.game.getSelectedCats().includes(cat.name)) return;
+    
+    const isCorrect = this.game.checkGuess(cat);
+    this.displayCatDetails(cat);
+    this.updateHintDisplay();
+    
+    // Clear search and results
     this.searchBar.value = "";
+    this.resultsContainer.innerHTML = "";
     this.resultsContainer.style.display = "none";
+    
+    if (isCorrect) {
+      this.displayGoodJobMessage();
+    }
   }
-
   displayCatDetails(cat) {
     if (this.headers.style.display === "none") {
       this.headers.style.display = "flex";
