@@ -17,6 +17,15 @@ export class UIHandlers {
     this.searchButton = document.getElementById("search-button");
     this.updateResultsWidth();
     window.addEventListener('resize', () => this.updateResultsWidth());
+
+    this.infoButton = document.getElementById("info-button");
+    this.infoBox = document.getElementById("info-box");
+    this.overlay = document.createElement("div");
+    this.overlay.className = "overlay";
+    document.body.appendChild(this.overlay);
+    
+    this.updateResultsWidth();
+    window.addEventListener('resize', () => this.updateResultsWidth());
   }
 
   setupEventListeners() {
@@ -24,22 +33,51 @@ export class UIHandlers {
     this.searchButton.addEventListener("click", () => this.handleSearchButtonClick());
     
     this.hintBox.addEventListener("click", () => {
-      if (this.game.hintAvailable && !this.hintRevealBox.style.display) {
-        const hint = this.game.getHint();
-        if (hint) {
-          this.hintDisplay.textContent = hint;
-          this.hintRevealBox.style.display = "block";
+        if (this.game.hintAvailable && !this.hintRevealBox.style.display) {
+            const hint = this.game.getHint();
+            if (hint) {
+                this.hintDisplay.textContent = hint;
+                this.hintRevealBox.style.display = "block";
+            }
         }
-      }
+    });
+    
+    this.infoButton.addEventListener("click", () => this.toggleInfoBox());
+    this.overlay.addEventListener("click", () => this.closeInfoBox());
+    document.querySelector('.close-info')?.addEventListener('click', () => this.closeInfoBox());
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') this.closeInfoBox();
     });
   }
 
+  toggleInfoBox() {
+    const isExpanded = this.infoButton.getAttribute('aria-expanded') === 'true';
+    this.infoButton.setAttribute('aria-expanded', !isExpanded);
+    this.infoBox.classList.toggle('active');
+    this.overlay.classList.toggle('active');
+    
+    // Toggle body class to lock scrolling
+    document.body.classList.toggle('overlay-open', !isExpanded);
+    
+    // If opening, scroll info box to top
+    if (!isExpanded) {
+        this.infoBox.scrollTop = 0;
+    }
+  }
+
+closeInfoBox() {
+    this.infoBox.classList.remove('active');
+    this.overlay.classList.remove('active');
+    this.infoButton.setAttribute('aria-expanded', 'false');
+    document.body.classList.remove('overlay-open');
+}
+
   updateResultsWidth() {
-      const searchBar = document.querySelector('.search-bar-outer');
-      if (searchBar) {
-          this.resultsContainer.style.width = `${searchBar.offsetWidth}px`;
-          this.resultsContainer.style.minWidth = `${searchBar.offsetWidth}px`;
-      }
+    const searchBar = document.querySelector('.search-bar-outer');
+    if (searchBar) {
+        this.resultsContainer.style.width = `${searchBar.offsetWidth}px`;
+        this.resultsContainer.style.minWidth = `${searchBar.offsetWidth}px`;
+    }
   }
 
   handleSearchButtonClick() {
@@ -83,14 +121,33 @@ export class UIHandlers {
       return;
     }
 
-    const filteredCats = this.game.getAllCats().filter(cat => 
-      cat.name.toLowerCase().includes(query) &&
-      !this.game.getSelectedCats().includes(cat.name)
+    // Find all cats matching the search OR sharing unitId with matching cats
+    const matchingCats = this.game.getAllCats().filter(cat => 
+      cat.name.toLowerCase().includes(query)
     );
 
-    if (filteredCats.length > 0) {
+    // Get all related cats (same unitId) that haven't been selected yet
+    const relatedCats = [];
+    matchingCats.forEach(cat => {
+      relatedCats.push(...this.game.getAllCats().filter(c => 
+        c.unitId === cat.unitId && 
+        !this.game.getSelectedCats().includes(c.name)
+      ));
+    });
+
+    // Remove duplicates by name
+    const uniqueCats = [];
+    const namesSeen = new Set();
+    relatedCats.forEach(cat => {
+      if (!namesSeen.has(cat.name)) {
+        namesSeen.add(cat.name);
+        uniqueCats.push(cat);
+      }
+    });
+
+    if (uniqueCats.length > 0) {
       this.resultsContainer.style.display = "block";
-      filteredCats.forEach(cat => {
+      uniqueCats.forEach(cat => {
         const catElement = document.createElement("div");
         catElement.classList.add("cat-result");
         catElement.innerHTML = `

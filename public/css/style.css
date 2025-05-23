@@ -540,3 +540,102 @@ header {
     color: #333;
     line-height: 1.4;
 }
+
+.info-box {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 800px;
+    max-height: 70vh;
+    overscroll-behavior: contain;
+    overflow-y: auto;
+    background: linear-gradient(180deg, #253131 0%, #4E6764 100%);
+    border: 4px solid #E6E6E6;
+    border-radius: 20px;
+    padding: 25px;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    color: white;
+    font-family: Arial, sans-serif;
+    box-shadow: 0 5px 30px rgba(0,0,0,0.3);
+}
+
+body.overlay-open {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+}
+
+.info-box.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.info-box h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #FEC200;
+    text-align: center;
+    font-family: 'Impact', sans-serif;
+}
+
+.info-box p, .info-box li {
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.info-box ul {
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+
+.close-info {
+    display: block;
+    margin: 20px auto 0;
+    padding: 8px 25px;
+    background: linear-gradient(180deg, #FEC200 0%, #C99102 100%);
+    border: 2px solid #000;
+    border-radius: 10px;
+    color: #E4E3E3;
+    cursor: pointer;
+    font-family: 'Impact', sans-serif;
+    font-size: 18px;
+    transition: all 0.2s ease;
+}
+
+.close-info:hover {
+    transform: scale(1.05);
+}
+
+/* Overlay */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.7);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.overlay.active {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.7);
+    z-index: 999;
+    opacity: 1;
+    visibility: visible;
+    overflow: hidden; /* Prevent scrolling */
+}
