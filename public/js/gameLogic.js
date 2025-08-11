@@ -2,7 +2,7 @@ export class GameLogic {
   constructor(catsData) {
     this.cats = catsData;
     this.selectedCats = [];
-    // this.answer = this.cats.find(cat => cat.name === "Sashimi Cat"); //For testing purposes
+    //this.answer = this.cats.find(cat => cat.name === "Iz the Dancer"); //For testing purposes
     this.answer = this.getRandomCat(); // Uncomment for normal operation
     this.attempts = 0;
     this.hintAvailable = false;
@@ -52,21 +52,50 @@ export class GameLogic {
       }
       
       // Exact match for rarity and attackType
-      else if (category === "rarity" || category === "attackType") {
+      else if (category === "rarity") {
         return cat[category] === answerCat[category] ? "green-box" : "red-box";
       }
-      
-      // Special handling for roles with partial matching
-      else if (category === "role") {
-        const catRoles = cat[category].split(/\s*,\s*|\s+/);
-        const answerRoles = answerCat[category].split(/\s*,\s*|\s+/);
+
+        else if (category === "attackType") {
+        const catAttacks = (cat[category] || "").split(" ");
+        const answerAttacks = (answerCat[category] || "").split(" ");
         
+        // Exact match
         if (cat[category] === answerCat[category]) {
           return "green-box";
         }
         
-        const commonRoles = catRoles.filter(role => answerRoles.includes(role));
-        return commonRoles.length > 0 ? "yellow-box" : "red-box";
+        // Partial match (any shared attack types)
+        const commonAttacks = catAttacks.filter(attack => answerAttacks.includes(attack));
+        if (commonAttacks.length > 0) {
+          return "yellow-box";
+        }
+        
+        return "red-box";
+      }
+      
+      // Special handling for roles with partial matching
+      else if (category === "role") {
+          const normalizeRoles = (roles) => {
+              return roles.split(/\s*,\s*|\s+/)
+                        .sort() // Sort alphabetically for consistent comparison
+                        .join(' '); // Rejoin with single spaces
+          };
+          
+          const catRoles = normalizeRoles(cat[category]);
+          const answerRoles = normalizeRoles(answerCat[category]);
+          
+          // Exact match (order doesn't matter)
+          if (catRoles === answerRoles) {
+              return "green-box";
+          }
+          
+          // Check for partial matches
+          const catRoleArray = catRoles.split(' ');
+          const answerRoleArray = answerRoles.split(' ');
+          const commonRoles = catRoleArray.filter(role => answerRoleArray.includes(role));
+          
+          return commonRoles.length > 0 ? "yellow-box" : "red-box";
       }
       
       // Partial matching for traits and abilities
@@ -101,31 +130,40 @@ export class GameLogic {
       
       // Version comparison
       else if (category === "version") {
-        if (cat[category] === answerCat[category]) return "green-box";
-        
-        const catVer = cat[category].replace(/^V/, '').split('.').map(Number);
-        const ansVer = answerCat[category].replace(/^V/, '').split('.').map(Number);
+      // Remove V prefix and split into components
+      const parseVersion = (v) => {
+          const parts = v.replace(/^V/, '').split('.').map(Number);
+          return {
+              major: parts[0] || 0,
+              minor: parts[1] || 0,
+              patch: parts[2] || 0
+          };
+      };
 
-        // Major version first
-        if (catVer[0] !== ansVer[0]) {
-          const diff = catVer[0] - ansVer[0];
+      const catVer = parseVersion(cat[category]);
+      const ansVer = parseVersion(answerCat[category]);
+
+      // Exact match (including patch)
+      if (cat[category] === answerCat[category]) return "green-box";
+
+      // Major version difference
+      if (catVer.major !== ansVer.major) {
+          const diff = catVer.major - ansVer.major;
           return Math.abs(diff) >= 5 ? 
-            (diff > 0 ? "double-down" : "double-up") :
-            (diff > 0 ? "single-down" : "single-up");
-        }
-
-        // Same major version - check minor
-        if (catVer[1] !== ansVer[1]) {
-          const diff = (catVer[1] || 0) - (ansVer[1] || 0);
-          return Math.abs(diff) >= 5 ? 
-            (diff > 0 ? "double-down" : "double-up") :
-            (diff > 0 ? "single-down" : "single-up");
-        }
-
-        // Same major.minor but different patch (e.g., 2.0 vs 2.0.9)
-        // Show single-up arrow since patch version is higher
-        return "single-up"; 
+              (diff > 0 ? "double-down" : "double-up") :
+              (diff > 0 ? "single-down" : "single-up");
       }
+
+      // Same major version - check minor
+      if (catVer.minor !== ansVer.minor) {
+          const diff = catVer.minor - ansVer.minor;
+          // For minor versions, only use single arrows regardless of difference
+          return diff > 0 ? "single-down" : "single-up";
+      }
+
+      // Same major.minor but different patch
+      return "single-up"; // Newer patch is slightly higher
+  }
       
       // Fallback
       return "red-box";
