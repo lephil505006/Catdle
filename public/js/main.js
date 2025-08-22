@@ -1,11 +1,11 @@
 import { GameLogic } from './gameLogic.js';
 import { UIHandlers } from './uiHandlers.js';
-import cats from './catsData.js';
+import { loadCatData } from './loadCats.js';
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", async () => {
+  const cats = await loadCatData();
   const game = new GameLogic(cats);
   const ui = new UIHandlers(game);
   
-  // Initial setup
   document.getElementById("headers").style.display = "none";
 });

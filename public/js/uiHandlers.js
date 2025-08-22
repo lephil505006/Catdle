@@ -208,76 +208,64 @@ closeInfoBox() {
       "version",
     ];
 
-    const detailsHTML = categories
-      .map((category, index) => {
-        let colorClass = "white-box";
-        if (index > 0) {
-          colorClass = colors[index - 1];
-        }
-        
-        if (category === "img") {
-          return `<div class="cat-img-container">
-              <img src="${cat[category]}" alt="${cat.name}" class="cat-img">
-          </div>`;
-        } 
-        else if (category === "traits") {
-          const traits = cat[category].split(" ");
-          const traitCount = traits.length;
-          const manyTraitsClass = traitCount >= 10 ? "many-traits" : "";
-          
-          const images = traits.map((value) => {
-            const imagePath = value === "X" 
-              ? `images/${category}/x.png`
-              : `images/${category}/${value.toLowerCase()}.webp`;
-            return `<img src="${imagePath}" alt="${value}" class="trait-icon">`;
-          }).join(" ");
-          
-          return `<div class="cat-detail ${colorClass} ${manyTraitsClass}" 
-                  data-category="${category}" data-trait-count="${traitCount}">
-              <div class="traits-container">${images}</div>
-          </div>`;
-        } 
-        else if (category === "attackType") {
-          const attackTypes = cat[category].split(" ");
-          const images = attackTypes.map((type) => {
-            const imagePath = `images/attackType/${type.toLowerCase()}.webp`;
-            return `<img src="${imagePath}" alt="${type}" class="attack-type-icon">`;
-          }).join(" ");
-          
-          return `<div class="cat-detail ${colorClass}">
-              <div class="attack-type-container">${images}</div>
-          </div>`;
-        } 
-        else if (category === "abilities") {
-          const abilities = cat[category].split(" ");
-          const abilityCount = abilities.length;
-          const manyAbilitiesClass = abilityCount >= 6 ? "many-abilities" : "";
-          
-          const images = abilities.map((value) => {
-            const imagePath = value === "X" 
-              ? `images/${category}/x.png`
-              : `images/${category}/${value.toLowerCase()}.webp`;
-            return `<img src="${imagePath}" alt="${value}" class="ability-icon">`;
-          }).join(" ");
-          
-          return `<div class="cat-detail ${colorClass} ${manyAbilitiesClass}" 
-                  data-category="${category}" data-ability-count="${abilityCount}">
-              <div class="abilities-container">${images}</div>
-          </div>`;
-        } 
-        else {
-          return `<div class="cat-detail ${colorClass}">
-              <p>${cat[category]} ${
-                category === "cost"
-                  ? '<span class="indicator ' + 
-                    (typeof colors[index - 1] === 'string' ? colors[index - 1].split(" ")[1] : '') + 
-                    '"></span>'
-                  : ""
-              }</p>
-          </div>`;
-        }
-      })
-      .join("");
+  const detailsHTML = categories.map((category, index) => {
+    let colorClass = "white-box";
+    if (index > 0) colorClass = colors[index - 1];
+
+    // Add null checks for splittable fields
+    const getSafeSplit = (value) => {
+      if (!value || typeof value !== 'string') return ['X']; // Fallback
+      return value.split(" ");
+    };
+
+    switch(category) {
+      case "img":
+        return `<div class="cat-img-container">
+          <img src="${cat[category]}" alt="${cat.name}" class="cat-img">
+        </div>`;
+
+      case "traits":
+        const traits = getSafeSplit(cat[category]);
+        return `<div class="cat-detail ${colorClass}">
+          <div class="traits-container">
+            ${traits.map(value => `
+              <img src="images/traits/${value === 'X' ? 'x.png' : value.toLowerCase()+'.webp'}" 
+                   alt="${value}" class="trait-icon">
+            `).join("")}
+          </div>
+        </div>`;
+
+      case "attackType":
+        const attackTypes = getSafeSplit(cat[category]);
+        return `<div class="cat-detail ${colorClass}">
+          <div class="attack-type-container">
+            ${attackTypes.map(type => {
+              const typeKey = type.toLowerCase().replace(/\s+/g, '');
+              const validTypes = ['singleattack', 'areaattack', 'multihit', 'omnistrike', 'longdistance'];
+              const safeType = validTypes.includes(typeKey) ? typeKey : 'x';
+              return `<img src="images/attackType/${safeType}.webp" 
+                          alt="${type}" class="attack-type-icon">`;
+            }).join("")}
+          </div>
+        </div>`;
+
+      case "abilities":
+        const abilities = getSafeSplit(cat[category]);
+        return `<div class="cat-detail ${colorClass}">
+          <div class="abilities-container">
+            ${abilities.map(value => `
+              <img src="images/abilities/${value === 'X' ? 'x.png' : value.toLowerCase()+'.webp'}" 
+                   alt="${value}" class="ability-icon">
+            `).join("")}
+          </div>
+        </div>`;
+
+      default:
+        return `<div class="cat-detail ${colorClass}">
+          <p>${cat[category] || 'N/A'}</p>
+        </div>`;
+    }
+  }).join("");
 
     catDetailsElement.innerHTML = detailsHTML;
 
