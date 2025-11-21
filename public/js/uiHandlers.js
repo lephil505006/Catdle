@@ -361,7 +361,7 @@ export class UIHandlers {
     const utcMinutes = now.getUTCMinutes();
     const utcSeconds = now.getUTCSeconds();
     
-    const resetUTC = 16;
+    const resetUTC = 17;
     
     let secondsUntilReset;
     if (utcHours < resetUTC) {

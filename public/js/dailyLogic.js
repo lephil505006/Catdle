@@ -13,7 +13,7 @@ export class DailyLogic {
 
         // 17:00 UTC = 11:00 AM CST (standard time)
         // 16:00 UTC = 11:00 AM CDT (daylight time)
-        const resetUTC = 16; // Switch to 17 during spring, 16 for fall (maybe keep it as 1 setting later)
+        const resetUTC = 17; // Switch to 17 after spring, 16 for fall (maybe keep it as 1 setting later)
 
         if (utcHours < resetUTC) {
             // Use yesterday's date
@@ -84,7 +84,7 @@ getYesterdaysAnswer() {
         const utcHours = now.getUTCHours();
         const utcMinutes = now.getUTCMinutes();
         const utcSeconds = now.getUTCSeconds();
-        const resetUTC = 16; // Change in case of Daylight savings vice versa
+        const resetUTC = 17; // Change in case of Daylight savings vice versa
 
         let secondsUntilReset;
         if (utcHours < resetUTC) {
