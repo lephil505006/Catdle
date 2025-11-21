@@ -1,10 +1,8 @@
 export class DailyLogic {
     constructor(catsData) {
         this.cats = catsData;
-        console.log('DailyLogic constructor - cats data:', catsData);
         this.todayKey = this.getTodayKey();
         this.yesterdayKey = this.getYesterdayKey();
-        console.log('DailyLogic fully initialized');
     }
 
     getTodayKey() {
@@ -20,12 +18,9 @@ export class DailyLogic {
             const yesterday = new Date(now);
             yesterday.setDate(yesterday.getDate() - 1);
             const todayKey = yesterday.toISOString().split('T')[0];
-            console.log('Using yesterday as today key:', todayKey);
             return todayKey;
         }
-
         const todayKey = now.toISOString().split('T')[0];
-        console.log('Using today as today key:', todayKey);
         return todayKey;
     }
 
@@ -64,6 +59,7 @@ getYesterdaysAnswer() {
     
     return availableCats[Math.floor(this.seededRandom(seed) * availableCats.length)];
 }
+
     // Avoid repeat answers
     getUsedCats(daysBack = 7) {
         const usedCats = new Set();

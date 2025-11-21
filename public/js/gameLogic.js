@@ -9,12 +9,8 @@ export class GameLogic {
     //this.answer = this.getRandomCat(); // Uncomment for normal operation
     this.attempts = 0;
     this.hintAvailable = false;
-
     this.answer = this.dailyLogic.getTodaysAnswer();
     this.yesterdaysAnswer = this.dailyLogic.getYesterdaysAnswer();
-
-    console.log("Today's answer:", this.answer.name);
-    console.log("Yesterday's answer:", this.yesterdaysAnswer.name);
   }
 
   getRandomCat() {
