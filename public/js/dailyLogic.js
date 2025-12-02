@@ -14,7 +14,6 @@ export class DailyLogic {
         const resetUTC = 17; // Switch to 17 after spring, 16 for fall (maybe keep it as 1 setting later)
 
         if (utcHours < resetUTC) {
-            // Use yesterday's date
             const yesterday = new Date(now);
             yesterday.setDate(yesterday.getDate() - 1);
             const todayKey = yesterday.toISOString().split('T')[0];

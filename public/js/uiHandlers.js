@@ -15,10 +15,13 @@ export class UIHandlers {
     this.hintBox = document.querySelector(".hint-box");
     this.hintRevealBox = document.querySelector(".hint-reveal-box");
     this.searchButton = document.getElementById("search-button");
+
     this.infoButton = document.getElementById("info-button");
     this.infoBox = document.getElementById("info-box");
     this.changelogButton = document.getElementById("changelog-button");
     this.changelogBox = document.getElementById("changelog-box");
+    this.aboutButton = document.getElementById("about-button");
+    this.aboutBox = document.getElementById("about-box");
 
     this.overlay = document.createElement("div");
     this.overlay.className = "overlay";
@@ -32,6 +35,7 @@ export class UIHandlers {
     this.searchBar.addEventListener("input", () => this.searchCats());
     this.searchButton.addEventListener("click", () => this.handleSearchButtonClick());
     this.changelogButton.addEventListener("click", () => this.toggleChangelogBox());
+    this.aboutButton.addEventListener("click", () => this.toggleAboutBox());
 
     this.hintBox.addEventListener("click", () => {
       if (this.game.hintAvailable && !this.hintRevealBox.style.display) {
@@ -76,12 +80,27 @@ export class UIHandlers {
     }
   }
 
+  toggleAboutBox() {
+    const isExpanded = this.aboutButton.getAttribute('aria-expanded') === 'true';
+    this.aboutButton.setAttribute('aria-expanded', !isExpanded);
+    this.aboutBox.classList.toggle('active');
+    this.overlay.classList.toggle('active');
+
+    document.body.classList.toggle('overlay-open', !isExpanded);
+
+    if (!isExpanded) {
+      this.aboutBox.scrollTop = 0;
+    }
+  }
+
   closeInfoBox() {
     this.infoBox.classList.remove('active');
     this.changelogBox.classList.remove('active');
+    this.aboutBox.classList.remove('active');
     this.overlay.classList.remove('active');
     this.infoButton.setAttribute('aria-expanded', 'false');
     this.changelogButton.setAttribute('aria-expanded', 'false');
+    this.aboutButton.setAttribute('aria-expanded', 'false');
     document.body.classList.remove('overlay-open');
   }
 
@@ -191,7 +210,6 @@ export class UIHandlers {
     this.displayCatDetails(cat);
     this.updateHintDisplay();
 
-    // Clear search and results
     this.searchBar.value = "";
     this.resultsContainer.innerHTML = "";
     this.resultsContainer.style.display = "none";
@@ -360,29 +378,31 @@ export class UIHandlers {
     const utcHours = now.getUTCHours();
     const utcMinutes = now.getUTCMinutes();
     const utcSeconds = now.getUTCSeconds();
-    
+
     const resetUTC = 17;
-    
+
     let secondsUntilReset;
     if (utcHours < resetUTC) {
-        secondsUntilReset = (resetUTC - utcHours) * 3600 - utcMinutes * 60 - utcSeconds;
+      secondsUntilReset = (resetUTC - utcHours) * 3600 - utcMinutes * 60 - utcSeconds;
     } else {
-        secondsUntilReset = (24 - utcHours + resetUTC) * 3600 - utcMinutes * 60 - utcSeconds;
+      secondsUntilReset = (24 - utcHours + resetUTC) * 3600 - utcMinutes * 60 - utcSeconds;
     }
-    
-    if (secondsUntilReset <= 5) {
-        setTimeout(() => {
-            localStorage.removeItem('selectedCats');
-            location.reload();
-        }, 1000);
-        timerElement.textContent = "00:00:00";
-        return;
-    }
-    
+
+  if (secondsUntilReset <= 5) {
+    setTimeout(() => {
+      localStorage.removeItem('selectedCats');
+      localStorage.removeItem('gameAttempts');
+      localStorage.removeItem('hintUsed');
+      location.reload();
+    }, 1000);
+    timerElement.textContent = "00:00:00";
+    return;
+  }
+
     const hours = Math.floor(secondsUntilReset / 3600);
     const minutes = Math.floor((secondsUntilReset % 3600) / 60);
     const seconds = secondsUntilReset % 60;
-    
+
     timerElement.textContent = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-}
+  }
 }
