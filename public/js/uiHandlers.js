@@ -1,9 +1,26 @@
+import { Security } from './security.js';
+
 export class UIHandlers {
   constructor(gameLogic) {
     this.game = gameLogic;
     this.initializeElements();
     this.setupEventListeners();
     this.updateHintDisplay();
+    this.initializeStorage();
+  }
+
+  initializeStorage() {
+    ['selectedCats', 'attempts', 'hintAvailable'].forEach(key => {
+      if (localStorage.getItem(key) && !localStorage.getItem(Security.storage.prefix + key)) {
+        try {
+          const value = localStorage.getItem(key);
+          Security.storage.set(key.replace('catdle_', ''), JSON.parse(value));
+          localStorage.removeItem(key);
+        } catch (e) {
+          console.warn('Storage migration failed:', e);
+        }
+      }
+    });
   }
 
   initializeElements() {
@@ -113,11 +130,13 @@ export class UIHandlers {
   }
 
   handleSearchButtonClick() {
-    const query = this.searchBar.value.toLowerCase();
-    if (query === "") return;
+    const query = this.searchBar.value;
+    const sanitizedQuery = Security.sanitizeInput(query, 50);
+    
+    if (sanitizedQuery === "") return;
 
     const filteredCats = this.game.getAllCats().filter(cat =>
-      cat.name.toLowerCase().includes(query)
+      cat.name.toLowerCase().includes(sanitizedQuery.toLowerCase())
     );
 
     if (filteredCats.length > 0) {
@@ -145,17 +164,19 @@ export class UIHandlers {
   }
 
   searchCats() {
-    const query = this.searchBar.value.toLowerCase();
+    const query = this.searchBar.value;
+    const sanitizedQuery = Security.sanitizeInput(query, 50);
+    
     this.resultsContainer.innerHTML = "";
 
-    if (query === "") {
+    if (sanitizedQuery === "") {
       this.resultsContainer.style.display = "none";
       return;
     }
 
     // Find all cats matching the search OR sharing unitId with matching cats
     const matchingCats = this.game.getAllCats().filter(cat =>
-      cat.name.toLowerCase().includes(query)
+      cat.name.toLowerCase().includes(sanitizedQuery.toLowerCase())
     );
 
     // Get all related cats (same unitId) that haven't been selected yet
@@ -182,10 +203,14 @@ export class UIHandlers {
       uniqueCats.forEach(cat => {
         const catElement = document.createElement("div");
         catElement.classList.add("cat-result");
+        
+        // Escape cat name for display
+        const escapedName = Security.escapeHTML(cat.name);
+        
         catElement.innerHTML = `
-          <img src="${cat.img}" alt="${cat.name}" class="search-cat-img">
+          <img src="${Security.escapeHTML(cat.img)}" alt="${escapedName}" class="search-cat-img">
           <div class="cat-details">
-            <p><strong>${cat.name}</strong></p>
+            <p><strong>${escapedName}</strong></p>
           </div>
         `;
         catElement.addEventListener("click", () => this.handleCatSelection(cat));
@@ -240,63 +265,73 @@ export class UIHandlers {
       "version",
     ];
 
-    const detailsHTML = categories.map((category, index) => {
+const detailsHTML = categories.map((category, index) => {
       let colorClass = "white-box";
       if (index > 0) colorClass = colors[index - 1];
 
       const getSafeSplit = (value) => {
         if (!value || typeof value !== 'string') return ['X'];
-        return value.split(" ");
+        const sanitized = Security.sanitizeInput(value);
+        return sanitized.split(" ");
       };
 
       switch (category) {
         case "img":
+          // Validate image URL is safe
+          const safeImg = cat.img.startsWith('images/') || cat.img.startsWith('data:') 
+            ? cat.img 
+            : 'images/cats/unknown.webp';
+          
           return `<div class="cat-img-container">
-                <img src="${cat[category]}" alt="${cat.name}" class="cat-img">
+                <img src="${Security.escapeHTML(safeImg)}" alt="${Security.escapeHTML(cat.name)}" class="cat-img">
               </div>`;
 
         case "traits":
           const traits = getSafeSplit(cat[category]);
           const traitCount = traits.length;
-          return `<div class="cat-detail ${colorClass}" data-trait-count="${traitCount}">
+          return `<div class="cat-detail ${Security.escapeHTML(colorClass)}" data-trait-count="${traitCount}">
                 <div class="traits-container">
-                  ${traits.map(value => `
-                    <img src="images/traits/${value === 'X' ? 'x.png' : value.toLowerCase() + '.webp'}" 
-                         alt="${value}" class="trait-icon">
-                  `).join("")}
+                  ${traits.map(value => {
+                    const safeValue = Security.sanitizeInput(value);
+                    return `<img src="images/traits/${safeValue === 'X' ? 'x.png' : safeValue.toLowerCase() + '.webp'}" 
+                         alt="${Security.escapeHTML(value)}" class="trait-icon">
+                  `}).join("")}
                 </div>
               </div>`;
 
         case "attackType":
           const attackTypes = getSafeSplit(cat[category]);
           const attackCount = attackTypes.length;
-          return `<div class="cat-detail ${colorClass}" data-trait-count="${attackCount}">
+          return `<div class="cat-detail ${Security.escapeHTML(colorClass)}" data-trait-count="${attackCount}">
                 <div class="attack-type-container">
                   ${attackTypes.map(type => {
-            const typeKey = type.toLowerCase().replace(/\s+/g, '');
-            const validTypes = ['singleattack', 'areaattack', 'multihit', 'omnistrike', 'longdistance'];
-            const safeType = validTypes.includes(typeKey) ? typeKey : 'x';
-            return `<img src="images/attackType/${safeType}.webp" 
-                                alt="${type}" class="attack-type-icon">`;
-          }).join("")}
+                    const sanitizedType = Security.sanitizeInput(type);
+                    const typeKey = sanitizedType.toLowerCase().replace(/\s+/g, '');
+                    const validTypes = ['singleattack', 'areaattack', 'multihit', 'omnistrike', 'longdistance'];
+                    const safeType = validTypes.includes(typeKey) ? typeKey : 'x';
+                    return `<img src="images/attackType/${safeType}.webp" 
+                                alt="${Security.escapeHTML(type)}" class="attack-type-icon">`;
+                  }).join("")}
                 </div>
               </div>`;
 
         case "abilities":
           const abilities = getSafeSplit(cat[category]);
           const abilityCount = abilities.length;
-          return `<div class="cat-detail ${colorClass}" data-trait-count="${abilityCount}">
+          return `<div class="cat-detail ${Security.escapeHTML(colorClass)}" data-trait-count="${abilityCount}">
                 <div class="abilities-container">
-                  ${abilities.map(value => `
-                    <img src="images/abilities/${value === 'X' ? 'x.png' : value.toLowerCase() + '.webp'}" 
-                         alt="${value}" class="ability-icon">
-                  `).join("")}
+                  ${abilities.map(value => {
+                    const safeValue = Security.sanitizeInput(value);
+                    return `<img src="images/abilities/${safeValue === 'X' ? 'x.png' : safeValue.toLowerCase() + '.webp'}" 
+                         alt="${Security.escapeHTML(value)}" class="ability-icon">
+                  `}).join("")}
                 </div>
               </div>`;
 
         default:
-          return `<div class="cat-detail ${colorClass}">
-                <p>${cat[category] || 'N/A'}</p>
+          const displayValue = cat[category] ? Security.escapeHTML(cat[category]) : 'N/A';
+          return `<div class="cat-detail ${Security.escapeHTML(colorClass)}">
+                <p>${displayValue}</p>
               </div>`;
       }
     }).join("");
@@ -388,16 +423,14 @@ export class UIHandlers {
       secondsUntilReset = (24 - utcHours + resetUTC) * 3600 - utcMinutes * 60 - utcSeconds;
     }
 
-  if (secondsUntilReset <= 5) {
-    setTimeout(() => {
-      localStorage.removeItem('selectedCats');
-      localStorage.removeItem('gameAttempts');
-      localStorage.removeItem('hintUsed');
-      location.reload();
-    }, 1000);
-    timerElement.textContent = "00:00:00";
-    return;
-  }
+    if (secondsUntilReset <= 5) {
+      setTimeout(() => {
+        Security.storage.clearAll();
+        location.reload();
+      }, 1000);
+      timerElement.textContent = "00:00:00";
+      return;
+    }
 
     const hours = Math.floor(secondsUntilReset / 3600);
     const minutes = Math.floor((secondsUntilReset % 3600) / 60);

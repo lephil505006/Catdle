@@ -1,20 +1,56 @@
 import { DailyLogic } from './dailyLogic.js';
+import { Security } from './security.js';
 
 export class GameLogic {
   constructor(catsData) {
     this.cats = catsData;
-    this.dailyLogic = new DailyLogic(catsData); //Daily answer
-    this.selectedCats = [];
-    //this.answer = this.cats.find(cat => cat.name === "Iz the Dancer"); //For testing purposes
-    //this.answer = this.getRandomCat(); // Uncomment for normal operation
-    this.attempts = 0;
-    this.hintAvailable = false;
+    this.dailyLogic = new DailyLogic(catsData);
+    
+    this.selectedCats = this.loadValidatedState('selectedCats', []);
+    this.attempts = this.loadValidatedState('attempts', 0);
+    this.hintAvailable = this.loadValidatedState('hintAvailable', false);
+    
+    this.todayKey = this.dailyLogic.getTodayKey();
+    Security.storage.set('game_date', this.todayKey, 24 * 60 * 60 * 1000);
+    
     this.answer = this.dailyLogic.getTodaysAnswer();
     this.yesterdaysAnswer = this.dailyLogic.getYesterdaysAnswer();
+    
+    const answerHash = Security.hashAnswer(this.answer.unitId, this.todayKey);
+    Security.storage.set('answer_hash', answerHash, 24 * 60 * 60 * 1000);
   }
 
-  getRandomCat() {
-    return this.cats[Math.floor(Math.random() * this.cats.length)];
+  loadValidatedState(key, defaultValue) {
+    const stored = Security.storage.get(key);
+    
+    if (stored === null) return defaultValue;
+    
+    switch(key) {
+      case 'selectedCats':
+        if (!Array.isArray(stored)) return defaultValue;
+        return stored
+          .filter(item => typeof item === 'string')
+          .slice(0, 8)
+          .map(item => Security.sanitizeInput(item));
+      
+      case 'attempts':
+        const num = parseInt(stored);
+        return (Number.isInteger(num) && num >= 0 && num <= 8) ? num : defaultValue;
+      
+      case 'hintAvailable':
+        return typeof stored === 'boolean' ? stored : defaultValue;
+      
+      default:
+        return defaultValue;
+    }
+  }
+
+  validateAnswerIntegrity(cat) {
+    const storedHash = Security.storage.get('answer_hash');
+    if (!storedHash) return true;
+    
+    const expectedHash = Security.hashAnswer(cat.unitId, this.todayKey);
+    return storedHash === expectedHash;
   }
 
   getAllCats() {
@@ -157,15 +193,44 @@ export class GameLogic {
     });
   }
 
-  checkGuess(cat) {
+checkGuess(cat) {
+    // Validate answer integrity
+    if (!this.validateAnswerIntegrity(cat)) {
+      console.warn('Answer validation failed - resetting game');
+      this.resetGameState();
+      return false;
+    }
+    
     this.attempts++;
-    this.selectedCats.push(cat.name);
+    Security.storage.set('attempts', this.attempts);
+    
+    // Sanitize and store cat name
+    const safeName = Security.sanitizeInput(cat.name);
+    this.selectedCats.push(safeName);
+    Security.storage.set('selectedCats', this.selectedCats);
 
     if (this.attempts >= 5 && !this.hintAvailable) {
       this.hintAvailable = true;
+      Security.storage.set('hintAvailable', this.hintAvailable);
     }
 
     return cat.name === this.answer.name;
+  }
+
+  resetGameState() {
+    this.selectedCats = [];
+    this.attempts = 0;
+    this.hintAvailable = false;
+    
+    // Clear all game-related storage
+    ['selectedCats', 'attempts', 'hintAvailable', 'answer_hash', 'game_date'].forEach(key => {
+      Security.storage.remove(key);
+    });
+    
+    // Reload answer
+    this.answer = this.dailyLogic.getTodaysAnswer();
+    const answerHash = Security.hashAnswer(this.answer.unitId, this.todayKey);
+    Security.storage.set('answer_hash', answerHash, 24 * 60 * 60 * 1000);
   }
 
   getHint() {
