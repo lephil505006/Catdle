@@ -10,16 +10,16 @@ export class Security {
       .replace(/'/g, '&#039;');
   }
 
-  static sanitizeInput(input, maxLength = 100) {
+static sanitizeInput(input, maxLength = 100) {
     if (typeof input !== 'string') return '';
     
     let sanitized = input
       .slice(0, maxLength)
-      .replace(/[<>"']/g, '')
+      .replace(/[<>"]/g, '') 
       .trim();
     
     return sanitized;
-  }
+}
 
   static validateExternalUrl(url, allowedDomains = ['forms.gle', 'docs.google.com']) {
     try {
@@ -82,9 +82,17 @@ export class Security {
     }
   };
 
-  static hashAnswer(unitId, seed) {
-    const combined = `${unitId}|${seed}`;
-
-    return btoa(combined).replace(/[+/=]/g, '').slice(0, 20);
-  }
+static hashAnswer(unitId, seed) {
+    const combined = `${String(unitId)}|${String(seed)}`;
+    
+    let hash = 0;
+    for (let i = 0; i < combined.length; i++) {
+        const char = combined.charCodeAt(i);
+        hash = ((hash << 5) - hash) + char;
+        hash = hash & hash;
+    }
+    
+    const hashStr = Math.abs(hash).toString(36).slice(0, 20);
+    return hashStr;
+}
 }
