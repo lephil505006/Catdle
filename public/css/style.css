@@ -53,7 +53,8 @@ header {
     display: flex;
     flex-direction: column;
     position: relative;
-    overflow: hidden;
+    overflow: visible;
+    z-index: 1;
 }
 
 .game-instruction {
@@ -68,21 +69,32 @@ header {
     position: absolute;
     bottom: 0;
     right: 0;
-    z-index: 1;
     width: 300px;
     height: auto;
+    border-radius: 40px;
 }
 
 /* Search bar */
+.search-area-wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: auto;
+    width: 100%;
+    z-index: 10;
+}
+
 .search-container {
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
-    margin-top: auto;
+    width: 100%;
 }
 
 .search-bar-outer {
+    position: relative;
     background-color: #e6e6e6;
     border-radius: 15px;
     padding: 5px;
@@ -91,8 +103,7 @@ header {
     width: 580px;
     height: 60px;
     border: 3px solid #000;
-    position: relative;
-    z-index: 2;
+    z-index: 1001;
 }
 
 #search-bar {
@@ -136,15 +147,17 @@ header {
 #results-container {
     display: none;
     position: absolute;
-    top: 710px;
+    top: 100%;
     left: 50%;
     transform: translateX(-50%);
     background: white;
     border: 2px solid #000;
     border-radius: 10px;
-    z-index: 3;
+    z-index: 1000;
     max-height: 300px;
     overflow-y: auto;
+    width: 580px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .cat-result {
@@ -162,6 +175,7 @@ header {
 .search-cat-img {
     width: 50px;
     height: 50px;
+    object-fit: contain;
 }
 
 /* Display for results */
