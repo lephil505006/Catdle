@@ -42,11 +42,6 @@ export class GameLogic {
 
     const answerHash = Security.hashAnswer(this.answer.unitId, this.todayKey);
     Security.storage.set('answer_hash', answerHash, 24 * 60 * 60 * 1000);
-
-    console.log('=== SIMPLE DAILY SYSTEM ===');
-    console.log('Today:', this.todayKey);
-    console.log('Today\'s answer:', this.answer?.name);
-    console.log('Yesterday\'s answer:', this.yesterdaysAnswer?.name);
   }
 
   clearOldGameState() {
