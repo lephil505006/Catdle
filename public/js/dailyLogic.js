@@ -45,33 +45,8 @@ export class DailyLogic {
 
     getTodaysAnswer() {
         const seed = this.generateSeed(this.todayKey);
-        const usedCats = this.getUsedCats(7);
-        const availableCats = this.cats.filter(cat => !usedCats.has(cat.unitId));
-
-        return availableCats[Math.floor(this.seededRandom(seed) * availableCats.length)];
-    }
-
-getYesterdaysAnswer() {
-    const seed = this.generateSeed(this.yesterdayKey);
-    const usedCats = this.getUsedCats(7);
-    const availableCats = this.cats.filter(cat => !usedCats.has(cat.unitId));
-    
-    return availableCats[Math.floor(this.seededRandom(seed) * availableCats.length)];
-}
-
-    // Avoid repeat answers
-    getUsedCats(daysBack = 7) {
-        const usedCats = new Set();
-
-        for (let i = 1; i <= daysBack; i++) {
-            const date = new Date(this.todayKey);
-            date.setDate(date.getDate() - i);
-            const dateKey = date.toISOString().split('T')[0];
-            const seed = this.generateSeed(dateKey);
-            const randomIndex = Math.floor(this.seededRandom(seed) * this.cats.length);
-            usedCats.add(this.cats[randomIndex].unitId);
-        }
-        return usedCats;
+        const randomIndex = Math.floor(this.seededRandom(seed) * this.cats.length);
+        return this.cats[randomIndex];
     }
 
     getTimeUntilNextReset() {

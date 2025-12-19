@@ -132,7 +132,7 @@ export class UIHandlers {
   handleSearchButtonClick() {
     const query = this.searchBar.value;
     const sanitizedQuery = Security.sanitizeInput(query, 50);
-    
+
     if (sanitizedQuery === "") return;
 
     const filteredCats = this.game.getAllCats().filter(cat =>
@@ -166,7 +166,7 @@ export class UIHandlers {
   searchCats() {
     const query = this.searchBar.value;
     const sanitizedQuery = Security.sanitizeInput(query, 50);
-    
+
     this.resultsContainer.innerHTML = "";
 
     if (sanitizedQuery === "") {
@@ -174,12 +174,12 @@ export class UIHandlers {
       return;
     }
 
-    // Find all cats matching the search OR sharing unitId with matching cats
+    // Find all cats matching
     const matchingCats = this.game.getAllCats().filter(cat =>
       cat.name.toLowerCase().includes(sanitizedQuery.toLowerCase())
     );
 
-    // Get all related cats (same unitId) that haven't been selected yet
+    // Get all related cats (same unitId)
     const relatedCats = [];
     matchingCats.forEach(cat => {
       relatedCats.push(...this.game.getAllCats().filter(c =>
@@ -203,10 +203,10 @@ export class UIHandlers {
       uniqueCats.forEach(cat => {
         const catElement = document.createElement("div");
         catElement.classList.add("cat-result");
-        
+
         // Escape cat name for display
         const escapedName = Security.escapeHTML(cat.name);
-        
+
         catElement.innerHTML = `
           <img src="${Security.escapeHTML(cat.img)}" alt="${escapedName}" class="search-cat-img">
           <div class="cat-details">
@@ -245,7 +245,7 @@ export class UIHandlers {
   }
 
   displayCatDetails(cat) {
-    if (this.headers.style.display === "none") {
+    if (this.headers && this.headers.style.display === "none") {
       this.headers.style.display = "flex";
     }
 
@@ -265,7 +265,7 @@ export class UIHandlers {
       "version",
     ];
 
-const detailsHTML = categories.map((category, index) => {
+    const detailsHTML = categories.map((category, index) => {
       let colorClass = "white-box";
       if (index > 0) colorClass = colors[index - 1];
 
@@ -277,11 +277,10 @@ const detailsHTML = categories.map((category, index) => {
 
       switch (category) {
         case "img":
-          // Validate image URL is safe
-          const safeImg = cat.img.startsWith('images/') || cat.img.startsWith('data:') 
-            ? cat.img 
+          const safeImg = cat.img.startsWith('images/') || cat.img.startsWith('data:')
+            ? cat.img
             : 'images/cats/unknown.webp';
-          
+
           return `<div class="cat-img-container">
                 <img src="${Security.escapeHTML(safeImg)}" alt="${Security.escapeHTML(cat.name)}" class="cat-img">
               </div>`;
@@ -292,8 +291,8 @@ const detailsHTML = categories.map((category, index) => {
           return `<div class="cat-detail ${Security.escapeHTML(colorClass)}" data-trait-count="${traitCount}">
                 <div class="traits-container">
                   ${traits.map(value => {
-                    const safeValue = Security.sanitizeInput(value);
-                    return `<img src="images/traits/${safeValue === 'X' ? 'x.png' : safeValue.toLowerCase() + '.webp'}" 
+            const safeValue = Security.sanitizeInput(value);
+            return `<img src="images/traits/${safeValue === 'X' ? 'x.png' : safeValue.toLowerCase() + '.webp'}" 
                          alt="${Security.escapeHTML(value)}" class="trait-icon">
                   `}).join("")}
                 </div>
@@ -305,13 +304,13 @@ const detailsHTML = categories.map((category, index) => {
           return `<div class="cat-detail ${Security.escapeHTML(colorClass)}" data-trait-count="${attackCount}">
                 <div class="attack-type-container">
                   ${attackTypes.map(type => {
-                    const sanitizedType = Security.sanitizeInput(type);
-                    const typeKey = sanitizedType.toLowerCase().replace(/\s+/g, '');
-                    const validTypes = ['singleattack', 'areaattack', 'multihit', 'omnistrike', 'longdistance'];
-                    const safeType = validTypes.includes(typeKey) ? typeKey : 'x';
-                    return `<img src="images/attackType/${safeType}.webp" 
+            const sanitizedType = Security.sanitizeInput(type);
+            const typeKey = sanitizedType.toLowerCase().replace(/\s+/g, '');
+            const validTypes = ['singleattack', 'areaattack', 'multihit', 'omnistrike', 'longdistance'];
+            const safeType = validTypes.includes(typeKey) ? typeKey : 'x';
+            return `<img src="images/attackType/${safeType}.webp" 
                                 alt="${Security.escapeHTML(type)}" class="attack-type-icon">`;
-                  }).join("")}
+          }).join("")}
                 </div>
               </div>`;
 
@@ -321,8 +320,8 @@ const detailsHTML = categories.map((category, index) => {
           return `<div class="cat-detail ${Security.escapeHTML(colorClass)}" data-trait-count="${abilityCount}">
                 <div class="abilities-container">
                   ${abilities.map(value => {
-                    const safeValue = Security.sanitizeInput(value);
-                    return `<img src="images/abilities/${safeValue === 'X' ? 'x.png' : safeValue.toLowerCase() + '.webp'}" 
+            const safeValue = Security.sanitizeInput(value);
+            return `<img src="images/abilities/${safeValue === 'X' ? 'x.png' : safeValue.toLowerCase() + '.webp'}" 
                          alt="${Security.escapeHTML(value)}" class="ability-icon">
                   `}).join("")}
                 </div>

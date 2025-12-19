@@ -5,41 +5,94 @@ export class GameLogic {
   constructor(catsData) {
     this.cats = catsData;
     this.dailyLogic = new DailyLogic(catsData);
-    
+    this.todayKey = this.dailyLogic.getTodayKey();
+
+    const storedDate = Security.storage.get('game_date');
+
+    if (storedDate && storedDate !== this.todayKey) {
+      console.log(`Day changed! Old: ${storedDate}, New: ${this.todayKey}`);
+
+      const storedTodaysAnswer = Security.storage.get('todays_answer');
+      if (storedTodaysAnswer) {
+        Security.storage.set('yesterdays_answer', storedTodaysAnswer, 48 * 60 * 60 * 1000);
+      }
+      this.clearOldGameState();
+    }
+
+    Security.storage.set('game_date', this.todayKey, 24 * 60 * 60 * 1000);
+
     this.selectedCats = this.loadValidatedState('selectedCats', []);
     this.attempts = this.loadValidatedState('attempts', 0);
     this.hintAvailable = this.loadValidatedState('hintAvailable', false);
-    
-    this.todayKey = this.dailyLogic.getTodayKey();
-    Security.storage.set('game_date', this.todayKey, 24 * 60 * 60 * 1000);
-    
     this.answer = this.dailyLogic.getTodaysAnswer();
-    this.yesterdaysAnswer = this.dailyLogic.getYesterdaysAnswer();
-    
+
+    Security.storage.set('todays_answer', JSON.stringify(this.answer), 48 * 60 * 60 * 1000);
+
+    const storedYesterdaysAnswer = Security.storage.get('yesterdays_answer');
+    if (storedYesterdaysAnswer) {
+      try {
+        this.yesterdaysAnswer = JSON.parse(storedYesterdaysAnswer);
+      } catch (e) {
+        console.warn('Failed to parse stored yesterday answer:', e);
+        this.yesterdaysAnswer = this.getPlaceholderCat();
+      }
+    } else {
+      this.yesterdaysAnswer = this.getPlaceholderCat();
+    }
+
     const answerHash = Security.hashAnswer(this.answer.unitId, this.todayKey);
     Security.storage.set('answer_hash', answerHash, 24 * 60 * 60 * 1000);
+
+    console.log('=== SIMPLE DAILY SYSTEM ===');
+    console.log('Today:', this.todayKey);
+    console.log('Today\'s answer:', this.answer?.name);
+    console.log('Yesterday\'s answer:', this.yesterdaysAnswer?.name);
+  }
+
+  clearOldGameState() {
+    console.log('Clearing old game state for new day');
+    ['selectedCats', 'attempts', 'hintAvailable', 'todays_answer', 'answer_hash'].forEach(key => {
+      Security.storage.remove(key);
+    });
+  }
+
+  getPlaceholderCat() {
+    return {
+      unitId: 0,
+      name: 'Cat',
+      img: 'images/cats/Cat.webp',
+      rarity: 'Normal',
+      form: 'Normal Form',
+      role: '',
+      traits: '',
+      attackType: '',
+      abilities: '',
+      cost: '0¢',
+      version: 'V1.0',
+      source: 'Unknown'
+    };
   }
 
   loadValidatedState(key, defaultValue) {
     const stored = Security.storage.get(key);
-    
+
     if (stored === null) return defaultValue;
-    
-    switch(key) {
+
+    switch (key) {
       case 'selectedCats':
         if (!Array.isArray(stored)) return defaultValue;
         return stored
           .filter(item => typeof item === 'string')
           .slice(0, 8)
           .map(item => Security.sanitizeInput(item));
-      
+
       case 'attempts':
         const num = parseInt(stored);
         return (Number.isInteger(num) && num >= 0 && num <= 8) ? num : defaultValue;
-      
+
       case 'hintAvailable':
         return typeof stored === 'boolean' ? stored : defaultValue;
-      
+
       default:
         return defaultValue;
     }
@@ -48,9 +101,13 @@ export class GameLogic {
   validateAnswerIntegrity(cat) {
     const storedHash = Security.storage.get('answer_hash');
     if (!storedHash) return true;
-    
+
     const expectedHash = Security.hashAnswer(cat.unitId, this.todayKey);
     return storedHash === expectedHash;
+  }
+
+  getAttempts() {
+    return this.attempts;
   }
 
   getAllCats() {
@@ -193,50 +250,32 @@ export class GameLogic {
     });
   }
 
-checkGuess(cat) {
-    if (!this.validateAnswerIntegrity(cat)) {
-        console.warn('Answer validation failed - attempting to recover');
-        
-        const storedHash = Security.storage.get('answer_hash');
-        console.log('Stored hash:', storedHash, 'Today key:', this.todayKey);
-        
-        const newHash = Security.hashAnswer(this.answer.unitId, this.todayKey);
-        Security.storage.set('answer_hash', newHash, 24 * 60 * 60 * 1000);
-        
-        if (!this.validateAnswerIntegrity(cat)) {
-            console.warn('Validation disabled for this session');
-        }
-    }
-    
+  checkGuess(cat) {
     this.attempts++;
     Security.storage.set('attempts', this.attempts);
-    
+
     const safeName = Security.sanitizeInput(cat.name);
     this.selectedCats.push(safeName);
     Security.storage.set('selectedCats', this.selectedCats);
 
     if (this.attempts >= 5 && !this.hintAvailable) {
-        this.hintAvailable = true;
-        Security.storage.set('hintAvailable', this.hintAvailable);
+      this.hintAvailable = true;
+      Security.storage.set('hintAvailable', this.hintAvailable);
     }
 
     return cat.name === this.answer.name;
-}
+  }
 
   resetGameState() {
     this.selectedCats = [];
     this.attempts = 0;
     this.hintAvailable = false;
-    
-    // Clear all game-related storage
-    ['selectedCats', 'attempts', 'hintAvailable', 'answer_hash', 'game_date'].forEach(key => {
+
+    ['selectedCats', 'attempts', 'hintAvailable'].forEach(key => {
       Security.storage.remove(key);
     });
-    
-    // Reload answer
-    this.answer = this.dailyLogic.getTodaysAnswer();
-    const answerHash = Security.hashAnswer(this.answer.unitId, this.todayKey);
-    Security.storage.set('answer_hash', answerHash, 24 * 60 * 60 * 1000);
+
+    console.log('Game manually reset');
   }
 
   getHint() {
