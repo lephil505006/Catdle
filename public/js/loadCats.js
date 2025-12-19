@@ -64,9 +64,9 @@ export async function loadCatData() {
       let safeImg;
       
       if (rawImg && (rawImg.startsWith('images/') || rawImg.startsWith('data:'))) {
-        safeImg = rawImg;
+        safeImg = 'public/' + rawImg;
       } else {
-        safeImg = `images/cats/${formatImageName(safeName)}.webp`;
+        safeImg = `public/images/cats/${formatImageName(safeName)}.webp`;
       }
 
       return {
