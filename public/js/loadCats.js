@@ -64,9 +64,9 @@ export async function loadCatData() {
       let safeImg;
       
       if (rawImg && (rawImg.startsWith('images/') || rawImg.startsWith('data:'))) {
-        safeImg = 'public/' + rawImg;
+        safeImg = rawImg;
       } else {
-        safeImg = `public/images/cats/${formatImageName(safeName)}.webp`;
+        safeImg = `images/cats/${formatImageName(safeName)}.webp`;
       }
 
       return {
@@ -92,7 +92,7 @@ export async function loadCatData() {
       {
         unitId: 1,
         name: 'Cat',
-        img: 'images/cats/Cat.webp',
+        img: 'public/images/cats/Cat.webp',
         rarity: 'Normal',
         form: 'Normal Form',
         role: 'Meatshield',

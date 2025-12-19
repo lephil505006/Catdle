@@ -208,7 +208,7 @@ export class UIHandlers {
         const escapedName = Security.escapeHTML(cat.name);
 
         catElement.innerHTML = `
-          <img src="${Security.escapeHTML(cat.img)}" alt="${escapedName}" class="search-cat-img">
+          <img src="${Security.escapeHTML(cat.img.startsWith('images/') ? 'public/' + cat.img : cat.img)}" alt="${escapedName}" class="search-cat-img">
           <div class="cat-details">
             <p><strong>${escapedName}</strong></p>
           </div>
@@ -278,8 +278,8 @@ export class UIHandlers {
       switch (category) {
         case "img":
           const safeImg = cat.img.startsWith('images/') || cat.img.startsWith('data:')
-            ? cat.img
-            : 'images/cats/unknown.webp';
+            ? (cat.img.startsWith('images/') ? 'public/' + cat.img : cat.img)
+            : 'public/images/cats/unknown.webp';
 
           return `<div class="cat-img-container">
                 <img src="${Security.escapeHTML(safeImg)}" alt="${Security.escapeHTML(cat.name)}" class="cat-img">
@@ -292,8 +292,8 @@ export class UIHandlers {
                 <div class="traits-container">
                   ${traits.map(value => {
             const safeValue = Security.sanitizeInput(value);
-            return `<img src="images/traits/${safeValue === 'X' ? 'x.png' : safeValue.toLowerCase() + '.webp'}" 
-                         alt="${Security.escapeHTML(value)}" class="trait-icon">
+            return `<img src="public/images/traits/${safeValue === 'X' ? 'x.png' : safeValue.toLowerCase() + '.webp'}" 
+                        alt="${Security.escapeHTML(value)}" class="trait-icon">
                   `}).join("")}
                 </div>
               </div>`;
@@ -308,8 +308,8 @@ export class UIHandlers {
             const typeKey = sanitizedType.toLowerCase().replace(/\s+/g, '');
             const validTypes = ['singleattack', 'areaattack', 'multihit', 'omnistrike', 'longdistance'];
             const safeType = validTypes.includes(typeKey) ? typeKey : 'x';
-            return `<img src="images/attackType/${safeType}.webp" 
-                                alt="${Security.escapeHTML(type)}" class="attack-type-icon">`;
+            return `<img src="public/images/attackType/${safeType}.webp" 
+                        alt="${Security.escapeHTML(type)}" class="attack-type-icon">`;
           }).join("")}
                 </div>
               </div>`;
@@ -321,8 +321,8 @@ export class UIHandlers {
                 <div class="abilities-container">
                   ${abilities.map(value => {
             const safeValue = Security.sanitizeInput(value);
-            return `<img src="images/abilities/${safeValue === 'X' ? 'x.png' : safeValue.toLowerCase() + '.webp'}" 
-                         alt="${Security.escapeHTML(value)}" class="ability-icon">
+            return `<img src="public/images/abilities/${safeValue === 'X' ? 'x.png' : safeValue.toLowerCase() + '.webp'}" 
+                        alt="${Security.escapeHTML(value)}" class="ability-icon">
                   `}).join("")}
                 </div>
               </div>`;
@@ -352,7 +352,9 @@ export class UIHandlers {
     const victoryCatName = document.getElementById('victory-cat-name');
     const victoryGuessCount = document.getElementById('victory-guess-count');
 
-    if (victoryCatImg) victoryCatImg.src = cat.img;
+    if (victoryCatImg) victoryCatImg.src = cat.img.startsWith('images/')
+      ? 'public/' + cat.img
+      : cat.img;
     if (victoryCatImg) victoryCatImg.alt = cat.name;
     if (victoryCatName) victoryCatName.textContent = cat.name;
     if (victoryGuessCount) victoryGuessCount.textContent = this.game.attempts;
@@ -382,7 +384,9 @@ export class UIHandlers {
       const yesterdaysCat = this.game.getYesterdaysAnswer();
 
       yesterdayNameElement.textContent = yesterdaysCat.name;
-      yesterdayImgElement.src = yesterdaysCat.img;
+      yesterdayImgElement.src = yesterdaysCat.img.startsWith('images/')
+        ? 'public/' + yesterdaysCat.img
+        : yesterdaysCat.img;
       yesterdayImgElement.alt = yesterdaysCat.name;
     }
   }
