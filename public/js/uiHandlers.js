@@ -412,21 +412,12 @@ export class UIHandlers {
     const timerElement = document.getElementById('victory-timer');
     if (!timerElement) return;
 
-    const now = new Date();
-    const utcHours = now.getUTCHours();
-    const utcMinutes = now.getUTCMinutes();
-    const utcSeconds = now.getUTCSeconds();
+    const timeString = this.game.dailyLogic.getTimeUntilNextReset();
 
-    const resetUTC = 17;
+    const [hours, minutes, seconds] = timeString.split(':').map(Number);
+    const totalSeconds = hours * 3600 + minutes * 60 + seconds;
 
-    let secondsUntilReset;
-    if (utcHours < resetUTC) {
-      secondsUntilReset = (resetUTC - utcHours) * 3600 - utcMinutes * 60 - utcSeconds;
-    } else {
-      secondsUntilReset = (24 - utcHours + resetUTC) * 3600 - utcMinutes * 60 - utcSeconds;
-    }
-
-    if (secondsUntilReset <= 5) {
+    if (totalSeconds <= 5) {
       setTimeout(() => {
         Security.storage.clearAll();
         location.reload();
@@ -435,10 +426,6 @@ export class UIHandlers {
       return;
     }
 
-    const hours = Math.floor(secondsUntilReset / 3600);
-    const minutes = Math.floor((secondsUntilReset % 3600) / 60);
-    const seconds = secondsUntilReset % 60;
-
-    timerElement.textContent = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+    timerElement.textContent = timeString;
   }
 }
