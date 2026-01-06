@@ -6,7 +6,6 @@ export class GameLogic {
     this.cats = catsData;
     this.dailyLogic = new DailyLogic(catsData);
     this.todayKey = this.dailyLogic.getTodayKey();
-    const yesterdayKey = this.dailyLogic.getYesterdayKey();
 
     const storedDate = Security.storage.get('game_date');
 
@@ -15,7 +14,7 @@ export class GameLogic {
 
       const storedTodaysAnswer = Security.storage.get('todays_answer');
       if (storedTodaysAnswer) {
-        Security.storage.set(`answer_${storedDate}`, storedTodaysAnswer, 48 * 60 * 60 * 1000);
+        Security.storage.set(`answer_${storedDate}`, storedTodaysAnswer, 30 * 24 * 60 * 60 * 1000);
       }
       this.clearOldGameState();
     }
@@ -27,15 +26,15 @@ export class GameLogic {
     this.hintAvailable = this.loadValidatedState('hintAvailable', false);
     this.answer = this.dailyLogic.getTodaysAnswer();
 
-    Security.storage.set(`answer_${this.todayKey}`, JSON.stringify(this.answer), 48 * 60 * 60 * 1000);
     Security.storage.set('todays_answer', JSON.stringify(this.answer), 48 * 60 * 60 * 1000);
 
+    const yesterdayKey = this.dailyLogic.getYesterdayKey();
     const storedYesterdaysAnswer = Security.storage.get(`answer_${yesterdayKey}`);
-
     if (storedYesterdaysAnswer) {
       try {
         this.yesterdaysAnswer = JSON.parse(storedYesterdaysAnswer);
       } catch (e) {
+        console.warn('Failed to parse stored yesterday answer:', e);
         this.yesterdaysAnswer = this.getPlaceholderCat();
       }
     } else {
@@ -44,12 +43,6 @@ export class GameLogic {
 
     const answerHash = Security.hashAnswer(this.answer.unitId, this.todayKey);
     Security.storage.set('answer_hash', answerHash, 24 * 60 * 60 * 1000);
-  }
-
-  getYesterdayKey() {
-    const yesterday = new Date();
-    yesterday.setDate(yesterday.getDate() - 1);
-    return yesterday.toISOString().split('T')[0];
   }
 
   clearOldGameState() {
