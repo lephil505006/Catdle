@@ -27,7 +27,6 @@ export class GameLogic {
     const storedGameDay = Security.storage.get('game_day');
 
     if (storedGameDay !== this.currentGameDay) {
-      console.log(`New day: ${storedGameDay} → ${this.currentGameDay}`);
       this.clearOldGameState();
       Security.storage.set('game_day', this.currentGameDay, 48 * 60 * 60 * 1000);
       return true;

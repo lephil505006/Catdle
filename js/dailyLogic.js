@@ -12,8 +12,6 @@ export class DailyLogic {
             this.unitIdMap.set(cat.unitId, cat);
             this.nameMap.set(cat.name, cat);
         });
-        
-        console.log(`Created lookup maps with ${this.cats.length} cats`);
     }
 
     getDaysSinceLaunch() {
@@ -63,8 +61,6 @@ export class DailyLogic {
             console.warn(`Cat not found for reference:`, answerRef);
             return this.getPlaceholderCat();
         }
-        
-        console.log("Today's answer cat:", cat.name);
         return cat;
     }
 
