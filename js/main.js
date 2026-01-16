@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   ui.displayYesterdaysAnswer();
 
-  const savedNames = game.getSelectedCats ? game.getSelectedCats() : [];
+  const savedNames = game.getSelectedCats();
   
   if (savedNames && savedNames.length > 0) {
     
@@ -19,6 +19,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         headers.style.display = "flex";
       }
       
+      // Display guesses from previous session if within same day
       savedNames.forEach(catName => {
         const cat = cats.find(c => c.name === catName);
         if (cat) {

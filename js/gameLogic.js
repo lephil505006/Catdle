@@ -5,49 +5,38 @@ export class GameLogic {
   constructor(catsData) {
     this.cats = catsData;
     this.dailyLogic = new DailyLogic(catsData);
-    this.todayKey = this.dailyLogic.getTodayKey();
+    this.currentGameDay = this.dailyLogic.getCurrentGameDay();
 
-    const storedDate = Security.storage.get('game_date');
+    // Check and reset for new day
+    const needsReset = this.checkAndResetForNewDay();
 
-    if (storedDate && storedDate !== this.todayKey) {
-      console.log(`Day changed! Old: ${storedDate}, New: ${this.todayKey}`);
-
-      const storedTodaysAnswer = Security.storage.get('todays_answer');
-      if (storedTodaysAnswer) {
-        Security.storage.set(`answer_${storedDate}`, storedTodaysAnswer, 30 * 24 * 60 * 60 * 1000);
-      }
-      this.clearOldGameState();
-    }
-
-    Security.storage.set('game_date', this.todayKey, 24 * 60 * 60 * 1000);
-
+    // Load game state
     this.selectedCats = this.loadValidatedState('selectedCats', []);
     this.attempts = this.loadValidatedState('attempts', 0);
     this.hintAvailable = this.loadValidatedState('hintAvailable', false);
+
+    // Get answers
     this.answer = this.dailyLogic.getTodaysAnswer();
+    this.yesterdaysAnswer = this.dailyLogic.getYesterdaysAnswer();
 
-    Security.storage.set('todays_answer', JSON.stringify(this.answer), 48 * 60 * 60 * 1000);
+    // Store today's answer
+    Security.storage.set(`answer_${this.currentGameDay}`, JSON.stringify(this.answer), 365 * 24 * 60 * 60 * 1000);
+  }
 
-    const yesterdayKey = this.dailyLogic.getYesterdayKey();
-    const storedYesterdaysAnswer = Security.storage.get(`answer_${yesterdayKey}`);
-    if (storedYesterdaysAnswer) {
-      try {
-        this.yesterdaysAnswer = JSON.parse(storedYesterdaysAnswer);
-      } catch (e) {
-        console.warn('Failed to parse stored yesterday answer:', e);
-        this.yesterdaysAnswer = this.getPlaceholderCat();
-      }
-    } else {
-      this.yesterdaysAnswer = this.getPlaceholderCat();
+  checkAndResetForNewDay() {
+    const storedGameDay = Security.storage.get('game_day');
+
+    if (storedGameDay !== this.currentGameDay) {
+      console.log(`New day: ${storedGameDay} → ${this.currentGameDay}`);
+      this.clearOldGameState();
+      Security.storage.set('game_day', this.currentGameDay, 48 * 60 * 60 * 1000);
+      return true;
     }
-
-    const answerHash = Security.hashAnswer(this.answer.unitId, this.todayKey);
-    Security.storage.set('answer_hash', answerHash, 24 * 60 * 60 * 1000);
+    return false;
   }
 
   clearOldGameState() {
-    console.log('Clearing old game state for new day');
-    ['selectedCats', 'attempts', 'hintAvailable', 'todays_answer', 'answer_hash'].forEach(key => {
+    ['selectedCats', 'attempts', 'hintAvailable'].forEach(key => {
       Security.storage.remove(key);
     });
   }
@@ -92,14 +81,6 @@ export class GameLogic {
       default:
         return defaultValue;
     }
-  }
-
-  validateAnswerIntegrity(cat) {
-    const storedHash = Security.storage.get('answer_hash');
-    if (!storedHash) return true;
-
-    const expectedHash = Security.hashAnswer(cat.unitId, this.todayKey);
-    return storedHash === expectedHash;
   }
 
   getAttempts() {
@@ -283,6 +264,6 @@ export class GameLogic {
   }
 
   getTodaysDateKey() {
-    return this.dailyLogic.todayKey;
+    return this.currentGameDay;
   }
 }

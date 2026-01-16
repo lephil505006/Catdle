@@ -2,7 +2,7 @@ import { Security } from './security.js';
 
 export async function loadCatData() {
   try {
-    const response = await fetch('public/data/BattleCatsDatabase.xlsm');
+    const response = await fetch('data/BattleCatsDatabase.xlsm');
     
     if (!response.ok) {
       throw new Error(`HTTP ${response.status}: Failed to load data`);
