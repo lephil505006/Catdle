@@ -38,9 +38,13 @@
         </div>
     </header>
 
+    <div class="game-mode-container">
+        <button id="mode-toggle" class="mode-toggle-button"></button>
+    </div>
+
     <div class="info-box" id="info-box">
         <div class="version-section">
-            <div class="version-text">Updated to Game Version 14.7.0</div>
+            <div class="version-text">Updated to Game Version 15.1.0</div>
         </div>
 
         <section class="info-section">
@@ -373,13 +377,11 @@
         </div>
 
         <section class="changelog-section">
-            <h3>Version 1.0</h3>
+            <h3>28th, January 2026</h3>
             <hr class="info-separator">
             <ul>
-                <li>Initial release of Catdle</li>
-                <li>Daily Battle Cats guessing game</li>
-                <li>300+ cat units included</li>
-                <li>All attributes and comparison system</li>
+                <li>Initial release of Catdle!</li>
+                <li>Game matching with Battle Cats V15.1</li>
             </ul>
         </section>
     </div>
@@ -420,8 +422,14 @@
         </button>
     </div>
 
+    <div id="infinite-new-game-container" class="infinite-new-game-container" style="display: none;">
+        <button id="infinite-new-game-button" class="infinite-new-game-button">
+            NEW GAME
+        </button>
+    </div>
+
     <main id="game-container">
-        <p class="game-instruction">Guess todays Battle Cat's unit!</p>
+        <p class="game-instruction" id="game-instruction">Guess todays Battle Cat's unit!</p>
         <div class="hint-area">
             <div class="hint-box">
                 <div class="hint-icon">
@@ -461,7 +469,7 @@
         </nav>
     </div>
 
-    <div class="yesterdays-answer">
+    <div class="yesterdays-answer" id="yesterdays-answer">
         <div class="yesterday-text">Yesterday's Answer: <span id="yesterday-cat-name"></span></div>
         <img id="yesterday-cat-img" src="" alt="Yesterday's Cat" class="yesterday-img">
     </div>
@@ -491,6 +499,8 @@
                 <div class="timer-label">Next Game:</div>
                 <div class="timer-value" id="victory-timer">Calculating...</div>
             </div>
+
+            <button id="play-again-button" class="play-again-button" style="display: none;">PLAY AGAIN</button>
 
             <div class="wordlecats">
                 <div class="wordlecats-text">Make sure to also check out!</div>

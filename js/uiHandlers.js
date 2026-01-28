@@ -55,7 +55,9 @@ export class UIHandlers {
     this.aboutButton.addEventListener("click", () => this.toggleAboutBox());
 
     this.hintBox.addEventListener("click", () => {
-      if (this.game.hintAvailable && !this.hintRevealBox.style.display) {
+      const isHintRevealed = window.getComputedStyle(this.hintRevealBox).display !== 'none';
+
+      if (this.game.hintAvailable && !isHintRevealed) {
         const hint = this.game.getHint();
         if (hint) {
           this.hintDisplay.textContent = hint;
@@ -151,14 +153,16 @@ export class UIHandlers {
   }
 
   updateHintDisplay() {
-    const attemptsLeft = 5 - this.game.attempts;
     const hintText = this.hintBox.querySelector(".hint-text");
+
+    if (!hintText) return;
 
     if (this.game.hintAvailable) {
       hintText.textContent = "Click for hint!";
       this.hintBox.style.cursor = "pointer";
     } else {
-      hintText.textContent = `Hint available in ${attemptsLeft} ${attemptsLeft === 1 ? 'try' : 'tries'}`;
+      const attemptsLeft = 5 - this.game.attempts;
+      hintText.textContent = `Hint appears after ${attemptsLeft} ${attemptsLeft === 1 ? 'try' : 'tries'}`;
       this.hintBox.style.cursor = "default";
     }
   }
@@ -370,24 +374,110 @@ export class UIHandlers {
     const victoryCatImg = document.getElementById('victory-cat-img');
     const victoryCatName = document.getElementById('victory-cat-name');
     const victoryGuessCount = document.getElementById('victory-guess-count');
+    const catUnitLabel = document.querySelector('.cat-unit-label');
 
     if (victoryCatImg) victoryCatImg.src = cat.img;
     if (victoryCatImg) victoryCatImg.alt = cat.name;
     if (victoryCatName) victoryCatName.textContent = cat.name;
     if (victoryGuessCount) victoryGuessCount.textContent = this.game.attempts;
 
-    victoryScreen.classList.add('active');
+    const timerRow = document.querySelector('.victory-timer-row');
+    if (timerRow) {
+      if (this.game.isInfiniteMode()) {
+        timerRow.style.display = 'none';
+      } else {
+        timerRow.style.display = 'flex';
+        this.startCountdownTimer();
+      }
+    }
 
-    this.startCountdownTimer();
+    const playAgainButton = document.getElementById('play-again-button');
+    if (playAgainButton) {
+      if (this.game.isInfiniteMode()) {
+        playAgainButton.style.display = 'block';
+        playAgainButton.onclick = () => {
+          this.startNewInfiniteGame();
+          victoryScreen.classList.remove('active');
+        };
+      } else {
+        playAgainButton.style.display = 'none';
+      }
+    }
+
+    if (catUnitLabel) {
+      catUnitLabel.textContent = this.game.isInfiniteMode()
+        ? "Correct Cat Unit!"
+        : "Cat Unit of the Day";
+    }
+
+    victoryScreen.classList.add('active');
     this.setupVictoryScreenListeners();
+  }
+
+  startNewInfiniteGame() {
+    this.clearGameDisplay();
+    this.game.startNewInfiniteGame();
+    this.resetHintDisplay();
+    this.announceToScreenReader('New infinite game started!');
+  }
+
+  clearGameDisplay() {
+    const catDetails = document.querySelectorAll('.cat-details-element');
+    catDetails.forEach(element => element.remove());
+
+    if (this.headers) {
+      this.headers.style.display = 'none';
+    }
+
+    if (this.resultsContainer) {
+      this.resultsContainer.innerHTML = '';
+      this.resultsContainer.style.display = 'none';
+    }
+
+    if (this.searchBar) {
+      this.searchBar.value = '';
+    }
+    this.resetHintDisplay();
+  }
+
+  resetHintDisplay() {
+    if (this.hintRevealBox) {
+      this.hintRevealBox.style.display = 'none';
+      this.hintDisplay.textContent = '';
+    }
+
+    this.updateHintDisplay();
+
+    if (this.hintBox) {
+      this.hintBox.style.cursor = this.game.hintAvailable ? 'pointer' : 'default';
+    }
+  }
+
+  announceToScreenReader(message) {
+    const announcement = document.createElement('div');
+    announcement.setAttribute('aria-live', 'assertive');
+    announcement.setAttribute('aria-atomic', 'true');
+    announcement.classList.add('sr-only');
+    announcement.textContent = message;
+
+    document.body.appendChild(announcement);
+
+    setTimeout(() => {
+      document.body.removeChild(announcement);
+    }, 1000);
   }
 
   setupVictoryScreenListeners() {
     const victoryScreen = document.getElementById('victory-screen');
+    const victoryContent = victoryScreen.querySelector('.victory-content');
 
     victoryScreen.addEventListener('click', (e) => {
-      if (e.target === victoryScreen) {
-        this.stopCountdownTimer();
+      if (!victoryContent.contains(e.target)) {
+        if (this.game.isInfiniteMode()) {
+          this.startNewInfiniteGame();
+        } else {
+          this.stopCountdownTimer();
+        }
         victoryScreen.classList.remove('active');
       }
     });

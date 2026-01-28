@@ -1,38 +1,38 @@
 import { ANSWER_LIST } from './answers.js';
 
 export class DailyLogic {
-    static LAUNCH_DATE = new Date('2026-01-14T17:00:00Z'); // 11 AM CST
+    static LAUNCH_DATE = new Date(Date.UTC(2026, 0, 28, 17, 0, 0)); // 11 AM CST
     static RESET_HOUR_UTC = 17;
 
     constructor(catsData) {
         this.cats = catsData;
-        this.unitIdMap = new Map();
-        this.nameMap = new Map();
-        this.cats.forEach(cat => {
-            this.unitIdMap.set(cat.unitId, cat);
-            this.nameMap.set(cat.name, cat);
-        });
+    }
+
+    findCatByIdAndForm(unitId, form) {
+        return this.cats.find(cat =>
+            cat.unitId === unitId && cat.form === form
+        );
     }
 
     getDaysSinceLaunch() {
         const now = new Date();
         const launch = DailyLogic.LAUNCH_DATE;
-        
+
         const diffMs = now - launch;
         let diffDays = Math.floor(diffMs / (1000 * 60 * 60 * 24));
-        
+
         const currentUTCHour = now.getUTCHours();
         if (currentUTCHour < DailyLogic.RESET_HOUR_UTC) {
             diffDays--;
         }
-        
+
         return Math.max(0, diffDays);
     }
 
     getCurrentGameDay() {
         const nowUTC = new Date();
         const currentUTCHour = nowUTC.getUTCHours();
-        
+
         if (currentUTCHour < DailyLogic.RESET_HOUR_UTC) {
             const yesterday = new Date(nowUTC);
             yesterday.setUTCDate(yesterday.getUTCDate() - 1);
@@ -54,38 +54,51 @@ export class DailyLogic {
 
     getTodaysAnswer() {
         const dayIndex = this.getDaysSinceLaunch();
-        const answerRef = this.getAnswerRefByDay(dayIndex);    
-        const cat = this.lookupCat(answerRef);
-        
-        if (!cat) {
-            console.warn(`Cat not found for reference:`, answerRef);
-            return this.getPlaceholderCat();
+
+        if (dayIndex < 0 || dayIndex >= ANSWER_LIST.length) {
+            return this.getFallbackAnswer();
         }
+
+        const answerEntry = ANSWER_LIST[dayIndex];
+        const cat = this.findCatByIdAndForm(answerEntry.unitId, answerEntry.form);
+
+        if (!cat) {
+            console.warn(`Cat not found for day ${dayIndex}: unitId ${answerEntry.unitId}, form ${answerEntry.form}`);
+            return this.getFallbackAnswer();
+        }
+
         return cat;
     }
 
     getYesterdaysAnswer() {
-        const dayIndex = this.getDaysSinceLaunch() - 1;       
+        const dayIndex = this.getDaysSinceLaunch() - 1;
+
         if (dayIndex < 0) {
             return this.getPlaceholderCat();
         }
-        
-        const answerRef = this.getAnswerRefByDay(dayIndex);     
-        const cat = this.lookupCat(answerRef);
-        
-        if (!cat) {
-            return this.getPlaceholderCat();
+
+        if (dayIndex >= ANSWER_LIST.length) {
+            return this.getFallbackAnswer();
         }
-        return cat;
+
+        const answerEntry = ANSWER_LIST[dayIndex];
+        const cat = this.findCatByIdAndForm(answerEntry.unitId, answerEntry.form);
+
+        return cat || this.getPlaceholderCat();
     }
 
     getAnswerRefByDay(dayIndex) {
         if (dayIndex < 0) {
             return null;
         }
-        
+
         const safeIndex = dayIndex % ANSWER_LIST.length;
         return ANSWER_LIST[safeIndex] || null;
+    }
+
+    getFallbackAnswer() {
+        const randomIndex = Math.floor(Math.random() * this.cats.length);
+        return this.cats[randomIndex];
     }
 
     lookupCat(answerRef) {
@@ -106,25 +119,12 @@ export class DailyLogic {
                 return catByName;
             }
         }
-        
+
         return null;
     }
 
     getPlaceholderCat() {
-        return {
-            unitId: 0,
-            name: 'Cat',
-            img: 'images/cats/Cat.webp',
-            rarity: 'Normal',
-            form: 'Normal Form',
-            role: '',
-            traits: '',
-            attackType: '',
-            abilities: '',
-            cost: '0¢',
-            version: 'V1.0',
-            source: 'Unknown'
-        };
+        return this.findCatByIdAndForm(1, "Normal Form") || this.cats[0];
     }
 
     getTimeUntilNextReset() {
@@ -132,7 +132,7 @@ export class DailyLogic {
         const utcHours = now.getUTCHours();
         const utcMinutes = now.getUTCMinutes();
         const utcSeconds = now.getUTCSeconds();
-        
+
         const resetUTC = DailyLogic.RESET_HOUR_UTC;
         let secondsUntilReset;
 

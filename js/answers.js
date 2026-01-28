@@ -1,5862 +1,5856 @@
+// Generated on 2026-01-28T18:34:22.865Z
+// Total entries in Excel: 1170
+// Launch date: 2026-01-14
+
 export const ANSWER_LIST = [
   {
     "day": 0,
-    "unitId": 682,
-    "name": "Spectral Goth Vega"
+    "unitId": 733,
+    "form": "Evolved Form"
   },
   {
     "day": 1,
-    "unitId": 533,
-    "name": "Bad Blaster Saki"
+    "unitId": 450,
+    "form": "True Form"
   },
   {
     "day": 2,
-    "unitId": 564,
-    "name": "Bikinilan Pasalan"
+    "unitId": 198,
+    "form": "Normal Form"
   },
   {
     "day": 3,
-    "unitId": 786,
-    "name": "Illusionist Catman"
+    "unitId": 382,
+    "form": "Evolved Form"
   },
   {
     "day": 4,
-    "unitId": 738,
-    "name": "Izanami of Eventide"
+    "unitId": 228,
+    "form": "Normal Form"
   },
   {
     "day": 5,
-    "unitId": 79,
-    "name": "Prisoner Cat"
+    "unitId": 519,
+    "form": "Normal Form"
   },
   {
     "day": 6,
-    "unitId": 212,
-    "name": "The Spectral Cat"
+    "unitId": 587,
+    "form": "Normal Form"
   },
   {
     "day": 7,
-    "unitId": 564,
-    "name": "Fabulous Pasalan"
+    "unitId": 310,
+    "form": "True Form"
   },
   {
     "day": 8,
-    "unitId": 98,
-    "name": "Manic King Dragon"
+    "unitId": 566,
+    "form": "True Form"
   },
   {
     "day": 9,
-    "unitId": 357,
-    "name": "Wolfchild Deale"
+    "unitId": 42,
+    "form": "True Form"
   },
   {
     "day": 10,
-    "unitId": 776,
-    "name": "Lieutenant Cat"
+    "unitId": 63,
+    "form": "Normal Form"
   },
   {
     "day": 11,
-    "unitId": 359,
-    "name": "Bazibon"
+    "unitId": 780,
+    "form": "Normal Form"
   },
   {
     "day": 12,
-    "unitId": 618,
-    "name": "Wargod Amakusa"
+    "unitId": 312,
+    "form": "Normal Form"
   },
   {
     "day": 13,
-    "unitId": 683,
-    "name": "Count Yukimura"
+    "unitId": 200,
+    "form": "Normal Form"
   },
   {
     "day": 14,
-    "unitId": 4,
-    "name": "Lion Cat"
+    "unitId": 239,
+    "form": "Normal Form"
   },
   {
     "day": 15,
-    "unitId": 146,
-    "name": "Stilts Cat"
+    "unitId": 357,
+    "form": "Evolved Form"
   },
   {
     "day": 16,
-    "unitId": 699,
-    "name": "Rabbit Satoru"
+    "unitId": 697,
+    "form": "True Form"
   },
   {
     "day": 17,
-    "unitId": 715,
-    "name": "Hyper Battalion Convoys"
+    "unitId": 131,
+    "form": "Evolved Form"
   },
   {
     "day": 18,
-    "unitId": 76,
-    "name": "Ultimate Thundia"
+    "unitId": 148,
+    "form": "Evolved Form"
   },
   {
     "day": 19,
-    "unitId": 57,
-    "name": "Paladin Cat"
+    "unitId": 767,
+    "form": "Normal Form"
   },
   {
     "day": 20,
-    "unitId": 48,
-    "name": "Dread Pirate Catley"
+    "unitId": 501,
+    "form": "Normal Form"
   },
   {
     "day": 21,
-    "unitId": 452,
-    "name": "Primordial Cat"
+    "unitId": 84,
+    "form": "True Form"
   },
   {
     "day": 22,
-    "unitId": 377,
-    "name": "Kendo Cat"
+    "unitId": 621,
+    "form": "Evolved Form"
   },
   {
     "day": 23,
-    "unitId": 568,
-    "name": "Idi:N"
+    "unitId": 666,
+    "form": "Evolved Form"
   },
   {
     "day": 24,
-    "unitId": 669,
-    "name": "Cat Cactus"
+    "unitId": 534,
+    "form": "Normal Form"
   },
   {
     "day": 25,
-    "unitId": 305,
-    "name": "B.C.S. Beartooth"
+    "unitId": 776,
+    "form": "Normal Form"
   },
   {
     "day": 26,
-    "unitId": 651,
-    "name": "Iron-Masked Lion Cat"
+    "unitId": 649,
+    "form": "Normal Form"
   },
   {
     "day": 27,
-    "unitId": 335,
-    "name": "Mer-Queen Ruri"
+    "unitId": 361,
+    "form": "Ultra Form"
   },
   {
     "day": 28,
-    "unitId": 676,
-    "name": "Mushroom Cat"
+    "unitId": 620,
+    "form": "Normal Form"
   },
   {
     "day": 29,
-    "unitId": 25,
-    "name": "Bahamut Cat"
+    "unitId": 153,
+    "form": "True Form"
   },
   {
     "day": 30,
-    "unitId": 136,
-    "name": "The Peach Angels"
+    "unitId": 668,
+    "form": "Normal Form"
   },
   {
     "day": 31,
-    "unitId": 629,
-    "name": "Brainwashed Mohawk Cat"
+    "unitId": 785,
+    "form": "Normal Form"
   },
   {
     "day": 32,
-    "unitId": 305,
-    "name": "B.C.S. Lionheart"
+    "unitId": 711,
+    "form": "Evolved Form"
   },
   {
     "day": 33,
-    "unitId": 723,
-    "name": "Almighty Aset"
+    "unitId": 32,
+    "form": "Evolved Form"
   },
   {
     "day": 34,
-    "unitId": 227,
-    "name": "Cat O'Lantern"
+    "unitId": 259,
+    "form": "Normal Form"
   },
   {
     "day": 35,
-    "unitId": 310,
-    "name": "Yuletide Nurse"
+    "unitId": 595,
+    "form": "True Form"
   },
   {
     "day": 36,
-    "unitId": 736,
-    "name": "Frozen Rose Cat"
+    "unitId": 30,
+    "form": "Evolved Form"
   },
   {
     "day": 37,
-    "unitId": 319,
-    "name": "Killer Cat"
+    "unitId": 705,
+    "form": "Evolved Form"
   },
   {
     "day": 38,
-    "unitId": 352,
-    "name": "Grandmaster Cat"
+    "unitId": 83,
+    "form": "True Form"
   },
   {
     "day": 39,
-    "unitId": 153,
-    "name": "Cat Projector"
+    "unitId": 154,
+    "form": "Evolved Form"
   },
   {
     "day": 40,
-    "unitId": 358,
-    "name": "Opulent Verbena"
+    "unitId": 329,
+    "form": "True Form"
   },
   {
     "day": 41,
-    "unitId": 212,
-    "name": "The White Rabbit"
+    "unitId": 712,
+    "form": "Normal Form"
   },
   {
     "day": 42,
-    "unitId": 612,
-    "name": "Empress Cat"
+    "unitId": 282,
+    "form": "Evolved Form"
   },
   {
     "day": 43,
-    "unitId": 523,
-    "name": "Sifu Cat"
+    "unitId": 172,
+    "form": "Normal Form"
   },
   {
     "day": 44,
-    "unitId": 625,
-    "name": "Furiluga"
+    "unitId": 642,
+    "form": "Evolved Form"
   },
   {
     "day": 45,
-    "unitId": 772,
-    "name": "Sodom-o'-Lantern"
+    "unitId": 439,
+    "form": "True Form"
   },
   {
     "day": 46,
-    "unitId": 493,
-    "name": "Gaia the Creator"
+    "unitId": 436,
+    "form": "True Form"
   },
   {
     "day": 47,
-    "unitId": 2,
-    "name": "Dark Cat"
+    "unitId": 632,
+    "form": "Normal Form"
   },
   {
     "day": 48,
-    "unitId": 335,
-    "name": "Sea Mistress Ruri"
+    "unitId": 3,
+    "form": "True Form"
   },
   {
     "day": 49,
-    "unitId": 616,
-    "name": "Kuwagata Cat"
+    "unitId": 107,
+    "form": "Normal Form"
   },
   {
     "day": 50,
-    "unitId": 585,
-    "name": "Baby Garu"
+    "unitId": 81,
+    "form": "True Form"
   },
   {
     "day": 51,
-    "unitId": 758,
-    "name": "Trixi the Merc"
+    "unitId": 358,
+    "form": "Normal Form"
   },
   {
     "day": 52,
-    "unitId": 49,
-    "name": "Thief Cat"
+    "unitId": 644,
+    "form": "Evolved Form"
   },
   {
     "day": 53,
-    "unitId": 12,
-    "name": "Bondage Cat"
+    "unitId": 154,
+    "form": "True Form"
   },
   {
     "day": 54,
-    "unitId": 86,
-    "name": "God Dragon Kamukura"
+    "unitId": 92,
+    "form": "True Form"
   },
   {
     "day": 55,
-    "unitId": 359,
-    "name": "Bazifenix"
+    "unitId": 564,
+    "form": "True Form"
   },
   {
     "day": 56,
-    "unitId": 718,
-    "name": "Maize Cat"
+    "unitId": 417,
+    "form": "Evolved Form"
   },
   {
     "day": 57,
-    "unitId": 645,
-    "name": "Brainwashed Brave Cat"
+    "unitId": 658,
+    "form": "True Form"
   },
   {
     "day": 58,
-    "unitId": 632,
-    "name": "Siege Walker Diabolosa"
+    "unitId": 43,
+    "form": "Evolved Form"
   },
   {
     "day": 59,
-    "unitId": 313,
-    "name": "Li'l Titan Cat"
+    "unitId": 441,
+    "form": "Evolved Form"
   },
   {
     "day": 60,
-    "unitId": 106,
-    "name": "Kai, type μ"
+    "unitId": 148,
+    "form": "True Form"
   },
   {
     "day": 61,
-    "unitId": 375,
-    "name": "Macho Coin Cat"
+    "unitId": 196,
+    "form": "Evolved Form"
   },
   {
     "day": 62,
-    "unitId": 6,
-    "name": "Whale Cat"
+    "unitId": 18,
+    "form": "True Form"
   },
   {
     "day": 63,
-    "unitId": 244,
-    "name": "Cat's Gift"
+    "unitId": 196,
+    "form": "Normal Form"
   },
   {
     "day": 64,
-    "unitId": 532,
-    "name": "Awakened Urs"
+    "unitId": 635,
+    "form": "Normal Form"
   },
   {
     "day": 65,
-    "unitId": 657,
-    "name": "Iz the Dancer of Grief"
+    "unitId": 212,
+    "form": "Normal Form"
   },
   {
     "day": 66,
-    "unitId": 634,
-    "name": "White Knight Cyclops"
+    "unitId": 666,
+    "form": "Normal Form"
   },
   {
     "day": 67,
-    "unitId": 619,
-    "name": "Lilin π"
+    "unitId": 95,
+    "form": "Evolved Form"
   },
   {
     "day": 68,
-    "unitId": 147,
-    "name": "Plane Cat"
+    "unitId": 325,
+    "form": "True Form"
   },
   {
     "day": 69,
-    "unitId": 198,
-    "name": "Magica Cat"
+    "unitId": 437,
+    "form": "Normal Form"
   },
   {
     "day": 70,
-    "unitId": 109,
-    "name": "Madam King"
+    "unitId": 426,
+    "form": "True Form"
   },
   {
     "day": 71,
-    "unitId": 284,
-    "name": "Bullet Train Cat"
+    "unitId": 169,
+    "form": "True Form"
   },
   {
     "day": 72,
-    "unitId": 667,
-    "name": "Brainwashed Flying Cat"
+    "unitId": 72,
+    "form": "Evolved Form"
   },
   {
     "day": 73,
-    "unitId": 645,
-    "name": "Brainwashed Axe Cat"
+    "unitId": 241,
+    "form": "True Form"
   },
   {
     "day": 74,
-    "unitId": 94,
-    "name": "Crazed Gross Cat"
+    "unitId": 495,
+    "form": "Evolved Form"
   },
   {
     "day": 75,
-    "unitId": 427,
-    "name": "Cat Guild Heroes"
+    "unitId": 361,
+    "form": "True Form"
   },
   {
     "day": 76,
-    "unitId": 662,
-    "name": "Brainwashed Giraffe Cat"
+    "unitId": 16,
+    "form": "True Form"
   },
   {
     "day": 77,
-    "unitId": 820,
-    "name": "Seaside Pegasa V"
+    "unitId": 397,
+    "form": "Ultra Form"
   },
   {
     "day": 78,
-    "unitId": 135,
-    "name": "The Grateful Crane"
+    "unitId": 653,
+    "form": "Evolved Form"
   },
   {
     "day": 79,
-    "unitId": 360,
-    "name": "Marinmizu"
+    "unitId": 198,
+    "form": "True Form"
   },
   {
     "day": 80,
-    "unitId": 649,
-    "name": "Wargod Hanzo"
+    "unitId": 79,
+    "form": "Normal Form"
   },
   {
     "day": 81,
-    "unitId": 311,
-    "name": "Li'l Whale Cat"
+    "unitId": 147,
+    "form": "Normal Form"
   },
   {
     "day": 82,
-    "unitId": 91,
-    "name": "Crazed Cat"
+    "unitId": 149,
+    "form": "Evolved Form"
   },
   {
     "day": 83,
-    "unitId": 31,
-    "name": "Ultra Delinquent Cat"
+    "unitId": 8,
+    "form": "True Form"
   },
   {
     "day": 84,
-    "unitId": 82,
-    "name": "Orange Shinobi"
+    "unitId": 554,
+    "form": "True Form"
   },
   {
     "day": 85,
-    "unitId": 169,
-    "name": "E. Kubilan Pasalan"
+    "unitId": 522,
+    "form": "Normal Form"
   },
   {
     "day": 86,
-    "unitId": 461,
-    "name": "Legeluga"
+    "unitId": 322,
+    "form": "Evolved Form"
   },
   {
     "day": 87,
-    "unitId": 316,
-    "name": "Wrathful Poseidon"
+    "unitId": 6,
+    "form": "True Form"
   },
   {
     "day": 88,
-    "unitId": 343,
-    "name": "Slug Jockey Cat"
+    "unitId": 129,
+    "form": "Evolved Form"
   },
   {
     "day": 89,
-    "unitId": 94,
-    "name": "Crazed Sexy Legs Cat"
+    "unitId": 699,
+    "form": "Normal Form"
   },
   {
     "day": 90,
-    "unitId": 451,
-    "name": "Ushiwakamaru"
+    "unitId": 95,
+    "form": "True Form"
   },
   {
     "day": 91,
-    "unitId": 733,
-    "name": "Pegasa ν"
+    "unitId": 313,
+    "form": "Normal Form"
   },
   {
     "day": 92,
-    "unitId": 85,
-    "name": "Dragon King Vars"
+    "unitId": 830,
+    "form": "Normal Form"
   },
   {
     "day": 93,
-    "unitId": 159,
-    "name": "Divine Kalisa"
+    "unitId": 171,
+    "form": "Evolved Form"
   },
   {
     "day": 94,
-    "unitId": 376,
-    "name": "Rover Cat"
+    "unitId": 502,
+    "form": "Evolved Form"
   },
   {
     "day": 95,
-    "unitId": 134,
-    "name": "King Gamereon"
+    "unitId": 588,
+    "form": "Evolved Form"
   },
   {
     "day": 96,
-    "unitId": 683,
-    "name": "Vampiric Yukimura"
+    "unitId": 715,
+    "form": "True Form"
   },
   {
     "day": 97,
-    "unitId": 51,
-    "name": "Fortune Teller Cat"
+    "unitId": 379,
+    "form": "True Form"
   },
   {
     "day": 98,
-    "unitId": 447,
-    "name": "Miter Saw Cat"
+    "unitId": 379,
+    "form": "Normal Form"
   },
   {
     "day": 99,
-    "unitId": 756,
-    "name": "Cake Machine"
+    "unitId": 123,
+    "form": "True Form"
   },
   {
     "day": 100,
-    "unitId": 143,
-    "name": "Nurse Cat"
+    "unitId": 227,
+    "form": "Evolved Form"
   },
   {
     "day": 101,
-    "unitId": 72,
-    "name": "Wargod Keiji"
+    "unitId": 22,
+    "form": "Evolved Form"
   },
   {
     "day": 102,
-    "unitId": 282,
-    "name": "So-Ran Cat"
+    "unitId": 507,
+    "form": "Normal Form"
   },
   {
     "day": 103,
-    "unitId": 272,
-    "name": "Exalted Ganesha"
+    "unitId": 648,
+    "form": "Normal Form"
   },
   {
     "day": 104,
-    "unitId": 553,
-    "name": "Fried Chicken Cat"
+    "unitId": 86,
+    "form": "Normal Form"
   },
   {
     "day": 105,
-    "unitId": 323,
-    "name": "Miyamoku Musashi"
+    "unitId": 837,
+    "form": "Evolved Form"
   },
   {
     "day": 106,
-    "unitId": 271,
-    "name": "Shining Amaterasu"
+    "unitId": 426,
+    "form": "Evolved Form"
   },
   {
     "day": 107,
-    "unitId": 442,
-    "name": "Vendor Cat and Kitten"
+    "unitId": 718,
+    "form": "Evolved Form"
   },
   {
     "day": 108,
-    "unitId": 241,
-    "name": "Frosty Kai"
+    "unitId": 766,
+    "form": "Normal Form"
   },
   {
     "day": 109,
-    "unitId": 612,
-    "name": "Princess Cat"
+    "unitId": 96,
+    "form": "Normal Form"
   },
   {
     "day": 110,
-    "unitId": 21,
-    "name": "Madame Sumo"
+    "unitId": 554,
+    "form": "Evolved Form"
   },
   {
     "day": 111,
-    "unitId": 616,
-    "name": "King Kuwagata Cat"
+    "unitId": 380,
+    "form": "Normal Form"
   },
   {
     "day": 112,
-    "unitId": 779,
-    "name": "Celestial Child Luna"
+    "unitId": 621,
+    "form": "Normal Form"
   },
   {
     "day": 113,
-    "unitId": 198,
-    "name": "Thaumaturge Cat"
+    "unitId": 615,
+    "form": "Evolved Form"
   },
   {
     "day": 114,
-    "unitId": 143,
-    "name": "Joyful Nurse Cat"
+    "unitId": 641,
+    "form": "Evolved Form"
   },
   {
     "day": 115,
-    "unitId": 316,
-    "name": "Almighty Poseidon"
+    "unitId": 519,
+    "form": "Evolved Form"
   },
   {
     "day": 116,
-    "unitId": 168,
-    "name": "Asilan Pasalan"
+    "unitId": 334,
+    "form": "Evolved Form"
   },
   {
     "day": 117,
-    "unitId": 267,
-    "name": "Catornado"
+    "unitId": 322,
+    "form": "Normal Form"
   },
   {
     "day": 118,
-    "unitId": 650,
-    "name": "Secret Crush Cat"
+    "unitId": 569,
+    "form": "True Form"
   },
   {
     "day": 119,
-    "unitId": 443,
-    "name": "Neo Driller Cat"
+    "unitId": 99,
+    "form": "True Form"
   },
   {
     "day": 120,
-    "unitId": 16,
-    "name": "Moneko"
+    "unitId": 668,
+    "form": "True Form"
   },
   {
     "day": 121,
-    "unitId": 97,
-    "name": "Crazed Whale Cat"
+    "unitId": 201,
+    "form": "Evolved Form"
   },
   {
     "day": 122,
-    "unitId": 520,
-    "name": "Good-Luck Ebisu"
+    "unitId": 98,
+    "form": "True Form"
   },
   {
     "day": 123,
-    "unitId": 56,
-    "name": "Archer Cat"
+    "unitId": 736,
+    "form": "Evolved Form"
   },
   {
     "day": 124,
-    "unitId": 655,
-    "name": "Bliza"
+    "unitId": 313,
+    "form": "Evolved Form"
   },
   {
     "day": 125,
-    "unitId": 271,
-    "name": "Glorious Amaterasu"
+    "unitId": 377,
+    "form": "Normal Form"
   },
   {
     "day": 126,
-    "unitId": 243,
-    "name": "Holy Coppermine"
+    "unitId": 11,
+    "form": "True Form"
   },
   {
     "day": 127,
-    "unitId": 269,
-    "name": "Mighty Lord Gao"
+    "unitId": 195,
+    "form": "Normal Form"
   },
   {
     "day": 128,
-    "unitId": 238,
-    "name": "Rich Cat Sr."
+    "unitId": 37,
+    "form": "Evolved Form"
   },
   {
     "day": 129,
-    "unitId": 357,
-    "name": "Jester Queen Deale"
+    "unitId": 533,
+    "form": "Evolved Form"
   },
   {
     "day": 130,
-    "unitId": 589,
-    "name": "Sweetheart Neneko"
+    "unitId": 260,
+    "form": "Normal Form"
   },
   {
     "day": 131,
-    "unitId": 759,
-    "name": "Music Fest Thundia β"
+    "unitId": 13,
+    "form": "Evolved Form"
   },
   {
     "day": 132,
-    "unitId": 50,
-    "name": "Monk Cat"
+    "unitId": 444,
+    "form": "True Form"
   },
   {
     "day": 133,
-    "unitId": 817,
-    "name": "Komori"
+    "unitId": 448,
+    "form": "Normal Form"
   },
   {
     "day": 134,
-    "unitId": 634,
-    "name": "Demon Knight Kyklops"
+    "unitId": 655,
+    "form": "Evolved Form"
   },
   {
     "day": 135,
-    "unitId": 125,
-    "name": "Immortal Shingen"
+    "unitId": 544,
+    "form": "Evolved Form"
   },
   {
     "day": 136,
-    "unitId": 769,
-    "name": "Ravenous Cherry"
+    "unitId": 532,
+    "form": "True Form"
   },
   {
     "day": 137,
-    "unitId": 525,
-    "name": "Kinrangers RoboForce"
+    "unitId": 613,
+    "form": "True Form"
   },
   {
     "day": 138,
-    "unitId": 330,
-    "name": "Full-Bloom Kenshin"
+    "unitId": 246,
+    "form": "Evolved Form"
   },
   {
     "day": 139,
-    "unitId": 306,
-    "name": "NEK-0 Sky Fortress"
+    "unitId": 42,
+    "form": "Normal Form"
   },
   {
     "day": 140,
-    "unitId": 712,
-    "name": "Kaoluga"
+    "unitId": 645,
+    "form": "Normal Form"
   },
   {
     "day": 141,
-    "unitId": 546,
-    "name": "Papalan Pasalan"
+    "unitId": 382,
+    "form": "Normal Form"
   },
   {
     "day": 142,
-    "unitId": 359,
-    "name": "Bora"
+    "unitId": 496,
+    "form": "True Form"
   },
   {
     "day": 143,
-    "unitId": 354,
-    "name": "Seashore Kai"
+    "unitId": 636,
+    "form": "Evolved Form"
   },
   {
     "day": 144,
-    "unitId": 92,
-    "name": "Manic Eraser Cat"
+    "unitId": 431,
+    "form": "Normal Form"
   },
   {
     "day": 145,
-    "unitId": 310,
-    "name": "Yule Knight Nurse"
+    "unitId": 143,
+    "form": "Normal Form"
   },
   {
     "day": 146,
-    "unitId": 565,
-    "name": "Suntan Cat"
+    "unitId": 25,
+    "form": "Evolved Form"
   },
   {
     "day": 147,
-    "unitId": 494,
-    "name": "Seabreeze Coppermine, type κ"
+    "unitId": 52,
+    "form": "Normal Form"
   },
   {
     "day": 148,
-    "unitId": 34,
-    "name": "Ultralan Pasalan"
+    "unitId": 324,
+    "form": "Normal Form"
   },
   {
     "day": 149,
-    "unitId": 313,
-    "name": "Li'l Jamiera Cat"
+    "unitId": 771,
+    "form": "Evolved Form"
   },
   {
     "day": 150,
-    "unitId": 158,
-    "name": "Uesugi Kenshin"
+    "unitId": 312,
+    "form": "True Form"
   },
   {
     "day": 151,
-    "unitId": 495,
-    "name": "Bellydance Cat"
+    "unitId": 319,
+    "form": "Normal Form"
   },
   {
     "day": 152,
-    "unitId": 613,
-    "name": "Awakened Doron"
+    "unitId": 59,
+    "form": "Ultra Form"
   },
   {
     "day": 153,
-    "unitId": 595,
-    "name": "Everbloom Lord Kamukura"
+    "unitId": 691,
+    "form": "True Form"
   },
   {
     "day": 154,
-    "unitId": 44,
-    "name": "Lesser Demon Cat"
+    "unitId": 183,
+    "form": "True Form"
   },
   {
     "day": 155,
-    "unitId": 501,
-    "name": "Baka Cat Bros"
+    "unitId": 88,
+    "form": "True Form"
   },
   {
     "day": 156,
-    "unitId": 699,
-    "name": "Rabbit Champion Satoru"
+    "unitId": 686,
+    "form": "Normal Form"
   },
   {
     "day": 157,
-    "unitId": 177,
-    "name": "God-Emperor Dioramos"
+    "unitId": 302,
+    "form": "True Form"
   },
   {
     "day": 158,
-    "unitId": 336,
-    "name": "Queen Reika"
+    "unitId": 126,
+    "form": "Evolved Form"
   },
   {
     "day": 159,
-    "unitId": 723,
-    "name": "Lightmother Aset"
+    "unitId": 431,
+    "form": "True Form"
   },
   {
     "day": 160,
-    "unitId": 314,
-    "name": "Years-End Neneko"
+    "unitId": 361,
+    "form": "Normal Form"
   },
   {
     "day": 161,
-    "unitId": 59,
-    "name": "Baby Cat"
+    "unitId": 594,
+    "form": "True Form"
   },
   {
     "day": 162,
-    "unitId": 446,
-    "name": "Neo Backhoe Cat"
+    "unitId": 715,
+    "form": "Normal Form"
   },
   {
     "day": 163,
-    "unitId": 203,
-    "name": "Fire Squad Kachiyama"
+    "unitId": 758,
+    "form": "Evolved Form"
   },
   {
     "day": 164,
-    "unitId": 151,
-    "name": "Weightlifter Cat"
+    "unitId": 210,
+    "form": "Evolved Form"
   },
   {
     "day": 165,
-    "unitId": 123,
-    "name": "Brah Cats"
+    "unitId": 241,
+    "form": "Normal Form"
   },
   {
     "day": 166,
-    "unitId": 9,
-    "name": "Actress Cat"
+    "unitId": 688,
+    "form": "True Form"
   },
   {
     "day": 167,
-    "unitId": 382,
-    "name": "Macho Crystal Cat"
+    "unitId": 529,
+    "form": "Evolved Form"
   },
   {
     "day": 168,
-    "unitId": 660,
-    "name": "Sea Serpent Daliasan"
+    "unitId": 177,
+    "form": "Evolved Form"
   },
   {
     "day": 169,
-    "unitId": 496,
-    "name": "Wargod Kaihime"
+    "unitId": 268,
+    "form": "Normal Form"
   },
   {
     "day": 170,
-    "unitId": 307,
-    "name": "Vaulter Cat"
+    "unitId": 716,
+    "form": "True Form"
   },
   {
     "day": 171,
-    "unitId": 655,
-    "name": "Blizana"
+    "unitId": 153,
+    "form": "Evolved Form"
   },
   {
     "day": 172,
-    "unitId": 40,
-    "name": "Bath Cat"
+    "unitId": 269,
+    "form": "Normal Form"
   },
   {
     "day": 173,
-    "unitId": 656,
-    "name": "Haniwa Cat"
+    "unitId": 237,
+    "form": "True Form"
   },
   {
     "day": 174,
-    "unitId": 276,
-    "name": "Early Summer Neneko"
+    "unitId": 273,
+    "form": "True Form"
   },
   {
     "day": 175,
-    "unitId": 243,
-    "name": "Holy Coppermine, type κ"
+    "unitId": 401,
+    "form": "Normal Form"
   },
   {
     "day": 176,
-    "unitId": 314,
-    "name": "New Year Neneko"
+    "unitId": 49,
+    "form": "Normal Form"
   },
   {
     "day": 177,
-    "unitId": 230,
-    "name": "Spooky Thundia, type β"
+    "unitId": 38,
+    "form": "Normal Form"
   },
   {
     "day": 178,
-    "unitId": 625,
-    "name": "Ragelan Pasalan"
+    "unitId": 51,
+    "form": "Evolved Form"
   },
   {
     "day": 179,
-    "unitId": 36,
-    "name": "Fishman Cat"
+    "unitId": 714,
+    "form": "Normal Form"
   },
   {
     "day": 180,
-    "unitId": 39,
-    "name": "iCat"
+    "unitId": 229,
+    "form": "Normal Form"
   },
   {
     "day": 181,
-    "unitId": 109,
-    "name": "Madam Bride"
+    "unitId": 654,
+    "form": "Normal Form"
   },
   {
     "day": 182,
-    "unitId": 662,
-    "name": "Brainwashed Lion Cat"
+    "unitId": 777,
+    "form": "Normal Form"
   },
   {
     "day": 183,
-    "unitId": 136,
-    "name": "The Peach Devils"
+    "unitId": 36,
+    "form": "True Form"
   },
   {
     "day": 184,
-    "unitId": 360,
-    "name": "Mizli"
+    "unitId": 623,
+    "form": "True Form"
   },
   {
     "day": 185,
-    "unitId": 361,
-    "name": "Aervantex"
+    "unitId": 532,
+    "form": "Normal Form"
   },
   {
     "day": 186,
-    "unitId": 56,
-    "name": "Cupid Cat"
+    "unitId": 245,
+    "form": "Evolved Form"
   },
   {
     "day": 187,
-    "unitId": 35,
-    "name": "Nerd Cat"
+    "unitId": 447,
+    "form": "Normal Form"
   },
   {
     "day": 188,
-    "unitId": 35,
-    "name": "Hacker Cat"
+    "unitId": 531,
+    "form": "Normal Form"
   },
   {
     "day": 189,
-    "unitId": 383,
-    "name": "Mystic Yulala"
+    "unitId": 93,
+    "form": "Evolved Form"
   },
   {
     "day": 190,
-    "unitId": 228,
-    "name": "Witchy Neneko"
+    "unitId": 150,
+    "form": "Normal Form"
   },
   {
     "day": 191,
-    "unitId": 13,
-    "name": "Executioner"
+    "unitId": 107,
+    "form": "Evolved Form"
   },
   {
     "day": 192,
-    "unitId": 335,
-    "name": "Sea Maiden Ruri"
+    "unitId": 756,
+    "form": "Normal Form"
   },
   {
     "day": 193,
-    "unitId": 684,
-    "name": "Brainwashed Whale Cat"
+    "unitId": 4,
+    "form": "True Form"
   },
   {
     "day": 194,
-    "unitId": 245,
-    "name": "Li'l Sexy Legs Cat"
+    "unitId": 733,
+    "form": "Normal Form"
   },
   {
     "day": 195,
-    "unitId": 507,
-    "name": "Mightycat"
+    "unitId": 439,
+    "form": "Normal Form"
   },
   {
     "day": 196,
-    "unitId": 12,
-    "name": "Bondage CatNEO"
+    "unitId": 97,
+    "form": "True Form"
   },
   {
     "day": 197,
-    "unitId": 622,
-    "name": "Lord Of Ruin Jagando Jr."
+    "unitId": 33,
+    "form": "Normal Form"
   },
   {
     "day": 198,
-    "unitId": 777,
-    "name": "Winter General Kaihime"
+    "unitId": 20,
+    "form": "Evolved Form"
   },
   {
     "day": 199,
-    "unitId": 401,
-    "name": "Volta"
+    "unitId": 316,
+    "form": "True Form"
   },
   {
     "day": 200,
-    "unitId": 80,
-    "name": "Gentleman Cat"
+    "unitId": 376,
+    "form": "Evolved Form"
   },
   {
     "day": 201,
-    "unitId": 336,
-    "name": "Pharaoh Reika"
+    "unitId": 323,
+    "form": "True Form"
   },
   {
     "day": 202,
-    "unitId": 329,
-    "name": "Easter Egg Cat"
+    "unitId": 49,
+    "form": "True Form"
   },
   {
     "day": 203,
-    "unitId": 323,
-    "name": "Heroic Musashi"
+    "unitId": 528,
+    "form": "True Form"
   },
   {
     "day": 204,
-    "unitId": 322,
-    "name": "The One-Hit Wonders"
+    "unitId": 738,
+    "form": "Normal Form"
   },
   {
     "day": 205,
-    "unitId": 396,
-    "name": "Ganglion the Ancient"
+    "unitId": 609,
+    "form": "Normal Form"
   },
   {
     "day": 206,
-    "unitId": 528,
-    "name": "Cossack Cat"
+    "unitId": 629,
+    "form": "True Form"
   },
   {
     "day": 207,
-    "unitId": 462,
-    "name": "Metafilibuster"
+    "unitId": 644,
+    "form": "True Form"
   },
   {
     "day": 208,
-    "unitId": 44,
-    "name": "Greater Demon Cat"
+    "unitId": 712,
+    "form": "Evolved Form"
   },
   {
     "day": 209,
-    "unitId": 693,
-    "name": "Black Butler Vigler"
+    "unitId": 57,
+    "form": "True Form"
   },
   {
     "day": 210,
-    "unitId": 620,
-    "name": "Wicked King Hevijak"
+    "unitId": 607,
+    "form": "Evolved Form"
   },
   {
     "day": 211,
-    "unitId": 306,
-    "name": "Mighty Bomburr"
+    "unitId": 352,
+    "form": "True Form"
   },
   {
     "day": 212,
-    "unitId": 318,
-    "name": "Miko Mitama"
+    "unitId": 331,
+    "form": "True Form"
   },
   {
     "day": 213,
-    "unitId": 725,
-    "name": "Gourmand Ninja Girl Tomoe"
+    "unitId": 446,
+    "form": "Normal Form"
   },
   {
     "day": 214,
-    "unitId": 11,
-    "name": "Mr."
+    "unitId": 426,
+    "form": "Normal Form"
   },
   {
     "day": 215,
-    "unitId": 196,
-    "name": "Dark Catman"
+    "unitId": 123,
+    "form": "Evolved Form"
   },
   {
     "day": 216,
-    "unitId": 799,
-    "name": "Mighty Morta-Loncha"
+    "unitId": 619,
+    "form": "Evolved Form"
   },
   {
     "day": 217,
-    "unitId": 242,
-    "name": "Santa Kuu, type γ"
+    "unitId": 708,
+    "form": "Evolved Form"
   },
   {
     "day": 218,
-    "unitId": 150,
-    "name": "Princess Juliet Cat"
+    "unitId": 147,
+    "form": "Evolved Form"
   },
   {
     "day": 219,
-    "unitId": 712,
-    "name": "Kaoluga Pasalan"
+    "unitId": 271,
+    "form": "Normal Form"
   },
   {
     "day": 220,
-    "unitId": 306,
-    "name": "NEK-03 Cloud Emperor"
+    "unitId": 284,
+    "form": "Normal Form"
   },
   {
     "day": 221,
-    "unitId": 451,
-    "name": "Colossal Benkei"
+    "unitId": 258,
+    "form": "Evolved Form"
   },
   {
     "day": 222,
-    "unitId": 502,
-    "name": "Myrcia, type ξ"
+    "unitId": 332,
+    "form": "Evolved Form"
   },
   {
     "day": 223,
-    "unitId": 0,
-    "name": "Mohawk Cat"
+    "unitId": 630,
+    "form": "Normal Form"
   },
   {
     "day": 224,
-    "unitId": 810,
-    "name": "Edgemaster Staal"
+    "unitId": 355,
+    "form": "Normal Form"
   },
   {
     "day": 225,
-    "unitId": 464,
-    "name": "Doguemon"
+    "unitId": 810,
+    "form": "Evolved Form"
   },
   {
     "day": 226,
-    "unitId": 107,
-    "name": "Coppermine, type κ"
+    "unitId": 82,
+    "form": "Evolved Form"
   },
   {
     "day": 227,
-    "unitId": 61,
-    "name": "Sushi Cat"
+    "unitId": 58,
+    "form": "Evolved Form"
   },
   {
     "day": 228,
-    "unitId": 570,
-    "name": "Nightmare King Vars"
+    "unitId": 695,
+    "form": "Evolved Form"
   },
   {
     "day": 229,
-    "unitId": 452,
-    "name": "Future Cat"
+    "unitId": 653,
+    "form": "Normal Form"
   },
   {
     "day": 230,
-    "unitId": 532,
-    "name": "Urs & Fenrir"
+    "unitId": 690,
+    "form": "Evolved Form"
   },
   {
     "day": 231,
-    "unitId": 735,
-    "name": "Midlife Crisis Cat"
+    "unitId": 159,
+    "form": "True Form"
   },
   {
     "day": 232,
-    "unitId": 122,
-    "name": "Call Center Cat"
+    "unitId": 194,
+    "form": "True Form"
   },
   {
     "day": 233,
-    "unitId": 666,
-    "name": "Night Beach Lilin"
+    "unitId": 528,
+    "form": "Evolved Form"
   },
   {
     "day": 234,
-    "unitId": 610,
-    "name": "King Ingot Cat"
+    "unitId": 436,
+    "form": "Evolved Form"
   },
   {
     "day": 235,
-    "unitId": 705,
-    "name": "King of Doom Phono"
+    "unitId": 330,
+    "form": "Normal Form"
   },
   {
     "day": 236,
-    "unitId": 361,
-    "name": "Erphuan"
+    "unitId": 760,
+    "form": "Evolved Form"
   },
   {
     "day": 237,
-    "unitId": 268,
-    "name": "Red Riding Mina"
+    "unitId": 725,
+    "form": "Evolved Form"
   },
   {
     "day": 238,
-    "unitId": 667,
-    "name": "Brainwashed Bird Cat"
+    "unitId": 360,
+    "form": "Ultra Form"
   },
   {
     "day": 239,
-    "unitId": 38,
-    "name": "Wheel Cat"
+    "unitId": 334,
+    "form": "True Form"
   },
   {
     "day": 240,
-    "unitId": 763,
-    "name": "Dynasaurus Cat"
+    "unitId": 41,
+    "form": "Evolved Form"
   },
   {
     "day": 241,
-    "unitId": 646,
-    "name": "Firecracker Cat"
+    "unitId": 129,
+    "form": "Normal Form"
   },
   {
     "day": 242,
-    "unitId": 660,
-    "name": "God-Emperor Daliasan"
+    "unitId": 130,
+    "form": "True Form"
   },
   {
     "day": 243,
-    "unitId": 71,
-    "name": "Wargod Yukimura"
+    "unitId": 307,
+    "form": "Normal Form"
   },
   {
     "day": 244,
-    "unitId": 195,
-    "name": "Dr. Mekako"
+    "unitId": 83,
+    "form": "Normal Form"
   },
   {
     "day": 245,
-    "unitId": 496,
-    "name": "Narita Kaihime"
+    "unitId": 564,
+    "form": "Evolved Form"
   },
   {
     "day": 246,
-    "unitId": 623,
-    "name": "Brass Cat"
+    "unitId": 14,
+    "form": "Normal Form"
   },
   {
     "day": 247,
-    "unitId": 37,
-    "name": "Masai Cat"
+    "unitId": 462,
+    "form": "Evolved Form"
   },
   {
     "day": 248,
-    "unitId": 652,
-    "name": "Chalkboard Eraser Cat"
+    "unitId": 43,
+    "form": "Normal Form"
   },
   {
     "day": 249,
-    "unitId": 239,
-    "name": "Sniper the Deadeye"
+    "unitId": 31,
+    "form": "Evolved Form"
   },
   {
     "day": 250,
-    "unitId": 568,
-    "name": "Idi:N2"
+    "unitId": 75,
+    "form": "True Form"
   },
   {
     "day": 251,
-    "unitId": 128,
-    "name": "Kite Cat"
+    "unitId": 464,
+    "form": "True Form"
   },
   {
     "day": 252,
-    "unitId": 203,
-    "name": "Kachiyama Assault Brigade"
+    "unitId": 135,
+    "form": "Normal Form"
   },
   {
     "day": 253,
-    "unitId": 303,
-    "name": "Delivery Cat"
+    "unitId": 228,
+    "form": "Evolved Form"
   },
   {
     "day": 254,
-    "unitId": 643,
-    "name": "TrueSuperfeline"
+    "unitId": 99,
+    "form": "Normal Form"
   },
   {
     "day": 255,
-    "unitId": 642,
-    "name": "Lucifer the Fallen"
+    "unitId": 34,
+    "form": "Normal Form"
   },
   {
     "day": 256,
-    "unitId": 303,
-    "name": "Food Stall Cat"
+    "unitId": 584,
+    "form": "Evolved Form"
   },
   {
     "day": 257,
-    "unitId": 589,
-    "name": "True Love Neneko"
+    "unitId": 714,
+    "form": "Evolved Form"
   },
   {
     "day": 258,
-    "unitId": 47,
-    "name": "Thor Cat"
+    "unitId": 124,
+    "form": "Evolved Form"
   },
   {
     "day": 259,
-    "unitId": 302,
-    "name": "Queen Succubus Cat"
+    "unitId": 48,
+    "form": "True Form"
   },
   {
     "day": 260,
-    "unitId": 380,
-    "name": "Meow-sketeer"
+    "unitId": 771,
+    "form": "Normal Form"
   },
   {
     "day": 261,
-    "unitId": 757,
-    "name": "Bride Cat"
+    "unitId": 199,
+    "form": "Evolved Form"
   },
   {
     "day": 262,
-    "unitId": 154,
-    "name": "Hoopmaster Cat"
+    "unitId": 7,
+    "form": "Evolved Form"
   },
   {
     "day": 263,
-    "unitId": 445,
-    "name": "Neo Cutter Cat"
+    "unitId": 31,
+    "form": "Normal Form"
   },
   {
     "day": 264,
-    "unitId": 614,
-    "name": "Kaguya of the Coast"
+    "unitId": 622,
+    "form": "Normal Form"
   },
   {
     "day": 265,
-    "unitId": 304,
-    "name": "CAT-10 Gigapult"
+    "unitId": 324,
+    "form": "Evolved Form"
   },
   {
     "day": 266,
-    "unitId": 830,
-    "name": "Raclesa Σ"
+    "unitId": 527,
+    "form": "True Form"
   },
   {
     "day": 267,
-    "unitId": 127,
-    "name": "Flower Cat"
+    "unitId": 657,
+    "form": "Evolved Form"
   },
   {
     "day": 268,
-    "unitId": 766,
-    "name": "Sardine"
+    "unitId": 382,
+    "form": "True Form"
   },
   {
     "day": 269,
-    "unitId": 648,
-    "name": "Lovestruck Lesser Demon"
+    "unitId": 767,
+    "form": "Evolved Form"
   },
   {
     "day": 270,
-    "unitId": 18,
-    "name": "Ninja Cat"
+    "unitId": 98,
+    "form": "Normal Form"
   },
   {
     "day": 271,
-    "unitId": 30,
-    "name": "Avalokitesvara Cat"
+    "unitId": 648,
+    "form": "Evolved Form"
   },
   {
     "day": 272,
-    "unitId": 397,
-    "name": "Sacred Blade Sakura"
+    "unitId": 243,
+    "form": "Evolved Form"
   },
   {
     "day": 273,
-    "unitId": 448,
-    "name": "Immortal Miyamoto"
+    "unitId": 663,
+    "form": "True Form"
   },
   {
     "day": 274,
-    "unitId": 332,
-    "name": "Blossoming Neneko"
+    "unitId": 244,
+    "form": "Evolved Form"
   },
   {
     "day": 275,
-    "unitId": 382,
-    "name": "Macho Glass Cat"
+    "unitId": 15,
+    "form": "Evolved Form"
   },
   {
     "day": 276,
-    "unitId": 819,
-    "name": "Rapper Cat"
+    "unitId": 342,
+    "form": "Evolved Form"
   },
   {
     "day": 277,
-    "unitId": 689,
-    "name": "Meditation Cat"
+    "unitId": 484,
+    "form": "Normal Form"
   },
   {
     "day": 278,
-    "unitId": 760,
-    "name": "Ballistic Dragon Gunduros"
+    "unitId": 715,
+    "form": "Evolved Form"
   },
   {
     "day": 279,
-    "unitId": 245,
-    "name": "Li'l Macho Legs Cat"
+    "unitId": 654,
+    "form": "Evolved Form"
   },
   {
     "day": 280,
-    "unitId": 88,
-    "name": "Pair Rope Jump Cat"
+    "unitId": 304,
+    "form": "Ultra Form"
   },
   {
     "day": 281,
-    "unitId": 533,
-    "name": "Sharpshooter Saki"
+    "unitId": 307,
+    "form": "Evolved Form"
   },
   {
     "day": 282,
     "unitId": 95,
-    "name": "Crazed Giraffe Cat"
+    "form": "Normal Form"
   },
   {
     "day": 283,
-    "unitId": 534,
-    "name": "Hades the Punisher"
+    "unitId": 401,
+    "form": "True Form"
   },
   {
     "day": 284,
-    "unitId": 272,
-    "name": "Almighty Ganesha"
+    "unitId": 754,
+    "form": "Evolved Form"
   },
   {
     "day": 285,
-    "unitId": 199,
-    "name": "Castaway Cat"
+    "unitId": 543,
+    "form": "Evolved Form"
   },
   {
     "day": 286,
-    "unitId": 522,
-    "name": "Medalist Cat"
+    "unitId": 545,
+    "form": "Normal Form"
   },
   {
     "day": 287,
-    "unitId": 98,
-    "name": "Crazed Dragon Cat"
+    "unitId": 318,
+    "form": "Evolved Form"
   },
   {
     "day": 288,
-    "unitId": 698,
-    "name": "Bloody Jack"
+    "unitId": 620,
+    "form": "True Form"
   },
   {
     "day": 289,
-    "unitId": 86,
-    "name": "God-Emperor Kamukura"
+    "unitId": 543,
+    "form": "Normal Form"
   },
   {
     "day": 290,
-    "unitId": 397,
-    "name": "Afterschool Sakura"
+    "unitId": 60,
+    "form": "True Form"
   },
   {
     "day": 291,
-    "unitId": 129,
-    "name": "Gold Macho Cat"
+    "unitId": 271,
+    "form": "Evolved Form"
   },
   {
     "day": 292,
-    "unitId": 632,
-    "name": "Obliterator Diabolosa"
+    "unitId": 781,
+    "form": "Normal Form"
   },
   {
     "day": 293,
-    "unitId": 463,
-    "name": "Doom Engine Pandora"
+    "unitId": 122,
+    "form": "Evolved Form"
   },
   {
     "day": 294,
-    "unitId": 772,
-    "name": "Pumpkin Sodom"
+    "unitId": 463,
+    "form": "Evolved Form"
   },
   {
     "day": 295,
-    "unitId": 51,
-    "name": "Fisherman Cat"
+    "unitId": 48,
+    "form": "Evolved Form"
   },
   {
     "day": 296,
-    "unitId": 689,
-    "name": "Paragon Cat"
+    "unitId": 319,
+    "form": "True Form"
   },
   {
     "day": 297,
-    "unitId": 651,
-    "name": "Tomboy Lion Cat"
+    "unitId": 737,
+    "form": "Normal Form"
   },
   {
     "day": 298,
-    "unitId": 614,
-    "name": "The Southern Sun"
+    "unitId": 209,
+    "form": "Evolved Form"
   },
   {
     "day": 299,
-    "unitId": 20,
-    "name": "Samurai Cat"
+    "unitId": 311,
+    "form": "Normal Form"
   },
   {
     "day": 300,
-    "unitId": 15,
-    "name": "Leaf Cat"
+    "unitId": 5,
+    "form": "True Form"
   },
   {
     "day": 301,
-    "unitId": 781,
-    "name": "Mamolan Pasalan"
+    "unitId": 11,
+    "form": "Evolved Form"
   },
   {
     "day": 302,
-    "unitId": 152,
-    "name": "Drama Cats"
+    "unitId": 20,
+    "form": "Normal Form"
   },
   {
     "day": 303,
-    "unitId": 724,
-    "name": "Cat Egg Pod"
+    "unitId": 20,
+    "form": "True Form"
   },
   {
     "day": 304,
-    "unitId": 22,
-    "name": "Boogie Cat"
+    "unitId": 47,
+    "form": "Evolved Form"
   },
   {
     "day": 305,
-    "unitId": 740,
-    "name": "Mimic Cat"
+    "unitId": 213,
+    "form": "Evolved Form"
   },
   {
     "day": 306,
-    "unitId": 450,
-    "name": "Babel the Darkflame"
+    "unitId": 36,
+    "form": "Normal Form"
   },
   {
     "day": 307,
-    "unitId": 756,
-    "name": "Wedding Cake Machine"
+    "unitId": 91,
+    "form": "True Form"
   },
   {
     "day": 308,
-    "unitId": 594,
-    "name": "Ultra Atlantis Logistix"
+    "unitId": 525,
+    "form": "Normal Form"
   },
   {
     "day": 309,
-    "unitId": 774,
-    "name": "Steel Sergeant Axel"
+    "unitId": 563,
+    "form": "Evolved Form"
   },
   {
     "day": 310,
-    "unitId": 149,
-    "name": "Commando Cat"
+    "unitId": 329,
+    "form": "Normal Form"
   },
   {
     "day": 311,
-    "unitId": 435,
-    "name": "Wind Dancer Valkyrie"
+    "unitId": 197,
+    "form": "True Form"
   },
   {
     "day": 312,
-    "unitId": 154,
-    "name": "Showoff Cat"
+    "unitId": 4,
+    "form": "Evolved Form"
   },
   {
     "day": 313,
-    "unitId": 84,
-    "name": "Holy Dragon Megidora"
+    "unitId": 783,
+    "form": "Evolved Form"
   },
   {
     "day": 314,
-    "unitId": 40,
-    "name": "Luxury Bath Cat"
+    "unitId": 172,
+    "form": "True Form"
   },
   {
     "day": 315,
-    "unitId": 417,
-    "name": "Subterra Guardians"
+    "unitId": 30,
+    "form": "Normal Form"
   },
   {
     "day": 316,
-    "unitId": 332,
-    "name": "Easter Neneko"
+    "unitId": 757,
+    "form": "True Form"
   },
   {
     "day": 317,
-    "unitId": 338,
-    "name": "Wargod Yoshimoto"
+    "unitId": 330,
+    "form": "Evolved Form"
   },
   {
     "day": 318,
-    "unitId": 138,
-    "name": "The Chaos Moon"
+    "unitId": 323,
+    "form": "Evolved Form"
   },
   {
     "day": 319,
-    "unitId": 586,
-    "name": "Emperor Cat"
+    "unitId": 60,
+    "form": "Normal Form"
   },
   {
     "day": 320,
-    "unitId": 544,
-    "name": "True Kyosaka Nanaho"
+    "unitId": 708,
+    "form": "Normal Form"
   },
   {
     "day": 321,
-    "unitId": 662,
-    "name": "Brainwashed Cow Cat"
+    "unitId": 446,
+    "form": "Evolved Form"
   },
   {
     "day": 322,
-    "unitId": 78,
-    "name": "Space Marine Cat"
+    "unitId": 417,
+    "form": "True Form"
   },
   {
     "day": 323,
-    "unitId": 70,
-    "name": "Salaryman Cat"
+    "unitId": 589,
+    "form": "Evolved Form"
   },
   {
     "day": 324,
-    "unitId": 687,
-    "name": "Reindeer Terun"
+    "unitId": 531,
+    "form": "Evolved Form"
   },
   {
     "day": 325,
-    "unitId": 96,
-    "name": "Manic Flying Cat"
+    "unitId": 267,
+    "form": "True Form"
   },
   {
     "day": 326,
-    "unitId": 493,
-    "name": "Gaia the Supreme"
+    "unitId": 126,
+    "form": "Normal Form"
   },
   {
     "day": 327,
-    "unitId": 306,
-    "name": "NEK-02 Air Citadel"
+    "unitId": 616,
+    "form": "Normal Form"
   },
   {
     "day": 328,
-    "unitId": 274,
-    "name": "Tropical Kalisa"
+    "unitId": 22,
+    "form": "True Form"
   },
   {
     "day": 329,
-    "unitId": 312,
-    "name": "Li'l Dragon Cat"
+    "unitId": 439,
+    "form": "Evolved Form"
   },
   {
     "day": 330,
-    "unitId": 771,
-    "name": "Master of Life Dr. Nova"
+    "unitId": 313,
+    "form": "True Form"
   },
   {
     "day": 331,
-    "unitId": 773,
-    "name": "Mummy Sumo"
+    "unitId": 801,
+    "form": "Normal Form"
   },
   {
     "day": 332,
-    "unitId": 10,
-    "name": "Drunken Master Cat"
+    "unitId": 109,
+    "form": "True Form"
   },
   {
     "day": 333,
-    "unitId": 726,
-    "name": "Medal King"
+    "unitId": 694,
+    "form": "Normal Form"
   },
   {
     "day": 334,
-    "unitId": 130,
-    "name": "Ururun Cat"
+    "unitId": 533,
+    "form": "Normal Form"
   },
   {
     "day": 335,
-    "unitId": 619,
-    "name": "Lilin"
+    "unitId": 612,
+    "form": "Evolved Form"
   },
   {
     "day": 336,
-    "unitId": 629,
-    "name": "Brainwashed Cat"
+    "unitId": 81,
+    "form": "Evolved Form"
   },
   {
     "day": 337,
-    "unitId": 149,
-    "name": "Mer-Cat"
+    "unitId": 226,
+    "form": "Normal Form"
   },
   {
     "day": 338,
-    "unitId": 381,
-    "name": "Harvest Cat"
+    "unitId": 85,
+    "form": "True Form"
   },
   {
     "day": 339,
-    "unitId": 240,
-    "name": "Togelan Pasalan"
+    "unitId": 616,
+    "form": "Evolved Form"
   },
   {
     "day": 340,
-    "unitId": 534,
-    "name": "Almighty Hades"
+    "unitId": 783,
+    "form": "Normal Form"
   },
   {
     "day": 341,
-    "unitId": 675,
-    "name": "Racquet Cat"
+    "unitId": 198,
+    "form": "Evolved Form"
   },
   {
     "day": 342,
-    "unitId": 830,
-    "name": "Raclesa the Lioness"
+    "unitId": 227,
+    "form": "Normal Form"
   },
   {
     "day": 343,
-    "unitId": 783,
-    "name": "Koneko"
+    "unitId": 662,
+    "form": "Normal Form"
   },
   {
     "day": 344,
-    "unitId": 355,
-    "name": "Orbital Platform Armageddon"
+    "unitId": 37,
+    "form": "True Form"
   },
   {
     "day": 345,
-    "unitId": 769,
-    "name": "Hanasaka Cat"
+    "unitId": 325,
+    "form": "Evolved Form"
   },
   {
     "day": 346,
-    "unitId": 695,
-    "name": "True Killer Tank Cat"
+    "unitId": 16,
+    "form": "Normal Form"
   },
   {
     "day": 347,
-    "unitId": 84,
-    "name": "God-Emperor Megidora"
+    "unitId": 442,
+    "form": "Evolved Form"
   },
   {
     "day": 348,
-    "unitId": 617,
-    "name": "Summoner Satoru"
+    "unitId": 73,
+    "form": "True Form"
   },
   {
     "day": 349,
-    "unitId": 584,
-    "name": "Keiji Claus"
+    "unitId": 668,
+    "form": "Evolved Form"
   },
   {
     "day": 350,
-    "unitId": 23,
-    "name": "Skirt Cat"
+    "unitId": 383,
+    "form": "True Form"
   },
   {
     "day": 351,
-    "unitId": 652,
-    "name": "Chalkboard Punk Cat"
+    "unitId": 306,
+    "form": "Ultra Form"
   },
   {
     "day": 352,
-    "unitId": 443,
-    "name": "Power Driller Cat"
+    "unitId": 647,
+    "form": "True Form"
   },
   {
     "day": 353,
-    "unitId": 46,
-    "name": "Catasaurus"
+    "unitId": 452,
+    "form": "True Form"
   },
   {
     "day": 354,
-    "unitId": 312,
-    "name": "Li'l Lizard Cat"
+    "unitId": 48,
+    "form": "Normal Form"
   },
   {
     "day": 355,
-    "unitId": 318,
-    "name": "Mitama the Oracle"
+    "unitId": 351,
+    "form": "True Form"
   },
   {
     "day": 356,
-    "unitId": 563,
-    "name": "Aquablaster Saki"
+    "unitId": 662,
+    "form": "True Form"
   },
   {
     "day": 357,
-    "unitId": 588,
-    "name": "First-Love Myrcia"
+    "unitId": 495,
+    "form": "Normal Form"
   },
   {
     "day": 358,
-    "unitId": 97,
-    "name": "Crazed Fish Cat"
+    "unitId": 360,
+    "form": "Evolved Form"
   },
   {
     "day": 359,
-    "unitId": 46,
-    "name": "Jurassic Cat Sitter"
+    "unitId": 335,
+    "form": "Evolved Form"
   },
   {
     "day": 360,
-    "unitId": 730,
-    "name": "Lion Dancer Cat"
+    "unitId": 661,
+    "form": "Normal Form"
   },
   {
     "day": 361,
-    "unitId": 698,
-    "name": "Thunder Jack"
+    "unitId": 707,
+    "form": "True Form"
   },
   {
     "day": 362,
-    "unitId": 43,
-    "name": "Cat Machine Mk 3"
+    "unitId": 1,
+    "form": "Normal Form"
   },
   {
     "day": 363,
-    "unitId": 641,
-    "name": "Iz the Alluring Dancer"
+    "unitId": 125,
+    "form": "Evolved Form"
   },
   {
     "day": 364,
-    "unitId": 707,
-    "name": "Barrel Cat"
+    "unitId": 381,
+    "form": "Evolved Form"
   },
   {
     "day": 365,
-    "unitId": 42,
-    "name": "Ice Queen Cat"
+    "unitId": 396,
+    "form": "Evolved Form"
   },
   {
     "day": 366,
-    "unitId": 135,
-    "name": "Super Galaxy Cosmo"
+    "unitId": 819,
+    "form": "Normal Form"
   },
   {
     "day": 367,
-    "unitId": 194,
-    "name": "Akira"
+    "unitId": 740,
+    "form": "Normal Form"
   },
   {
     "day": 368,
-    "unitId": 708,
-    "name": "Kinjirou Cat"
+    "unitId": 451,
+    "form": "Normal Form"
   },
   {
     "day": 369,
-    "unitId": 654,
-    "name": "Brainwashed Macho Legs Cat"
+    "unitId": 631,
+    "form": "True Form"
   },
   {
     "day": 370,
-    "unitId": 79,
-    "name": "Sick Cat"
+    "unitId": 268,
+    "form": "Evolved Form"
   },
   {
     "day": 371,
-    "unitId": 665,
-    "name": "Exorcist Cat"
+    "unitId": 80,
+    "form": "Evolved Form"
   },
   {
     "day": 372,
-    "unitId": 621,
-    "name": "Evil Aku Researcher"
+    "unitId": 151,
+    "form": "True Form"
   },
   {
     "day": 373,
-    "unitId": 5,
-    "name": "Flying Cat"
+    "unitId": 587,
+    "form": "Evolved Form"
   },
   {
     "day": 374,
-    "unitId": 146,
-    "name": "Acrobat Cats"
+    "unitId": 147,
+    "form": "True Form"
   },
   {
     "day": 375,
-    "unitId": 733,
-    "name": "Pegasa"
+    "unitId": 695,
+    "form": "Normal Form"
   },
   {
     "day": 376,
-    "unitId": 643,
-    "name": "Superfeline"
+    "unitId": 72,
+    "form": "Normal Form"
   },
   {
     "day": 377,
-    "unitId": 172,
-    "name": "Schoolbus Nyandam"
+    "unitId": 194,
+    "form": "Evolved Form"
   },
   {
     "day": 378,
-    "unitId": 484,
-    "name": "Dark Rider Valkyrie"
+    "unitId": 76,
+    "form": "Ultra Form"
   },
   {
     "day": 379,
-    "unitId": 51,
-    "name": "Doctor Cat"
+    "unitId": 100,
+    "form": "Evolved Form"
   },
   {
     "day": 380,
-    "unitId": 25,
-    "name": "Crazed Bahamut Cat"
+    "unitId": 55,
+    "form": "Normal Form"
   },
   {
     "day": 381,
-    "unitId": 242,
-    "name": "Santa Kuu"
+    "unitId": 618,
+    "form": "Evolved Form"
   },
   {
     "day": 382,
-    "unitId": 331,
-    "name": "Malevolent Mad-Duck"
+    "unitId": 243,
+    "form": "Normal Form"
   },
   {
     "day": 383,
-    "unitId": 520,
-    "name": "Bad-Luck Ebisu"
+    "unitId": 645,
+    "form": "True Form"
   },
   {
     "day": 384,
-    "unitId": 213,
-    "name": "Value Meal Cat"
+    "unitId": 546,
+    "form": "Normal Form"
   },
   {
     "day": 385,
-    "unitId": 269,
-    "name": "Baby Gao"
+    "unitId": 610,
+    "form": "Evolved Form"
   },
   {
     "day": 386,
-    "unitId": 716,
-    "name": "Cop Cat"
+    "unitId": 318,
+    "form": "Normal Form"
   },
   {
     "day": 387,
-    "unitId": 228,
-    "name": "Gloomy Neneko"
+    "unitId": 126,
+    "form": "True Form"
   },
   {
     "day": 388,
-    "unitId": 311,
-    "name": "Li'l Fish Cat"
+    "unitId": 71,
+    "form": "Evolved Form"
   },
   {
     "day": 389,
-    "unitId": 644,
-    "name": "Bittersweet Mekako"
+    "unitId": 360,
+    "form": "Ultra Form"
   },
   {
     "day": 390,
-    "unitId": 629,
-    "name": "Brainwashed Macho Cat"
+    "unitId": 127,
+    "form": "True Form"
   },
   {
     "day": 391,
-    "unitId": 138,
-    "name": "Ultra Kaguya"
+    "unitId": 100,
+    "form": "True Form"
   },
   {
     "day": 392,
-    "unitId": 446,
-    "name": "Backhoe Cat"
+    "unitId": 698,
+    "form": "Evolved Form"
   },
   {
     "day": 393,
-    "unitId": 143,
-    "name": "Heartful Nurse Cat"
+    "unitId": 240,
+    "form": "Evolved Form"
   },
   {
     "day": 394,
-    "unitId": 635,
-    "name": "Million-Dollar Cat"
+    "unitId": 78,
+    "form": "Normal Form"
   },
   {
     "day": 395,
-    "unitId": 447,
-    "name": "Power Saw Cat"
+    "unitId": 455,
+    "form": "Evolved Form"
   },
   {
     "day": 396,
-    "unitId": 631,
-    "name": "Yamii"
+    "unitId": 689,
+    "form": "Evolved Form"
   },
   {
     "day": 397,
-    "unitId": 545,
-    "name": "Miasma Cat"
+    "unitId": 558,
+    "form": "Evolved Form"
   },
   {
     "day": 398,
-    "unitId": 715,
-    "name": "Mighty Sphinx Korps"
+    "unitId": 505,
+    "form": "Normal Form"
   },
   {
     "day": 399,
-    "unitId": 655,
-    "name": "Blizarena"
+    "unitId": 144,
+    "form": "True Form"
   },
   {
     "day": 400,
-    "unitId": 303,
-    "name": "Cafeteria Cat"
+    "unitId": 614,
+    "form": "Evolved Form"
   },
   {
     "day": 401,
-    "unitId": 564,
-    "name": "Summerluga"
+    "unitId": 696,
+    "form": "Normal Form"
   },
   {
     "day": 402,
-    "unitId": 58,
-    "name": "Sword Master Cat"
+    "unitId": 47,
+    "form": "True Form"
   },
   {
     "day": 403,
-    "unitId": 824,
-    "name": "Flame Mage Sidmi"
+    "unitId": 145,
+    "form": "Evolved Form"
   },
   {
     "day": 404,
-    "unitId": 523,
-    "name": "Wushu Cat"
+    "unitId": 72,
+    "form": "True Form"
   },
   {
     "day": 405,
-    "unitId": 283,
-    "name": "Pai-Pai Z"
+    "unitId": 71,
+    "form": "True Form"
   },
   {
     "day": 406,
-    "unitId": 444,
-    "name": "Power Piledriver Cat"
+    "unitId": 286,
+    "form": "Normal Form"
   },
   {
     "day": 407,
-    "unitId": 801,
-    "name": "Master of Logic Mewton"
+    "unitId": 700,
+    "form": "True Form"
   },
   {
     "day": 408,
-    "unitId": 396,
-    "name": "Ganglion"
+    "unitId": 237,
+    "form": "Normal Form"
   },
   {
     "day": 409,
-    "unitId": 275,
-    "name": "Midsummer Rabbit"
+    "unitId": 124,
+    "form": "True Form"
   },
   {
     "day": 410,
-    "unitId": 1,
-    "name": "Tank Cat"
+    "unitId": 534,
+    "form": "True Form"
   },
   {
     "day": 411,
-    "unitId": 431,
-    "name": "Detective Vigler"
+    "unitId": 837,
+    "form": "Normal Form"
   },
   {
     "day": 412,
-    "unitId": 247,
-    "name": "Li'l UFO Cat"
+    "unitId": 545,
+    "form": "Evolved Form"
   },
   {
     "day": 413,
-    "unitId": 33,
-    "name": "Sadako Cat"
+    "unitId": 311,
+    "form": "True Form"
   },
   {
     "day": 414,
-    "unitId": 786,
-    "name": "The Amazing Catman"
+    "unitId": 653,
+    "form": "True Form"
   },
   {
     "day": 415,
-    "unitId": 168,
-    "name": "Asiluga"
+    "unitId": 622,
+    "form": "Evolved Form"
   },
   {
     "day": 416,
-    "unitId": 176,
-    "name": "Creepmallow"
+    "unitId": 159,
+    "form": "Evolved Form"
   },
   {
     "day": 417,
-    "unitId": 159,
-    "name": "Kalisa, type χ"
+    "unitId": 316,
+    "form": "Normal Form"
   },
   {
     "day": 418,
-    "unitId": 21,
-    "name": "Riceball Cat"
+    "unitId": 682,
+    "form": "Normal Form"
   },
   {
     "day": 419,
-    "unitId": 377,
-    "name": "The Kitty of Liberty"
+    "unitId": 332,
+    "form": "True Form"
   },
   {
     "day": 420,
-    "unitId": 780,
-    "name": "Bowler Cat"
+    "unitId": 619,
+    "form": "True Form"
   },
   {
     "day": 421,
-    "unitId": 334,
-    "name": "Trickster Himeyuri"
+    "unitId": 505,
+    "form": "Evolved Form"
   },
   {
     "day": 422,
-    "unitId": 260,
-    "name": "Catway"
+    "unitId": 441,
+    "form": "Normal Form"
   },
   {
     "day": 423,
-    "unitId": 272,
-    "name": "Splendid Ganesha"
+    "unitId": 76,
+    "form": "Normal Form"
   },
   {
     "day": 424,
-    "unitId": 570,
-    "name": "Halloween Knight Vars"
+    "unitId": 241,
+    "form": "Evolved Form"
   },
   {
     "day": 425,
-    "unitId": 324,
-    "name": "Green Shell Cat"
+    "unitId": 378,
+    "form": "Normal Form"
   },
   {
     "day": 426,
-    "unitId": 17,
-    "name": "Tricycle Cat"
+    "unitId": 667,
+    "form": "Normal Form"
   },
   {
     "day": 427,
-    "unitId": 495,
-    "name": "Matador Cat"
+    "unitId": 725,
+    "form": "Normal Form"
   },
   {
     "day": 428,
-    "unitId": 60,
-    "name": "Quizmaster Cat"
+    "unitId": 523,
+    "form": "Evolved Form"
   },
   {
     "day": 429,
-    "unitId": 636,
-    "name": "Brainwashed Eraser Cat"
+    "unitId": 88,
+    "form": "Normal Form"
   },
   {
     "day": 430,
-    "unitId": 129,
-    "name": "Glittering Macho Cat"
+    "unitId": 124,
+    "form": "Normal Form"
   },
   {
     "day": 431,
-    "unitId": 713,
-    "name": "Clown Cat"
+    "unitId": 275,
+    "form": "Evolved Form"
   },
   {
     "day": 432,
-    "unitId": 1,
-    "name": "Wall Cat"
+    "unitId": 525,
+    "form": "True Form"
   },
   {
     "day": 433,
-    "unitId": 134,
-    "name": "Urashima Taro"
+    "unitId": 153,
+    "form": "Normal Form"
   },
   {
     "day": 434,
-    "unitId": 35,
-    "name": "Cyberpunk Cat"
+    "unitId": 19,
+    "form": "True Form"
   },
   {
     "day": 435,
-    "unitId": 209,
-    "name": "Li'l Cat"
+    "unitId": 39,
+    "form": "Normal Form"
   },
   {
     "day": 436,
-    "unitId": 738,
-    "name": "Izanami of Dusk"
+    "unitId": 210,
+    "form": "Normal Form"
   },
   {
     "day": 437,
-    "unitId": 654,
-    "name": "Brainwashed Sexy Legs Cat"
+    "unitId": 661,
+    "form": "Evolved Form"
   },
   {
     "day": 438,
-    "unitId": 286,
-    "name": "Flight Unit R.E.I."
+    "unitId": 674,
+    "form": "Normal Form"
   },
   {
     "day": 439,
-    "unitId": 212,
-    "name": "The Grey Fox"
+    "unitId": 145,
+    "form": "True Form"
   },
   {
     "day": 440,
-    "unitId": 244,
-    "name": "A Gift of Cats"
+    "unitId": 170,
+    "form": "Normal Form"
   },
   {
     "day": 441,
-    "unitId": 37,
-    "name": "Pogo Cat"
+    "unitId": 690,
+    "form": "Normal Form"
   },
   {
     "day": 442,
-    "unitId": 642,
-    "name": "Grand Lucifer"
+    "unitId": 683,
+    "form": "Normal Form"
   },
   {
     "day": 443,
-    "unitId": 566,
-    "name": "Gelato Bro Cats"
+    "unitId": 502,
+    "form": "True Form"
   },
   {
     "day": 444,
-    "unitId": 241,
-    "name": "Frosty Kai, type μ"
+    "unitId": 70,
+    "form": "Evolved Form"
   },
   {
     "day": 445,
-    "unitId": 527,
-    "name": "Jellycat"
+    "unitId": 138,
+    "form": "True Form"
   },
   {
     "day": 446,
-    "unitId": 631,
-    "name": "Yaminora"
+    "unitId": 633,
+    "form": "Evolved Form"
   },
   {
     "day": 447,
-    "unitId": 197,
-    "name": "Corrupted Psychocat"
+    "unitId": 397,
+    "form": "True Form"
   },
   {
     "day": 448,
-    "unitId": 239,
-    "name": "Sniper the Heavy"
+    "unitId": 618,
+    "form": "Normal Form"
   },
   {
     "day": 449,
-    "unitId": 324,
-    "name": "Zamboney Cat"
+    "unitId": 559,
+    "form": "Normal Form"
   },
   {
     "day": 450,
-    "unitId": 478,
-    "name": "Luminalia"
+    "unitId": 418,
+    "form": "Normal Form"
   },
   {
     "day": 451,
-    "unitId": 531,
-    "name": "Teacher BearCat"
+    "unitId": 261,
+    "form": "Normal Form"
   },
   {
     "day": 452,
-    "unitId": 666,
-    "name": "Night Beach Lilinπ"
+    "unitId": 570,
+    "form": "True Form"
   },
   {
     "day": 453,
-    "unitId": 170,
-    "name": "Tesalan Pasalan"
+    "unitId": 308,
+    "form": "Normal Form"
   },
   {
     "day": 454,
-    "unitId": 33,
-    "name": "Octopus Cat"
+    "unitId": 171,
+    "form": "True Form"
   },
   {
     "day": 455,
-    "unitId": 198,
-    "name": "Onmyoji Cat"
+    "unitId": 532,
+    "form": "Evolved Form"
   },
   {
     "day": 456,
-    "unitId": 692,
-    "name": "Oni Landshaker Kozuchimaru"
+    "unitId": 17,
+    "form": "Evolved Form"
   },
   {
     "day": 457,
-    "unitId": 545,
-    "name": "Phantom Cat"
+    "unitId": 380,
+    "form": "Evolved Form"
   },
   {
     "day": 458,
-    "unitId": 49,
-    "name": "Phantom Thief Cat"
+    "unitId": 286,
+    "form": "True Form"
   },
   {
     "day": 459,
-    "unitId": 273,
-    "name": "Waitress Cat"
+    "unitId": 450,
+    "form": "Evolved Form"
   },
   {
     "day": 460,
-    "unitId": 539,
-    "name": "Quarterback Cat"
+    "unitId": 287,
+    "form": "True Form"
   },
   {
     "day": 461,
-    "unitId": 96,
-    "name": "Crazed Bird Cat"
+    "unitId": 545,
+    "form": "True Form"
   },
   {
     "day": 462,
-    "unitId": 239,
-    "name": "Sniper the Recruit"
+    "unitId": 97,
+    "form": "Evolved Form"
   },
   {
     "day": 463,
-    "unitId": 81,
-    "name": "Nyalladin"
+    "unitId": 338,
+    "form": "True Form"
   },
   {
     "day": 464,
-    "unitId": 85,
-    "name": "Vars"
+    "unitId": 609,
+    "form": "Evolved Form"
   },
   {
     "day": 465,
-    "unitId": 822,
-    "name": "Consultant Cat"
+    "unitId": 539,
+    "form": "True Form"
   },
   {
     "day": 466,
-    "unitId": 449,
-    "name": "Headmistress Jeanne"
+    "unitId": 642,
+    "form": "True Form"
   },
   {
     "day": 467,
-    "unitId": 137,
-    "name": "Jizo's Moving Castle"
+    "unitId": 238,
+    "form": "True Form"
   },
   {
     "day": 468,
-    "unitId": 360,
-    "name": "Mizunade"
+    "unitId": 355,
+    "form": "Evolved Form"
   },
   {
     "day": 469,
-    "unitId": 544,
-    "name": "Kyosaka Nanaho"
+    "unitId": 138,
+    "form": "Evolved Form"
   },
   {
     "day": 470,
-    "unitId": 333,
-    "name": "Shadow Gao"
+    "unitId": 274,
+    "form": "Normal Form"
   },
   {
     "day": 471,
-    "unitId": 759,
-    "name": "Music Fest Thundia"
+    "unitId": 40,
+    "form": "True Form"
   },
   {
     "day": 472,
-    "unitId": 644,
-    "name": "Sweet Love Mekako"
+    "unitId": 32,
+    "form": "True Form"
   },
   {
     "day": 473,
-    "unitId": 554,
-    "name": "Mystic Uril"
+    "unitId": 35,
+    "form": "Normal Form"
   },
   {
     "day": 474,
-    "unitId": 63,
-    "name": "Kidnapper Cats"
+    "unitId": 209,
+    "form": "True Form"
   },
   {
     "day": 475,
-    "unitId": 287,
-    "name": "Golfer Cat"
+    "unitId": 719,
+    "form": "Evolved Form"
   },
   {
     "day": 476,
-    "unitId": 238,
-    "name": "Rich Cat III"
+    "unitId": 570,
+    "form": "Normal Form"
   },
   {
     "day": 477,
-    "unitId": 176,
-    "name": "Marshmallow Cat"
+    "unitId": 98,
+    "form": "Evolved Form"
   },
   {
     "day": 478,
-    "unitId": 427,
-    "name": "Cat Quest Heroes"
+    "unitId": 595,
+    "form": "Normal Form"
   },
   {
     "day": 479,
-    "unitId": 383,
-    "name": "Spiritual Yulala"
+    "unitId": 617,
+    "form": "Normal Form"
   },
   {
     "day": 480,
-    "unitId": 105,
-    "name": "Divine Kuu"
+    "unitId": 259,
+    "form": "True Form"
   },
   {
     "day": 481,
-    "unitId": 463,
-    "name": "Mighty Kristul Muu"
+    "unitId": 682,
+    "form": "True Form"
   },
   {
     "day": 482,
-    "unitId": 719,
-    "name": "Tetsukachi"
+    "unitId": 199,
+    "form": "True Form"
   },
   {
     "day": 483,
-    "unitId": 380,
-    "name": "D'artanyan"
+    "unitId": 38,
+    "form": "Evolved Form"
   },
   {
     "day": 484,
-    "unitId": 325,
-    "name": "Ectoweight Cat"
+    "unitId": 15,
+    "form": "True Form"
   },
   {
     "day": 485,
-    "unitId": 211,
-    "name": "Li'l Axe Cat"
+    "unitId": 376,
+    "form": "True Form"
   },
   {
     "day": 486,
-    "unitId": 565,
-    "name": "Permed Suntan Cat"
+    "unitId": 336,
+    "form": "Evolved Form"
   },
   {
     "day": 487,
-    "unitId": 785,
-    "name": "Killer Gross Cat"
+    "unitId": 820,
+    "form": "Evolved Form"
   },
   {
     "day": 488,
-    "unitId": 305,
-    "name": "B.C.S. Tigerclaw"
+    "unitId": 32,
+    "form": "Normal Form"
   },
   {
     "day": 489,
-    "unitId": 226,
-    "name": "Mad Doctor Klay"
+    "unitId": 76,
+    "form": "Evolved Form"
   },
   {
     "day": 490,
-    "unitId": 717,
-    "name": "Farmboy Cat"
+    "unitId": 261,
+    "form": "True Form"
   },
   {
     "day": 491,
-    "unitId": 694,
-    "name": "Brainwashed Jamiera Cat"
+    "unitId": 659,
+    "form": "True Form"
   },
   {
     "day": 492,
-    "unitId": 196,
-    "name": "Ultimate Catman"
+    "unitId": 86,
+    "form": "True Form"
   },
   {
     "day": 493,
-    "unitId": 31,
-    "name": "Angry Delinquent Cat"
+    "unitId": 12,
+    "form": "True Form"
   },
   {
     "day": 494,
-    "unitId": 641,
-    "name": "Iz the Dancer"
+    "unitId": 239,
+    "form": "Evolved Form"
   },
   {
     "day": 495,
-    "unitId": 695,
-    "name": "Killer Tank Cat"
+    "unitId": 14,
+    "form": "Evolved Form"
   },
   {
     "day": 496,
-    "unitId": 152,
-    "name": "Figure Skating Cats"
+    "unitId": 445,
+    "form": "Normal Form"
   },
   {
     "day": 497,
-    "unitId": 72,
-    "name": "Immortal Keiji"
+    "unitId": 306,
+    "form": "Normal Form"
   },
   {
     "day": 498,
-    "unitId": 12,
-    "name": "Ultimate Bondage Cat"
+    "unitId": 1,
+    "form": "True Form"
   },
   {
     "day": 499,
-    "unitId": 711,
-    "name": "Betrothed Balaluga"
+    "unitId": 42,
+    "form": "Evolved Form"
   },
   {
     "day": 500,
-    "unitId": 106,
-    "name": "Kai"
+    "unitId": 58,
+    "form": "True Form"
   },
   {
     "day": 501,
-    "unitId": 417,
-    "name": "Mighty Thermae D-Lux"
+    "unitId": 84,
+    "form": "Evolved Form"
   },
   {
     "day": 502,
-    "unitId": 88,
-    "name": "Rope Jump Cat"
+    "unitId": 302,
+    "form": "Normal Form"
   },
   {
     "day": 503,
-    "unitId": 539,
-    "name": "Gridiron Cat"
+    "unitId": 276,
+    "form": "Evolved Form"
   },
   {
     "day": 504,
-    "unitId": 319,
-    "name": "Radical Cat"
+    "unitId": 523,
+    "form": "Normal Form"
   },
   {
     "day": 505,
-    "unitId": 83,
-    "name": "God-Emperor Sodom"
+    "unitId": 282,
+    "form": "True Form"
   },
   {
     "day": 506,
-    "unitId": 658,
-    "name": "Courier Cat"
+    "unitId": 237,
+    "form": "Evolved Form"
   },
   {
     "day": 507,
-    "unitId": 670,
-    "name": "Armored Firefly Cat"
+    "unitId": 675,
+    "form": "True Form"
   },
   {
     "day": 508,
-    "unitId": 92,
-    "name": "Crazed Wall Cat"
+    "unitId": 10,
+    "form": "Evolved Form"
   },
   {
     "day": 509,
-    "unitId": 13,
-    "name": "Dom Cat"
+    "unitId": 452,
+    "form": "Normal Form"
   },
   {
     "day": 510,
-    "unitId": 462,
-    "name": "Filibuster Cat X"
+    "unitId": 59,
+    "form": "Normal Form"
   },
   {
     "day": 511,
-    "unitId": 7,
-    "name": "Lizard Cat"
+    "unitId": 259,
+    "form": "Evolved Form"
   },
   {
     "day": 512,
-    "unitId": 737,
-    "name": "Floral Kalisa"
+    "unitId": 8,
+    "form": "Normal Form"
   },
   {
     "day": 513,
-    "unitId": 723,
-    "name": "Nefer Aset"
+    "unitId": 502,
+    "form": "Normal Form"
   },
   {
     "day": 514,
-    "unitId": 11,
-    "name": "Hyper Mr."
+    "unitId": 338,
+    "form": "Evolved Form"
   },
   {
     "day": 515,
-    "unitId": 158,
-    "name": "Hellrider Kenshin"
+    "unitId": 634,
+    "form": "Normal Form"
   },
   {
     "day": 516,
-    "unitId": 129,
-    "name": "Gold Cat"
+    "unitId": 310,
+    "form": "Normal Form"
   },
   {
     "day": 517,
-    "unitId": 55,
-    "name": "Enchantress Cat"
+    "unitId": 431,
+    "form": "Ultra Form"
   },
   {
     "day": 518,
-    "unitId": 543,
-    "name": "Kasli, Daughter of Chaos"
+    "unitId": 635,
+    "form": "Evolved Form"
   },
   {
     "day": 519,
-    "unitId": 100,
-    "name": "Maiden Cat"
+    "unitId": 17,
+    "form": "Normal Form"
   },
   {
     "day": 520,
-    "unitId": 780,
-    "name": "Dodgeballer Cat"
+    "unitId": 777,
+    "form": "Evolved Form"
   },
   {
     "day": 521,
-    "unitId": 212,
-    "name": "The Black Cat"
+    "unitId": 2,
+    "form": "Normal Form"
   },
   {
     "day": 522,
-    "unitId": 276,
-    "name": "Sunny Neneko"
+    "unitId": 351,
+    "form": "Normal Form"
   },
   {
     "day": 523,
-    "unitId": 19,
-    "name": "Devil Cat"
+    "unitId": 565,
+    "form": "Evolved Form"
   },
   {
     "day": 524,
-    "unitId": 30,
-    "name": "Bodhisattva Cat"
+    "unitId": 312,
+    "form": "Evolved Form"
   },
   {
     "day": 525,
-    "unitId": 20,
-    "name": "Knight Cat"
+    "unitId": 711,
+    "form": "Normal Form"
   },
   {
     "day": 526,
-    "unitId": 519,
-    "name": "Ultimate Lasvoss"
+    "unitId": 267,
+    "form": "Normal Form"
   },
   {
     "day": 527,
-    "unitId": 527,
-    "name": "Jelly Dumpling Cat"
+    "unitId": 617,
+    "form": "True Form"
   },
   {
     "day": 528,
-    "unitId": 352,
-    "name": "Hermit Cat"
+    "unitId": 522,
+    "form": "True Form"
   },
   {
     "day": 529,
-    "unitId": 228,
-    "name": "Costumed Witchy Neneko"
+    "unitId": 654,
+    "form": "True Form"
   },
   {
     "day": 530,
-    "unitId": 2,
-    "name": "Brave Cat"
+    "unitId": 776,
+    "form": "Evolved Form"
   },
   {
     "day": 531,
-    "unitId": 240,
-    "name": "Shishilan Pasalan"
+    "unitId": 758,
+    "form": "Normal Form"
   },
   {
     "day": 532,
-    "unitId": 63,
-    "name": "Rampage Cats"
+    "unitId": 46,
+    "form": "Normal Form"
   },
   {
     "day": 533,
-    "unitId": 257,
-    "name": "Thunder God Zeus"
+    "unitId": 283,
+    "form": "Evolved Form"
   },
   {
     "day": 534,
-    "unitId": 81,
-    "name": "Doll Cats"
+    "unitId": 93,
+    "form": "Normal Form"
   },
   {
     "day": 535,
-    "unitId": 787,
-    "name": "Death's Daughter Lunacia"
+    "unitId": 100,
+    "form": "Normal Form"
   },
   {
     "day": 536,
-    "unitId": 566,
-    "name": "Lifeguard Cats"
+    "unitId": 105,
+    "form": "True Form"
   },
   {
     "day": 537,
-    "unitId": 150,
-    "name": "Juliet the Maiko"
+    "unitId": 276,
+    "form": "True Form"
   },
   {
     "day": 538,
-    "unitId": 357,
-    "name": "Wolf Princess Deale"
+    "unitId": 529,
+    "form": "Normal Form"
   },
   {
     "day": 539,
-    "unitId": 636,
-    "name": "Brainwashed Wall Cat"
+    "unitId": 754,
+    "form": "Normal Form"
   },
   {
     "day": 540,
-    "unitId": 754,
-    "name": "Wargod Mitsuhide"
+    "unitId": 136,
+    "form": "True Form"
   },
   {
     "day": 541,
-    "unitId": 123,
-    "name": "Val Val Cat"
+    "unitId": 631,
+    "form": "Normal Form"
   },
   {
     "day": 542,
-    "unitId": 36,
-    "name": "Swimmer Cat"
+    "unitId": 595,
+    "form": "Evolved Form"
   },
   {
     "day": 543,
-    "unitId": 462,
-    "name": "Filibuster Cat Y"
+    "unitId": 135,
+    "form": "True Form"
   },
   {
     "day": 544,
-    "unitId": 107,
-    "name": "Coppermine"
+    "unitId": 720,
+    "form": "True Form"
   },
   {
     "day": 545,
-    "unitId": 595,
-    "name": "Blooming Kamukura"
+    "unitId": 692,
+    "form": "Normal Form"
   },
   {
     "day": 546,
-    "unitId": 630,
-    "name": "Calligraphy Cat"
+    "unitId": 625,
+    "form": "Evolved Form"
   },
   {
     "day": 547,
-    "unitId": 382,
-    "name": "Glass Cat"
+    "unitId": 521,
+    "form": "Normal Form"
   },
   {
     "day": 548,
-    "unitId": 168,
-    "name": "Assassinlan Pasalan"
+    "unitId": 723,
+    "form": "Evolved Form"
   },
   {
     "day": 549,
-    "unitId": 23,
-    "name": "Tights Cat"
+    "unitId": 377,
+    "form": "Evolved Form"
   },
   {
     "day": 550,
-    "unitId": 57,
-    "name": "Berserker Cat"
+    "unitId": 378,
+    "form": "Evolved Form"
   },
   {
     "day": 551,
-    "unitId": 359,
-    "name": "Bazibastra"
+    "unitId": 9,
+    "form": "Normal Form"
   },
   {
     "day": 552,
-    "unitId": 148,
-    "name": "Artist Cat"
+    "unitId": 304,
+    "form": "True Form"
   },
   {
     "day": 553,
-    "unitId": 302,
-    "name": "Lilith Cat"
+    "unitId": 229,
+    "form": "Evolved Form"
   },
   {
     "day": 554,
-    "unitId": 329,
-    "name": "Eggy Cat"
+    "unitId": 239,
+    "form": "True Form"
   },
   {
     "day": 555,
-    "unitId": 211,
-    "name": "Li'l Brave Cat"
+    "unitId": 773,
+    "form": "Normal Form"
   },
   {
     "day": 556,
-    "unitId": 332,
-    "name": "Hoppity Neneko"
+    "unitId": 245,
+    "form": "True Form"
   },
   {
     "day": 557,
-    "unitId": 735,
-    "name": "Principal Cat"
+    "unitId": 247,
+    "form": "Evolved Form"
   },
   {
     "day": 558,
-    "unitId": 614,
-    "name": "The Southern Sunflare"
+    "unitId": 355,
+    "form": "True Form"
   },
   {
     "day": 559,
-    "unitId": 781,
-    "name": "Mamoluga"
+    "unitId": 12,
+    "form": "Normal Form"
   },
   {
     "day": 560,
-    "unitId": 240,
-    "name": "Togeluga"
+    "unitId": 759,
+    "form": "Normal Form"
   },
   {
     "day": 561,
-    "unitId": 700,
-    "name": "Hitman Cat"
+    "unitId": 646,
+    "form": "Normal Form"
   },
   {
     "day": 562,
-    "unitId": 104,
-    "name": "Gross Koi Cat"
+    "unitId": 152,
+    "form": "Evolved Form"
   },
   {
     "day": 563,
-    "unitId": 210,
-    "name": "Li'l Wall Cat"
+    "unitId": 104,
+    "form": "Evolved Form"
   },
   {
     "day": 564,
-    "unitId": 144,
-    "name": "Cat Base Mini"
+    "unitId": 136,
+    "form": "Normal Form"
   },
   {
     "day": 565,
-    "unitId": 107,
-    "name": "Divine Coppermine"
+    "unitId": 200,
+    "form": "Evolved Form"
   },
   {
     "day": 566,
-    "unitId": 587,
-    "name": "Sweet Aphrodite"
+    "unitId": 613,
+    "form": "Evolved Form"
   },
   {
     "day": 567,
-    "unitId": 754,
-    "name": "Akechi Mitsuhide"
+    "unitId": 645,
+    "form": "Evolved Form"
   },
   {
     "day": 568,
-    "unitId": 55,
-    "name": "Sorceress Cat"
+    "unitId": 177,
+    "form": "True Form"
   },
   {
     "day": 569,
-    "unitId": 589,
-    "name": "Valentine's Neneko"
+    "unitId": 56,
+    "form": "Evolved Form"
   },
   {
     "day": 570,
-    "unitId": 42,
-    "name": "Ice Crystal Cat"
+    "unitId": 359,
+    "form": "True Form"
   },
   {
     "day": 571,
-    "unitId": 333,
-    "name": "Diabolic Gao"
+    "unitId": 24,
+    "form": "Evolved Form"
   },
   {
     "day": 572,
-    "unitId": 654,
-    "name": "Brainwashed Gross Cat"
+    "unitId": 427,
+    "form": "Evolved Form"
   },
   {
     "day": 573,
-    "unitId": 304,
-    "name": "CAT-6 Siege Engine"
+    "unitId": 94,
+    "form": "True Form"
   },
   {
     "day": 574,
-    "unitId": 227,
-    "name": "Pumpcat"
+    "unitId": 643,
+    "form": "True Form"
   },
   {
     "day": 575,
-    "unitId": 76,
-    "name": "Thundia"
+    "unitId": 244,
+    "form": "Normal Form"
   },
   {
     "day": 576,
-    "unitId": 563,
-    "name": "Aquabuster Saki"
+    "unitId": 197,
+    "form": "Normal Form"
   },
   {
     "day": 577,
-    "unitId": 147,
-    "name": "Tin Cat"
+    "unitId": 314,
+    "form": "True Form"
   },
   {
     "day": 578,
-    "unitId": 87,
-    "name": "Dragonslayer Raiden"
+    "unitId": 565,
+    "form": "Normal Form"
   },
   {
     "day": 579,
-    "unitId": 765,
-    "name": "Clam Cat"
+    "unitId": 122,
+    "form": "Normal Form"
   },
   {
     "day": 580,
-    "unitId": 210,
-    "name": "Li'l Tank Cat"
+    "unitId": 336,
+    "form": "Normal Form"
   },
   {
     "day": 581,
-    "unitId": 88,
-    "name": "Noodle Cats"
+    "unitId": 696,
+    "form": "Evolved Form"
   },
   {
     "day": 582,
-    "unitId": 417,
-    "name": "Subterra Sentinels"
+    "unitId": 154,
+    "form": "Normal Form"
   },
   {
     "day": 583,
-    "unitId": 431,
-    "name": "Inspector Gabriel"
+    "unitId": 636,
+    "form": "Normal Form"
   },
   {
     "day": 584,
-    "unitId": 138,
-    "name": "The Death Moon"
+    "unitId": 78,
+    "form": "Evolved Form"
   },
   {
     "day": 585,
-    "unitId": 17,
-    "name": "Biker Cat"
+    "unitId": 9,
+    "form": "True Form"
   },
   {
     "day": 586,
-    "unitId": 151,
-    "name": "Pizza Cat"
+    "unitId": 688,
+    "form": "Normal Form"
   },
   {
     "day": 587,
-    "unitId": 13,
-    "name": "Dark Lazer"
+    "unitId": 152,
+    "form": "True Form"
   },
   {
     "day": 588,
-    "unitId": 271,
-    "name": "Almighty Amaterasu"
+    "unitId": 810,
+    "form": "Normal Form"
   },
   {
     "day": 589,
-    "unitId": 668,
-    "name": "Grand Yokai Tengu"
+    "unitId": 684,
+    "form": "Evolved Form"
   },
   {
     "day": 590,
-    "unitId": 57,
-    "name": "Marauder Cat"
+    "unitId": 694,
+    "form": "True Form"
   },
   {
     "day": 591,
-    "unitId": 284,
-    "name": "Maglev Cat"
+    "unitId": 553,
+    "form": "Normal Form"
   },
   {
     "day": 592,
-    "unitId": 691,
-    "name": "Ape Lord Luza"
+    "unitId": 417,
+    "form": "Normal Form"
   },
   {
     "day": 593,
-    "unitId": 437,
-    "name": "Cat God The Great"
+    "unitId": 692,
+    "form": "Evolved Form"
   },
   {
     "day": 594,
-    "unitId": 330,
-    "name": "Springtime Kenshin"
+    "unitId": 39,
+    "form": "True Form"
   },
   {
     "day": 595,
-    "unitId": 201,
-    "name": "Mochi Cat"
+    "unitId": 211,
+    "form": "True Form"
   },
   {
     "day": 596,
-    "unitId": 322,
-    "name": "Rock Revengers"
+    "unitId": 565,
+    "form": "True Form"
   },
   {
     "day": 597,
-    "unitId": 126,
-    "name": "Puppetmaster & Charley"
+    "unitId": 352,
+    "form": "Normal Form"
   },
   {
     "day": 598,
-    "unitId": 8,
-    "name": "Jamiera Cat"
+    "unitId": 625,
+    "form": "Normal Form"
   },
   {
     "day": 599,
-    "unitId": 361,
-    "name": "Aervanta"
+    "unitId": 772,
+    "form": "Evolved Form"
   },
   {
     "day": 600,
-    "unitId": 361,
-    "name": "Aer"
+    "unitId": 144,
+    "form": "Normal Form"
   },
   {
     "day": 601,
-    "unitId": 84,
-    "name": "Megidora"
+    "unitId": 6,
+    "form": "Normal Form"
   },
   {
     "day": 602,
-    "unitId": 426,
-    "name": "Ultimate Mecha-Bun"
+    "unitId": 520,
+    "form": "Evolved Form"
   },
   {
     "day": 603,
-    "unitId": 125,
-    "name": "Wargod Shingen"
+    "unitId": 568,
+    "form": "True Form"
   },
   {
     "day": 604,
-    "unitId": 553,
-    "name": "Boomerang Cat"
+    "unitId": 769,
+    "form": "Normal Form"
   },
   {
     "day": 605,
-    "unitId": 615,
-    "name": "Golden Kabuto Cat"
+    "unitId": 311,
+    "form": "Evolved Form"
   },
   {
     "day": 606,
-    "unitId": 194,
-    "name": "Inferno Akira"
+    "unitId": 670,
+    "form": "True Form"
   },
   {
     "day": 607,
-    "unitId": 690,
-    "name": "Child of Destiny Phono"
+    "unitId": 786,
+    "form": "Normal Form"
   },
   {
     "day": 608,
-    "unitId": 609,
-    "name": "Dark Beastlord Garu"
+    "unitId": 531,
+    "form": "True Form"
   },
   {
     "day": 609,
-    "unitId": 758,
-    "name": "Trixi the Revenant"
+    "unitId": 131,
+    "form": "Normal Form"
   },
   {
     "day": 610,
-    "unitId": 213,
-    "name": "Cat Royale"
+    "unitId": 787,
+    "form": "Evolved Form"
   },
   {
     "day": 611,
-    "unitId": 737,
-    "name": "Floral Kalisa, type X"
+    "unitId": 610,
+    "form": "True Form"
   },
   {
     "day": 612,
-    "unitId": 127,
-    "name": "Cooldown Cat"
+    "unitId": 375,
+    "form": "Normal Form"
   },
   {
     "day": 613,
-    "unitId": 505,
-    "name": "God-Emperor Gladios"
+    "unitId": 657,
+    "form": "Normal Form"
   },
   {
     "day": 614,
-    "unitId": 329,
-    "name": "Easter Cat"
+    "unitId": 652,
+    "form": "Normal Form"
   },
   {
     "day": 615,
-    "unitId": 633,
-    "name": "Grand Chunchun Haunters"
+    "unitId": 687,
+    "form": "Evolved Form"
   },
   {
     "day": 616,
-    "unitId": 684,
-    "name": "Brainwashed Fish Cat"
+    "unitId": 534,
+    "form": "Evolved Form"
   },
   {
     "day": 617,
-    "unitId": 705,
-    "name": "King of Extinction Phono"
+    "unitId": 448,
+    "form": "Evolved Form"
   },
   {
     "day": 618,
-    "unitId": 331,
-    "name": "Disciple Psychoduck"
+    "unitId": 44,
+    "form": "True Form"
   },
   {
     "day": 619,
-    "unitId": 529,
-    "name": "Kasli the Scourge"
+    "unitId": 128,
+    "form": "Evolved Form"
   },
   {
     "day": 620,
-    "unitId": 76,
-    "name": "Divine Thundia"
+    "unitId": 437,
+    "form": "True Form"
   },
   {
     "day": 621,
-    "unitId": 529,
-    "name": "Ritual Saint Kasli"
+    "unitId": 22,
+    "form": "Normal Form"
   },
   {
     "day": 622,
-    "unitId": 104,
-    "name": "Koi Cat"
+    "unitId": 329,
+    "form": "Evolved Form"
   },
   {
     "day": 623,
-    "unitId": 194,
-    "name": "Shadow Akira"
+    "unitId": 71,
+    "form": "Normal Form"
   },
   {
     "day": 624,
-    "unitId": 763,
-    "name": "Mecha Dynasaurus Cat"
+    "unitId": 655,
+    "form": "Normal Form"
   },
   {
     "day": 625,
-    "unitId": 7,
-    "name": "King Dragon Cat"
+    "unitId": 273,
+    "form": "Normal Form"
   },
   {
     "day": 626,
-    "unitId": 397,
-    "name": "Sakura Sonic"
+    "unitId": 443,
+    "form": "True Form"
   },
   {
     "day": 627,
-    "unitId": 661,
-    "name": "Chronos the Bride"
+    "unitId": 35,
+    "form": "True Form"
   },
   {
     "day": 628,
-    "unitId": 209,
-    "name": "Li'l Mohawk Cat"
+    "unitId": 261,
+    "form": "Evolved Form"
   },
   {
     "day": 629,
-    "unitId": 523,
-    "name": "Shigong Cat"
+    "unitId": 40,
+    "form": "Normal Form"
   },
   {
     "day": 630,
-    "unitId": 229,
-    "name": "Hallowindy, type α"
+    "unitId": 176,
+    "form": "Normal Form"
   },
   {
     "day": 631,
-    "unitId": 355,
-    "name": "Mighty Rekon Korps"
+    "unitId": 170,
+    "form": "True Form"
   },
   {
     "day": 632,
-    "unitId": 302,
-    "name": "Succubus Cat"
+    "unitId": 643,
+    "form": "Normal Form"
   },
   {
     "day": 633,
-    "unitId": 584,
-    "name": "Maeda Christmas DX"
+    "unitId": 169,
+    "form": "Evolved Form"
   },
   {
     "day": 634,
-    "unitId": 736,
-    "name": "Arctic Bloom Cat"
+    "unitId": 51,
+    "form": "Normal Form"
   },
   {
     "day": 635,
-    "unitId": 92,
-    "name": "Crazed Tank Cat"
+    "unitId": 772,
+    "form": "Normal Form"
   },
   {
     "day": 636,
-    "unitId": 501,
-    "name": "Cat Bros"
+    "unitId": 330,
+    "form": "True Form"
   },
   {
     "day": 637,
-    "unitId": 41,
-    "name": "Salon Cat"
+    "unitId": 56,
+    "form": "True Form"
   },
   {
     "day": 638,
-    "unitId": 615,
-    "name": "Kabuto Cat"
+    "unitId": 46,
+    "form": "Evolved Form"
   },
   {
     "day": 639,
-    "unitId": 714,
-    "name": "Deep-Diver Kanna"
+    "unitId": 354,
+    "form": "Evolved Form"
   },
   {
     "day": 640,
-    "unitId": 688,
-    "name": "Brainwashed Lizard Cat"
+    "unitId": 8,
+    "form": "Evolved Form"
   },
   {
     "day": 641,
-    "unitId": 78,
-    "name": "Major Space Cat"
+    "unitId": 694,
+    "form": "Evolved Form"
   },
   {
     "day": 642,
-    "unitId": 0,
-    "name": "Macho Cat"
+    "unitId": 647,
+    "form": "Evolved Form"
   },
   {
     "day": 643,
-    "unitId": 258,
-    "name": "Anubis the Unblemished"
+    "unitId": 50,
+    "form": "Normal Form"
   },
   {
     "day": 644,
-    "unitId": 436,
-    "name": "Mystican Pasalan"
+    "unitId": 718,
+    "form": "Normal Form"
   },
   {
     "day": 645,
-    "unitId": 10,
-    "name": "Kung Fu Cat"
+    "unitId": 201,
+    "form": "Normal Form"
   },
   {
     "day": 646,
-    "unitId": 336,
-    "name": "Eternal Reika"
+    "unitId": 203,
+    "form": "Evolved Form"
   },
   {
     "day": 647,
-    "unitId": 728,
-    "name": "Master of Mind Catcrates"
+    "unitId": 303,
+    "form": "Normal Form"
   },
   {
     "day": 648,
-    "unitId": 731,
-    "name": "Daybreaker Izanagi"
+    "unitId": 226,
+    "form": "True Form"
   },
   {
     "day": 649,
-    "unitId": 2,
-    "name": "Axe Cat"
+    "unitId": 314,
+    "form": "Normal Form"
   },
   {
     "day": 650,
-    "unitId": 245,
-    "name": "Li'l Gross Cat"
+    "unitId": 81,
+    "form": "Normal Form"
   },
   {
     "day": 651,
-    "unitId": 461,
-    "name": "Legelan Pasalan"
+    "unitId": 23,
+    "form": "Normal Form"
   },
   {
     "day": 652,
-    "unitId": 132,
-    "name": "Iron Claw X"
+    "unitId": 811,
+    "form": "Normal Form"
   },
   {
     "day": 653,
-    "unitId": 822,
-    "name": "Business Partner Cat"
+    "unitId": 443,
+    "form": "Evolved Form"
   },
   {
     "day": 654,
-    "unitId": 73,
-    "name": "Immortal Nobunaga"
+    "unitId": 568,
+    "form": "Normal Form"
   },
   {
     "day": 655,
-    "unitId": 452,
-    "name": "Modern Cat"
+    "unitId": 526,
+    "form": "Evolved Form"
   },
   {
     "day": 656,
-    "unitId": 95,
-    "name": "Manic Lion Cat"
+    "unitId": 774,
+    "form": "Evolved Form"
   },
   {
     "day": 657,
-    "unitId": 226,
-    "name": "Dark Merchant Babil"
+    "unitId": 44,
+    "form": "Evolved Form"
   },
   {
     "day": 658,
-    "unitId": 569,
-    "name": "Gravolodon"
+    "unitId": 25,
+    "form": "True Form"
   },
   {
     "day": 659,
-    "unitId": 636,
-    "name": "Brainwashed Tank Cat"
+    "unitId": 79,
+    "form": "Evolved Form"
   },
   {
     "day": 660,
-    "unitId": 4,
-    "name": "Cow Cat"
+    "unitId": 75,
+    "form": "Evolved Form"
   },
   {
     "day": 661,
-    "unitId": 668,
-    "name": "Immortal Master Tengu"
+    "unitId": 521,
+    "form": "True Form"
   },
   {
     "day": 662,
-    "unitId": 145,
-    "name": "Cat Eastwood"
+    "unitId": 494,
+    "form": "Evolved Form"
   },
   {
     "day": 663,
-    "unitId": 767,
-    "name": "Squid CC"
+    "unitId": 146,
+    "form": "True Form"
   },
   {
     "day": 664,
-    "unitId": 152,
-    "name": "Slapstick Cats"
+    "unitId": 82,
+    "form": "Normal Form"
   },
   {
     "day": 665,
-    "unitId": 438,
-    "name": "Waverider Kuu, type γ"
+    "unitId": 306,
+    "form": "Evolved Form"
   },
   {
     "day": 666,
-    "unitId": 447,
-    "name": "Neo Saw Cat"
+    "unitId": 168,
+    "form": "True Form"
   },
   {
     "day": 667,
-    "unitId": 439,
-    "name": "Almighty Chronos"
+    "unitId": 664,
+    "form": "True Form"
   },
   {
     "day": 668,
-    "unitId": 132,
-    "name": "Kung Fu Cat X"
+    "unitId": 195,
+    "form": "Evolved Form"
   },
   {
     "day": 669,
-    "unitId": 426,
-    "name": "Mecha-Bun"
+    "unitId": 60,
+    "form": "Evolved Form"
   },
   {
     "day": 670,
-    "unitId": 227,
-    "name": "Harbinger Cat"
+    "unitId": 212,
+    "form": "Evolved Form"
   },
   {
     "day": 671,
-    "unitId": 268,
-    "name": "Crimson Mina"
+    "unitId": 159,
+    "form": "Normal Form"
   },
   {
     "day": 672,
-    "unitId": 354,
-    "name": "Seashore Kai, type μ"
+    "unitId": 308,
+    "form": "True Form"
   },
   {
     "day": 673,
-    "unitId": 246,
-    "name": "Li'l Giraffe Cat"
+    "unitId": 669,
+    "form": "True Form"
   },
   {
     "day": 674,
-    "unitId": 203,
-    "name": "Kachi-Kachi"
+    "unitId": 269,
+    "form": "Evolved Form"
   },
   {
     "day": 675,
-    "unitId": 6,
-    "name": "Fish Cat"
+    "unitId": 78,
+    "form": "True Form"
   },
   {
     "day": 676,
-    "unitId": 570,
-    "name": "Skull Rider Vars"
+    "unitId": 667,
+    "form": "True Form"
   },
   {
     "day": 677,
-    "unitId": 397,
-    "name": "Sacred Blade Sakura Z"
+    "unitId": 581,
+    "form": "Evolved Form"
   },
   {
     "day": 678,
-    "unitId": 692,
-    "name": "Oni Battlepod Kozuchimaru"
+    "unitId": 2,
+    "form": "True Form"
   },
   {
     "day": 679,
-    "unitId": 261,
-    "name": "Akuma Hayabusa"
+    "unitId": 4,
+    "form": "Normal Form"
   },
   {
     "day": 680,
-    "unitId": 446,
-    "name": "Power Backhoe Cat"
+    "unitId": 149,
+    "form": "True Form"
   },
   {
     "day": 681,
-    "unitId": 40,
-    "name": "Sexy Bathtub Cat"
+    "unitId": 358,
+    "form": "True Form"
   },
   {
     "day": 682,
-    "unitId": 16,
-    "name": "Superstar MONEKO"
+    "unitId": 779,
+    "form": "Evolved Form"
   },
   {
     "day": 683,
-    "unitId": 649,
-    "name": "Immortal Hanzo"
+    "unitId": 87,
+    "form": "Normal Form"
   },
   {
     "day": 684,
-    "unitId": 78,
-    "name": "Space Cat"
+    "unitId": 306,
+    "form": "True Form"
   },
   {
     "day": 685,
-    "unitId": 351,
-    "name": "Twinstars"
+    "unitId": 83,
+    "form": "Evolved Form"
   },
   {
     "day": 686,
-    "unitId": 307,
-    "name": "Polevaulter Cat"
+    "unitId": 137,
+    "form": "Ultra Form"
   },
   {
     "day": 687,
-    "unitId": 445,
-    "name": "Power Cutter Cat"
+    "unitId": 726,
+    "form": "Normal Form"
   },
   {
     "day": 688,
-    "unitId": 154,
-    "name": "Hoop Cat"
+    "unitId": 10,
+    "form": "Normal Form"
   },
   {
     "day": 689,
-    "unitId": 136,
-    "name": "Momotaro"
+    "unitId": 594,
+    "form": "Evolved Form"
   },
   {
     "day": 690,
-    "unitId": 464,
-    "name": "Dogumaru"
+    "unitId": 723,
+    "form": "True Form"
   },
   {
     "day": 691,
-    "unitId": 134,
-    "name": "Guardian Gamereon"
+    "unitId": 7,
+    "form": "True Form"
   },
   {
     "day": 692,
-    "unitId": 94,
-    "name": "Manic Macho Legs"
+    "unitId": 445,
+    "form": "Evolved Form"
   },
   {
     "day": 693,
-    "unitId": 533,
-    "name": "Nighthunter Saki"
+    "unitId": 272,
+    "form": "Normal Form"
   },
   {
     "day": 694,
-    "unitId": 682,
-    "name": "Illusory Guardian Vega"
+    "unitId": 646,
+    "form": "Evolved Form"
   },
   {
     "day": 695,
-    "unitId": 779,
-    "name": "Salvation's Daughter Lunacia"
+    "unitId": 79,
+    "form": "True Form"
   },
   {
     "day": 696,
-    "unitId": 177,
-    "name": "Ascendant Dioramos"
+    "unitId": 481,
+    "form": "Evolved Form"
   },
   {
     "day": 697,
-    "unitId": 259,
-    "name": "Almighty Aphrodite"
+    "unitId": 585,
+    "form": "Normal Form"
   },
   {
     "day": 698,
-    "unitId": 21,
-    "name": "Sumo Cat"
+    "unitId": 158,
+    "form": "Normal Form"
   },
   {
     "day": 699,
-    "unitId": 59,
-    "name": "Cats in the Stroller"
+    "unitId": 230,
+    "form": "Normal Form"
   },
   {
     "day": 700,
-    "unitId": 667,
-    "name": "Brainwashed UFO Cat"
+    "unitId": 246,
+    "form": "Normal Form"
   },
   {
     "day": 701,
-    "unitId": 135,
-    "name": "Supernova Cosmo"
+    "unitId": 211,
+    "form": "Normal Form"
   },
   {
     "day": 702,
-    "unitId": 73,
-    "name": "Phantasmal Nobunaga"
+    "unitId": 310,
+    "form": "Evolved Form"
   },
   {
     "day": 703,
-    "unitId": 171,
-    "name": "Balalan Pasalan"
+    "unitId": 303,
+    "form": "Evolved Form"
   },
   {
     "day": 704,
-    "unitId": 526,
-    "name": "Snow Angel Twinstars"
+    "unitId": 240,
+    "form": "True Form"
   },
   {
     "day": 705,
-    "unitId": 521,
-    "name": "Medusa Cat"
+    "unitId": 335,
+    "form": "True Form"
   },
   {
     "day": 706,
-    "unitId": 52,
-    "name": "Necromancer Cat"
+    "unitId": 436,
+    "form": "Normal Form"
   },
   {
     "day": 707,
-    "unitId": 630,
-    "name": "Tea Master Cat"
+    "unitId": 319,
+    "form": "Evolved Form"
   },
   {
     "day": 708,
-    "unitId": 282,
-    "name": "Awa-Odori Cat"
+    "unitId": 41,
+    "form": "Normal Form"
   },
   {
     "day": 709,
-    "unitId": 663,
-    "name": "Gas Mask Cat"
+    "unitId": 2,
+    "form": "Evolved Form"
   },
   {
     "day": 710,
-    "unitId": 183,
-    "name": "Cat Kart P"
+    "unitId": 539,
+    "form": "Evolved Form"
   },
   {
     "day": 711,
-    "unitId": 246,
-    "name": "Li'l Cow Cat"
+    "unitId": 57,
+    "form": "Normal Form"
   },
   {
     "day": 712,
-    "unitId": 441,
-    "name": "D'arktanyan"
+    "unitId": 331,
+    "form": "Normal Form"
   },
   {
     "day": 713,
-    "unitId": 692,
-    "name": "Issun Boshi"
+    "unitId": 91,
+    "form": "Normal Form"
   },
   {
     "day": 714,
-    "unitId": 484,
-    "name": "Li'l Valkyrie Dark"
+    "unitId": 84,
+    "form": "Normal Form"
   },
   {
     "day": 715,
-    "unitId": 282,
-    "name": "Gorgeous Groovin' Cat"
+    "unitId": 61,
+    "form": "Normal Form"
   },
   {
     "day": 716,
-    "unitId": 75,
-    "name": "Ultimate Windy"
+    "unitId": 134,
+    "form": "True Form"
   },
   {
     "day": 717,
-    "unitId": 379,
-    "name": "Ballet Cat"
+    "unitId": 564,
+    "form": "Normal Form"
   },
   {
     "day": 718,
-    "unitId": 649,
-    "name": "Hattori Hanzo"
+    "unitId": 452,
+    "form": "Evolved Form"
   },
   {
     "day": 719,
-    "unitId": 525,
-    "name": "Kinrangers GigaForce"
+    "unitId": 649,
+    "form": "True Form"
   },
   {
     "day": 720,
-    "unitId": 664,
-    "name": "Surgeon Cat"
+    "unitId": 21,
+    "form": "True Form"
   },
   {
     "day": 721,
-    "unitId": 505,
-    "name": "Gladios the Annihilator"
+    "unitId": 332,
+    "form": "Normal Form"
   },
   {
     "day": 722,
-    "unitId": 528,
-    "name": "Royal Guard Cat"
+    "unitId": 61,
+    "form": "Evolved Form"
   },
   {
     "day": 723,
-    "unitId": 442,
-    "name": "Lone Cat and Kitten"
+    "unitId": 307,
+    "form": "True Form"
   },
   {
     "day": 724,
-    "unitId": 159,
-    "name": "Kalisa"
+    "unitId": 461,
+    "form": "Evolved Form"
   },
   {
     "day": 725,
-    "unitId": 622,
-    "name": "Jagando Jr."
+    "unitId": 201,
+    "form": "True Form"
   },
   {
     "day": 726,
-    "unitId": 377,
-    "name": "Fencer Cat"
+    "unitId": 612,
+    "form": "Normal Form"
   },
   {
     "day": 727,
-    "unitId": 342,
-    "name": "Neo Maneki Cat"
+    "unitId": 443,
+    "form": "Normal Form"
   },
   {
     "day": 728,
-    "unitId": 618,
-    "name": "Immortal Amakusa"
+    "unitId": 689,
+    "form": "Normal Form"
   },
   {
     "day": 729,
-    "unitId": 644,
-    "name": "Minty Love Mekako"
+    "unitId": 358,
+    "form": "Evolved Form"
   },
   {
     "day": 730,
-    "unitId": 766,
-    "name": "Sardine CC"
+    "unitId": 21,
+    "form": "Evolved Form"
   },
   {
     "day": 731,
-    "unitId": 87,
-    "name": "God-Emperor Raiden"
+    "unitId": 246,
+    "form": "True Form"
   },
   {
     "day": 732,
-    "unitId": 86,
-    "name": "Kamukura"
+    "unitId": 260,
+    "form": "Evolved Form"
   },
   {
     "day": 733,
-    "unitId": 128,
-    "name": "Vengeful Cat"
+    "unitId": 143,
+    "form": "True Form"
   },
   {
     "day": 734,
-    "unitId": 586,
-    "name": "Tyrant Cat"
+    "unitId": 172,
+    "form": "Evolved Form"
   },
   {
     "day": 735,
-    "unitId": 697,
-    "name": "Cat Chief"
+    "unitId": 699,
+    "form": "Evolved Form"
   },
   {
     "day": 736,
-    "unitId": 494,
-    "name": "Seabreeze Coppermine"
+    "unitId": 351,
+    "form": "Evolved Form"
   },
   {
     "day": 737,
-    "unitId": 172,
-    "name": "Dark Emperor Catdam"
+    "unitId": 287,
+    "form": "Evolved Form"
   },
   {
     "day": 738,
-    "unitId": 647,
-    "name": "Divine Huntress Terun ζ"
+    "unitId": 170,
+    "form": "Evolved Form"
   },
   {
     "day": 739,
-    "unitId": 14,
-    "name": "Cats in a Box"
+    "unitId": 137,
+    "form": "True Form"
   },
   {
     "day": 740,
-    "unitId": 305,
-    "name": "Mighty Drednot"
+    "unitId": 169,
+    "form": "Normal Form"
   },
   {
     "day": 741,
-    "unitId": 38,
-    "name": "Chill Cat"
+    "unitId": 546,
+    "form": "Evolved Form"
   },
   {
     "day": 742,
-    "unitId": 183,
-    "name": "Cat Kart G"
+    "unitId": 629,
+    "form": "Normal Form"
   },
   {
     "day": 743,
-    "unitId": 607,
-    "name": "Fabled Adventure Girl Kanna"
+    "unitId": 442,
+    "form": "Normal Form"
   },
   {
     "day": 744,
-    "unitId": 273,
-    "name": "Soba Cat"
+    "unitId": 46,
+    "form": "True Form"
   },
   {
     "day": 745,
-    "unitId": 625,
-    "name": "Furilan Pasalan"
+    "unitId": 210,
+    "form": "True Form"
   },
   {
     "day": 746,
-    "unitId": 657,
-    "name": "Iz the Lady of Mourning"
+    "unitId": 75,
+    "form": "Normal Form"
   },
   {
     "day": 747,
-    "unitId": 73,
-    "name": "Wargod Nobunaga"
+    "unitId": 258,
+    "form": "True Form"
   },
   {
     "day": 748,
-    "unitId": 275,
-    "name": "Midsummer Cat"
+    "unitId": 55,
+    "form": "Evolved Form"
   },
   {
     "day": 749,
-    "unitId": 532,
-    "name": "Urs & Minka"
+    "unitId": 34,
+    "form": "Evolved Form"
   },
   {
     "day": 750,
-    "unitId": 74,
-    "name": "Xmas Pudding Cat"
+    "unitId": 342,
+    "form": "Normal Form"
   },
   {
     "day": 751,
-    "unitId": 607,
-    "name": "Adventurer Kanna"
+    "unitId": 435,
+    "form": "Evolved Form"
   },
   {
     "day": 752,
-    "unitId": 150,
-    "name": "Juliet Cat"
+    "unitId": 763,
+    "form": "Normal Form"
   },
   {
     "day": 753,
-    "unitId": 137,
-    "name": "Kasa Jizo"
+    "unitId": 632,
+    "form": "Evolved Form"
   },
   {
     "day": 754,
-    "unitId": 283,
-    "name": "Pai-Pai DX"
+    "unitId": 106,
+    "form": "Normal Form"
   },
   {
     "day": 755,
-    "unitId": 496,
-    "name": "Immortal Kaihime"
+    "unitId": 643,
+    "form": "Evolved Form"
   },
   {
     "day": 756,
-    "unitId": 105,
-    "name": "Kuu, type γ"
+    "unitId": 80,
+    "form": "Normal Form"
   },
   {
     "day": 757,
-    "unitId": 581,
-    "name": "Boulder Cat"
+    "unitId": 227,
+    "form": "True Form"
   },
   {
     "day": 758,
-    "unitId": 443,
-    "name": "Driller Cat"
+    "unitId": 275,
+    "form": "True Form"
   },
   {
     "day": 759,
-    "unitId": 80,
-    "name": "Evil Cat"
+    "unitId": 594,
+    "form": "Normal Form"
   },
   {
     "day": 760,
-    "unitId": 308,
-    "name": "Lumbercat"
+    "unitId": 80,
+    "form": "True Form"
   },
   {
     "day": 761,
-    "unitId": 696,
-    "name": "Class Rep Cat"
+    "unitId": 427,
+    "form": "True Form"
   },
   {
     "day": 762,
-    "unitId": 128,
-    "name": "Groucho Cat"
+    "unitId": 130,
+    "form": "Normal Form"
   },
   {
     "day": 763,
-    "unitId": 9,
-    "name": "Mother Cat"
+    "unitId": 647,
+    "form": "Normal Form"
   },
   {
     "day": 764,
-    "unitId": 531,
-    "name": "Cadaver BearCat"
+    "unitId": 765,
+    "form": "True Form"
   },
   {
     "day": 765,
-    "unitId": 211,
-    "name": "Li'l Dark Cat"
+    "unitId": 623,
+    "form": "Evolved Form"
   },
   {
     "day": 766,
-    "unitId": 351,
-    "name": "Twinstars, type Φ"
+    "unitId": 17,
+    "form": "True Form"
   },
   {
     "day": 767,
-    "unitId": 37,
-    "name": "Jiangshi Cat"
+    "unitId": 286,
+    "form": "Evolved Form"
   },
   {
     "day": 768,
-    "unitId": 396,
-    "name": "Ganglion the Unleashed"
+    "unitId": 636,
+    "form": "True Form"
   },
   {
     "day": 769,
-    "unitId": 645,
-    "name": "Brainwashed Dark Cat"
+    "unitId": 195,
+    "form": "True Form"
   },
   {
     "day": 770,
-    "unitId": 106,
-    "name": "Divine Kai"
+    "unitId": 662,
+    "form": "Evolved Form"
   },
   {
     "day": 771,
-    "unitId": 4,
-    "name": "Giraffe Cat"
+    "unitId": 712,
+    "form": "True Form"
   },
   {
     "day": 772,
-    "unitId": 63,
-    "name": "Sports Day Cat"
+    "unitId": 87,
+    "form": "Evolved Form"
   },
   {
     "day": 773,
-    "unitId": 811,
-    "name": "Victorious Skanda"
+    "unitId": 183,
+    "form": "Evolved Form"
   },
   {
     "day": 774,
-    "unitId": 584,
-    "name": "Maeda Christmas"
+    "unitId": 383,
+    "form": "Normal Form"
   },
   {
     "day": 775,
-    "unitId": 195,
-    "name": "Mekako Saionji"
+    "unitId": 687,
+    "form": "Normal Form"
   },
   {
     "day": 776,
-    "unitId": 199,
-    "name": "Surfer Cat"
+    "unitId": 756,
+    "form": "Evolved Form"
   },
   {
     "day": 777,
-    "unitId": 528,
-    "name": "Vodka Cat"
+    "unitId": 30,
+    "form": "True Form"
   },
   {
     "day": 778,
-    "unitId": 170,
-    "name": "Tecoluga"
+    "unitId": 553,
+    "form": "True Form"
   },
   {
     "day": 779,
-    "unitId": 93,
-    "name": "Crazed Axe Cat"
+    "unitId": 559,
+    "form": "Evolved Form"
   },
   {
     "day": 780,
-    "unitId": 569,
-    "name": "Gravolo"
+    "unitId": 682,
+    "form": "Evolved Form"
   },
   {
     "day": 781,
-    "unitId": 131,
-    "name": "Miss NENEKO"
+    "unitId": 143,
+    "form": "Evolved Form"
   },
   {
     "day": 782,
-    "unitId": 132,
-    "name": "Drunken Master Cat X"
+    "unitId": 150,
+    "form": "Evolved Form"
   },
   {
     "day": 783,
-    "unitId": 521,
-    "name": "Naga Cat"
+    "unitId": 197,
+    "form": "Evolved Form"
   },
   {
     "day": 784,
-    "unitId": 563,
-    "name": "Squirtgun Saki"
+    "unitId": 799,
+    "form": "Evolved Form"
   },
   {
     "day": 785,
-    "unitId": 99,
-    "name": "Crazed Titan Cat"
+    "unitId": 736,
+    "form": "Normal Form"
   },
   {
     "day": 786,
-    "unitId": 246,
-    "name": "Li'l Lion Cat"
+    "unitId": 692,
+    "form": "True Form"
   },
   {
     "day": 787,
-    "unitId": 559,
-    "name": "Hell Commissioner Emma"
+    "unitId": 719,
+    "form": "Normal Form"
   },
   {
     "day": 788,
-    "unitId": 502,
-    "name": "Divine Myrcia"
+    "unitId": 359,
+    "form": "Evolved Form"
   },
   {
     "day": 789,
-    "unitId": 260,
-    "name": "Time Traveller Cat"
+    "unitId": 444,
+    "form": "Normal Form"
   },
   {
     "day": 790,
-    "unitId": 72,
-    "name": "Maeda Keiji"
+    "unitId": 105,
+    "form": "Evolved Form"
   },
   {
     "day": 791,
-    "unitId": 304,
-    "name": "CAT-8 Behemoth"
+    "unitId": 56,
+    "form": "Normal Form"
   },
   {
     "day": 792,
-    "unitId": 96,
-    "name": "Crazed UFO Cat"
+    "unitId": 431,
+    "form": "Evolved Form"
   },
   {
     "day": 793,
-    "unitId": 610,
-    "name": "Gold Brick Cat"
+    "unitId": 779,
+    "form": "Normal Form"
   },
   {
     "day": 794,
-    "unitId": 32,
-    "name": "Dancing Flasher Cat"
+    "unitId": 683,
+    "form": "True Form"
   },
   {
     "day": 795,
-    "unitId": 650,
-    "name": "Girlfriend Cat"
+    "unitId": 37,
+    "form": "Normal Form"
   },
   {
     "day": 796,
-    "unitId": 98,
-    "name": "Crazed Lizard Cat"
+    "unitId": 501,
+    "form": "Evolved Form"
   },
   {
     "day": 797,
-    "unitId": 376,
-    "name": "Rover Cat Mk II"
+    "unitId": 418,
+    "form": "Evolved Form"
   },
   {
     "day": 798,
-    "unitId": 776,
-    "name": "Commander Cat"
+    "unitId": 52,
+    "form": "Evolved Form"
   },
   {
     "day": 799,
-    "unitId": 130,
-    "name": "Awakened Ururun"
+    "unitId": 316,
+    "form": "Evolved Form"
   },
   {
     "day": 800,
-    "unitId": 358,
-    "name": "Graveflower Verbena"
+    "unitId": 360,
+    "form": "Normal Form"
   },
   {
     "day": 801,
-    "unitId": 661,
-    "name": "Wedding Chronos"
+    "unitId": 660,
+    "form": "True Form"
   },
   {
     "day": 802,
-    "unitId": 237,
-    "name": "Freshman Cat Jobs"
+    "unitId": 212,
+    "form": "True Form"
   },
   {
     "day": 803,
-    "unitId": 33,
-    "name": "Kotatsu Cat"
+    "unitId": 238,
+    "form": "Evolved Form"
   },
   {
     "day": 804,
-    "unitId": 20,
-    "name": "Pastry Cat"
+    "unitId": 314,
+    "form": "Evolved Form"
   },
   {
     "day": 805,
-    "unitId": 444,
-    "name": "Piledriver Cat"
+    "unitId": 766,
+    "form": "Evolved Form"
   },
   {
     "day": 806,
-    "unitId": 714,
-    "name": "Coastal Explorer Kanna"
+    "unitId": 304,
+    "form": "Evolved Form"
   },
   {
     "day": 807,
-    "unitId": 685,
-    "name": "Supercar Cat"
+    "unitId": 177,
+    "form": "Normal Form"
   },
   {
     "day": 808,
-    "unitId": 674,
-    "name": "Mighty Carrowsell"
+    "unitId": 9,
+    "form": "Evolved Form"
   },
   {
     "day": 809,
-    "unitId": 694,
-    "name": "Brainwashed Titan Cat"
+    "unitId": 735,
+    "form": "Evolved Form"
   },
   {
     "day": 810,
-    "unitId": 55,
-    "name": "Witch Cat"
+    "unitId": 91,
+    "form": "Evolved Form"
   },
   {
     "day": 811,
-    "unitId": 642,
-    "name": "Almighty Lucifer"
+    "unitId": 570,
+    "form": "Evolved Form"
   },
   {
     "day": 812,
-    "unitId": 124,
-    "name": "Date Masamune"
+    "unitId": 763,
+    "form": "Evolved Form"
   },
   {
     "day": 813,
-    "unitId": 581,
-    "name": "Stone Cat"
+    "unitId": 125,
+    "form": "Normal Form"
   },
   {
     "day": 814,
-    "unitId": 105,
-    "name": "Kuu"
+    "unitId": 437,
+    "form": "Evolved Form"
   },
   {
     "day": 815,
-    "unitId": 104,
-    "name": "Kiss and Koi"
+    "unitId": 41,
+    "form": "True Form"
   },
   {
     "day": 816,
-    "unitId": 566,
-    "name": "Sweet Bro Cats"
+    "unitId": 24,
+    "form": "True Form"
   },
   {
     "day": 817,
-    "unitId": 49,
-    "name": "Goemon Cat"
+    "unitId": 740,
+    "form": "Evolved Form"
   },
   {
     "day": 818,
-    "unitId": 5,
-    "name": "UFO Cat"
+    "unitId": 665,
+    "form": "True Form"
   },
   {
     "day": 819,
-    "unitId": 10,
-    "name": "Dancer Cat"
+    "unitId": 496,
+    "form": "Evolved Form"
   },
   {
     "day": 820,
-    "unitId": 91,
-    "name": "Crazed Macho Cat"
+    "unitId": 614,
+    "form": "Normal Form"
   },
   {
     "day": 821,
-    "unitId": 634,
-    "name": "Black Knight Kyklops"
+    "unitId": 333,
+    "form": "Evolved Form"
   },
   {
     "day": 822,
-    "unitId": 60,
-    "name": "Michelangelo Cat"
+    "unitId": 494,
+    "form": "Normal Form"
   },
   {
     "day": 823,
-    "unitId": 325,
-    "name": "Heavyweight Cat"
+    "unitId": 717,
+    "form": "True Form"
   },
   {
     "day": 824,
-    "unitId": 525,
-    "name": "Kintaro"
+    "unitId": 623,
+    "form": "Normal Form"
   },
   {
     "day": 825,
-    "unitId": 71,
-    "name": "Sanada Yukimura"
+    "unitId": 125,
+    "form": "True Form"
   },
   {
     "day": 826,
-    "unitId": 526,
-    "name": "Snow Angel Twinstars, type Φ"
+    "unitId": 427,
+    "form": "Normal Form"
   },
   {
     "day": 827,
-    "unitId": 331,
-    "name": "Bunny & Canard"
+    "unitId": 801,
+    "form": "Evolved Form"
   },
   {
     "day": 828,
-    "unitId": 124,
-    "name": "Immortal Masamune"
+    "unitId": 149,
+    "form": "Normal Form"
   },
   {
     "day": 829,
-    "unitId": 455,
-    "name": "Cutie MOMOCO"
+    "unitId": 247,
+    "form": "Normal Form"
   },
   {
     "day": 830,
-    "unitId": 18,
-    "name": "Flying Ninja Cat"
+    "unitId": 435,
+    "form": "Normal Form"
   },
   {
     "day": 831,
-    "unitId": 52,
-    "name": "Necro Dance Cat"
+    "unitId": 151,
+    "form": "Evolved Form"
   },
   {
     "day": 832,
-    "unitId": 330,
-    "name": "Spring Breeze Kenshin"
+    "unitId": 276,
+    "form": "Normal Form"
   },
   {
     "day": 833,
-    "unitId": 431,
-    "name": "Section Chief Gravicci"
+    "unitId": 728,
+    "form": "Normal Form"
   },
   {
     "day": 834,
-    "unitId": 83,
-    "name": "Sodom"
+    "unitId": 105,
+    "form": "Normal Form"
   },
   {
     "day": 835,
-    "unitId": 659,
-    "name": "Catarzan"
+    "unitId": 5,
+    "form": "Evolved Form"
   },
   {
     "day": 836,
-    "unitId": 3,
-    "name": "Gross Cat"
+    "unitId": 817,
+    "form": "Normal Form"
   },
   {
     "day": 837,
-    "unitId": 201,
-    "name": "Drumcorps Cat"
+    "unitId": 242,
+    "form": "Normal Form"
   },
   {
     "day": 838,
-    "unitId": 609,
-    "name": "Dark Aegis Garu"
+    "unitId": 379,
+    "form": "Evolved Form"
   },
   {
     "day": 839,
-    "unitId": 200,
-    "name": "Metal Cat"
+    "unitId": 584,
+    "form": "Normal Form"
   },
   {
     "day": 840,
-    "unitId": 631,
-    "name": "Yaminoir"
+    "unitId": 539,
+    "form": "Normal Form"
   },
   {
     "day": 841,
-    "unitId": 99,
-    "name": "Crazed M Titan Cat"
+    "unitId": 660,
+    "form": "Normal Form"
   },
   {
     "day": 842,
-    "unitId": 75,
-    "name": "Windy"
+    "unitId": 787,
+    "form": "Normal Form"
   },
   {
     "day": 843,
-    "unitId": 158,
-    "name": "Wargod Kenshin"
+    "unitId": 75,
+    "form": "Ultra Form"
   },
   {
     "day": 844,
-    "unitId": 502,
-    "name": "Myrcia"
+    "unitId": 76,
+    "form": "True Form"
   },
   {
     "day": 845,
-    "unitId": 145,
-    "name": "Cat Gunslinger"
+    "unitId": 106,
+    "form": "Evolved Form"
   },
   {
     "day": 846,
-    "unitId": 199,
-    "name": "Seafarer Cat"
+    "unitId": 819,
+    "form": "Evolved Form"
   },
   {
     "day": 847,
-    "unitId": 22,
-    "name": "Gato Amigo"
+    "unitId": 284,
+    "form": "Evolved Form"
   },
   {
     "day": 848,
-    "unitId": 647,
-    "name": "Huntress Terun ζ"
+    "unitId": 85,
+    "form": "Normal Form"
   },
   {
     "day": 849,
-    "unitId": 594,
-    "name": "Mighty Aethur Ltd."
+    "unitId": 23,
+    "form": "Evolved Form"
   },
   {
     "day": 850,
-    "unitId": 686,
-    "name": "Goddess of Sunrise Sirius"
+    "unitId": 19,
+    "form": "Evolved Form"
   },
   {
     "day": 851,
-    "unitId": 24,
-    "name": "True Valkyrie Cat"
+    "unitId": 177,
+    "form": "Ultra Form"
   },
   {
     "day": 852,
-    "unitId": 338,
-    "name": "Imagawa Yoshimoto"
+    "unitId": 522,
+    "form": "Evolved Form"
   },
   {
     "day": 853,
-    "unitId": 24,
-    "name": "Holy Valkyrie Cat"
+    "unitId": 633,
+    "form": "True Form"
   },
   {
     "day": 854,
-    "unitId": 151,
-    "name": "Ring Girl Cat"
+    "unitId": 354,
+    "form": "Normal Form"
   },
   {
     "day": 855,
-    "unitId": 24,
-    "name": "Valkyrie Cat"
+    "unitId": 245,
+    "form": "Normal Form"
   },
   {
     "day": 856,
-    "unitId": 725,
-    "name": "Ninja Girl Tomoe"
+    "unitId": 25,
+    "form": "Normal Form"
   },
   {
     "day": 857,
-    "unitId": 148,
-    "name": "Ramen Cat"
+    "unitId": 824,
+    "form": "Evolved Form"
   },
   {
     "day": 858,
-    "unitId": 539,
-    "name": "Rugby Cat"
+    "unitId": 238,
+    "form": "Normal Form"
   },
   {
     "day": 859,
-    "unitId": 60,
-    "name": "Bronze Cat"
+    "unitId": 74,
+    "form": "Normal Form"
   },
   {
     "day": 860,
-    "unitId": 439,
-    "name": "Chronos the Infinite"
+    "unitId": 88,
+    "form": "Evolved Form"
   },
   {
     "day": 861,
-    "unitId": 138,
-    "name": "Princess Kaguya"
+    "unitId": 268,
+    "form": "True Form"
   },
   {
     "day": 862,
-    "unitId": 308,
-    "name": "Weedwacker Cat"
+    "unitId": 6,
+    "form": "Evolved Form"
   },
   {
     "day": 863,
-    "unitId": 767,
-    "name": "Squid"
+    "unitId": 357,
+    "form": "True Form"
   },
   {
     "day": 864,
-    "unitId": 375,
-    "name": "Coin Cat"
+    "unitId": 505,
+    "form": "True Form"
   },
   {
     "day": 865,
-    "unitId": 17,
-    "name": "Unicycle Cat"
+    "unitId": 86,
+    "form": "Evolved Form"
   },
   {
     "day": 866,
-    "unitId": 438,
-    "name": "Waverider Kuu"
+    "unitId": 660,
+    "form": "Evolved Form"
   },
   {
     "day": 867,
-    "unitId": 81,
-    "name": "Cat-o-tron"
+    "unitId": 478,
+    "form": "Normal Form"
   },
   {
     "day": 868,
-    "unitId": 0,
-    "name": "Cat"
+    "unitId": 586,
+    "form": "Normal Form"
   },
   {
     "day": 869,
-    "unitId": 543,
-    "name": "Kasli the Bane"
+    "unitId": 212,
+    "form": "Ultra Form"
   },
   {
     "day": 870,
-    "unitId": 287,
-    "name": "Little Leaguer Cat"
+    "unitId": 273,
+    "form": "Evolved Form"
   },
   {
     "day": 871,
-    "unitId": 731,
-    "name": "Dawnbringer Izanagi"
+    "unitId": 63,
+    "form": "True Form"
   },
   {
     "day": 872,
-    "unitId": 91,
-    "name": "Manic Mohawk Cat"
+    "unitId": 438,
+    "form": "Evolved Form"
   },
   {
     "day": 873,
-    "unitId": 34,
-    "name": "Nekoluga"
+    "unitId": 462,
+    "form": "Normal Form"
   },
   {
     "day": 874,
-    "unitId": 16,
-    "name": "Miss MONEKO"
+    "unitId": 87,
+    "form": "True Form"
   },
   {
     "day": 875,
-    "unitId": 774,
-    "name": "Mech Patrol Axel"
+    "unitId": 698,
+    "form": "Normal Form"
   },
   {
     "day": 876,
-    "unitId": 553,
-    "name": "Bakery Cat"
+    "unitId": 706,
+    "form": "True Form"
   },
   {
     "day": 877,
-    "unitId": 554,
-    "name": "Master Uril"
+    "unitId": 272,
+    "form": "Evolved Form"
   },
   {
     "day": 878,
-    "unitId": 801,
-    "name": "Master of Logic Newton"
+    "unitId": 57,
+    "form": "Evolved Form"
   },
   {
     "day": 879,
-    "unitId": 241,
-    "name": "Frostspirit Kai, type μ"
+    "unitId": 566,
+    "form": "Evolved Form"
   },
   {
     "day": 880,
-    "unitId": 688,
-    "name": "Brainwashed King Dragon Cat"
+    "unitId": 11,
+    "form": "Normal Form"
   },
   {
     "day": 881,
-    "unitId": 426,
-    "name": "Mecha-Bun Mk II"
+    "unitId": 10,
+    "form": "True Form"
   },
   {
     "day": 882,
-    "unitId": 646,
-    "name": "Macho Firecracker Cat"
+    "unitId": 283,
+    "form": "Normal Form"
   },
   {
     "day": 883,
-    "unitId": 196,
-    "name": "Catman"
+    "unitId": 650,
+    "form": "Normal Form"
   },
   {
     "day": 884,
-    "unitId": 437,
-    "name": "Cat God The Golden"
+    "unitId": 146,
+    "form": "Normal Form"
   },
   {
     "day": 885,
-    "unitId": 595,
-    "name": "Everbloom Kamukura"
+    "unitId": 462,
+    "form": "True Form"
   },
   {
     "day": 886,
-    "unitId": 70,
-    "name": "Grudge Cat"
+    "unitId": 12,
+    "form": "Evolved Form"
   },
   {
     "day": 887,
-    "unitId": 172,
-    "name": "Li'l Nyandam"
+    "unitId": 74,
+    "form": "True Form"
   },
   {
     "day": 888,
-    "unitId": 260,
-    "name": "Drone Cat"
+    "unitId": 655,
+    "form": "True Form"
   },
   {
     "day": 889,
-    "unitId": 522,
-    "name": "Nymph Cat"
+    "unitId": 586,
+    "form": "Evolved Form"
   },
   {
     "day": 890,
-    "unitId": 122,
-    "name": "Vacation Queen"
+    "unitId": 58,
+    "form": "Normal Form"
   },
   {
     "day": 891,
-    "unitId": 76,
-    "name": "Thundia, type β"
+    "unitId": 723,
+    "form": "Normal Form"
   },
   {
     "day": 892,
-    "unitId": 261,
-    "name": "Oni Hayabusa"
+    "unitId": 820,
+    "form": "Normal Form"
   },
   {
     "day": 893,
-    "unitId": 145,
-    "name": "Rodeo Cat"
+    "unitId": 305,
+    "form": "Evolved Form"
   },
   {
     "day": 894,
-    "unitId": 632,
-    "name": "Mighty Deth-Troy-R"
+    "unitId": 39,
+    "form": "Evolved Form"
   },
   {
     "day": 895,
-    "unitId": 418,
-    "name": "Crazed Moneko"
+    "unitId": 19,
+    "form": "Normal Form"
   },
   {
     "day": 896,
-    "unitId": 771,
-    "name": "Master of Life Catnova"
+    "unitId": 685,
+    "form": "True Form"
   },
   {
     "day": 897,
-    "unitId": 79,
-    "name": "Adult Cat"
+    "unitId": 526,
+    "form": "Normal Form"
   },
   {
     "day": 898,
-    "unitId": 668,
-    "name": "Cat Tengu"
+    "unitId": 760,
+    "form": "Normal Form"
   },
   {
     "day": 899,
-    "unitId": 558,
-    "name": "Lucky Gacha Cat"
+    "unitId": 634,
+    "form": "Evolved Form"
   },
   {
     "day": 900,
-    "unitId": 379,
-    "name": "Volley Cat"
+    "unitId": 396,
+    "form": "True Form"
   },
   {
     "day": 901,
-    "unitId": 149,
-    "name": "Cameraman Cat"
+    "unitId": 305,
+    "form": "Ultra Form"
   },
   {
     "day": 902,
-    "unitId": 200,
-    "name": "Metal Macho"
+    "unitId": 569,
+    "form": "Normal Form"
   },
   {
     "day": 903,
-    "unitId": 431,
-    "name": "Arcane Commissioner Gravicci"
+    "unitId": 629,
+    "form": "Evolved Form"
   },
   {
     "day": 904,
-    "unitId": 322,
-    "name": "Sarukani"
+    "unitId": 138,
+    "form": "Ultra Form"
   },
   {
     "day": 905,
-    "unitId": 607,
-    "name": "Swashbuckler Kanna"
+    "unitId": 633,
+    "form": "Normal Form"
   },
   {
     "day": 906,
-    "unitId": 401,
-    "name": "Gigavolta"
+    "unitId": 94,
+    "form": "Evolved Form"
   },
   {
     "day": 907,
-    "unitId": 521,
-    "name": "Twintail Medusa Cat"
+    "unitId": 569,
+    "form": "Evolved Form"
   },
   {
     "day": 908,
-    "unitId": 334,
-    "name": "Himeyuri Ninetails"
+    "unitId": 203,
+    "form": "True Form"
   },
   {
     "day": 909,
-    "unitId": 229,
-    "name": "Hallowindy"
+    "unitId": 546,
+    "form": "True Form"
   },
   {
     "day": 910,
-    "unitId": 75,
-    "name": "Divine Windy"
+    "unitId": 478,
+    "form": "Evolved Form"
   },
   {
     "day": 911,
-    "unitId": 647,
-    "name": "Huntress Terun"
+    "unitId": 724,
+    "form": "True Form"
   },
   {
     "day": 912,
-    "unitId": 147,
-    "name": "Robocat"
+    "unitId": 132,
+    "form": "True Form"
   },
   {
     "day": 913,
-    "unitId": 197,
-    "name": "Psychocat"
+    "unitId": 442,
+    "form": "True Form"
   },
   {
     "day": 914,
-    "unitId": 14,
-    "name": "Heavy Assault C.A.T"
+    "unitId": 738,
+    "form": "Evolved Form"
   },
   {
     "day": 915,
-    "unitId": 257,
-    "name": "The Majestic Zeus"
+    "unitId": 359,
+    "form": "Ultra Form"
   },
   {
     "day": 916,
-    "unitId": 8,
-    "name": "Titan Cat"
+    "unitId": 168,
+    "form": "Evolved Form"
   },
   {
     "day": 917,
-    "unitId": 450,
-    "name": "High Lord Babel"
+    "unitId": 275,
+    "form": "Normal Form"
   },
   {
     "day": 918,
-    "unitId": 623,
-    "name": "Pied Piper Cat"
+    "unitId": 397,
+    "form": "Normal Form"
   },
   {
     "day": 919,
-    "unitId": 230,
-    "name": "Spooky Thundia"
+    "unitId": 447,
+    "form": "True Form"
   },
   {
     "day": 920,
-    "unitId": 619,
-    "name": "Divine Lilin π"
+    "unitId": 824,
+    "form": "Normal Form"
   },
   {
     "day": 921,
-    "unitId": 448,
-    "name": "Wargod Miyamoto"
+    "unitId": 713,
+    "form": "True Form"
   },
   {
     "day": 922,
-    "unitId": 144,
-    "name": "Cat Base Jr."
+    "unitId": 109,
+    "form": "Evolved Form"
   },
   {
     "day": 923,
-    "unitId": 30,
-    "name": "Tathagata Cat"
+    "unitId": 520,
+    "form": "Normal Form"
   },
   {
     "day": 924,
-    "unitId": 338,
-    "name": "Immortal Yoshimoto"
+    "unitId": 106,
+    "form": "True Form"
   },
   {
     "day": 925,
-    "unitId": 495,
-    "name": "Flamenco Cat"
+    "unitId": 620,
+    "form": "Evolved Form"
   },
   {
     "day": 926,
-    "unitId": 170,
-    "name": "Lufalan Pasalan"
+    "unitId": 448,
+    "form": "True Form"
   },
   {
     "day": 927,
-    "unitId": 312,
-    "name": "Li'l King Dragon Cat"
+    "unitId": 194,
+    "form": "Normal Form"
   },
   {
     "day": 928,
-    "unitId": 558,
-    "name": "Gacha Cat"
+    "unitId": 822,
+    "form": "Normal Form"
   },
   {
     "day": 929,
-    "unitId": 376,
-    "name": "Catellite"
+    "unitId": 817,
+    "form": "Evolved Form"
   },
   {
     "day": 930,
-    "unitId": 314,
-    "name": "Festive New Year Neneko"
+    "unitId": 735,
+    "form": "Normal Form"
   },
   {
     "day": 931,
-    "unitId": 19,
-    "name": "Zombie Cat"
+    "unitId": 40,
+    "form": "Evolved Form"
   },
   {
     "day": 932,
-    "unitId": 559,
-    "name": "Hell Warden Emma"
+    "unitId": 334,
+    "form": "Normal Form"
   },
   {
     "day": 933,
-    "unitId": 810,
-    "name": "Agent Staal"
+    "unitId": 528,
+    "form": "Normal Form"
   },
   {
     "day": 934,
-    "unitId": 304,
-    "name": "Mighty Kat-A-Pult"
+    "unitId": 584,
+    "form": "True Form"
   },
   {
     "day": 935,
-    "unitId": 135,
-    "name": "Ultima Galaxy Cosmo"
+    "unitId": 322,
+    "form": "True Form"
   },
   {
     "day": 936,
-    "unitId": 46,
-    "name": "Jurassic Cat"
+    "unitId": 449,
+    "form": "Evolved Form"
   },
   {
     "day": 937,
-    "unitId": 436,
-    "name": "Nobilan Pasalan"
+    "unitId": 47,
+    "form": "Normal Form"
   },
   {
     "day": 938,
-    "unitId": 740,
-    "name": "Trash Cat"
+    "unitId": 446,
+    "form": "True Form"
   },
   {
     "day": 939,
-    "unitId": 3,
-    "name": "Macho Leg Cat"
+    "unitId": 667,
+    "form": "Evolved Form"
   },
   {
     "day": 940,
-    "unitId": 209,
-    "name": "Li'l Macho Cat"
+    "unitId": 96,
+    "form": "True Form"
   },
   {
     "day": 941,
-    "unitId": 379,
-    "name": "Curry Cat"
+    "unitId": 240,
+    "form": "Normal Form"
   },
   {
     "day": 942,
-    "unitId": 505,
-    "name": "Relentless Gladios"
+    "unitId": 651,
+    "form": "Normal Form"
   },
   {
     "day": 943,
-    "unitId": 48,
-    "name": "Captain Cat"
+    "unitId": 24,
+    "form": "Normal Form"
   },
   {
     "day": 944,
-    "unitId": 259,
-    "name": "Megaphrodite"
+    "unitId": 799,
+    "form": "Normal Form"
   },
   {
     "day": 945,
-    "unitId": 545,
-    "name": "Bubble Cat"
+    "unitId": 242,
+    "form": "Evolved Form"
   },
   {
     "day": 946,
-    "unitId": 342,
-    "name": "Maneki Cat"
+    "unitId": 63,
+    "form": "Evolved Form"
   },
   {
     "day": 947,
-    "unitId": 6,
-    "name": "Island Cat"
+    "unitId": 359,
+    "form": "Normal Form"
   },
   {
     "day": 948,
-    "unitId": 620,
-    "name": "God-Emperor Hevijak"
+    "unitId": 780,
+    "form": "Evolved Form"
   },
   {
     "day": 949,
-    "unitId": 61,
-    "name": "Fried Shrimp Cat"
+    "unitId": 213,
+    "form": "True Form"
   },
   {
     "day": 950,
-    "unitId": 130,
-    "name": "Ururun Wolf"
+    "unitId": 553,
+    "form": "Evolved Form"
   },
   {
     "day": 951,
-    "unitId": 617,
-    "name": "Devil Hunter Satoru"
+    "unitId": 336,
+    "form": "True Form"
   },
   {
     "day": 952,
-    "unitId": 93,
-    "name": "Crazed Brave Cat"
+    "unitId": 642,
+    "form": "Normal Form"
   },
   {
     "day": 953,
-    "unitId": 441,
-    "name": "Valiant D'arktanyan"
+    "unitId": 59,
+    "form": "Evolved Form"
   },
   {
     "day": 954,
-    "unitId": 688,
-    "name": "Brainwashed Dragon Cat"
+    "unitId": 343,
+    "form": "Normal Form"
   },
   {
     "day": 955,
-    "unitId": 351,
-    "name": "Divine Twinstars"
+    "unitId": 16,
+    "form": "Evolved Form"
   },
   {
     "day": 956,
-    "unitId": 177,
-    "name": "Archdragon Dioramos"
+    "unitId": 618,
+    "form": "True Form"
   },
   {
     "day": 957,
-    "unitId": 267,
-    "name": "Catyphoon"
+    "unitId": 686,
+    "form": "Evolved Form"
   },
   {
     "day": 958,
-    "unitId": 268,
-    "name": "Awakened Mina"
+    "unitId": 284,
+    "form": "True Form"
   },
   {
     "day": 959,
-    "unitId": 95,
-    "name": "Crazed Cow Cat"
+    "unitId": 92,
+    "form": "Normal Form"
   },
   {
     "day": 960,
-    "unitId": 633,
-    "name": "Shitakiri Sparrow"
+    "unitId": 158,
+    "form": "Evolved Form"
   },
   {
     "day": 961,
-    "unitId": 534,
-    "name": "Hades the Deathdealer"
+    "unitId": 55,
+    "form": "True Form"
   },
   {
     "day": 962,
-    "unitId": 585,
-    "name": "Mighty Aegis Garu"
+    "unitId": 523,
+    "form": "True Form"
   },
   {
     "day": 963,
-    "unitId": 811,
-    "name": "Zeta Skanda"
+    "unitId": 656,
+    "form": "True Form"
   },
   {
     "day": 964,
-    "unitId": 48,
-    "name": "Pirate Cat"
+    "unitId": 533,
+    "form": "True Form"
   },
   {
     "day": 965,
-    "unitId": 568,
-    "name": "Idi:NX"
+    "unitId": 33,
+    "form": "True Form"
   },
   {
     "day": 966,
-    "unitId": 569,
-    "name": "Gravi"
+    "unitId": 581,
+    "form": "Normal Form"
   },
   {
     "day": 967,
-    "unitId": 137,
-    "name": "Jizo's Mega-Castle"
+    "unitId": 213,
+    "form": "Normal Form"
   },
   {
     "day": 968,
-    "unitId": 708,
-    "name": "Jetpack Cat"
+    "unitId": 228,
+    "form": "True Form"
   },
   {
     "day": 969,
-    "unitId": 5,
-    "name": "Bird Cat"
+    "unitId": 773,
+    "form": "Evolved Form"
   },
   {
     "day": 970,
-    "unitId": 201,
-    "name": "Banner Cat"
+    "unitId": 651,
+    "form": "Evolved Form"
   },
   {
     "day": 971,
-    "unitId": 325,
-    "name": "Welterweight Cat"
+    "unitId": 621,
+    "form": "True Form"
   },
   {
     "day": 972,
-    "unitId": 41,
-    "name": "Paris Cat"
+    "unitId": 381,
+    "form": "Normal Form"
   },
   {
     "day": 973,
-    "unitId": 444,
-    "name": "Neo Piledriver Cat"
+    "unitId": 705,
+    "form": "Normal Form"
   },
   {
     "day": 974,
-    "unitId": 93,
-    "name": "Manic Dark Cat"
+    "unitId": 769,
+    "form": "Evolved Form"
   },
   {
     "day": 975,
-    "unitId": 267,
-    "name": "Hurricat"
+    "unitId": 376,
+    "form": "Normal Form"
   },
   {
     "day": 976,
-    "unitId": 720,
-    "name": "Fallen Bear Cat"
+    "unitId": 109,
+    "form": "Normal Form"
   },
   {
     "day": 977,
-    "unitId": 59,
-    "name": "Cats in the Cradle"
+    "unitId": 507,
+    "form": "Evolved Form"
   },
   {
     "day": 978,
-    "unitId": 74,
-    "name": "Sashimi Cat"
+    "unitId": 3,
+    "form": "Normal Form"
   },
   {
     "day": 979,
-    "unitId": 613,
-    "name": "Cat Mask Doron"
+    "unitId": 304,
+    "form": "Normal Form"
   },
   {
     "day": 980,
-    "unitId": 620,
-    "name": "Hevijak the Wicked"
+    "unitId": 527,
+    "form": "Evolved Form"
   },
   {
     "day": 981,
-    "unitId": 358,
-    "name": "Verbena the Bride"
+    "unitId": 99,
+    "form": "Evolved Form"
   },
   {
     "day": 982,
-    "unitId": 427,
-    "name": "Cat Clan Heroes"
+    "unitId": 35,
+    "form": "Evolved Form"
   },
   {
     "day": 983,
-    "unitId": 686,
-    "name": "Goddess of Light Sirius"
+    "unitId": 461,
+    "form": "Normal Form"
   },
   {
     "day": 984,
-    "unitId": 760,
-    "name": "Gunduros"
+    "unitId": 196,
+    "form": "True Form"
   },
   {
     "day": 985,
-    "unitId": 247,
-    "name": "Li'l Flying Cat"
+    "unitId": 449,
+    "form": "Normal Form"
   },
   {
     "day": 986,
-    "unitId": 259,
-    "name": "Radiant Aphrodite"
+    "unitId": 650,
+    "form": "Evolved Form"
   },
   {
     "day": 987,
-    "unitId": 696,
-    "name": "Stealth Class Rep Cat"
+    "unitId": 352,
+    "form": "Evolved Form"
   },
   {
     "day": 988,
-    "unitId": 621,
-    "name": "Cat Researcher"
+    "unitId": 438,
+    "form": "Normal Form"
   },
   {
     "day": 989,
-    "unitId": 519,
-    "name": "Lasvoss Reborn"
+    "unitId": 43,
+    "form": "True Form"
   },
   {
     "day": 990,
-    "unitId": 109,
-    "name": "Madam the Savannah"
+    "unitId": 631,
+    "form": "Evolved Form"
   },
   {
     "day": 991,
-    "unitId": 276,
-    "name": "Seaside Neneko"
+    "unitId": 674,
+    "form": "True Form"
   },
   {
     "day": 992,
-    "unitId": 43,
-    "name": "Cat Machine"
+    "unitId": 59,
+    "form": "True Form"
   },
   {
     "day": 993,
-    "unitId": 283,
-    "name": "Pai-Pai"
+    "unitId": 401,
+    "form": "Evolved Form"
   },
   {
     "day": 994,
-    "unitId": 171,
-    "name": "Piccolan Pasalan"
+    "unitId": 137,
+    "form": "Evolved Form"
   },
   {
     "day": 995,
-    "unitId": 18,
-    "name": "Ninja Frog Cat"
+    "unitId": 31,
+    "form": "True Form"
   },
   {
     "day": 996,
-    "unitId": 171,
-    "name": "Balaluga"
+    "unitId": 759,
+    "form": "Evolved Form"
   },
   {
     "day": 997,
-    "unitId": 308,
-    "name": "Gardener Cat"
+    "unitId": 447,
+    "form": "Evolved Form"
   },
   {
     "day": 998,
-    "unitId": 777,
-    "name": "Winter Commander Kaihime"
+    "unitId": 257,
+    "form": "Normal Form"
   },
   {
     "day": 999,
-    "unitId": 286,
-    "name": "Strike Unit R.E.I."
+    "unitId": 36,
+    "form": "Evolved Form"
   },
   {
     "day": 1000,
-    "unitId": 787,
-    "name": "Netherworld Nymph Lunacia"
+    "unitId": 145,
+    "form": "Normal Form"
   },
   {
     "day": 1001,
-    "unitId": 683,
-    "name": "Nosferatu Yukimura"
+    "unitId": 260,
+    "form": "True Form"
   },
   {
     "day": 1002,
-    "unitId": 674,
-    "name": "Extradimensional Envanz"
+    "unitId": 830,
+    "form": "Evolved Form"
   },
   {
     "day": 1003,
-    "unitId": 31,
-    "name": "Delinquent Cat"
+    "unitId": 589,
+    "form": "True Form"
   },
   {
     "day": 1004,
-    "unitId": 210,
-    "name": "Li'l Eraser Cat"
+    "unitId": 641,
+    "form": "Normal Form"
   },
   {
     "day": 1005,
-    "unitId": 287,
-    "name": "Major Leaguer Cat"
+    "unitId": 649,
+    "form": "Evolved Form"
   },
   {
     "day": 1006,
-    "unitId": 653,
-    "name": "Awakened Naala"
+    "unitId": 230,
+    "form": "Evolved Form"
   },
   {
     "day": 1007,
-    "unitId": 148,
-    "name": "Rocker Cat"
+    "unitId": 632,
+    "form": "True Form"
   },
   {
     "day": 1008,
-    "unitId": 711,
-    "name": "Betrothed Pasalan"
+    "unitId": 158,
+    "form": "True Form"
   },
   {
     "day": 1009,
-    "unitId": 71,
-    "name": "Immortal Yukimura"
+    "unitId": 128,
+    "form": "True Form"
   },
   {
     "day": 1010,
-    "unitId": 546,
-    "name": "Papaluga"
+    "unitId": 684,
+    "form": "True Form"
   },
   {
     "day": 1011,
-    "unitId": 22,
-    "name": "Samba Cat"
+    "unitId": 137,
+    "form": "Normal Form"
   },
   {
     "day": 1012,
-    "unitId": 684,
-    "name": "Brainwashed Island Cat"
+    "unitId": 282,
+    "form": "Normal Form"
   },
   {
     "day": 1013,
-    "unitId": 146,
-    "name": "Totem Cat"
+    "unitId": 203,
+    "form": "Normal Form"
   },
   {
     "day": 1014,
-    "unitId": 464,
-    "name": "Reborn Warrior Doguemon"
+    "unitId": 150,
+    "form": "True Form"
   },
   {
     "day": 1015,
-    "unitId": 38,
-    "name": "Solar Cat"
+    "unitId": 33,
+    "form": "Evolved Form"
   },
   {
     "day": 1016,
-    "unitId": 213,
-    "name": "Catburger"
+    "unitId": 132,
+    "form": "Normal Form"
   },
   {
     "day": 1017,
-    "unitId": 519,
-    "name": "Lasvoss"
+    "unitId": 464,
+    "form": "Normal Form"
   },
   {
     "day": 1018,
-    "unitId": 153,
-    "name": "Catophone"
+    "unitId": 97,
+    "form": "Normal Form"
   },
   {
     "day": 1019,
-    "unitId": 588,
-    "name": "First-Love Myrcia ξ"
+    "unitId": 463,
+    "form": "Normal Form"
   },
   {
     "day": 1020,
-    "unitId": 75,
-    "name": "Windy, type α"
+    "unitId": 44,
+    "form": "Normal Form"
   },
   {
     "day": 1021,
-    "unitId": 183,
-    "name": "Cat Kart R"
+    "unitId": 132,
+    "form": "Evolved Form"
   },
   {
     "day": 1022,
-    "unitId": 442,
-    "name": "Tourist Cat"
+    "unitId": 683,
+    "form": "Evolved Form"
   },
   {
     "day": 1023,
-    "unitId": 44,
-    "name": "Greater Balrog Cat"
+    "unitId": 148,
+    "form": "Normal Form"
   },
   {
     "day": 1024,
-    "unitId": 169,
-    "name": "Kubiluga"
+    "unitId": 1,
+    "form": "Evolved Form"
   },
   {
     "day": 1025,
-    "unitId": 478,
-    "name": "Lumina"
+    "unitId": 226,
+    "form": "Evolved Form"
   },
   {
     "day": 1026,
-    "unitId": 34,
-    "name": "Unknown Cat"
+    "unitId": 23,
+    "form": "True Form"
   },
   {
     "day": 1027,
-    "unitId": 273,
-    "name": "Cheerleader Cat"
+    "unitId": 568,
+    "form": "Evolved Form"
   },
   {
     "day": 1028,
-    "unitId": 14,
-    "name": "CatGang"
+    "unitId": 617,
+    "form": "Evolved Form"
   },
   {
     "day": 1029,
-    "unitId": 158,
-    "name": "Immortal Kenshin"
+    "unitId": 607,
+    "form": "True Form"
   },
   {
     "day": 1030,
-    "unitId": 594,
-    "name": "Atlantis Logistix"
+    "unitId": 811,
+    "form": "Evolved Form"
   },
   {
     "day": 1031,
-    "unitId": 690,
-    "name": "King of Destiny Phonoa"
+    "unitId": 151,
+    "form": "Normal Form"
   },
   {
     "day": 1032,
-    "unitId": 87,
-    "name": "Raiden"
+    "unitId": 444,
+    "form": "Evolved Form"
   },
   {
     "day": 1033,
-    "unitId": 7,
-    "name": "Dragon Cat"
+    "unitId": 544,
+    "form": "Normal Form"
   },
   {
     "day": 1034,
-    "unitId": 439,
-    "name": "Empress Chronos"
+    "unitId": 519,
+    "form": "True Form"
   },
   {
     "day": 1035,
-    "unitId": 455,
-    "name": "Wonder MOMOCO"
+    "unitId": 128,
+    "form": "Normal Form"
   },
   {
     "day": 1036,
-    "unitId": 100,
-    "name": "Wrestling Cat"
+    "unitId": 144,
+    "form": "Evolved Form"
   },
   {
     "day": 1037,
-    "unitId": 617,
-    "name": "Dark Summoner Satoru"
+    "unitId": 104,
+    "form": "True Form"
   },
   {
     "day": 1038,
-    "unitId": 32,
-    "name": "Can Can Cat"
+    "unitId": 5,
+    "form": "Normal Form"
   },
   {
     "day": 1039,
-    "unitId": 39,
-    "name": "Face Cat"
+    "unitId": 308,
+    "form": "Evolved Form"
   },
   {
     "day": 1040,
-    "unitId": 687,
-    "name": "Reindeer Terunζ"
+    "unitId": 484,
+    "form": "Evolved Form"
   },
   {
     "day": 1041,
-    "unitId": 449,
-    "name": "Headmistress Jeanne ψ"
+    "unitId": 450,
+    "form": "Normal Form"
   },
   {
     "day": 1042,
-    "unitId": 621,
-    "name": "Aku Researcher"
+    "unitId": 199,
+    "form": "Normal Form"
   },
   {
     "day": 1043,
-    "unitId": 70,
-    "name": "Ritual Cat"
+    "unitId": 176,
+    "form": "Evolved Form"
   },
   {
     "day": 1044,
-    "unitId": 83,
-    "name": "Earth King Sodom"
+    "unitId": 283,
+    "form": "True Form"
   },
   {
     "day": 1045,
-    "unitId": 125,
-    "name": "Takeda Shingen"
+    "unitId": 70,
+    "form": "Normal Form"
   },
   {
     "day": 1046,
-    "unitId": 343,
-    "name": "Slugcat"
+    "unitId": 271,
+    "form": "True Form"
   },
   {
     "day": 1047,
-    "unitId": 819,
-    "name": "Carpenter Cat"
+    "unitId": 287,
+    "form": "Normal Form"
   },
   {
     "day": 1048,
-    "unitId": 674,
-    "name": "Extraterrestrial Envanz"
+    "unitId": 785,
+    "form": "Evolved Form"
   },
   {
     "day": 1049,
-    "unitId": 785,
-    "name": "True Killer Gross Cat"
+    "unitId": 495,
+    "form": "True Form"
   },
   {
     "day": 1050,
-    "unitId": 169,
-    "name": "Kubilan Pasalan"
+    "unitId": 171,
+    "form": "Normal Form"
   },
   {
     "day": 1051,
-    "unitId": 682,
-    "name": "Lady of Deception Vega"
+    "unitId": 7,
+    "form": "Normal Form"
   },
   {
     "day": 1052,
-    "unitId": 481,
-    "name": "Doktor Heaven"
+    "unitId": 396,
+    "form": "Normal Form"
   },
   {
     "day": 1053,
-    "unitId": 448,
-    "name": "Musashi Miyamoto"
+    "unitId": 360,
+    "form": "True Form"
   },
   {
     "day": 1054,
-    "unitId": 80,
-    "name": "Gentleman Bros"
+    "unitId": 51,
+    "form": "True Form"
   },
   {
     "day": 1055,
-    "unitId": 653,
-    "name": "Storm Beast Naala"
+    "unitId": 728,
+    "form": "Evolved Form"
   },
   {
     "day": 1056,
-    "unitId": 531,
-    "name": "Assassin BearCat"
+    "unitId": 21,
+    "form": "Normal Form"
   },
   {
     "day": 1057,
-    "unitId": 613,
-    "name": "Elder Mask Doron"
+    "unitId": 774,
+    "form": "Normal Form"
   },
   {
     "day": 1058,
-    "unitId": 378,
-    "name": "Dark Mitama"
+    "unitId": 737,
+    "form": "Evolved Form"
   },
   {
     "day": 1059,
-    "unitId": 587,
-    "name": "Chocoladite"
+    "unitId": 18,
+    "form": "Evolved Form"
   },
   {
     "day": 1060,
-    "unitId": 820,
-    "name": "Seaside Pegasa"
+    "unitId": 122,
+    "form": "True Form"
   },
   {
     "day": 1061,
-    "unitId": 618,
-    "name": "Shiro Amakusa"
+    "unitId": 38,
+    "form": "True Form"
   },
   {
     "day": 1062,
-    "unitId": 783,
-    "name": "Superstar Koneko"
+    "unitId": 130,
+    "form": "Evolved Form"
   },
   {
     "day": 1063,
-    "unitId": 450,
-    "name": "God-Emperor Babel"
+    "unitId": 730,
+    "form": "True Form"
   },
   {
     "day": 1064,
-    "unitId": 126,
-    "name": "Clockwork Cat"
+    "unitId": 652,
+    "form": "Evolved Form"
   },
   {
     "day": 1065,
-    "unitId": 706,
-    "name": "Soap Cat"
+    "unitId": 563,
+    "form": "Normal Form"
   },
   {
     "day": 1066,
-    "unitId": 15,
-    "name": "Panties Cat"
+    "unitId": 481,
+    "form": "Normal Form"
   },
   {
     "day": 1067,
-    "unitId": 100,
-    "name": "Sportsgirl Cat"
+    "unitId": 85,
+    "form": "Evolved Form"
   },
   {
     "day": 1068,
-    "unitId": 258,
-    "name": "Almighty Anubis"
+    "unitId": 74,
+    "form": "Evolved Form"
   },
   {
     "day": 1069,
-    "unitId": 11,
-    "name": "Super Mr."
+    "unitId": 209,
+    "form": "Normal Form"
   },
   {
     "day": 1070,
-    "unitId": 47,
-    "name": "Maximum The Fighter"
+    "unitId": 127,
+    "form": "Normal Form"
   },
   {
     "day": 1071,
-    "unitId": 56,
-    "name": "Cataur"
+    "unitId": 134,
+    "form": "Normal Form"
   },
   {
     "day": 1072,
-    "unitId": 261,
-    "name": "Hayabusa"
+    "unitId": 614,
+    "form": "True Form"
   },
   {
     "day": 1073,
-    "unitId": 360,
-    "name": "Mizuririn"
+    "unitId": 493,
+    "form": "Evolved Form"
   },
   {
     "day": 1074,
-    "unitId": 334,
-    "name": "Fox Queen Himeyuri"
+    "unitId": 521,
+    "form": "Evolved Form"
   },
   {
     "day": 1075,
-    "unitId": 728,
-    "name": "Master of Mind Soractes"
+    "unitId": 822,
+    "form": "Evolved Form"
   },
   {
     "day": 1076,
-    "unitId": 352,
-    "name": "Masked Grandmaster Cat"
+    "unitId": 94,
+    "form": "Normal Form"
   },
   {
     "day": 1077,
-    "unitId": 144,
-    "name": "Cat Base Ultra"
+    "unitId": 158,
+    "form": "Ultra Form"
   },
   {
     "day": 1078,
-    "unitId": 137,
-    "name": "Ultra Kasa Jizo"
+    "unitId": 588,
+    "form": "Normal Form"
   },
   {
     "day": 1079,
-    "unitId": 316,
-    "name": "Valiant Poseidon"
+    "unitId": 50,
+    "form": "True Form"
   },
   {
     "day": 1080,
-    "unitId": 355,
-    "name": "Orbital Annihilator Ragnarok"
+    "unitId": 267,
+    "form": "Evolved Form"
   },
   {
     "day": 1081,
-    "unitId": 15,
-    "name": "Lollycat"
+    "unitId": 630,
+    "form": "Evolved Form"
   },
   {
     "day": 1082,
-    "unitId": 39,
-    "name": "Apple Cat"
+    "unitId": 272,
+    "form": "True Form"
   },
   {
     "day": 1083,
-    "unitId": 275,
-    "name": "Brightsummer Cat"
+    "unitId": 726,
+    "form": "Evolved Form"
   },
   {
     "day": 1084,
-    "unitId": 82,
-    "name": "Blue Shinobi"
+    "unitId": 61,
+    "form": "True Form"
   },
   {
     "day": 1085,
-    "unitId": 8,
-    "name": "Mythical Titan Cat"
+    "unitId": 123,
+    "form": "Normal Form"
   },
   {
     "day": 1086,
-    "unitId": 58,
-    "name": "Swordsman Cat"
+    "unitId": 135,
+    "form": "Ultra Form"
   },
   {
     "day": 1087,
-    "unitId": 648,
-    "name": "Lovestruck Greater Demon"
+    "unitId": 305,
+    "form": "True Form"
   },
   {
     "day": 1088,
-    "unitId": 58,
-    "name": "Elemental Duelist Cat"
+    "unitId": 325,
+    "form": "Normal Form"
   },
   {
     "day": 1089,
-    "unitId": 61,
-    "name": "Roe Cat"
+    "unitId": 107,
+    "form": "True Form"
   },
   {
     "day": 1090,
-    "unitId": 59,
-    "name": "Baby Cats"
+    "unitId": 50,
+    "form": "Evolved Form"
   },
   {
     "day": 1091,
-    "unitId": 153,
-    "name": "Cat Toaster"
+    "unitId": 731,
+    "form": "Normal Form"
   },
   {
     "day": 1092,
-    "unitId": 1,
-    "name": "Eraser Cat"
+    "unitId": 183,
+    "form": "Normal Form"
   },
   {
     "day": 1093,
-    "unitId": 527,
-    "name": "Slime Cat"
+    "unitId": 464,
+    "form": "Evolved Form"
   },
   {
     "day": 1094,
-    "unitId": 73,
-    "name": "Oda Nobunaga"
+    "unitId": 693,
+    "form": "Normal Form"
   },
   {
     "day": 1095,
-    "unitId": 824,
-    "name": "Sorceress Sidmi"
+    "unitId": 527,
+    "form": "Normal Form"
   },
   {
     "day": 1096,
-    "unitId": 378,
-    "name": "Gothic Mitama"
+    "unitId": 96,
+    "form": "Evolved Form"
   },
   {
     "day": 1097,
-    "unitId": 177,
-    "name": "Dioramos"
+    "unitId": 619,
+    "form": "Normal Form"
   },
   {
     "day": 1098,
-    "unitId": 693,
-    "name": "White Butler Vigler"
+    "unitId": 247,
+    "form": "True Form"
   },
   {
     "day": 1099,
-    "unitId": 323,
-    "name": "Awakened Musashi"
+    "unitId": 563,
+    "form": "True Form"
   },
   {
     "day": 1100,
-    "unitId": 258,
-    "name": "Anubis the Protector"
+    "unitId": 3,
+    "form": "Evolved Form"
   },
   {
     "day": 1101,
-    "unitId": 124,
-    "name": "Wargod Masamune"
+    "unitId": 257,
+    "form": "Evolved Form"
   },
   {
     "day": 1102,
-    "unitId": 23,
-    "name": "Loincloth Cat"
+    "unitId": 676,
+    "form": "True Form"
   },
   {
     "day": 1103,
-    "unitId": 718,
-    "name": "Cone Cat"
+    "unitId": 52,
+    "form": "True Form"
   },
   {
     "day": 1104,
-    "unitId": 25,
-    "name": "Awakened Bahamut Cat"
+    "unitId": 73,
+    "form": "Normal Form"
   },
   {
     "day": 1105,
-    "unitId": 546,
-    "name": "Sukelan Kakulan"
+    "unitId": 73,
+    "form": "Evolved Form"
   },
   {
     "day": 1106,
-    "unitId": 719,
-    "name": "Tekachi"
+    "unitId": 135,
+    "form": "Evolved Form"
   },
   {
     "day": 1107,
-    "unitId": 127,
-    "name": "Bombercat"
+    "unitId": 134,
+    "form": "Evolved Form"
   },
   {
     "day": 1108,
-    "unitId": 274,
-    "name": "Tropical Kalisa, type X"
+    "unitId": 493,
+    "form": "Normal Form"
   },
   {
     "day": 1109,
-    "unitId": 313,
-    "name": "Li'l Mythical Titan"
+    "unitId": 455,
+    "form": "Normal Form"
   },
   {
     "day": 1110,
-    "unitId": 507,
-    "name": "Supercat"
+    "unitId": 684,
+    "form": "Normal Form"
   },
   {
     "day": 1111,
-    "unitId": 554,
-    "name": "Esoteric Uril"
+    "unitId": 18,
+    "form": "Normal Form"
   },
   {
     "day": 1112,
-    "unitId": 324,
-    "name": "Curling Cat"
+    "unitId": 613,
+    "form": "Normal Form"
   },
   {
     "day": 1113,
-    "unitId": 481,
-    "name": "Professor Abyss"
+    "unitId": 383,
+    "form": "Evolved Form"
   },
   {
     "day": 1114,
-    "unitId": 36,
-    "name": "Butterfly Cat"
+    "unitId": 14,
+    "form": "True Form"
   },
   {
     "day": 1115,
-    "unitId": 633,
-    "name": "Chunchun Haunters"
+    "unitId": 333,
+    "form": "Normal Form"
   },
   {
     "day": 1116,
-    "unitId": 643,
-    "name": "Superfeline2"
+    "unitId": 331,
+    "form": "Evolved Form"
   },
   {
     "day": 1117,
-    "unitId": 195,
-    "name": "Mission Control Mekako"
+    "unitId": 357,
+    "form": "Normal Form"
   },
   {
     "day": 1118,
-    "unitId": 799,
-    "name": "Grandiose Gunhauzer"
+    "unitId": 338,
+    "form": "Normal Form"
   },
   {
     "day": 1119,
-    "unitId": 41,
-    "name": "Cyborg Cat"
+    "unitId": 136,
+    "form": "Evolved Form"
   },
   {
     "day": 1120,
-    "unitId": 284,
-    "name": "Express Cat"
+    "unitId": 323,
+    "form": "Normal Form"
   },
   {
     "day": 1121,
-    "unitId": 123,
-    "name": "Bean Cats"
+    "unitId": 168,
+    "form": "Normal Form"
   },
   {
     "day": 1122,
-    "unitId": 559,
-    "name": "Hell Sentinel Emma"
+    "unitId": 49,
+    "form": "Evolved Form"
   },
   {
     "day": 1123,
-    "unitId": 522,
-    "name": "Fiend Cat"
+    "unitId": 73,
+    "form": "Ultra Form"
   },
   {
     "day": 1124,
-    "unitId": 197,
-    "name": "Neo Psychocat"
+    "unitId": 104,
+    "form": "Normal Form"
   },
   {
     "day": 1125,
-    "unitId": 257,
-    "name": "Almighty Zeus"
+    "unitId": 129,
+    "form": "True Form"
   },
   {
     "day": 1126,
-    "unitId": 660,
-    "name": "Sea King Daliasan"
+    "unitId": 127,
+    "form": "Evolved Form"
   },
   {
     "day": 1127,
-    "unitId": 43,
-    "name": "Cat Machine Mk 2"
+    "unitId": 607,
+    "form": "Normal Form"
   },
   {
     "day": 1128,
-    "unitId": 99,
-    "name": "Manic Jamiera Cat"
+    "unitId": 274,
+    "form": "Evolved Form"
   },
   {
     "day": 1129,
-    "unitId": 436,
-    "name": "Nobiluga"
+    "unitId": 688,
+    "form": "Evolved Form"
   },
   {
     "day": 1130,
-    "unitId": 383,
-    "name": "Masked Yulala"
+    "unitId": 377,
+    "form": "True Form"
   },
   {
     "day": 1131,
-    "unitId": 381,
-    "name": "Farmer Cat"
+    "unitId": 451,
+    "form": "Evolved Form"
   },
   {
     "day": 1132,
-    "unitId": 635,
-    "name": "Hundred-Million-Dollar Cat"
+    "unitId": 625,
+    "form": "True Form"
   },
   {
     "day": 1133,
-    "unitId": 3,
-    "name": "Sexy Legs Cat"
+    "unitId": 615,
+    "form": "Normal Form"
   },
   {
     "day": 1134,
-    "unitId": 32,
-    "name": "Hip Hop Cat"
+    "unitId": 554,
+    "form": "Normal Form"
   },
   {
     "day": 1135,
-    "unitId": 237,
-    "name": "Headmaster Cat Jobs"
+    "unitId": 674,
+    "form": "Evolved Form"
   },
   {
     "day": 1136,
-    "unitId": 565,
-    "name": "Macho Suntan Cat"
+    "unitId": 258,
+    "form": "Normal Form"
   },
   {
     "day": 1137,
-    "unitId": 307,
-    "name": "Housewife Cat"
+    "unitId": 343,
+    "form": "Evolved Form"
   },
   {
     "day": 1138,
-    "unitId": 726,
-    "name": "Medal Emperor"
+    "unitId": 13,
+    "form": "True Form"
   },
   {
     "day": 1139,
-    "unitId": 47,
-    "name": "Viking Cat"
+    "unitId": 731,
+    "form": "Evolved Form"
   },
   {
     "day": 1140,
-    "unitId": 126,
-    "name": "Puppetmaster Cat"
+    "unitId": 34,
+    "form": "True Form"
   },
   {
     "day": 1141,
-    "unitId": 418,
-    "name": "Corrupted Moneko"
+    "unitId": 15,
+    "form": "Normal Form"
   },
   {
     "day": 1142,
-    "unitId": 131,
-    "name": "Neneko"
+    "unitId": 566,
+    "form": "Normal Form"
   },
   {
     "day": 1143,
-    "unitId": 435,
-    "name": "Li'l Valkyrie"
+    "unitId": 644,
+    "form": "Normal Form"
   },
   {
     "day": 1144,
-    "unitId": 310,
-    "name": "Xmas Spirit Nurse"
+    "unitId": 558,
+    "form": "Normal Form"
   },
   {
     "day": 1145,
-    "unitId": 817,
-    "name": "Moririn"
+    "unitId": 361,
+    "form": "Evolved Form"
   },
   {
     "day": 1146,
-    "unitId": 50,
-    "name": "Sanzo Cat"
+    "unitId": 324,
+    "form": "True Form"
   },
   {
     "day": 1147,
-    "unitId": 773,
-    "name": "Mama Mummy Sumo"
+    "unitId": 303,
+    "form": "True Form"
   },
   {
     "day": 1148,
-    "unitId": 247,
-    "name": "Li'l Bird Cat"
+    "unitId": 211,
+    "form": "Evolved Form"
   },
   {
     "day": 1149,
-    "unitId": 237,
-    "name": "Prof. Cat Jobs"
+    "unitId": 13,
+    "form": "Normal Form"
   },
   {
     "day": 1150,
-    "unitId": 694,
-    "name": "Brainwashed Mythic Titan"
+    "unitId": 70,
+    "form": "True Form"
   },
   {
     "day": 1151,
-    "unitId": 286,
-    "name": "Assault Unit R.E.I."
+    "unitId": 146,
+    "form": "Evolved Form"
   },
   {
     "day": 1152,
-    "unitId": 42,
-    "name": "Ice Cat"
+    "unitId": 693,
+    "form": "Evolved Form"
   },
   {
     "day": 1153,
-    "unitId": 437,
-    "name": "Cat God The Awesome"
+    "unitId": 786,
+    "form": "Evolved Form"
   },
   {
     "day": 1154,
-    "unitId": 311,
-    "name": "Li'l Island Cat"
+    "unitId": 781,
+    "form": "Evolved Form"
   },
   {
     "day": 1155,
-    "unitId": 653,
-    "name": "Elder Beast Naala"
+    "unitId": 302,
+    "form": "Evolved Form"
   },
   {
     "day": 1156,
-    "unitId": 50,
-    "name": "Bishop Cat"
+    "unitId": 92,
+    "form": "Evolved Form"
   },
   {
     "day": 1157,
-    "unitId": 19,
-    "name": "Skelecat"
+    "unitId": 589,
+    "form": "Normal Form"
   },
   {
     "day": 1158,
-    "unitId": 74,
-    "name": "Reindeer Fish Cat"
+    "unitId": 585,
+    "form": "Evolved Form"
   },
   {
     "day": 1159,
-    "unitId": 610,
-    "name": "King Nekokhamen"
+    "unitId": 257,
+    "form": "True Form"
   },
   {
     "day": 1160,
-    "unitId": 85,
-    "name": "God-Emperor Vars"
+    "unitId": 375,
+    "form": "Evolved Form"
   },
   {
     "day": 1161,
-    "unitId": 52,
-    "name": "Shaman Cat"
+    "unitId": 305,
+    "form": "Normal Form"
   },
   {
     "day": 1162,
-    "unitId": 715,
-    "name": "Attack Battalion Convoys"
+    "unitId": 525,
+    "form": "Evolved Form"
   },
   {
     "day": 1163,
-    "unitId": 445,
-    "name": "Cutter Cat"
+    "unitId": 559,
+    "form": "True Form"
   },
   {
     "day": 1164,
-    "unitId": 9,
-    "name": "Beefcake Cat"
+    "unitId": 93,
+    "form": "True Form"
   },
   {
     "day": 1165,
-    "unitId": 226,
-    "name": "Warlock and Pierre"
+    "unitId": 335,
+    "form": "Normal Form"
   },
   {
     "day": 1166,
-    "unitId": 238,
-    "name": "Richest Cat"
+    "unitId": 496,
+    "form": "Normal Form"
   },
   {
     "day": 1167,
-    "unitId": 319,
-    "name": "True Killer Cat"
+    "unitId": 152,
+    "form": "Normal Form"
   },
   {
     "day": 1168,
-    "unitId": 97,
-    "name": "Manic Island Cat"
+    "unitId": 397,
+    "form": "Evolved Form"
   },
   {
     "day": 1169,
-    "unitId": 401,
-    "name": "Voli"
-  },
-  {
-    "day": 1170,
-    "unitId": 623,
-    "name": "Komuso Cat"
-  },
-  {
-    "day": 1171,
-    "unitId": 122,
-    "name": "Office Lady Cat"
+    "unitId": 610,
+    "form": "Normal Form"
   }
 ];

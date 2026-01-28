@@ -2,18 +2,28 @@ import { DailyLogic } from './dailyLogic.js';
 import { Security } from './security.js';
 
 export class GameLogic {
-  constructor(catsData) {
+  constructor(catsData, mode = 'daily') {
     this.cats = catsData;
-    this.dailyLogic = new DailyLogic(catsData);
+    this.mode = mode;
+
+    if (this.mode === 'infinite') {
+      this.initializeInfiniteMode();
+    } else {
+      this.initializeDailyMode();
+    }
+  }
+
+  initializeDailyMode() {
+    this.dailyLogic = new DailyLogic(this.cats);
     this.currentGameDay = this.dailyLogic.getCurrentGameDay();
 
     // Check and reset for new day
     const needsReset = this.checkAndResetForNewDay();
 
-    // Load game state
-    this.selectedCats = this.loadValidatedState('selectedCats', []);
-    this.attempts = this.loadValidatedState('attempts', 0);
-    this.hintAvailable = this.loadValidatedState('hintAvailable', false);
+    // Load game state with daily prefix
+    this.selectedCats = this.loadValidatedState('selectedCats', [], 'daily');
+    this.attempts = this.loadValidatedState('attempts', 0, 'daily');
+    this.hintAvailable = this.loadValidatedState('hintAvailable', false, 'daily');
 
     // Get answers
     this.answer = this.dailyLogic.getTodaysAnswer();
@@ -23,42 +33,68 @@ export class GameLogic {
     Security.storage.set(`answer_${this.currentGameDay}`, JSON.stringify(this.answer), 365 * 24 * 60 * 60 * 1000);
   }
 
+  initializeInfiniteMode() {
+    this.dailyLogic = null;
+
+    // Load game state with infinite prefix
+    this.selectedCats = this.loadValidatedState('selectedCats', [], 'infinite');
+    this.attempts = this.loadValidatedState('attempts', 0, 'infinite');
+    this.hintAvailable = this.loadValidatedState('hintAvailable', false, 'infinite');
+
+    // Load or generate random answer
+    const storedAnswer = Security.storage.get('infinite_currentAnswer');
+    if (storedAnswer) {
+      try {
+        this.answer = JSON.parse(storedAnswer);
+      } catch (e) {
+        this.answer = this.generateRandomAnswer();
+        this.saveInfiniteState();
+      }
+    } else {
+      this.answer = this.generateRandomAnswer();
+      this.saveInfiniteState();
+    }
+
+    this.yesterdaysAnswer = this.getPlaceholderCat();
+  }
+
+  generateRandomAnswer() {
+    const randomIndex = Math.floor(Math.random() * this.cats.length);
+    return this.cats[randomIndex];
+  }
+
+  saveInfiniteState() {
+    Security.storage.set('infinite_currentAnswer', JSON.stringify(this.answer));
+  }
+
   checkAndResetForNewDay() {
+    if (this.mode !== 'daily') return false;
+
     const storedGameDay = Security.storage.get('game_day');
 
     if (storedGameDay !== this.currentGameDay) {
-      this.clearOldGameState();
+      this.clearOldGameState('daily');
       Security.storage.set('game_day', this.currentGameDay, 48 * 60 * 60 * 1000);
       return true;
     }
     return false;
   }
 
-  clearOldGameState() {
-    ['selectedCats', 'attempts', 'hintAvailable'].forEach(key => {
-      Security.storage.remove(key);
-    });
+  clearOldGameState(prefix = 'daily') {
+    if (prefix === 'daily') {
+      ['selectedCats', 'attempts', 'hintAvailable'].forEach(key => {
+        Security.storage.remove(key);
+      });
+    } else {
+      ['infinite_selectedCats', 'infinite_attempts', 'infinite_hintAvailable'].forEach(key => {
+        Security.storage.remove(key);
+      });
+    }
   }
 
-  getPlaceholderCat() {
-    return {
-      unitId: 0,
-      name: 'Cat',
-      img: 'images/cats/Cat.webp',
-      rarity: 'Normal',
-      form: 'Normal Form',
-      role: '',
-      traits: '',
-      attackType: '',
-      abilities: '',
-      cost: '0¢',
-      version: 'V1.0',
-      source: 'Unknown'
-    };
-  }
-
-  loadValidatedState(key, defaultValue) {
-    const stored = Security.storage.get(key);
+  loadValidatedState(key, defaultValue, prefix = 'daily') {
+    const storageKey = prefix === 'infinite' ? `infinite_${key}` : key;
+    const stored = Security.storage.get(storageKey);
 
     if (stored === null) return defaultValue;
 
@@ -80,6 +116,23 @@ export class GameLogic {
       default:
         return defaultValue;
     }
+  }
+
+  getPlaceholderCat() {
+    return {
+      unitId: 0,
+      name: 'Cat',
+      img: 'images/cats/Cat.webp',
+      rarity: 'Normal',
+      form: 'Normal Form',
+      role: '',
+      traits: '',
+      attackType: '',
+      abilities: '',
+      cost: '0¢',
+      version: 'V1.0',
+      source: 'Unknown'
+    };
   }
 
   getAttempts() {
@@ -228,18 +281,43 @@ export class GameLogic {
 
   checkGuess(cat) {
     this.attempts++;
-    Security.storage.set('attempts', this.attempts);
 
     const safeName = Security.sanitizeInput(cat.name);
     this.selectedCats.push(safeName);
-    Security.storage.set('selectedCats', this.selectedCats);
 
     if (this.attempts >= 5 && !this.hintAvailable) {
       this.hintAvailable = true;
+    }
+
+    // Save state based on mode
+    if (this.mode === 'infinite') {
+      Security.storage.set('infinite_selectedCats', this.selectedCats);
+      Security.storage.set('infinite_attempts', this.attempts);
+      Security.storage.set('infinite_hintAvailable', this.hintAvailable);
+    } else {
+      Security.storage.set('selectedCats', this.selectedCats);
+      Security.storage.set('attempts', this.attempts);
       Security.storage.set('hintAvailable', this.hintAvailable);
     }
 
     return cat.name === this.answer.name;
+  }
+
+  startNewInfiniteGame() {
+    if (this.mode === 'infinite') {
+      this.answer = this.generateRandomAnswer();
+      this.selectedCats = [];
+      this.attempts = 0;
+      this.hintAvailable = false;
+
+      Security.storage.set('infinite_selectedCats', []);
+      Security.storage.set('infinite_attempts', 0);
+      Security.storage.set('infinite_hintAvailable', false);
+      Security.storage.set('infinite_currentAnswer', JSON.stringify(this.answer));
+
+      return true;
+    }
+    return false;
   }
 
   resetGameState() {
@@ -247,9 +325,15 @@ export class GameLogic {
     this.attempts = 0;
     this.hintAvailable = false;
 
-    ['selectedCats', 'attempts', 'hintAvailable'].forEach(key => {
-      Security.storage.remove(key);
-    });
+    if (this.mode === 'infinite') {
+      ['infinite_selectedCats', 'infinite_attempts', 'infinite_hintAvailable'].forEach(key => {
+        Security.storage.remove(key);
+      });
+    } else {
+      ['selectedCats', 'attempts', 'hintAvailable'].forEach(key => {
+        Security.storage.remove(key);
+      });
+    }
 
     console.log('Game manually reset');
   }
@@ -259,10 +343,17 @@ export class GameLogic {
   }
 
   getYesterdaysAnswer() {
+    if (this.mode === 'infinite') {
+      return this.getPlaceholderCat();
+    }
     return this.yesterdaysAnswer;
   }
 
   getTodaysDateKey() {
     return this.currentGameDay;
+  }
+
+  isInfiniteMode() {
+    return this.mode === 'infinite';
   }
 }
