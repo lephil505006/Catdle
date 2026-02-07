@@ -5,13 +5,13 @@ import { loadCatData } from './loadCats.js';
 function getGameMode() {
     const hash = window.location.hash;
     if (hash === '#infinite') return 'infinite';
-    
+
     const urlParams = new URLSearchParams(window.location.search);
     if (urlParams.get('mode') === 'infinite') {
         window.location.hash = 'infinite';
         return 'infinite';
     }
-    
+
     return 'daily';
 }
 
@@ -22,24 +22,24 @@ function updateUIMode(mode) {
 
     if (mode === 'infinite') {
         body.classList.add('infinite-mode');
-        
+
         if (window.location.hash !== '#infinite') {
             const cleanUrl = window.location.pathname + '#infinite';
             window.history.replaceState({}, '', cleanUrl);
         }
-        
+
 
         if (instructionElement) {
             instructionElement.textContent = "Battle Cats Infinite Mode - Endless Units!";
         }
     } else {
         body.classList.remove('infinite-mode');
-        
+
         if (window.location.hash) {
             const cleanUrl = window.location.pathname;
             window.history.replaceState({}, '', cleanUrl);
         }
-        
+
         if (instructionElement) {
             instructionElement.textContent = "Guess The Daily Battle Cat's unit!";
         }

@@ -17,16 +17,10 @@ export class DailyLogic {
     getDaysSinceLaunch() {
         const now = new Date();
         const launch = DailyLogic.LAUNCH_DATE;
+        const msSinceLaunch = now.getTime() - launch.getTime();
+        const msPerDay = 1000 * 60 * 60 * 24;
 
-        const diffMs = now - launch;
-        let diffDays = Math.floor(diffMs / (1000 * 60 * 60 * 24));
-
-        const currentUTCHour = now.getUTCHours();
-        if (currentUTCHour < DailyLogic.RESET_HOUR_UTC) {
-            diffDays--;
-        }
-
-        return Math.max(0, diffDays);
+        return Math.max(0, Math.floor(msSinceLaunch / msPerDay));
     }
 
     getCurrentGameDay() {

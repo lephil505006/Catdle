@@ -16,32 +16,21 @@ export class GameLogic {
   initializeDailyMode() {
     this.dailyLogic = new DailyLogic(this.cats);
     this.currentGameDay = this.dailyLogic.getCurrentGameDay();
-
-    // Check and reset for new day
-    const needsReset = this.checkAndResetForNewDay();
-
-    // Load game state with daily prefix
     this.selectedCats = this.loadValidatedState('selectedCats', [], 'daily');
     this.attempts = this.loadValidatedState('attempts', 0, 'daily');
     this.hintAvailable = this.loadValidatedState('hintAvailable', false, 'daily');
-
-    // Get answers
     this.answer = this.dailyLogic.getTodaysAnswer();
     this.yesterdaysAnswer = this.dailyLogic.getYesterdaysAnswer();
 
-    // Store today's answer
     Security.storage.set(`answer_${this.currentGameDay}`, JSON.stringify(this.answer), 365 * 24 * 60 * 60 * 1000);
   }
 
   initializeInfiniteMode() {
     this.dailyLogic = null;
-
-    // Load game state with infinite prefix
     this.selectedCats = this.loadValidatedState('selectedCats', [], 'infinite');
     this.attempts = this.loadValidatedState('attempts', 0, 'infinite');
     this.hintAvailable = this.loadValidatedState('hintAvailable', false, 'infinite');
 
-    // Load or generate random answer
     const storedAnswer = Security.storage.get('infinite_currentAnswer');
     if (storedAnswer) {
       try {
