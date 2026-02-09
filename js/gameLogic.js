@@ -13,9 +13,10 @@ export class GameLogic {
     }
   }
 
-  initializeDailyMode() {
+initializeDailyMode() {
     this.dailyLogic = new DailyLogic(this.cats);
     this.currentGameDay = this.dailyLogic.getCurrentGameDay();
+    const needsReset = this.checkAndResetForNewDay();
     this.selectedCats = this.loadValidatedState('selectedCats', [], 'daily');
     this.attempts = this.loadValidatedState('attempts', 0, 'daily');
     this.hintAvailable = this.loadValidatedState('hintAvailable', false, 'daily');
@@ -23,7 +24,7 @@ export class GameLogic {
     this.yesterdaysAnswer = this.dailyLogic.getYesterdaysAnswer();
 
     Security.storage.set(`answer_${this.currentGameDay}`, JSON.stringify(this.answer), 365 * 24 * 60 * 60 * 1000);
-  }
+}
 
   initializeInfiniteMode() {
     this.dailyLogic = null;
