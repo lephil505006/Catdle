@@ -13,6 +13,10 @@ body {
     height: 100vh;
 }
 
+* {
+    outline: 1px solid red;
+}
+
 @font-face {
     font-family: 'Humato Heavy';
     src: url('../fonts/Humato-Hv-FFP.ttf') format('truetype');
@@ -34,6 +38,7 @@ header {
 }
 
 .game-logo {
+    max-width: clamp(250px, 50%, 600px);
     max-width: 50%;
     height: auto;
     display: block;
@@ -284,19 +289,18 @@ body.infinite-mode .play-again-button {
 
 #headers {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     gap: 6px;
-    padding: 5px;
+    padding: 5px 0;
     margin: 0 auto;
     width: 100%;
     max-width: 1400px;
     box-sizing: border-box;
-    text-align: center;
 }
 
 .header-item {
     width: 120px;
-    height: 100px;
+    height: 120px;
     text-align: center;
     box-sizing: border-box;
     display: flex;
@@ -304,7 +308,7 @@ body.infinite-mode .play-again-button {
     justify-content: center;
     border-radius: 10px;
     margin: 0 3px;
-    padding: 10px;
+    padding: 5px;
     font-family: 'Humato Heavy';
     font-size: 24px;
     color: black;
@@ -313,20 +317,22 @@ body.infinite-mode .play-again-button {
 
 .cat-details-element {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     width: 100%;
     margin-bottom: 15px;
-    gap: 20px;
+    gap: 6px;
 }
 
 /* Boxes */
 .cat-detail {
-    flex: 1;
-    min-width: 80px;
+    flex: 0 0 auto;
+    width: 120px;
+    min-width: 120px;
     max-width: 120px;
+    height: 120px;
     text-align: center;
     border: 3px solid #000000;
-    padding: 10px;
+    padding: 5px;
     margin: 0 3px;
     border-radius: 10px;
     display: flex;
@@ -335,20 +341,20 @@ body.infinite-mode .play-again-button {
     flex-direction: column;
     font-size: 16px;
     color: white;
-    height: 120px;
     overflow: hidden;
     text-overflow: ellipsis;
     word-wrap: break-word;
     white-space: normal;
+    box-sizing: border-box;
+    text-shadow: 1px 1px 2px black;
 }
 
 .cat-img-container {
-    width: 135px;
+    width: 120px;
     height: 120px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: auto;
 }
 
 .cat-img-container img {
@@ -375,8 +381,6 @@ body.infinite-mode .play-again-button {
     border-radius: 30px;
     font-family: 'Impact';
     font-size: 24px;
-    max-height: 110px;
-    max-width: 110px;
 }
 
 .red-box {
@@ -400,11 +404,13 @@ body.infinite-mode .play-again-button {
 .cat-details-element .red-box,
 .cat-details-element .green-box,
 .cat-details-element .yellow-box {
-    width: 110px;
-    max-width: 110px;
-    height: 110px;
-    max-height: 110px;
-    padding: 10px;
+    width: 120px;
+    min-width: 120px;
+    max-width: 120px;
+    height: 120px;
+    max-height: 120px;
+    padding: 5px;
+    /* Reduced padding */
     border-radius: 30px;
     font-family: 'Impact';
     font-size: 24px;
@@ -415,6 +421,7 @@ body.infinite-mode .play-again-button {
     flex-direction: column;
     word-wrap: break-word;
     white-space: normal;
+    box-sizing: border-box;
 }
 
 /* Icons (abilities, traits, attack) */
@@ -452,10 +459,16 @@ body.infinite-mode .play-again-button {
 .single-down,
 .double-up,
 .double-down {
-    flex: 1;
+    flex: 0 0 auto;
+    width: 120px;
+    min-width: 120px;
+    max-width: 120px;
+    height: 120px;
+    max-height: 120px;
     text-align: center;
     border: 3px solid #000000;
-    padding: 10px;
+    padding: 5px;
+    /* Reduced padding */
     margin: 0 3px;
     border-radius: 30px;
     display: flex;
@@ -465,10 +478,6 @@ body.infinite-mode .play-again-button {
     font-family: 'Impact';
     font-size: 24px;
     color: white;
-    width: 110px;
-    max-width: 110px;
-    height: 110px;
-    max-height: 110px;
     overflow: hidden;
     text-overflow: ellipsis;
     word-wrap: break-word;
@@ -476,6 +485,7 @@ body.infinite-mode .play-again-button {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    box-sizing: border-box;
 }
 
 .single-up {
@@ -742,6 +752,7 @@ body.overlay-open {
     flex-wrap: wrap;
     gap: 10px;
     margin-top: 10px;
+    justify-content: center;
 }
 
 .category-box {
@@ -892,7 +903,7 @@ body.overlay-open {
 .version-examples-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 50px;
     justify-content: center;
     margin: 20px 0;
     height: 170px;
@@ -904,6 +915,7 @@ body.overlay-open {
     flex-direction: column;
     align-items: center;
     gap: 10px;
+    max-width: 100px;
 }
 
 .example-cat-detail {
@@ -1009,6 +1021,7 @@ body.overlay-open {
         transform: scale(0.7);
         opacity: 0;
     }
+
     100% {
         transform: scale(1);
         opacity: 1;
@@ -1166,7 +1179,318 @@ body.overlay-open {
     margin: 0 auto;
 }
 
-/* Hide yesterdays answer in infinite mode */
 body.infinite-mode .yesterdays-answer {
     display: none;
+}
+
+@media (max-width: 1240px) {
+
+    body {
+        padding-bottom: 80px;
+        overflow-x: hidden;
+    }
+
+    .cost-examples-container,
+    .version-examples-container {
+        height: auto;
+    }
+
+    #game-container,
+    .header-bar,
+    .yesterdays-answer,
+    .victory-content,
+    .info-box,
+    .changelog-box,
+    .about-box {
+        width: 92%;
+        max-width: 92%;
+        margin-left: auto;
+        margin-right: auto;
+        box-sizing: border-box;
+    }
+
+    #game-container {
+        padding: 12px;
+        border-radius: 20px;
+        min-height: 340px;
+        margin: 0 auto 15px;
+    }
+
+    .game-instruction {
+        font-size: 20px;
+        margin: 10px 0;
+        line-height: 1.2;
+    }
+
+    .header-bar {
+        gap: 70px;
+        padding: 8px;
+        border-radius: 15px;
+        margin: 0 auto 15px;
+    }
+
+    .header-button {
+        width: 45px;
+        height: 45px;
+    }
+
+    .header-icon {
+        width: 50px;
+        height: 50px;
+    }
+
+    .hint-area {
+        margin: 15px 0;
+    }
+
+    .hint-box {
+        width: 130px;
+        height: 95px;
+        padding-bottom: 12px;
+        border-radius: 12px;
+    }
+
+    .hint-icon-img {
+        width: 45px;
+        height: 45px;
+    }
+
+    .hint-text {
+        font-size: 15px;
+        padding: 0 8px;
+    }
+
+    .hint-reveal-box {
+        width: 130px;
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .search-bar-outer {
+        height: 68px;
+        padding: 6px;
+        border-radius: 12px;
+    }
+
+    #search-bar {
+        width: calc(100% - 120px);
+        height: 28px;
+        font-size: 14px;
+        padding: 8px 12px;
+        margin-left: 8px;
+        border-radius: 8px;
+    }
+
+    #search-button {
+        width: 68px;
+        height: 48px;
+        font-size: 28px;
+        right: 10px;
+        top: 16px;
+        border-radius: 8px;
+        -webkit-text-stroke-width: 1.5px;
+    }
+
+    #menu-cat {
+        display: none;
+    }
+
+    #cat-details-container {
+        width: 100%;
+        max-width: 92%;
+        margin: 0 auto;
+        padding: 0 4%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        display: block;
+        box-sizing: border-box;
+    }
+
+    #cat-details-container::-webkit-scrollbar {
+        height: 4px;
+    }
+
+    #cat-details-container::-webkit-scrollbar-thumb {
+        background: #FEC200;
+        border-radius: 4px;
+    }
+
+    #headers {
+        display: flex;
+        width: 950px;
+        margin: 0;
+        padding: 0;
+    }
+
+    .header-item {
+        width: 100px;
+        height: 80px;
+        margin: 0 2px;
+        flex-shrink: 0;
+        font-size: 16px;
+        padding: 3px;
+        border-radius: 6px;
+        box-sizing: border-box;
+    }
+
+    .cat-detail[data-trait-count="10"] img:not(.cat-img),
+    .cat-detail[data-trait-count="11"] img:not(.cat-img),
+    .cat-detail[data-trait-count="12"] img:not(.cat-img) {
+        width: 20px;
+        height: 20px;
+    }
+
+    .cat-details-element {
+        display: flex;
+        width: 950px;
+        margin: 0 0 10px 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .cat-details-element>div {
+        width: 100px;
+        height: 80px;
+        margin: 0 3px;
+        flex-shrink: 0;
+        box-sizing: border-box;
+    }
+
+    .cat-details-element>div:first-child,
+    .header-item:first-child {
+        margin-left: 0;
+    }
+
+    .cat-detail,
+    .cat-details-element .red-box,
+    .cat-details-element .green-box,
+    .cat-details-element .yellow-box,
+    .single-up,
+    .single-down,
+    .double-up,
+    .double-down,
+    .cat-img-container,
+    .cat-details-element>div {
+        width: 100px;
+        min-width: 100px;
+        max-width: 100px;
+        height: 100px;
+        min-height: 100px;
+        max-height: 100px;
+        margin: 0 2px;
+        flex-shrink: 0;
+        box-sizing: border-box;
+        font-size: 20px;
+    }
+
+    .cat-img-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 2px;
+    }
+
+    .cat-img {
+        width: 70px;
+        height: 70px;
+        object-fit: contain;
+    }
+
+    .cat-details-element>div:first-child,
+    .header-item:first-child {
+        margin-left: 0;
+    }
+
+    .cat-detail img:not(.cat-img) {
+        width: 20px;
+        height: 20px;
+    }
+
+    @media (max-width: 430px) {
+
+        .single-up,
+        .single-down,
+        .double-up,
+        .double-down {
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            font-size: 16px;
+            color: white;
+            text-shadow: 1px 1px 2px black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2px;
+        }
+    }
+
+    .victory-content {
+        padding: 15px 12px;
+    }
+
+    .victory-header h2 {
+        font-size: 32px;
+        margin-bottom: 15px;
+    }
+
+    .victory-cat-row {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .victory-cat-image img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .cat-unit-label {
+        font-size: 24px;
+    }
+
+    .victory-cat-text h3 {
+        font-size: 22px;
+    }
+
+    .yesterdays-answer {
+        margin: 5px 0;
+    }
+
+    .yesterday-text {
+        font-size: 14px;
+    }
+
+    .yesterday-img {
+        width: 70px;
+        height: 70px;
+    }
+
+    .info-box,
+    .changelog-box,
+    .about-box {
+        padding: 15px;
+        max-height: 80vh;
+    }
+
+    .info-box h3,
+    .changelog-section h3,
+    .about-section h3 {
+        font-size: 22px;
+    }
+
+    .category-box {
+        width: 90px;
+        height: 90px;
+    }
+
+    .category-box img {
+        width: 40px;
+        height: 40px;
+        margin-bottom: 10px;
+    }
+
+    .form-img {
+        width: 100px;
+        height: 100px;
+    }
 }

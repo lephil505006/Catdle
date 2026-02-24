@@ -13,9 +13,9 @@ export class GameLogic {
     }
   }
 
-initializeDailyMode() {
+  initializeDailyMode() {
     this.dailyLogic = new DailyLogic(this.cats);
-    this.currentGameDay = this.dailyLogic.getCurrentGameDay();
+    this.currentGameIndex = this.dailyLogic.getDaysSinceLaunch();
     const needsReset = this.checkAndResetForNewDay();
     this.selectedCats = this.loadValidatedState('selectedCats', [], 'daily');
     this.attempts = this.loadValidatedState('attempts', 0, 'daily');
@@ -23,8 +23,8 @@ initializeDailyMode() {
     this.answer = this.dailyLogic.getTodaysAnswer();
     this.yesterdaysAnswer = this.dailyLogic.getYesterdaysAnswer();
 
-    Security.storage.set(`answer_${this.currentGameDay}`, JSON.stringify(this.answer), 365 * 24 * 60 * 60 * 1000);
-}
+    Security.storage.set(`answer_${this.currentGameIndex}`, JSON.stringify(this.answer), 365 * 24 * 60 * 60 * 1000);
+  }
 
   initializeInfiniteMode() {
     this.dailyLogic = null;
@@ -60,11 +60,11 @@ initializeDailyMode() {
   checkAndResetForNewDay() {
     if (this.mode !== 'daily') return false;
 
-    const storedGameDay = Security.storage.get('game_day');
+    const storedGameIndex = Security.storage.get('game_index');
 
-    if (storedGameDay !== this.currentGameDay) {
+    if (storedGameIndex !== this.currentGameIndex) {
       this.clearOldGameState('daily');
-      Security.storage.set('game_day', this.currentGameDay, 48 * 60 * 60 * 1000);
+      Security.storage.set('game_index', this.currentGameIndex, 48 * 60 * 60 * 1000);
       return true;
     }
     return false;

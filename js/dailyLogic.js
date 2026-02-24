@@ -23,19 +23,6 @@ export class DailyLogic {
         return Math.max(0, Math.floor(msSinceLaunch / msPerDay));
     }
 
-    getCurrentGameDay() {
-        const nowUTC = new Date();
-        const currentUTCHour = nowUTC.getUTCHours();
-
-        if (currentUTCHour < DailyLogic.RESET_HOUR_UTC) {
-            const yesterday = new Date(nowUTC);
-            yesterday.setUTCDate(yesterday.getUTCDate() - 1);
-            return this.getUTCDateString(yesterday);
-        } else {
-            return this.getUTCDateString(nowUTC);
-        }
-    }
-
     getUTCDateString(date) {
         return date.toISOString().split('T')[0];
     }
