@@ -13,10 +13,6 @@ body {
     height: 100vh;
 }
 
-* {
-    outline: 1px solid red;
-}
-
 @font-face {
     font-family: 'Humato Heavy';
     src: url('../fonts/Humato-Hv-FFP.ttf') format('truetype');
