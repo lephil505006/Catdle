@@ -44,7 +44,7 @@
 
     <div class="info-box" id="info-box">
         <div class="version-section">
-            <div class="version-text">Updated to Game Version 15.2</div>
+            <div class="version-text">Updated to Game Version 15.3</div>
         </div>
 
         <section class="info-section">
@@ -377,6 +377,20 @@
         </div>
 
         <section class="changelog-section">
+            <h3>1st, May 2026</h3>
+            <hr class="info-separator">
+            <ul>
+                <li><b>Endless Mode</b></li>
+                <li>New button added as a way to reset when finishing an Endless Mode round due to reports of not being
+                    able to reset previously</li>
+                <li>Also a way to see your guesses instead of forcefully playing the next round</li>
+                <li><b>Daily Mode</b></li>
+                <li>Hiding the search bar once completed with the daily guess</li>
+                <li>Show results button to see the pop up again</li>
+                <li>CatGang -> Cat Gang (Glory to Cat Gang)</li>
+                <li>UL Unit Hints: Ucanny -> Uncanny</li>
+                <li>uhhh random typo fixes, i forgot which units</li>
+            </ul>
             <h3>27nd, April 2026</h3>
             <hr class="info-separator">
             <ul>
@@ -389,7 +403,8 @@
                 <li>Kung Fu Cat all forms cost fixed</li>
                 <li>Black -> Dark fixed in the instructions</li>
                 <li>Version 2.0 units (Wargods/Dynamyies/Rare Cats/Monthly Cats) set to the international release date
-                    rather than the Japanese Version, looking into other units in similar situation, IE anniversary units</li>
+                    rather than the Japanese Version, looking into other units in similar situation, IE anniversary
+                    units</li>
             </ul>
             <h3>23nd, April 2026</h3>
             <hr class="info-separator">
@@ -487,6 +502,16 @@
             </div>
 
             <div id="results-container" role="listbox" aria-label="Search results"></div>
+        </div>
+        <div class="infinite-controls" style="display: none;">
+            <button id="infinite-restart-button" class="infinite-restart-button">
+                New Game
+            </button>
+        </div>
+        <div class="daily-results-container" style="display: none;">
+            <button id="daily-results-button" class="daily-results-button">
+                See Results
+            </button>
         </div>
         <img src="images/assets/MenuCat.png" id="menu-cat" alt="Menu Cat" class="decorative-cat">
     </main>

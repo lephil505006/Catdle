@@ -28,7 +28,6 @@ function updateUIMode(mode) {
             window.history.replaceState({}, '', cleanUrl);
         }
 
-
         if (instructionElement) {
             instructionElement.textContent = "Battle Cats Infinite Mode - Endless Units!";
         }
@@ -68,6 +67,8 @@ document.addEventListener("DOMContentLoaded", async () => {
     const cats = await loadCatData();
     const game = new GameLogic(cats, mode);
     const ui = new UIHandlers(game);
+    
+    ui.updateInfiniteModeUI();
 
     if (mode === 'daily') {
         ui.displayYesterdaysAnswer();
@@ -96,9 +97,20 @@ document.addEventListener("DOMContentLoaded", async () => {
 
             ui.updateHintDisplay();
 
-        }, 100);
+            const lastGuess = savedNames[savedNames.length - 1];
+            const isGameWon = (lastGuess === game.getAnswer().name);
 
+            if (isGameWon) {
+                ui.showGameRestartUI();
+            } else {
+                ui.showGamePlayUI();
+            }
+
+        }, 100);
     } else {
         document.getElementById("headers").style.display = "none";
+        if (mode === 'infinite') {
+            ui.showGamePlayUI();
+        }
     }
 });

@@ -293,39 +293,40 @@ export class GameLogic {
     return cat.name === this.answer.name;
   }
 
-  startNewInfiniteGame() {
-    if (this.mode === 'infinite') {
-      this.answer = this.generateRandomAnswer();
-      this.selectedCats = [];
-      this.attempts = 0;
-      this.hintAvailable = false;
+  resetInfiniteGame() {
+    if (this.mode !== 'infinite') return false;
 
-      Security.storage.set('infinite_selectedCats', []);
-      Security.storage.set('infinite_attempts', 0);
-      Security.storage.set('infinite_hintAvailable', false);
-      Security.storage.set('infinite_currentAnswer', JSON.stringify(this.answer));
+    Security.storage.remove('infinite_selectedCats');
+    Security.storage.remove('infinite_attempts');
+    Security.storage.remove('infinite_hintAvailable');
+    Security.storage.remove('infinite_currentAnswer');
 
-      return true;
-    }
-    return false;
+    this.selectedCats = [];
+    this.attempts = 0;
+    this.hintAvailable = false;
+    this.answer = this.generateRandomAnswer();
+
+    Security.storage.set('infinite_selectedCats', this.selectedCats);
+    Security.storage.set('infinite_attempts', this.attempts);
+    Security.storage.set('infinite_hintAvailable', this.hintAvailable);
+    Security.storage.set('infinite_currentAnswer', JSON.stringify(this.answer));
+    
+    return true;
   }
 
   resetGameState() {
+    if (this.mode === 'infinite') {
+      this.resetInfiniteGame();
+      return;
+    }
+
     this.selectedCats = [];
     this.attempts = 0;
     this.hintAvailable = false;
 
-    if (this.mode === 'infinite') {
-      ['infinite_selectedCats', 'infinite_attempts', 'infinite_hintAvailable'].forEach(key => {
-        Security.storage.remove(key);
-      });
-    } else {
-      ['selectedCats', 'attempts', 'hintAvailable'].forEach(key => {
-        Security.storage.remove(key);
-      });
-    }
-
-    console.log('Game manually reset');
+    ['selectedCats', 'attempts', 'hintAvailable'].forEach(key => {
+      Security.storage.remove(key);
+    });
   }
 
   getHint() {
