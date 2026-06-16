@@ -1372,10 +1372,10 @@ body.infinite-mode .yesterdays-answer {
     }
 
     #cat-details-container {
-        width: 100%;
-        max-width: 92%;
+        width: 94%;
+        max-width: 100%;
         margin: 0 auto;
-        padding: 0 4%;
+        padding: 0 0 0 2%;
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
         display: block;
@@ -1391,11 +1391,12 @@ body.infinite-mode .yesterdays-answer {
         border-radius: 4px;
     }
 
-    #headers {
+    #headers, .cat-details-element {
         display: flex;
-        width: 950px;
+        width: 1050px;
         margin: 0;
-        padding: 0;
+        padding: 0 10px 5px 0;
+        box-sizing: border-box;
     }
 
     .header-item {
@@ -1414,14 +1415,6 @@ body.infinite-mode .yesterdays-answer {
     .cat-detail[data-trait-count="12"] img:not(.cat-img) {
         width: 20px;
         height: 20px;
-    }
-
-    .cat-details-element {
-        display: flex;
-        width: 950px;
-        margin: 0 0 10px 0;
-        padding: 0;
-        box-sizing: border-box;
     }
 
     .cat-details-element>div {
