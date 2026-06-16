@@ -36,11 +36,26 @@ export class UIHandlers {
     this.dailyResultsContainer = document.querySelector('.daily-results-container');
     this.dailyResultsButton = document.getElementById('daily-results-button');
     this.infiniteRestartButton = document.getElementById('infinite-restart-button');
+    this.shareButton = document.getElementById('share-results-button');
+
     if (this.infiniteRestartButton) {
       this.infiniteRestartButton.addEventListener('click', () => this.handleInfiniteRestart());
     }
+
     if (this.dailyResultsButton) {
       this.dailyResultsButton.addEventListener('click', () => this.handleDailyResults());
+    }
+
+    if (this.shareButton) {
+      this.shareButton.addEventListener('click', () => this.shareResults());
+    }
+
+    if (this.shareButton) {
+      if (this.game.isInfiniteMode()) {
+        this.shareButton.style.display = 'none';
+      } else {
+        this.shareButton.style.display = 'block';
+      }
     }
 
     this.infoButton = document.getElementById("info-button");
@@ -278,10 +293,12 @@ export class UIHandlers {
       "img",
       "rarity",
       "form",
-      "role",
+      //"role", TEMP REMOVE
       "traits",
       "attackType",
       "abilities",
+      "standingRange",
+      "speed",
       "cost",
       "version",
     ];
@@ -516,11 +533,15 @@ export class UIHandlers {
   handleDailyResults() {
     const victoryScreen = document.getElementById('victory-screen');
     const victoryCatName = document.getElementById('victory-cat-name');
+    const shareButton = document.getElementById('share-results-button');
 
     if (!victoryCatName || !victoryCatName.textContent) {
       const answer = this.game.getAnswer();
       this.displayVictoryScreen(answer);
     } else {
+      if (shareButton && !this.game.isInfiniteMode()) {
+        shareButton.style.display = 'block';
+      }
       victoryScreen.classList.add('active');
       if (!this.game.isInfiniteMode()) {
         this.startCountdownTimer();
@@ -594,5 +615,83 @@ export class UIHandlers {
     if (this.dailyResultsContainer) {
       this.dailyResultsContainer.style.display = 'none';
     }
+  }
+
+  generateShareText() {
+    const answer = this.game.getAnswer();
+    const attempts = this.game.attempts;
+    const isInfinite = this.game.isInfiniteMode();
+    const dayNum = this.game.getCurrentDayNumber();
+    const header = `Catdle #${dayNum} (${attempts} guesses)`;
+    const guesses = [...this.game.getSelectedCats()].reverse();
+    let grid = '';
+
+    for (let i = 0; i < guesses.length; i++) {
+      const guessName = guesses[i];
+      const guessCat = this.game.getAllCats().find(c => c.name === guessName);
+      if (guessCat) {
+        const colors = this.game.compareCategories(guessCat, answer);
+        let row = '';
+        for (let j = 0; j < colors.length; j++) {
+          const color = colors[j];
+          if (color === 'green-box') row += '🟩';
+          else if (color === 'yellow-box') row += '🟨';
+          else if (color === 'red-box') row += '🟥';
+          else if (color === 'single-up') row += '🔼';
+          else if (color === 'double-up') row += '⏫';
+          else if (color === 'single-down') row += '🔽';
+          else if (color === 'double-down') row += '⏬';
+          else row += '⬜';
+        }
+        grid += row + '\n';
+      }
+    }
+
+    return `${header}\n\n${grid}`;
+  }
+
+  shareResults() {
+    const shareText = this.generateShareText();
+
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(shareText).catch(() => {
+        this.fallbackCopyToClipboard(shareText);
+      });
+    } else {
+      this.fallbackCopyToClipboard(shareText);
+    }
+  }
+
+  fallbackCopyToClipboard(text) {
+    const textarea = document.createElement('textarea');
+    textarea.value = text;
+    textarea.style.position = 'fixed';
+    textarea.style.top = '-9999px';
+    textarea.style.left = '-9999px';
+    document.body.appendChild(textarea);
+    textarea.select();
+
+    try {
+      document.execCommand('copy');
+      this.showToast('Results copied to clipboard! 📋');
+    } catch (err) {
+      this.showToast('Press Ctrl+C to copy results');
+    }
+
+    document.body.removeChild(textarea);
+  }
+
+  showToast(message) {
+    const existingToast = document.querySelector('.toast-message');
+    if (existingToast) existingToast.remove();
+
+    const toast = document.createElement('div');
+    toast.className = 'toast-message';
+    toast.textContent = message;
+    document.body.appendChild(toast);
+
+    setTimeout(() => {
+      toast.remove();
+    }, 2000);
   }
 }

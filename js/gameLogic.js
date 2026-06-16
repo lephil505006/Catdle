@@ -125,6 +125,16 @@ export class GameLogic {
     };
   }
 
+  getCurrentDayNumber() {
+    if (this.mode === 'infinite') return null;
+    return this.dailyLogic.getCurrentDayNumber();
+  }
+
+  getYesterdayDayNumber() {
+    if (this.mode === 'infinite') return null;
+    return this.dailyLogic.getCurrentDayNumber() - 1;
+  }
+
   getAttempts() {
     return this.attempts;
   }
@@ -145,10 +155,12 @@ export class GameLogic {
     const categories = [
       "rarity",
       "form",
-      "role",
+      //"role", TEMP REMOVE
       "traits",
       "attackType",
       "abilities",
+      "standingRange",
+      "speed",
       "cost",
       "version",
     ];
@@ -171,46 +183,39 @@ export class GameLogic {
         return cat[category] === answerCat[category] ? "green-box" : "red-box";
       }
 
-      else if (category === "attackType") {
-        const catAttacks = (cat[category] || "").split(" ");
-        const answerAttacks = (answerCat[category] || "").split(" ");
+      else if (category === "standingRange") {
+        const catRange = parseInt(cat[category]) || 0;
+        const answerRange = parseInt(answerCat[category]) || 0;
 
-        if (cat[category] === answerCat[category]) {
-          return "green-box";
-        }
+        if (catRange === answerRange) return "green-box";
 
-        const commonAttacks = catAttacks.filter(attack => answerAttacks.includes(attack));
-        if (commonAttacks.length > 0) {
-          return "yellow-box";
-        }
-
-        return "red-box";
+        const diff = Math.abs(catRange - answerRange);
+        if (diff > 150) return catRange > answerRange ? "double-down" : "double-up";
+        return catRange > answerRange ? "single-down" : "single-up";
       }
 
-      else if (category === "role") {
-        const normalizeRoles = (roles) => {
-          return roles.split(/\s*,\s*|\s+/)
-            .sort()
-            .join(' ');
+      else if (category === "speed") {
+        const catSpeed = parseInt(cat[category]) || 0;
+        const answerSpeed = parseInt(answerCat[category]) || 0;
+
+        if (catSpeed === answerSpeed) return "green-box";
+
+        const diff = Math.abs(catSpeed - answerSpeed);
+        if (diff > 20) return catSpeed > answerSpeed ? "double-down" : "double-up";
+        return catSpeed > answerSpeed ? "single-down" : "single-up";
+      }
+
+      else if (category === "traits" || category === "abilities" || category === "attackType") {
+        const normalizeValues = (str) => {
+          if (!str) return [];
+          return str
+            .toLowerCase()
+            .split(" ")
+            .filter(v => v && v !== 'x');
         };
 
-        const catRoles = normalizeRoles(cat[category]);
-        const answerRoles = normalizeRoles(answerCat[category]);
-
-        if (catRoles === answerRoles) {
-          return "green-box";
-        }
-
-        const catRoleArray = catRoles.split(' ');
-        const answerRoleArray = answerRoles.split(' ');
-        const commonRoles = catRoleArray.filter(role => answerRoleArray.includes(role));
-
-        return commonRoles.length > 0 ? "yellow-box" : "red-box";
-      }
-
-      else if (category === "traits" || category === "abilities") {
-        const catValues = (cat[category] || "").split(" ");
-        const answerValues = (answerCat[category] || "").split(" ");
+        const catValues = normalizeValues(cat[category]);
+        const answerValues = normalizeValues(answerCat[category]);
         const commonElements = catValues.filter(value => answerValues.includes(value));
 
         if (commonElements.length === catValues.length &&
@@ -227,13 +232,11 @@ export class GameLogic {
         if (catValue === answerValue) return "green-box";
         if (isNaN(catValue) || isNaN(answerValue)) return "red-box";
 
-        let arrowClass = "";
         if (Math.abs(catValue - answerValue) > 1500) {
-          arrowClass = catValue > answerValue ? "double-down" : "double-up";
+          return catValue > answerValue ? "double-down" : "double-up";
         } else {
-          arrowClass = catValue > answerValue ? "single-down" : "single-up";
+          return catValue > answerValue ? "single-down" : "single-up";
         }
-        return arrowClass;
       }
 
       else if (category === "version") {
@@ -265,6 +268,7 @@ export class GameLogic {
 
         return "single-up";
       }
+
       return "red-box";
     });
   }
@@ -310,7 +314,7 @@ export class GameLogic {
     Security.storage.set('infinite_attempts', this.attempts);
     Security.storage.set('infinite_hintAvailable', this.hintAvailable);
     Security.storage.set('infinite_currentAnswer', JSON.stringify(this.answer));
-    
+
     return true;
   }
 

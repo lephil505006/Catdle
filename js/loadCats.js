@@ -3,23 +3,23 @@ import { Security } from './security.js';
 export async function loadCatData() {
   try {
     const response = await fetch('data/BattleCatsDatabase.xlsm');
-    
+
     if (!response.ok) {
       throw new Error(`HTTP ${response.status}: Failed to load data`);
     }
 
     const contentType = response.headers.get('content-type');
     const contentLength = response.headers.get('content-length');
-    
+
     const validTypes = [
       'application/vnd.ms-excel',
       'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
     ];
-    
+
     if (!validTypes.some(type => contentType.includes(type))) {
       console.warn('Unexpected content type:', contentType);
     }
-    
+
     const MAX_FILE_SIZE = 10 * 1024 * 1024;
     if (contentLength && parseInt(contentLength) > MAX_FILE_SIZE) {
       throw new Error('Data file too large');
@@ -29,19 +29,19 @@ export async function loadCatData() {
     if (arrayBuffer.byteLength > MAX_FILE_SIZE) {
       throw new Error('Data file too large');
     }
-    
+
     const workbook = window.XLSX.read(arrayBuffer, { type: 'array' });
-    
+
     if (!workbook.SheetNames || workbook.SheetNames.length === 0) {
       throw new Error('Invalid Excel file: No sheets found');
     }
-    
+
     const worksheet = workbook.Sheets[workbook.SheetNames[0]];
-    
+
     if (!worksheet) {
       throw new Error('Invalid Excel file: First sheet is empty');
     }
-    
+
     const jsonData = window.XLSX.utils.sheet_to_json(worksheet);
 
     return jsonData.map(cat => {
@@ -59,10 +59,10 @@ export async function loadCatData() {
 
       const rawName = getValue(['name', 'Name']);
       const safeName = rawName || 'Unknown';
-      
+
       const rawImg = getValue(['img', 'Image']);
       let safeImg;
-      
+
       if (rawImg && (rawImg.startsWith('images/') || rawImg.startsWith('data:'))) {
         safeImg = rawImg;
       } else {
@@ -75,10 +75,12 @@ export async function loadCatData() {
         img: safeImg,
         rarity: getValue(['rarity', 'Rarity']) || 'Normal',
         form: getValue(['form', 'Form']) || 'Normal Form',
-        role: getValue(['role', 'Role']) || '',
+        //role: getValue(['role', 'Role']) || '', KEEP FOR TEMP PURPOSES
         traits: parseField(getValue(['traits', 'Traits'])),
         attackType: parseField(getValue(['attack type', 'Attack Type'])),
         abilities: parseField(getValue(['abilities', 'Abilities'])),
+        standingRange: getValue(['range', 'Standing Range', 'Range']) || '0',
+        speed: getValue(['speed', 'Speed']) || '0',
         cost: formatCost(getValue(['cost', 'Cost'])),
         version: formatVersion(getValue(['version', 'Version'])),
         source: getValue(['source', 'Source']) || 'Unknown'
@@ -87,7 +89,7 @@ export async function loadCatData() {
 
   } catch (error) {
     console.error("Error loading cat data:", error);
-    
+
     return [
       {
         unitId: 1,
@@ -125,14 +127,14 @@ function formatVersion(value) {
 }
 
 function formatImageName(name) {
-    if (!name) return 'unknown';
-    
-    // Handle IDI variants
-    if (name.includes("Idi:N")) {
-        name = name.replace(/Idi:N/, 'Idi-N');
-    }
-    
-    let formattedName = name.replace(/\s/g, '');
-    
-    return formattedName;
+  if (!name) return 'unknown';
+
+  // Handle IDI variants
+  if (name.includes("Idi:N")) {
+    name = name.replace(/Idi:N/, 'Idi-N');
+  }
+
+  let formattedName = name.replace(/\s/g, '');
+
+  return formattedName;
 }

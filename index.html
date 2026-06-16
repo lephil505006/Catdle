@@ -124,42 +124,6 @@
             </div>
 
             <div class="attribute-group">
-                <h3>Roles/Class</h3>
-                <p>Specifc roles a unit is catergoriezed (this info is based of the Battle Cats wiki).</p>
-                <div class="roles-container">
-                    <div class="role-example">
-                        <img src="images/cats/IslandCat.webp" alt="Island Cat" class="role-img">
-                        <div class="role-name">Island Cat</div>
-                        <div class="role-class">Melee Tanker</div>
-                    </div>
-
-                    <div class="role-example">
-                        <img src="images/cats/BadBlasterSaki.webp" alt="Bad Blaster Saki" class="role-img">
-                        <div class="role-name">Bad Blaster Saki</div>
-                        <div class="role-class">Sniper Super-Backliner</div>
-                    </div>
-
-                    <div class="role-example">
-                        <img src="images/cats/BoulderCat.webp" alt="Boulder Cat" class="role-img">
-                        <div class="role-name">Boulder Cat</div>
-                        <div class="role-class">Meatshield</div>
-                    </div>
-
-                    <div class="role-example">
-                        <img src="images/cats/AwakenedBahamutCat.webp" alt="Bahamut Cat" class="role-img">
-                        <div class="role-name">Bahamut Cat</div>
-                        <div class="role-class">Rusher Nuker</div>
-                    </div>
-
-                    <div class="role-example">
-                        <img src="images/cats/TrueKyosakaNanaho.webp" alt="True Kyosaka Nanaho" class="role-img">
-                        <div class="role-name">True Kyosaka Nanaho</div>
-                        <div class="role-class">Critter Sniper</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="attribute-group">
                 <h3>Traits</h3>
                 <div class="traits-container">
                     <div class="trait-item">
@@ -252,7 +216,7 @@
 
             <div class="attribute-group">
                 <h3>Abilities</h3>
-                <p>All other abilities, attack types are NOT considered an ability for this.</p>
+                <p>All other abilities, attack types are NOT considered an ability for this game.</p>
                 <div class="abilities-container">
                     <div class="ability-item">
                         <img src="images/abilities/attacksonly.webp" alt="Attacks Only" class="ability-icon">
@@ -280,8 +244,8 @@
                     </div>
 
                     <div class="ability-item">
-                        <img src="images/abilities/countersurge.webp" alt="Counter Surge" class="ability-icon">
-                        <div class="ability-label">Counter Surge</div>
+                        <img src="images/abilities/kamikaze.webp" alt="Kamikaze" class="ability-icon">
+                        <div class="ability-label">Kamikaze (thx wiki for icon)</div>
                     </div>
 
                     <div class="ability-item">
@@ -292,75 +256,155 @@
             </div>
 
             <div class="attribute-group">
-                <h3>Cost</h3>
-                <p>How much a unit costs, can change depending on the unit's form.</p>
-                <div class="cost-examples-container">
-                    <div class="cost-example">
-                        <div class="cat-detail green-box">
-                            <div class="cost-value">4500¢</div>
-                        </div>
-                        <div class="example-label">Exact Match</div>
-                    </div>
-
-                    <div class="cost-example">
-                        <div class="cat-detail double-down">
-                            <p>6500¢</p>
-                        </div>
-                        <div class="example-label">Way above cost</div>
-                    </div>
-                    <div class="cost-example">
-                        <div class="single-up">
-                            <p>3500¢</p>
-                        </div>
-                        <div class="example-label">Slightly below cost</div>
-                    </div>
-                    <div class="cost-example">
-                        <div class="double-up">
-                            <p>75¢</p>
-                        </div>
-                        <div class="example-label">Way below cost </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="attribute-group">
-                <h3>Version</h3>
-                <p>The version the unit was released on, can change depending on unit's form.</p>
-                <p>*Version should be reflected of the International Game, but wiki can be a bit dumb so some early
-                    version cats might be slightly off.</p>
+                <h3>Standing Range</h3>
+                <p>The standing range of a unit. If a unit has LD, Multi Hit, Omni Strike, those additional ranges are
+                    not listed, just their base standing range.</p>
+                <p>The threshold for being way off is currently 150 units.</p>
                 <div class="version-examples-container">
                     <div class="version-example">
                         <div class="cat-detail green-box">
-                            <p>V12.5</p>
+                            <p>250</p>
                         </div>
                         <div class="example-label">Exact Match</div>
                     </div>
 
                     <div class="version-example">
-                        <div class="single-down">
-                            <div class="version-value">V13.0</div>
-                        </div>
-                        <div class="example-label">Slightly above version</div>
-                    </div>
-
-                    <div class="version-example">
-                        <div class="single-down">
-                            <div class="version-container">
-                                <p>V13.0</p>
-                            </div>
-                        </div>
-                        <div class="example-label">Older Version</div>
-                    </div>
-
-                    <div class="version-example">
                         <div class="double-up">
+                            <div class="version-value">1</div>
+                        </div>
+                        <div class="example-label">Way off</div>
+                    </div>
+
+                    <div class="version-example">
+                        <div class="single-down">
                             <div class="version-container">
-                                <div class="version-value">V15.0</div>
+                                <p>300</p>
                             </div>
                         </div>
-                        <div class="example-label">Much Newer</div>
+                        <div class="example-label">Slightly off</div>
+                    </div>
+
+                    <div class="version-example">
+                        <div class="single-up">
+                            <div class="version-container">
+                                <div class="version-value">150</div>
+                            </div>
+                        </div>
+                        <div class="example-label">Slightly off</div>
                     </div>
                 </div>
+
+                <div class="attribute-group">
+                    <h3>Speed</h3>
+                    <p>How fast a unit goes (shoutout to Mamolan and Paragon Cat)</p>
+                    <p>The threshold for being way off is currently 15 units.</p>
+                    <div class="version-examples-container">
+                        <div class="version-example">
+                            <div class="cat-detail green-box">
+                                <p>25</p>
+                            </div>
+                            <div class="example-label">Exact Match</div>
+                        </div>
+
+                        <div class="version-example">
+                            <div class="double-up">
+                                <div class="version-value">2</div>
+                            </div>
+                            <div class="example-label">Way off</div>
+                        </div>
+
+                        <div class="version-example">
+                            <div class="single-down">
+                                <div class="version-container">
+                                    <p>35</p>
+                                </div>
+                            </div>
+                            <div class="example-label">Slightly off</div>
+                        </div>
+
+                        <div class="version-example">
+                            <div class="single-up">
+                                <div class="version-container">
+                                    <div class="version-value">15</div>
+                                </div>
+                            </div>
+                            <div class="example-label">Slightly off</div>
+                        </div>
+                    </div>
+
+                    <div class="attribute-group">
+                        <h3>Cost</h3>
+                        <p>How much a unit costs, can change depending on the unit's form.</p>
+                        <p>The threshold for being way off is currently 1500¢.</p>
+                        <div class="cost-examples-container">
+                            <div class="cost-example">
+                                <div class="cat-detail green-box">
+                                    <div class="cost-value">4500¢</div>
+                                </div>
+                                <div class="example-label">Exact Match</div>
+                            </div>
+
+                            <div class="cost-example">
+                                <div class="cat-detail double-down">
+                                    <p>6500¢</p>
+                                </div>
+                                <div class="example-label">Way above cost</div>
+                            </div>
+                            <div class="cost-example">
+                                <div class="single-up">
+                                    <p>3500¢</p>
+                                </div>
+                                <div class="example-label">Slightly below cost</div>
+                            </div>
+                            <div class="cost-example">
+                                <div class="double-up">
+                                    <p>75¢</p>
+                                </div>
+                                <div class="example-label">Way below cost</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="attribute-group">
+                        <h3>Version</h3>
+                        <p>The version the unit was released on, can change depending on unit's form.</p>
+                        <p>*Version should be reflected of the International Game (or EN), but wiki can be a bit dumb so
+                            some early
+                            version cats might be slightly off.</p>
+                        <p>The threshold for being way off is currently 5.0.</p>
+                        <div class="version-examples-container">
+                            <div class="version-example">
+                                <div class="cat-detail green-box">
+                                    <p>V9.5</p>
+                                </div>
+                                <div class="example-label">Exact Match</div>
+                            </div>
+
+                            <div class="version-example">
+                                <div class="single-down">
+                                    <div class="version-value">V11.5</div>
+                                </div>
+                                <div class="example-label">Slightly newer</div>
+                            </div>
+
+                            <div class="version-example">
+                                <div class="single-up">
+                                    <div class="version-container">
+                                        <p>V8.0</p>
+                                    </div>
+                                </div>
+                                <div class="example-label">Slightly older</div>
+                            </div>
+
+                            <div class="version-example">
+                                <div class="double-up">
+                                    <div class="version-container">
+                                        <div class="version-value">V15.0</div>
+                                    </div>
+                                </div>
+                                <div class="example-label">Much Newer</div>
+                            </div>
+                        </div>
         </section>
 
         <section class="info-section">
@@ -377,6 +421,48 @@
         </div>
 
         <section class="changelog-section">
+            <h3>15th, June 2026</h3>
+            <h3>New Categories and Sharing update!</h3>
+            <hr class="info-separator">
+            <h3>Categories and Revisions</h3>
+            <ul>
+                <li>Firstly, revisions for all units are done in theory so there shouldn't be any issues with
+                    missing/incorrect abilities and so on hopefully. Although the Version might still be a bit tricky,
+                    this info can be a bit tricky to get.</li>
+                <li>Categories is getting a big change with the addition of standing range (units with LD or Multi
+                    Hit won't display the additonal range) and cost, but with that, the removal of the Roles category.
+                    Roles is a bit subjective since the info was pulled from the wiki and not from the game itself as
+                    this would cause some confusion with some units. While going through revisions, I noticed a several
+                    handful of cats that could have different roles and so on, prime example being halloween Thundia and
+                    Windy, both should in theory be a Nuker/Backliner but apparently Windy is just a Nuker only.
+                    Ideally, the range and speed should be able to give a rough understanding of the units general role,
+                    ie high speed being a sort of rusher, or low range being a tanker or melee unit. I'm still playing
+                    with the thresholds of the "double arrow" indicators for the numbers feel free to give feedback if
+                    it feels off, the info on specific numbers is listed in the instructions section. So with that,
+                    comes goodbye to our user rank fodders, you will not be missed.</li>
+            </ul>
+            <h3>Sharing!</h3>
+            <ul>
+                <li>A long overdue but simple addition. Nothin too fancy here, go share with ya buddies and what not. I
+                    don't expect there to be any issues with this bu as always, send a report bug if you encounter
+                    anything
+                    bad. </li>
+            </ul>
+            <h3>Change Notes</h3>
+            <ul>
+                <li>Issue fix regarding the order of attack types causing an improper answer (Area Attack, LD, Multi
+                    Hit) vs (Area Attack, Multi Hit, LD) was flagged as semi correct.</li>
+                <li>Mighty Rekon Korps (all forms) added zombie killer</li>
+                <li>Orbital Annihilator Ragnarok added Omni Strike</li>
+                <li>Mizli removed barrier breaker</li>
+                <li>Aervantex version fix</li>
+                <li>Everbloom Lord Kamukura version fix</li>
+                <li>Big gao added crit</li>
+                <li>Dark Mitama/Gothic Mitama abilities swapped</li>
+                <li>Lone Moon Lunos/Lunos the Eclipsed removed surge, added conjure</li>
+                <li>Izanami of Dusk removed savage blow</li>
+                <li>Instructions page updated to reflect new add ons, also included thresholds for what is considered "way off" for the numerical categories</li>
+            </ul>
             <h3>4th, June 2026</h3>
             <hr class="info-separator">
             <ul>
@@ -616,11 +702,13 @@
         <nav id="headers" aria-label="Categories">
             <div class="header-item" role="columnheader">Cat</div>
             <div class="header-item" role="columnheader">Rarity</div>
-            <div class="header-item" role="columnheader">Form</div>
+            <!-- <div class="header-item" role="columnheader">Form</div> TEMP REMOVE -->
             <div class="header-item" role="columnheader">Role</div>
             <div class="header-item" role="columnheader">Traits</div>
             <div class="header-item" role="columnheader">Attack Type</div>
             <div class="header-item" role="columnheader">Abilities</div>
+            <div class="header-item" role="columnheader">Standing Range</div>
+            <div class="header-item" role="columnheader">Speed</div>
             <div class="header-item" role="columnheader">Cost</div>
             <div class="header-item" role="columnheader">Version</div>
         </nav>
@@ -655,6 +743,12 @@
             <div class="victory-timer-row">
                 <div class="timer-label">Next Game:</div>
                 <div class="timer-value" id="victory-timer">Calculating...</div>
+            </div>
+
+            <div class="victory-share-row">
+                <button id="share-results-button" class="share-results-button">
+                    Share Results
+                </button>
             </div>
 
             <button id="play-again-button" class="play-again-button" style="display: none;">PLAY AGAIN</button>

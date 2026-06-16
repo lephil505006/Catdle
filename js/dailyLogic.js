@@ -23,6 +23,10 @@ export class DailyLogic {
         return Math.max(0, Math.floor(msSinceLaunch / msPerDay));
     }
 
+    getCurrentDayNumber() {
+        return this.getDaysSinceLaunch();
+    }
+
     getUTCDateString(date) {
         return date.toISOString().split('T')[0];
     }
@@ -35,6 +39,15 @@ export class DailyLogic {
 
     getTodaysAnswer() {
         const dayIndex = this.getDaysSinceLaunch();
+
+        // Testing answer
+        // const testUnitId = 607; 
+        // const testForm = "Normal Form";
+
+        // const testCat = this.findCatByIdAndForm(testUnitId, testForm);
+        // if (testCat) {
+        //     return testCat;
+        // }
 
         if (dayIndex < 0 || dayIndex >= ANSWER_LIST.length) {
             return this.getFallbackAnswer();
