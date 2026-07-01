@@ -654,19 +654,20 @@ export class UIHandlers {
     return `${header}\n\n${grid}\n\nPlay Catdle: https://catdle.com`;
   }
 
-  shareResults() {
-    console.log('shareResults called');
+shareResults() {
+    const self = this;
     const shareText = this.generateShareText();
-    console.log('shareText:', shareText);
-
+    
     if (navigator.clipboard && navigator.clipboard.writeText) {
-      navigator.clipboard.writeText(shareText).catch(() => {
-        this.fallbackCopyToClipboard(shareText);
-      });
+        navigator.clipboard.writeText(shareText).then(function() {
+            self.showToast('Results copied to clipboard! 📋');
+        }).catch(function() {
+            self.fallbackCopyToClipboard(shareText);
+        });
     } else {
-      this.fallbackCopyToClipboard(shareText);
+        this.fallbackCopyToClipboard(shareText);
     }
-  }
+}
 
   fallbackCopyToClipboard(text) {
     const textarea = document.createElement('textarea');
