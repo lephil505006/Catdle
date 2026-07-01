@@ -390,9 +390,10 @@ export class UIHandlers {
 
     if (yesterdayNameElement && yesterdayImgElement) {
       const yesterdaysCat = this.game.getYesterdaysAnswer();
+      const yesterdayNum = this.game.getYesterdayDayNumber();
 
       if (yesterdaysCat) {
-        yesterdayNameElement.textContent = yesterdaysCat.name;
+        yesterdayNameElement.textContent = `#${yesterdayNum} ${yesterdaysCat.name}`;
         yesterdayImgElement.src = yesterdaysCat.img;
         yesterdayImgElement.alt = yesterdaysCat.name;
       } else {
@@ -431,9 +432,12 @@ export class UIHandlers {
     }
 
     if (catUnitLabel) {
-      catUnitLabel.textContent = this.game.isInfiniteMode()
-        ? "Correct Cat Unit!"
-        : "Cat Unit of the Day";
+      if (this.game.isInfiniteMode()) {
+        catUnitLabel.textContent = "Correct Cat Unit!";
+      } else {
+        const dayNum = this.game.getCurrentDayNumber();
+        catUnitLabel.textContent = `Catdle Unit #${dayNum}`;
+      }
     }
 
     victoryScreen.classList.add('active');
@@ -647,11 +651,13 @@ export class UIHandlers {
       }
     }
 
-    return `${header}\n\n${grid}`;
+    return `${header}\n\n${grid}\n\nPlay Catdle: https://catdle.com`;
   }
 
   shareResults() {
+    console.log('shareResults called');
     const shareText = this.generateShareText();
+    console.log('shareText:', shareText);
 
     if (navigator.clipboard && navigator.clipboard.writeText) {
       navigator.clipboard.writeText(shareText).catch(() => {
