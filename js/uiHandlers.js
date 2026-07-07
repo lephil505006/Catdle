@@ -275,8 +275,8 @@ export class UIHandlers {
         Security.storage.set('infinite_currentAnswer', JSON.stringify(this.game.getAnswer()));
       }
 
-      this.displayVictoryScreen(cat);
       this.showGameRestartUI();
+      this.displayVictoryScreen(cat);
     }
   }
 
