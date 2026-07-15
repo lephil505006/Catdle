@@ -32,6 +32,15 @@ export class GameLogic {
     this.attempts = this.loadValidatedState('attempts', 0, 'infinite');
     this.hintAvailable = this.loadValidatedState('hintAvailable', false, 'infinite');
 
+    // temp fixed answer
+    // const testCat = this.cats.find(c => c.name === "Nymph Cat");
+    // if (testCat) {
+    //   this.answer = testCat;
+    //   Security.storage.set('infinite_currentAnswer', JSON.stringify(this.answer));
+    //   this.yesterdaysAnswer = this.getPlaceholderCat();
+    //   return;
+    // }
+
     const storedAnswer = Security.storage.get('infinite_currentAnswer');
     if (storedAnswer) {
       try {

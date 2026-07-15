@@ -67,8 +67,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     const cats = await loadCatData();
     const game = new GameLogic(cats, mode);
     const ui = new UIHandlers(game);
-    
-    ui.updateInfiniteModeUI();
 
     if (mode === 'daily') {
         ui.displayYesterdaysAnswer();

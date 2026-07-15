@@ -37,6 +37,8 @@ export class UIHandlers {
     this.dailyResultsButton = document.getElementById('daily-results-button');
     this.infiniteRestartButton = document.getElementById('infinite-restart-button');
     this.shareButton = document.getElementById('share-results-button');
+    this.restartButtonBox = document.querySelector('.reset-button-box');
+    this.restartButton = document.getElementById('reset-button');
 
     if (this.infiniteRestartButton) {
       this.infiniteRestartButton.addEventListener('click', () => this.handleInfiniteRestart());
@@ -48,6 +50,10 @@ export class UIHandlers {
 
     if (this.shareButton) {
       this.shareButton.addEventListener('click', () => this.shareResults());
+    }
+
+    if (this.restartButton) {
+      this.restartButton.addEventListener('click', () => this.handleRestart());
     }
 
     if (this.shareButton) {
@@ -553,12 +559,29 @@ export class UIHandlers {
     }
   }
 
-  updateInfiniteModeUI() {
-    if (this.infiniteControls) {
-      if (!this.game.isInfiniteMode()) {
-      }
+  updateResetButtonUI() {
+    if (this.restartButtonBox) {
+      this.restartButtonBox.style.display = 'flex';
     }
   }
+
+handleRestart() {
+    if (confirm('This will clear both daily and endless mode, are you sure?')) {
+        Security.storage.remove('selectedCats');
+        Security.storage.remove('attempts');
+        Security.storage.remove('hintAvailable');
+        Security.storage.remove('game_day');
+        Security.storage.remove('game_index');
+        Security.storage.remove('infinite_selectedCats');
+        Security.storage.remove('infinite_attempts');
+        Security.storage.remove('infinite_hintAvailable');
+        Security.storage.remove('infinite_currentAnswer');
+        Security.storage.remove('infinite_version');
+        Security.storage.remove('infinite_reset_done');
+
+        window.location.reload();
+    }
+}
 
   startNewInfiniteGame() {
     if (!this.game.isInfiniteMode()) return;
@@ -654,20 +677,20 @@ export class UIHandlers {
     return `${header}\n\n${grid}\n\nPlay Catdle: https://catdle.com`;
   }
 
-shareResults() {
+  shareResults() {
     const self = this;
     const shareText = this.generateShareText();
-    
+
     if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(shareText).then(function() {
-            self.showToast('Results copied to clipboard! 📋');
-        }).catch(function() {
-            self.fallbackCopyToClipboard(shareText);
-        });
+      navigator.clipboard.writeText(shareText).then(function () {
+        self.showToast('Results copied to clipboard! 📋');
+      }).catch(function () {
+        self.fallbackCopyToClipboard(shareText);
+      });
     } else {
-        this.fallbackCopyToClipboard(shareText);
+      this.fallbackCopyToClipboard(shareText);
     }
-}
+  }
 
   fallbackCopyToClipboard(text) {
     const textarea = document.createElement('textarea');
