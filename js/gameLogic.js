@@ -210,7 +210,7 @@ export class GameLogic {
         if (catSpeed === answerSpeed) return "green-box";
 
         const diff = Math.abs(catSpeed - answerSpeed);
-        if (diff > 20) return catSpeed > answerSpeed ? "double-down" : "double-up";
+        if (diff > 15) return catSpeed > answerSpeed ? "double-down" : "double-up";
         return catSpeed > answerSpeed ? "single-down" : "single-up";
       }
 
