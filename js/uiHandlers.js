@@ -39,6 +39,11 @@ export class UIHandlers {
     this.shareButton = document.getElementById('share-results-button');
     this.restartButtonBox = document.querySelector('.reset-button-box');
     this.restartButton = document.getElementById('reset-button');
+    this.customInstructionsBox = document.getElementById('custom-instructions-box');
+    this.modeDropdownBtn = document.getElementById('mode-dropdown-btn');
+    this.modeDropdownMenu = document.getElementById('mode-dropdown-menu');
+    this.modeDropdownText = document.getElementById('mode-dropdown-text');
+    this.modeDropdownItems = document.querySelectorAll('.mode-dropdown-item');
 
     if (this.infiniteRestartButton) {
       this.infiniteRestartButton.addEventListener('click', () => this.handleInfiniteRestart());
@@ -70,13 +75,31 @@ export class UIHandlers {
     this.changelogBox = document.getElementById("changelog-box");
     this.aboutButton = document.getElementById("about-button");
     this.aboutBox = document.getElementById("about-box");
-
     this.overlay = document.createElement("div");
     this.overlay.className = "overlay";
     document.body.appendChild(this.overlay);
 
     this.updateResultsWidth();
     window.addEventListener('resize', () => this.updateResultsWidth());
+
+    if (this.modeDropdownBtn) {
+      this.modeDropdownBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        this.toggleModeDropdown();
+      });
+    }
+
+    this.modeDropdownItems.forEach(item => {
+      item.addEventListener('click', () => {
+        const mode = item.dataset.mode;
+        this.selectMode(mode);
+      });
+    });
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', () => {
+      this.closeModeDropdown();
+    });
   }
 
   setupEventListeners() {
@@ -86,6 +109,11 @@ export class UIHandlers {
     this.aboutButton.addEventListener("click", () => this.toggleAboutBox());
 
     this.hintBox.addEventListener("click", () => {
+      if (this.game.mode === 'custom' && !this.game.isCustomAnswerSet()) {
+        this.toggleCustomInstructions();
+        return;
+      }
+
       const isHintRevealed = window.getComputedStyle(this.hintRevealBox).display !== 'none';
 
       if (this.game.hintAvailable && !isHintRevealed) {
@@ -98,10 +126,32 @@ export class UIHandlers {
     });
 
     this.infoButton.addEventListener("click", () => this.toggleInfoBox());
-    this.overlay.addEventListener("click", () => this.closeInfoBox());
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') this.closeInfoBox();
+
+    this.overlay.addEventListener("click", () => {
+      this.closeInfoBox();
+      this.closeCustomInstructions();
     });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        this.closeInfoBox();
+        this.closeCustomInstructions();
+      }
+    });
+  }
+
+  handleModeChange() {
+    const mode = this.modeSelect.value;
+    const currentMode = this.game.mode;
+
+    if (mode === currentMode) return;
+
+    const path = window.location.pathname;
+    if (mode === 'daily') {
+      window.location.href = path;
+    } else {
+      window.location.href = path + '#' + mode;
+    }
   }
 
   toggleInfoBox() {
@@ -143,10 +193,33 @@ export class UIHandlers {
     }
   }
 
+  toggleCustomInstructions() {
+    const isActive = this.customInstructionsBox.classList.contains('active');
+
+    if (isActive) {
+      this.closeCustomInstructions();
+    } else {
+      this.customInstructionsBox.classList.add('active');
+      this.customInstructionsBox.setAttribute('aria-expanded', 'true');
+      this.overlay.classList.add('active');
+      document.body.classList.add('overlay-open');
+      this.customInstructionsBox.scrollTop = 0;
+    }
+  }
+
+  closeCustomInstructions() {
+    this.customInstructionsBox.classList.remove('active');
+    this.customInstructionsBox.setAttribute('aria-expanded', 'false');
+    this.overlay.classList.remove('active');
+    document.body.classList.remove('overlay-open');
+  }
+
   closeInfoBox() {
     this.infoBox.classList.remove('active');
     this.changelogBox.classList.remove('active');
     this.aboutBox.classList.remove('active');
+    this.customInstructionsBox.classList.remove('active');
+    this.customInstructionsBox.setAttribute('aria-expanded', 'false');
     this.overlay.classList.remove('active');
     this.infoButton.setAttribute('aria-expanded', 'false');
     this.changelogButton.setAttribute('aria-expanded', 'false');
@@ -173,20 +246,32 @@ export class UIHandlers {
     );
 
     if (filteredCats.length > 0) {
-      const firstValidCat = filteredCats.find(cat =>
-        !this.game.getSelectedCats().includes(cat.name)
-      );
+      const cat = filteredCats[0];
 
-      if (firstValidCat) {
-        this.handleCatSelection(firstValidCat);
+      if (this.game.mode === 'custom' && !this.game.isCustomAnswerSet()) {
+        this.setCustomAnswer(cat);
+        return;
+      }
+
+      if (!this.game.getSelectedCats().includes(cat.name)) {
+        this.handleCatSelection(cat);
       }
     }
   }
 
   updateHintDisplay() {
     const hintText = this.hintBox.querySelector(".hint-text");
-
     if (!hintText) return;
+
+    if (this.game.mode === 'custom' && !this.game.isCustomAnswerSet()) {
+      hintText.textContent = "Click me for more instructions!";
+      return;
+    }
+
+    this.hintBox.style.backgroundColor = "#e6e6e6";
+    this.hintBox.style.borderColor = "#000";
+    this.hintBox.style.borderStyle = "solid";
+    this.hintBox.style.borderWidth = "3px";
 
     if (this.game.hintAvailable) {
       hintText.textContent = "Click for hint!";
@@ -242,12 +327,24 @@ export class UIHandlers {
         const escapedName = Security.escapeHTML(cat.name);
 
         catElement.innerHTML = `
-          <img src="${Security.escapeHTML(cat.img)}" alt="${escapedName}" class="search-cat-img">
-          <div class="cat-details">
-            <p><strong>${escapedName}</strong></p>
-          </div>
-        `;
-        catElement.addEventListener("click", () => this.handleCatSelection(cat));
+                <img src="${Security.escapeHTML(cat.img)}" alt="${escapedName}" class="search-cat-img">
+                <div class="cat-details">
+                    <p><strong>${escapedName}</strong></p>
+                </div>
+            `;
+
+        catElement.addEventListener("click", () => {
+          if (this.game.mode === 'custom') {
+            if (!this.game.isCustomAnswerSet()) {
+              this.setCustomAnswer(cat);
+            } else {
+              this.handleCatSelection(cat);
+            }
+          } else {
+            this.handleCatSelection(cat);
+          }
+        });
+
         this.resultsContainer.appendChild(catElement);
       });
     } else {
@@ -424,7 +521,7 @@ export class UIHandlers {
 
     const timerRow = document.querySelector('.victory-timer-row');
     if (timerRow) {
-      if (this.game.isInfiniteMode()) {
+      if (this.game.isInfiniteMode() || this.game.mode === 'custom') {
         timerRow.style.display = 'none';
       } else {
         timerRow.style.display = 'flex';
@@ -440,6 +537,8 @@ export class UIHandlers {
     if (catUnitLabel) {
       if (this.game.isInfiniteMode()) {
         catUnitLabel.textContent = "Correct Cat Unit!";
+      } else if (this.game.mode === 'custom') {
+        catUnitLabel.textContent = "Custom Cat Unit";
       } else {
         const dayNum = this.game.getCurrentDayNumber();
         catUnitLabel.textContent = `Catdle Unit #${dayNum}`;
@@ -565,23 +664,26 @@ export class UIHandlers {
     }
   }
 
-handleRestart() {
-    if (confirm('This will clear both daily and endless mode, are you sure?')) {
-        Security.storage.remove('selectedCats');
-        Security.storage.remove('attempts');
-        Security.storage.remove('hintAvailable');
-        Security.storage.remove('game_day');
-        Security.storage.remove('game_index');
-        Security.storage.remove('infinite_selectedCats');
-        Security.storage.remove('infinite_attempts');
-        Security.storage.remove('infinite_hintAvailable');
-        Security.storage.remove('infinite_currentAnswer');
-        Security.storage.remove('infinite_version');
-        Security.storage.remove('infinite_reset_done');
+  handleRestart() {
+    if (confirm('Reset the game? This will clear your current progress and start a fresh game.')) {
+      Security.storage.remove('selectedCats');
+      Security.storage.remove('attempts');
+      Security.storage.remove('hintAvailable');
+      Security.storage.remove('game_day');
+      Security.storage.remove('game_index');
+      Security.storage.remove('infinite_selectedCats');
+      Security.storage.remove('infinite_attempts');
+      Security.storage.remove('infinite_hintAvailable');
+      Security.storage.remove('infinite_currentAnswer');
+      Security.storage.remove('custom_selectedCats');
+      Security.storage.remove('custom_attempts');
+      Security.storage.remove('custom_hintAvailable');
+      Security.storage.remove('custom_currentAnswer');
+      Security.storage.remove('custom_answer_set');
 
-        window.location.reload();
+      window.location.reload();
     }
-}
+  }
 
   startNewInfiniteGame() {
     if (!this.game.isInfiniteMode()) return;
@@ -607,6 +709,33 @@ handleRestart() {
     this.announceToScreenReader('New infinite game started!');
   }
 
+  startCustomNewGame() {
+    if (this.game.mode !== 'custom') return;
+
+    this.clearGameDisplay();
+    this.game.resetCustomGame();
+    this.resetHintDisplay();
+
+    const victoryScreen = document.getElementById('victory-screen');
+    if (victoryScreen) victoryScreen.classList.remove('active');
+
+    if (this.catDetailsContainer) {
+      const details = this.catDetailsContainer.querySelectorAll('.cat-details-element');
+      details.forEach(el => el.remove());
+    }
+
+    this.showGamePlayUI();
+
+    const instructionElement = document.getElementById('game-instruction');
+    if (instructionElement) {
+      instructionElement.textContent = "Custom Mode - Select a Unit for the answer!";
+    }
+
+    if (this.searchBar) {
+      this.searchBar.value = '';
+    }
+  }
+
   showGameRestartUI() {
     const searchArea = document.querySelector('.search-area-wrapper');
     if (searchArea) {
@@ -615,13 +744,62 @@ handleRestart() {
 
     if (this.game.isInfiniteMode()) {
       if (this.infiniteControls) {
+        const button = this.infiniteControls.querySelector('#infinite-restart-button');
+        if (button) {
+          button.innerHTML = 'New Game';
+          button.onclick = (e) => {
+            e.stopPropagation();
+            this.startNewInfiniteGame();
+            this.showGamePlayUI();
+          };
+        }
         this.infiniteControls.style.display = 'flex';
       }
       if (this.dailyResultsContainer) {
         this.dailyResultsContainer.style.display = 'none';
       }
+    } else if (this.game.mode === 'custom') {
+      if (this.dailyResultsContainer) {
+        const button = this.dailyResultsContainer.querySelector('#daily-results-button');
+        if (button) {
+          button.innerHTML = 'See Results';
+          button.onclick = () => {
+            this.showVictoryScreenAgain();
+          };
+        }
+        this.dailyResultsContainer.style.display = 'flex';
+      }
+
+      if (this.infiniteControls) {
+        const button = this.infiniteControls.querySelector('#infinite-restart-button');
+        if (button) {
+          button.innerHTML = 'New Game';
+          button.onclick = (e) => {
+            e.stopPropagation();
+            this.startCustomNewGame();
+            this.showGamePlayUI();
+          };
+        }
+        this.infiniteControls.style.display = 'flex';
+      }
+
+      if (this.infiniteControls && this.dailyResultsContainer) {
+        this.infiniteControls.style.display = 'flex';
+        this.dailyResultsContainer.style.display = 'flex';
+        this.infiniteControls.style.width = 'auto';
+        this.dailyResultsContainer.style.width = 'auto';
+        this.infiniteControls.style.gap = '15px';
+        this.dailyResultsContainer.style.gap = '15px';
+      }
     } else {
       if (this.dailyResultsContainer) {
+        const button = this.dailyResultsContainer.querySelector('#daily-results-button');
+        if (button) {
+          button.innerHTML = 'See Results';
+          button.onclick = () => {
+            this.showVictoryScreenAgain();
+          };
+        }
         this.dailyResultsContainer.style.display = 'flex';
       }
       if (this.infiniteControls) {
@@ -644,12 +822,39 @@ handleRestart() {
     }
   }
 
+  setCustomAnswer(cat) {
+    if (this.game.setCustomAnswer(cat)) {
+      this.showToast(`Answer set to: ${cat.name}! 🎯`);
+
+      const instructionElement = document.getElementById('game-instruction');
+      if (instructionElement) {
+        instructionElement.textContent = `Answer: ${cat.name} - Taking audience guesses!`;
+      }
+
+      const searchButton = document.getElementById('search-button');
+      if (searchButton) {
+        searchButton.textContent = 'Play';
+      }
+
+      if (this.hintBox) {
+        this.hintBox.style.backgroundColor = "#e6e6e6";
+        this.hintBox.style.borderColor = "#000";
+        this.hintBox.style.borderStyle = "solid";
+        this.hintBox.style.borderWidth = "3px";
+      }
+
+      this.updateHintDisplay();
+      this.searchBar.value = '';
+      this.resultsContainer.innerHTML = '';
+      this.resultsContainer.style.display = 'none';
+    }
+  }
+
   generateShareText() {
     const answer = this.game.getAnswer();
     const attempts = this.game.attempts;
     const isInfinite = this.game.isInfiniteMode();
-    const dayNum = this.game.getCurrentDayNumber();
-    const header = `Catdle #${dayNum} (${attempts} guesses)`;
+    const isCustom = this.game.mode === 'custom';
     const guesses = [...this.game.getSelectedCats()].reverse();
     let grid = '';
 
@@ -672,6 +877,16 @@ handleRestart() {
         }
         grid += row + '\n';
       }
+    }
+
+    let header = '';
+    if (isCustom) {
+      header = `Custom Catdle (${attempts} guesses)`;
+    } else if (isInfinite) {
+      header = `Catdle ∞ (${attempts} guesses)`;
+    } else {
+      const dayNum = this.game.getCurrentDayNumber ? this.game.getCurrentDayNumber() : '?';
+      header = `Catdle #${dayNum} (${attempts} guesses)`;
     }
 
     return `${header}\n\n${grid}\n\nPlay Catdle: https://catdle.com`;
@@ -723,5 +938,56 @@ handleRestart() {
     setTimeout(() => {
       toast.remove();
     }, 2000);
+  }
+
+  toggleModeDropdown() {
+    this.modeDropdownBtn.classList.toggle('open');
+    this.modeDropdownMenu.classList.toggle('open');
+  }
+
+  closeModeDropdown() {
+    this.modeDropdownBtn.classList.remove('open');
+    this.modeDropdownMenu.classList.remove('open');
+  }
+
+selectMode(mode) {
+    const modeNames = {
+        'daily': 'Daily Mode',
+        'infinite': 'Endless Mode',
+        'custom': 'Custom Mode'
+    };
+    
+    if (this.modeDropdownText) {
+        this.modeDropdownText.textContent = modeNames[mode] || mode;
+    }
+    
+    this.modeDropdownItems.forEach(item => {
+        item.classList.toggle('active', item.dataset.mode === mode);
+    });
+    
+    this.closeModeDropdown();
+    
+    const path = window.location.pathname;
+    if (mode === 'daily') {
+        window.location.href = path;
+    } else {
+        window.location.href = path + '#' + mode;
+    }
+}
+
+  updateModeDropdown(mode) {
+    const modeNames = {
+      'daily': 'Daily Mode',
+      'infinite': 'Endless Mode',
+      'custom': 'Custom Mode'
+    };
+
+    if (this.modeDropdownText) {
+      this.modeDropdownText.textContent = modeNames[mode] || 'Daily Mode';
+    }
+
+    this.modeDropdownItems.forEach(item => {
+      item.classList.toggle('active', item.dataset.mode === mode);
+    });
   }
 }

@@ -8,6 +8,8 @@ export class GameLogic {
 
     if (this.mode === 'infinite') {
       this.initializeInfiniteMode();
+    } else if (this.mode === 'custom') {
+      this.initializeCustomMode();
     } else {
       this.initializeDailyMode();
     }
@@ -66,6 +68,54 @@ export class GameLogic {
     Security.storage.set('infinite_currentAnswer', JSON.stringify(this.answer));
   }
 
+  initializeCustomMode() {
+    this.dailyLogic = null;
+    this.isCustomMode = true;
+
+    const storedAnswerSet = Security.storage.get('custom_answer_set');
+    this.customAnswerSet = storedAnswerSet === true;
+
+    const storedAnswer = Security.storage.get('custom_currentAnswer');
+    if (storedAnswer && this.customAnswerSet) {
+      try {
+        this.answer = JSON.parse(storedAnswer);
+      } catch (e) {
+        this.answer = null;
+        this.customAnswerSet = false;
+      }
+    } else {
+      this.answer = null;
+      this.customAnswerSet = false;
+    }
+
+    this.selectedCats = this.loadValidatedState('selectedCats', [], 'custom');
+    this.attempts = this.loadValidatedState('attempts', 0, 'custom');
+    this.hintAvailable = this.loadValidatedState('hintAvailable', false, 'custom');
+    this.yesterdaysAnswer = this.getPlaceholderCat();
+  }
+
+  setCustomAnswer(cat) {
+    if (this.mode !== 'custom') return false;
+
+    this.answer = cat;
+    this.customAnswerSet = true;
+    this.selectedCats = [];
+    this.attempts = 0;
+    this.hintAvailable = false;
+
+    Security.storage.set('custom_currentAnswer', JSON.stringify(cat));
+    Security.storage.set('custom_answer_set', true);
+    Security.storage.set('custom_selectedCats', []);
+    Security.storage.set('custom_attempts', 0);
+    Security.storage.set('custom_hintAvailable', false);
+
+    return true;
+  }
+
+  isCustomAnswerSet() {
+    return this.mode === 'custom' && this.customAnswerSet && this.answer !== null;
+  }
+
   checkAndResetForNewDay() {
     if (this.mode !== 'daily') return false;
 
@@ -84,6 +134,10 @@ export class GameLogic {
       ['selectedCats', 'attempts', 'hintAvailable'].forEach(key => {
         Security.storage.remove(key);
       });
+    } else if (prefix === 'custom') {
+      ['custom_selectedCats', 'custom_attempts', 'custom_hintAvailable'].forEach(key => {
+        Security.storage.remove(key);
+      });
     } else {
       ['infinite_selectedCats', 'infinite_attempts', 'infinite_hintAvailable'].forEach(key => {
         Security.storage.remove(key);
@@ -92,7 +146,15 @@ export class GameLogic {
   }
 
   loadValidatedState(key, defaultValue, prefix = 'daily') {
-    const storageKey = prefix === 'infinite' ? `infinite_${key}` : key;
+    let storageKey;
+    if (prefix === 'infinite') {
+      storageKey = `infinite_${key}`;
+    } else if (prefix === 'custom') {
+      storageKey = `custom_${key}`;
+    } else {
+      storageKey = key;
+
+    }
     const stored = Security.storage.get(storageKey);
 
     if (stored === null) return defaultValue;
@@ -297,6 +359,10 @@ export class GameLogic {
       Security.storage.set('infinite_selectedCats', this.selectedCats);
       Security.storage.set('infinite_attempts', this.attempts);
       Security.storage.set('infinite_hintAvailable', this.hintAvailable);
+    } else if (this.mode === 'custom') {
+      Security.storage.set('custom_selectedCats', this.selectedCats);
+      Security.storage.set('custom_attempts', this.attempts);
+      Security.storage.set('custom_hintAvailable', this.hintAvailable);
     } else {
       Security.storage.set('selectedCats', this.selectedCats);
       Security.storage.set('attempts', this.attempts);
@@ -323,6 +389,24 @@ export class GameLogic {
     Security.storage.set('infinite_attempts', this.attempts);
     Security.storage.set('infinite_hintAvailable', this.hintAvailable);
     Security.storage.set('infinite_currentAnswer', JSON.stringify(this.answer));
+
+    return true;
+  }
+
+  resetCustomGame() {
+    if (this.mode !== 'custom') return false;
+
+    Security.storage.remove('custom_selectedCats');
+    Security.storage.remove('custom_attempts');
+    Security.storage.remove('custom_hintAvailable');
+    Security.storage.remove('custom_currentAnswer');
+    Security.storage.remove('custom_answer_set');
+
+    this.selectedCats = [];
+    this.attempts = 0;
+    this.hintAvailable = false;
+    this.answer = null;
+    this.customAnswerSet = false;
 
     return true;
   }

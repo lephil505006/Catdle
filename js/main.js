@@ -4,12 +4,20 @@ import { loadCatData } from './loadCats.js';
 
 function getGameMode() {
     const hash = window.location.hash;
+    console.log('Current hash:', hash);
+
     if (hash === '#infinite') return 'infinite';
+    if (hash === '#custom') return 'custom';
+    if (hash === '' || hash === '#') return 'daily';
 
     const urlParams = new URLSearchParams(window.location.search);
     if (urlParams.get('mode') === 'infinite') {
         window.location.hash = 'infinite';
         return 'infinite';
+    }
+    if (urlParams.get('mode') === 'custom') {
+        window.location.hash = 'custom';
+        return 'custom';
     }
 
     return 'daily';
@@ -17,46 +25,29 @@ function getGameMode() {
 
 function updateUIMode(mode) {
     const body = document.body;
-    const modeButton = document.getElementById('mode-toggle');
+    const modeSelect = document.getElementById('mode-select');
     const instructionElement = document.getElementById('game-instruction');
+    const searchButton = document.getElementById('search-button');
 
-    if (mode === 'infinite') {
-        body.classList.add('infinite-mode');
+    body.classList.remove('daily-mode', 'infinite-mode', 'custom-mode');
+    body.classList.add(`${mode}-mode`);
 
-        if (window.location.hash !== '#infinite') {
-            const cleanUrl = window.location.pathname + '#infinite';
-            window.history.replaceState({}, '', cleanUrl);
-        }
-
-        if (instructionElement) {
-            instructionElement.textContent = "Battle Cats Infinite Mode - Endless Units!";
-        }
-    } else {
-        body.classList.remove('infinite-mode');
-
-        if (window.location.hash) {
-            const cleanUrl = window.location.pathname;
-            window.history.replaceState({}, '', cleanUrl);
-        }
-
-        if (instructionElement) {
-            instructionElement.textContent = "Guess The Daily Battle Cat's unit!";
-        }
+    if (modeSelect) {
+        modeSelect.value = mode;
     }
 
-    if (modeButton) {
-        modeButton.onclick = () => {
-            const currentMode = getGameMode();
-            if (currentMode === 'daily') {
-                window.location.href = window.location.pathname + '#infinite';
-            } else {
-                window.location.href = window.location.pathname;
-            }
+    if (instructionElement) {
+        const texts = {
+            'daily': "Guess The Daily Battle Cat's unit!",
+            'infinite': "Battle Cats Infinite Mode - Endless Units!",
+            'custom': "Custom Mode - Select a Unit for the answer!"
         };
+        instructionElement.textContent = texts[mode] || texts.daily;
     }
 }
 
 window.addEventListener('hashchange', () => {
+    console.log('Hash changed to:', window.location.hash);
     window.location.reload();
 });
 
@@ -67,6 +58,10 @@ document.addEventListener("DOMContentLoaded", async () => {
     const cats = await loadCatData();
     const game = new GameLogic(cats, mode);
     const ui = new UIHandlers(game);
+
+    if (ui.updateModeDropdown) {
+        ui.updateModeDropdown(mode);
+    }
 
     if (mode === 'daily') {
         ui.displayYesterdaysAnswer();

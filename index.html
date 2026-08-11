@@ -40,7 +40,17 @@
     </header>
 
     <div class="game-mode-container">
-        <button id="mode-toggle" class="mode-toggle-button"></button>
+        <div class="mode-dropdown" id="mode-dropdown">
+            <button class="mode-dropdown-btn" id="mode-dropdown-btn">
+                <span id="mode-dropdown-text">Daily Mode</span>
+                <span class="mode-dropdown-arrow">▼</span>
+            </button>
+            <div class="mode-dropdown-menu" id="mode-dropdown-menu">
+                <div class="mode-dropdown-item" data-mode="daily">Daily Mode</div>
+                <div class="mode-dropdown-item" data-mode="infinite">Endless Mode</div>
+                <div class="mode-dropdown-item" data-mode="custom">Custom Mode</div>
+            </div>
+        </div>
     </div>
 
     <div class="info-box" id="info-box">
@@ -422,6 +432,20 @@
         </div>
 
         <section class="changelog-section">
+            <h3>10th, August 2026</h3>
+            <h3>The Beach Episode Update ᓚ₍ ^. ̫ .^₎</h3>
+            <h3>Custom Games!</h3>
+            <p>Custom Catdle games is now a thing! From what I remember, before this whole website was created, there
+                was
+                a person (or multiple?) who hosted Catdle, but more closer to a Wordle if anything on the old discord
+                server. Custom mode is a way to sort of bring that back in the form of this game instead. </p>
+            <p><strong>How does it work?</strong> There's instructions on the page itself, but to quickly go over, a
+                host
+                gets to select an answer ahead of time, while their audience is the player, collectively guessing.</p>
+            <h3>Other stuff</h3>
+            <p><strong>The Beach Episode!</strong> The theme has been changed accordingly, goodbye 13th Anniversary!</p>
+            <p><strong>Game mode button:</strong> As with the new addition, the toggle for switching gamemodes has been improved! </p>
+            <hr class="info-separator">
             <h3>27th, July 2026</h3>
             <h3>Update for 15.5! ദ്ദി（• ˕ •マ.ᐟ|</h3>
             <ul>
@@ -429,11 +453,12 @@
                 <li>True forms added: Ironcat, Sugar Rush Shinobi Tomoe, Starlight MOMOCO</li>
                 <li>Ultra form added: Subterra Saviors</li>
             </ul>
-                        <h3>Custom games</h3>
-                        <ul>
-                            <li>Basically as it sounds, from a feedback, I can make a seperate "custom" mode where you as a host can select an answer and potentially show and stream with whoever</li>
-                            <li>Gosh I should find an easier way to communicate this stuff ( ˶°ㅁ°) !!</li>
-                        </ul>
+            <h3>Custom games</h3>
+            <ul>
+                <li>Basically as it sounds, from a feedback, I can make a seperate "custom" mode where you as a host can
+                    select an answer and potentially show and stream with whoever</li>
+                <li>Gosh I should find an easier way to communicate this stuff ( ˶°ㅁ°) !!</li>
+            </ul>
             <hr class="info-separator">
             <h3>17th, July 2026</h3>
             <h3>Quick fix</h3>
@@ -732,6 +757,21 @@
         </button>
     </div>
 
+    <div class="custom-instructions-box" id="custom-instructions-box">
+        <div class="version-section">
+            <div class="version-text">Custom Mode Instructions</div>
+        </div>
+
+        <section class="custom-instructions-section">
+            <h3>How Custom Mode Works</h3>
+            <hr class="info-separator">
+            <p><strong>What is Custom Mode?</strong> Custom mode is the mode that allows playing Catdle with an
+                audience! A host selects a cat unit at the beginning and after that, the host let's their audience guess
+                as the way to play. The same rule and methodology applies. The same pool of Units is used for this mode,
+                so no collabs, sorry! </p>
+        </section>
+    </div>
+
     <main id="game-container">
         <p class="game-instruction" id="game-instruction">Guess todays Battle Cat's unit!</p>
         <div class="hint-area">
@@ -745,6 +785,7 @@
                 <div class="hint-reveal-text" id="hint-display"></div>
             </div>
         </div>
+
 
         <div class="search-area-wrapper">
             <div class="search-container">
@@ -766,7 +807,7 @@
                 See Results
             </button>
         </div>
-        <img src="images/assets/MenuCat13.png" id="menu-cat" alt="Menu Cat" class="decorative-cat">
+        <img src="images/assets/MenuCatSummer.png" id="menu-cat" alt="Menu Cat" class="decorative-cat">
     </main>
 
     <div id="cat-details-container" aria-live="polite">
