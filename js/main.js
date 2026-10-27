@@ -4,7 +4,6 @@ import { loadCatData } from './loadCats.js';
 
 function getGameMode() {
     const hash = window.location.hash;
-    console.log('Current hash:', hash);
 
     if (hash === '#infinite') return 'infinite';
     if (hash === '#custom') return 'custom';

@@ -391,7 +391,10 @@ export class UIHandlers {
     const catDetailsElement = document.createElement("div");
     catDetailsElement.classList.add("cat-details-element");
 
+    const answer = this.game.getAnswer();
     const colors = this.game.compareCategories(cat, this.game.getAnswer());
+    const isCatMatch = cat.name === answer.name;
+
     const categories = [
       "img",
       "rarity",
@@ -410,6 +413,12 @@ export class UIHandlers {
       let colorClass = "white-box";
       if (index > 0) colorClass = colors[index - 1];
 
+      if (category === "img") {
+        colorClass = isCatMatch ? "green-box" : "red-box";
+      } else {
+        colorClass = colors[index - 1];
+      }
+
       const getSafeSplit = (value) => {
         if (!value || typeof value !== 'string') return ['X'];
         const sanitized = Security.sanitizeInput(value);
@@ -422,9 +431,9 @@ export class UIHandlers {
             ? cat.img
             : 'images/cats/unknown.webp';
 
-          return `<div class="cat-img-container">
-                <img src="${Security.escapeHTML(safeImg)}" alt="${Security.escapeHTML(cat.name)}" class="cat-img">
-              </div>`;
+          return `<div class="cat-img-container ${colorClass}">
+                    <img src="${Security.escapeHTML(safeImg)}" alt="${Security.escapeHTML(cat.name)}" class="cat-img">
+                </div>`;
 
         case "traits":
           const traits = getSafeSplit(cat[category]);
@@ -862,8 +871,12 @@ export class UIHandlers {
       const guessName = guesses[i];
       const guessCat = this.game.getAllCats().find(c => c.name === guessName);
       if (guessCat) {
+        //Get and use the cat answer first
+        const isCatMatch = guessCat.name === answer.name;
+        const catEmoji = isCatMatch ? '🟩' : '🟥';
         const colors = this.game.compareCategories(guessCat, answer);
-        let row = '';
+
+        let row = catEmoji;
         for (let j = 0; j < colors.length; j++) {
           const color = colors[j];
           if (color === 'green-box') row += '🟩';
@@ -950,30 +963,30 @@ export class UIHandlers {
     this.modeDropdownMenu.classList.remove('open');
   }
 
-selectMode(mode) {
+  selectMode(mode) {
     const modeNames = {
-        'daily': 'Daily Mode',
-        'infinite': 'Endless Mode',
-        'custom': 'Custom Mode'
+      'daily': 'Daily Mode',
+      'infinite': 'Endless Mode',
+      'custom': 'Custom Mode'
     };
-    
+
     if (this.modeDropdownText) {
-        this.modeDropdownText.textContent = modeNames[mode] || mode;
+      this.modeDropdownText.textContent = modeNames[mode] || mode;
     }
-    
+
     this.modeDropdownItems.forEach(item => {
-        item.classList.toggle('active', item.dataset.mode === mode);
+      item.classList.toggle('active', item.dataset.mode === mode);
     });
-    
+
     this.closeModeDropdown();
-    
+
     const path = window.location.pathname;
     if (mode === 'daily') {
-        window.location.href = path;
+      window.location.href = path;
     } else {
-        window.location.href = path + '#' + mode;
+      window.location.href = path + '#' + mode;
     }
-}
+  }
 
   updateModeDropdown(mode) {
     const modeNames = {

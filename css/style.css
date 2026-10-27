@@ -5,7 +5,7 @@ body {
     margin: 0;
     padding-bottom: 200px;
     text-align: center;
-    background-image: url('../images/assets/Battle Cats Background3.png');
+    background-image: url('../images/assets/Battle Cats Background Spooky.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -445,6 +445,9 @@ body.infinite-mode .play-again-button {
     display: flex;
     align-items: center;
     justify-content: center;
+    border: 3px solid #000;
+    border-radius: 10px;
+    box-sizing: border-box;
 }
 
 .cat-img-container img {
