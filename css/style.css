@@ -1527,7 +1527,7 @@ body.infinite-mode .yesterdays-answer {
         display: flex;
         width: 1050px;
         margin: 0;
-        padding: 0 10px 5px 0;
+        padding: 0 10px 5px 40px;
         box-sizing: border-box;
     }
 
